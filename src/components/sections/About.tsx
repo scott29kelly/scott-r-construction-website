@@ -1,0 +1,73 @@
+import React from 'react';
+import { ABOUT_CONTENT } from '@/lib/constants';
+import { SectionLabel } from '@/components/ui/SectionLabel';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { Camera, CheckCircle2 } from 'lucide-react';
+
+export function About() {
+  return (
+    <section id="about" className="relative section-padding bg-warm-black bg-noise overflow-hidden">
+      
+      {/* Decorative architectural line */}
+      <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-accent/20 to-transparent hidden lg:block" style={{ right: '15%' }} />
+      
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+          
+          {/* Text Content */}
+          <div className="lg:col-span-6 lg:pr-10">
+            <ScrollReveal>
+              <SectionLabel light>About Scott</SectionLabel>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.1}>
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-[1.1] mb-10 whitespace-pre-line">
+                {ABOUT_CONTENT.heading}
+              </h2>
+            </ScrollReveal>
+            
+            <div className="space-y-6 mb-12">
+              {ABOUT_CONTENT.paragraphs.map((text, i) => (
+                <ScrollReveal key={i} delay={0.2 + (i * 0.1)}>
+                  <p className={`text-lg leading-relaxed ${i === 0 ? 'text-sand/90 font-medium' : 'text-ash font-light'}`}>
+                    {text}
+                  </p>
+                </ScrollReveal>
+              ))}
+            </div>
+            
+            <div className="space-y-4">
+              {ABOUT_CONTENT.credentials.map((cred, i) => (
+                <ScrollReveal key={i} delay={0.4 + (i * 0.05)} className="flex items-start gap-4">
+                  <CheckCircle2 size={20} className="text-accent shrink-0 mt-1" />
+                  <span className="text-cream/80 text-base">{cred}</span>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+          
+          {/* Image Wrapper */}
+          <div className="lg:col-span-6">
+            <ScrollReveal direction="left" delay={0.3} className="relative w-full aspect-[4/5] lg:aspect-[3/4] group">
+              {/* Offset decorative border */}
+              <div className="absolute -inset-4 md:-inset-6 border border-sand/20 z-0 translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6 transition-transform duration-700 ease-out group-hover:translate-x-2 group-hover:translate-y-2" />
+              
+              <div className="absolute inset-0 bg-slate/50 z-10 flex flex-col items-center justify-center border border-sand/10">
+                <Camera size={48} strokeWidth={1} className="text-steel/50 mb-4" />
+                <div className="text-center px-6">
+                  <span className="block text-cream/70 font-semibold uppercase tracking-widest text-sm mb-2">
+                    Photo of Scott
+                  </span>
+                  <span className="text-ash/60 text-xs italic">
+                    On job site or completed project
+                  </span>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  );
+}
