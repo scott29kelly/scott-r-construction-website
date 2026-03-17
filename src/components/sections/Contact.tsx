@@ -1,11 +1,21 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CheckCircle2, Clock, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import {
+  CheckCircle2,
+  CircleHelp,
+  Clock,
+  Mail,
+  MapPin,
+  Phone,
+  ShieldCheck,
+} from 'lucide-react';
 import {
   BUDGET_RANGE_OPTIONS,
   CONTACT_INFO,
   CONTACT_TRUST_POINTS,
+  ESTIMATE_EXPECTATIONS,
+  ESTIMATE_FIT_CHECKLIST,
   TARGET_TIMELINE_OPTIONS,
 } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
@@ -103,6 +113,46 @@ export function Contact() {
               <p className="mb-12 text-lg leading-relaxed text-steel">
                 Whether you&apos;re planning a major renovation or just exploring ideas, you&apos;ll get straightforward answers, a no-pressure estimate, and a clear sense of what comes next.
               </p>
+
+              <div className="mb-12 border border-charcoal bg-charcoal p-7 text-cream shadow-2xl shadow-charcoal/10">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                    <CircleHelp size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
+                      Estimate fit guide
+                    </p>
+                    <h3 className="mt-3 font-display text-2xl leading-tight">
+                      Not sure if you&apos;re ready to reach out yet? This usually means yes.
+                    </h3>
+                    <p className="mt-4 text-sm leading-relaxed text-ash">
+                      If two or three of these sound like you, the form is probably the right next step.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid gap-4">
+                  {ESTIMATE_FIT_CHECKLIST.map((item) => (
+                    <div
+                      key={item.id}
+                      className="border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm"
+                    >
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-accent" />
+                        <div>
+                          <p className="text-sm font-semibold uppercase tracking-[0.12em] text-cream">
+                            {item.title}
+                          </p>
+                          <p className="mt-2 text-sm leading-relaxed text-ash">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <div className="mb-12 grid gap-4">
                 {CONTACT_TRUST_POINTS.map((point) => (
@@ -219,6 +269,24 @@ export function Contact() {
                     <p className="mt-2 text-sm leading-relaxed text-steel">
                       Share a few details below and Scott will follow up to confirm fit, answer questions, and talk through timing.
                     </p>
+                  </div>
+
+                  <div className="mb-6 grid gap-4 md:grid-cols-2">
+                    {ESTIMATE_EXPECTATIONS.map((group) => (
+                      <div key={group.id} className="border border-sand/30 bg-cream/60 px-5 py-4">
+                        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-charcoal">
+                          {group.heading}
+                        </p>
+                        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-steel">
+                          {group.points.map((point) => (
+                            <li key={point} className="flex items-start gap-2">
+                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
 
                   <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">

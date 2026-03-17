@@ -3,9 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Phone } from 'lucide-react';
+import { Clock3, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import { SITE_INFO } from '@/lib/constants';
+import { SCHEDULING_SIGNALS, SITE_INFO } from '@/lib/constants';
 
 export function Hero() {
   return (
@@ -95,6 +95,27 @@ export function Hero() {
           >
             Planning a kitchen, bath, addition, deck, or Bilco door project? Call now or request an estimate and we&apos;ll help you figure out the next step.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 1 }}
+            className="mt-6 max-w-2xl border border-sand/15 bg-white/5 p-5 backdrop-blur-sm"
+          >
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                <Clock3 size={18} />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                  {SCHEDULING_SIGNALS.eyebrow}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-ash">
+                  {SCHEDULING_SIGNALS.heroMessage}
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 

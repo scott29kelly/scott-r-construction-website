@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
-import { PROCESS_STEPS } from '@/lib/constants';
+import { PROCESS_STEPS, SCHEDULING_SIGNALS } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';
@@ -64,6 +64,9 @@ export function Process() {
               </h3>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-ash">
                 Scott can usually tell you quickly whether the scope, location, and timeline sound realistic, and what the best next step should be.
+              </p>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-accent-light">
+                {SCHEDULING_SIGNALS.processMessage}
               </p>
             </div>
 

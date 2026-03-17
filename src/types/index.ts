@@ -72,3 +72,15 @@ export interface FaqItem {
   question: string;
   answer: string;
 }
+
+export interface FitChecklistItem {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface FitExpectation {
+  id: string;
+  heading: string;
+  points: string[];
+}

@@ -6,6 +6,7 @@ import { Menu, Phone, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
+import { SCHEDULING_SIGNALS } from '@/lib/constants';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -75,6 +76,9 @@ export function Navbar() {
           </ul>
           
           <div className="flex items-center gap-3">
+            <span className="hidden xl:inline-flex border border-accent/20 bg-accent/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-light">
+              {SCHEDULING_SIGNALS.navMessage}
+            </span>
             <a
               href="tel:2155191795"
               className="hidden lg:inline-flex items-center gap-2 border border-sand/20 px-4 py-3 text-xs font-semibold tracking-[0.1em] uppercase text-cream/80 transition-colors duration-300 hover:border-accent hover:text-accent"

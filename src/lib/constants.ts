@@ -9,6 +9,8 @@ import {
   ReassurancePoint,
   ComparisonPoint,
   FaqItem,
+  FitChecklistItem,
+  FitExpectation,
 } from '@/types';
 
 export const SITE_INFO = {
@@ -337,5 +339,53 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'faq-service-area',
     question: 'What areas do you serve?',
     answer: 'Scott Romanoski Construction serves Langhorne, Newtown, Yardley, Levittown, Bensalem, and surrounding Bucks County and nearby South Jersey communities.',
+  },
+];
+
+export const SCHEDULING_SIGNALS = {
+  eyebrow: 'Scheduling clarity',
+  heroMessage:
+    'If you are hoping to start this season or want to compare timing before getting too far, reaching out sooner makes it easier to talk through fit and availability.',
+  navMessage: 'Now booking estimate conversations',
+  processMessage:
+    'Homeowners who already know their town, timing, and project goals usually get the clearest next-step guidance fastest.',
+};
+
+export const ESTIMATE_FIT_CHECKLIST: FitChecklistItem[] = [
+  {
+    id: 'location',
+    title: 'You are in Bucks County or nearby South Jersey',
+    description: 'Local-fit projects are easier to schedule and easier to support throughout the job.',
+  },
+  {
+    id: 'timing',
+    title: 'You have a rough timeline in mind',
+    description: 'Even a general target helps Scott quickly confirm availability and the right next step.',
+  },
+  {
+    id: 'scope',
+    title: 'You can describe the space or project goal',
+    description: 'You do not need a full plan yet, but knowing the room, issue, or upgrade you want keeps the conversation productive.',
+  },
+];
+
+export const ESTIMATE_EXPECTATIONS: FitExpectation[] = [
+  {
+    id: 'good-fit',
+    heading: 'A strong estimate fit usually looks like:',
+    points: [
+      'You want straightforward feedback on whether the project makes sense now.',
+      'You are comparing timing, scope, or investment ranges before committing.',
+      'You want to work with an owner-led contractor instead of a high-pressure sales process.',
+    ],
+  },
+  {
+    id: 'first-call',
+    heading: 'On the first follow-up, expect help with:',
+    points: [
+      'Confirming whether the project is in the service area and schedule window.',
+      'Talking through budget range and practical options for the space.',
+      'Clarifying whether an estimate, site visit, or later follow-up is the best next move.',
+    ],
   },
 ];
