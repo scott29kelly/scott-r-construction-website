@@ -10,6 +10,8 @@ const featuredProjects = PORTFOLIO.slice(0, 4);
 export function LocalFit() {
   return (
     <section className="relative overflow-hidden bg-white section-padding">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sand/30 to-transparent" />
+
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
@@ -18,12 +20,15 @@ export function LocalFit() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="max-w-3xl font-display text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
-                See the kinds of projects homeowners near you are already trusting Scott to handle.
+                See the kinds of projects homeowners near you are already trusting Scott to
+                handle.
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-steel">
-                If you are planning a kitchen, bath, trim upgrade, or larger remodel in or around Langhorne, this is the kind of work and service area fit Scott is known for.
+                If you are planning a kitchen, bath, trim upgrade, or larger remodel in or
+                around Langhorne, this is the kind of work and service-area fit Scott is known
+                for.
               </p>
             </ScrollReveal>
 
@@ -37,8 +42,17 @@ export function LocalFit() {
                         {project.location}
                       </div>
                       <h3 className="mt-4 text-2xl font-display text-charcoal">{project.title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-steel">
-                        A recent example of the craftsmanship, communication, and owner-led project oversight homeowners ask about before requesting an estimate.
+                      <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-charcoal">
+                        Typical homeowner goal
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-steel">
+                        {project.homeownerGoal}
+                      </p>
+                    </div>
+
+                    <div className="mt-5 border-t border-sand/30 pt-4">
+                      <p className="text-sm font-medium leading-relaxed text-charcoal">
+                        {project.outcome}
                       </p>
                     </div>
                   </div>
@@ -53,10 +67,12 @@ export function LocalFit() {
                 Service area clarity
               </p>
               <h3 className="mt-4 font-display text-3xl leading-tight">
-                Working with homeowners across lower Bucks County and nearby South Jersey communities.
+                Working with homeowners across lower Bucks County and nearby South Jersey
+                communities.
               </h3>
               <p className="mt-5 text-sm leading-relaxed text-ash">
-                A quick location check helps Scott tell you early whether the project is a fit and how soon he can realistically schedule a conversation or site visit.
+                A quick location check helps Scott tell you early whether the project is a fit
+                and how soon he can realistically schedule a conversation or site visit.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -72,7 +88,8 @@ export function LocalFit() {
 
               <div className="mt-8 border-t border-sand/15 pt-8">
                 <p className="text-sm leading-relaxed text-ash">
-                  Not sure if your town is in range? Reach out anyway. A quick note with your location and scope is enough to get a clear answer.
+                  Not sure if your town is in range? Reach out anyway. A quick note with your
+                  location and scope is enough to get a clear answer.
                 </p>
                 <div className="mt-6">
                   <Button asChild variant="secondary">

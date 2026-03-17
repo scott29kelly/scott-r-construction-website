@@ -11,8 +11,12 @@ export interface PortfolioItem {
   location: string;
   image?: string;
   imageAlt: string;
+  scope: string;
+  homeownerGoal: string;
   outcome: string;
   summary: string;
+  projectStory: string;
+  projectHighlights: string[];
   tags: string[];
   isTall?: boolean;
 }

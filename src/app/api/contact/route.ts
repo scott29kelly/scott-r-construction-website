@@ -2,26 +2,47 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { buildContactEmail } from '@/lib/email-template';
 
+interface ContactRequestBody {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  projectType?: string;
+  projectLocation?: string;
+  targetTimeline?: string;
+  budgetRange?: string;
+  message?: string;
+  companyName?: string;
+}
+
+function normalizeValue(value: string | undefined): string {
+  return value?.trim() ?? '';
+}
+
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const {
-      firstName,
-      lastName,
-      email,
-      phone,
-      projectType,
-      projectLocation,
-      targetTimeline,
-      budgetRange,
-      message,
-    } = body;
+    const body = (await request.json()) as ContactRequestBody;
 
-    if (!firstName || !lastName || !email || !projectLocation || !targetTimeline) {
+    const firstName = normalizeValue(body.firstName);
+    const lastName = normalizeValue(body.lastName);
+    const email = normalizeValue(body.email);
+    const phone = normalizeValue(body.phone);
+    const projectType = normalizeValue(body.projectType);
+    const projectLocation = normalizeValue(body.projectLocation);
+    const targetTimeline = normalizeValue(body.targetTimeline);
+    const budgetRange = normalizeValue(body.budgetRange);
+    const message = normalizeValue(body.message);
+    const companyName = normalizeValue(body.companyName);
+
+    if (companyName) {
+      return NextResponse.json({ success: true });
+    }
+
+    if (!firstName || !lastName || !email || !projectType || !projectLocation || !targetTimeline) {
       return NextResponse.json(
         {
           error:
-            'First name, last name, email, project location, and target timeline are required.',
+            'First name, last name, email, project type, project location, and target timeline are required.',
         },
         { status: 400 }
       );
@@ -30,6 +51,22 @@ export async function POST(request: Request) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
         { error: 'Please provide a valid email address.' },
+        { status: 400 }
+      );
+    }
+
+    if (phone && phone.replace(/\D/g, '').length < 10) {
+      return NextResponse.json(
+        { error: 'Please provide a valid phone number or leave that field blank.' },
+        { status: 400 }
+      );
+    }
+
+    if (!message || message.length < 20) {
+      return NextResponse.json(
+        {
+          error: 'Please share a few details about the project so the follow-up can be helpful.',
+        },
         { status: 400 }
       );
     }
@@ -51,7 +88,7 @@ export async function POST(request: Request) {
       from: 'Scott Romanoski Construction <onboarding@resend.dev>',
       to: 'sroman2@verizon.net',
       replyTo: email,
-      subject: `New Inquiry from ${firstName} ${lastName}${projectType ? ` - ${projectType}` : ''}`,
+      subject: `New Inquiry from ${firstName} ${lastName} - ${projectType}`,
       html,
     });
 

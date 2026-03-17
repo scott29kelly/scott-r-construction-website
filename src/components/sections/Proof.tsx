@@ -1,14 +1,17 @@
 import React from 'react';
-import { BadgeCheck, MapPinned, MessageSquareQuote, type LucideIcon } from 'lucide-react';
-import { HOMEOWNER_REASSURANCE_POINTS, PROOF_STATS } from '@/lib/constants';
+import { ArrowRight, BadgeCheck, MapPinned, MessageSquareQuote, type LucideIcon } from 'lucide-react';
+import { HOMEOWNER_REASSURANCE_POINTS, PORTFOLIO, PROOF_STATS } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { Button } from '@/components/ui/Button';
 
 const reassuranceIcons: Record<string, LucideIcon> = {
   'owner-led': BadgeCheck,
   'service-area': MapPinned,
   'testimonial-framing': MessageSquareQuote,
 };
+
+const featuredCaseStudies = PORTFOLIO.slice(0, 3);
 
 export function Proof() {
   return (
@@ -27,7 +30,9 @@ export function Proof() {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="mt-6 text-lg leading-relaxed text-steel">
-              Before you invite a contractor into your home, you want to know who will be on-site, how communication works, and whether the project fits your area and timeline.
+              Before you invite a contractor into your home, you want to know who will be
+              on-site, how communication works, and whether the project fits your area,
+              timeline, and goals.
             </p>
           </ScrollReveal>
         </div>
@@ -74,20 +79,100 @@ export function Proof() {
                   What homeowners can expect
                 </p>
                 <h3 className="mt-4 font-display text-3xl leading-tight">
-                  Straight answers, realistic timing, and work led by the person whose name is on the company.
+                  Straight answers, realistic timing, and work led by the person whose name
+                  is on the company.
                 </h3>
               </div>
 
               <div className="mt-8 space-y-4 text-sm leading-relaxed text-ash">
                 <p>
-                  Share your town, target timing, and budget range up front and Scott can quickly confirm fit, availability, and the best next step.
+                  Share your town, project type, target timing, and budget range up front and
+                  Scott can quickly confirm fit, availability, and the best next step.
                 </p>
                 <p>
-                  That means fewer back-and-forth emails and a better estimate conversation for both sides.
+                  That means fewer back-and-forth emails, a more useful estimate conversation,
+                  and a better fit for both sides.
                 </p>
+              </div>
+
+              <div className="mt-8">
+                <Button asChild variant="secondary">
+                  <a href="#contact">
+                    Check Project Fit
+                    <ArrowRight size={16} />
+                  </a>
+                </Button>
               </div>
             </div>
           </ScrollReveal>
+        </div>
+
+        <div className="mt-16 md:mt-20">
+          <ScrollReveal>
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                  Case-study snapshots
+                </p>
+                <h3 className="mt-3 font-display text-3xl leading-tight text-charcoal md:text-4xl">
+                  Real projects, real homeowner goals, and the kind of results people call
+                  about.
+                </h3>
+              </div>
+              <p className="max-w-md text-sm leading-relaxed text-steel">
+                These examples add context beyond photos by showing what the homeowners were
+                trying to improve and how the finished spaces support daily life.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {featuredCaseStudies.map((project, index) => (
+              <ScrollReveal key={project.id} delay={0.08 * index} className="h-full">
+                <article className="flex h-full flex-col border border-sand/30 bg-white p-7 shadow-sm shadow-charcoal/5">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                      {project.location}
+                    </span>
+                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-steel">
+                      {project.scope}
+                    </span>
+                  </div>
+
+                  <h4 className="mt-4 font-display text-2xl text-charcoal">{project.title}</h4>
+
+                  <div className="mt-6 space-y-4 text-sm leading-relaxed text-steel">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-charcoal">
+                        Homeowner goal
+                      </p>
+                      <p className="mt-2">{project.homeownerGoal}</p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-charcoal">
+                        Result
+                      </p>
+                      <p className="mt-2 text-charcoal">{project.outcome}</p>
+                    </div>
+
+                    <p>{project.projectStory}</p>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-2 border-t border-sand/30 pt-5">
+                    {project.projectHighlights.map((highlight) => (
+                      <span
+                        key={highlight}
+                        className="border border-sand/30 bg-cream px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal"
+                      >
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

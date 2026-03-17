@@ -33,7 +33,7 @@
 
   @media (max-width: 767px) {
     body {
-      padding-bottom: 88px;
+      padding-bottom: calc(88px + env(safe-area-inset-bottom));
     }
   }
 
@@ -48,7 +48,7 @@
     padding-top: var(--section-pad);
     padding-bottom: var(--section-pad);
   }
-  
+
   .text-balance {
     text-wrap: balance;
   }
