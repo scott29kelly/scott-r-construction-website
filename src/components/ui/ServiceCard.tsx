@@ -9,8 +9,8 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, className }: ServiceCardProps) {
-  // Dynamically load icon
-  const Icon = (Icons as any)[service.icon] || Icons.Wrench;
+  const iconMap = Icons as unknown as Record<string, Icons.LucideIcon>;
+  const Icon = iconMap[service.icon] ?? Icons.Wrench;
 
   return (
     <div className={cn(

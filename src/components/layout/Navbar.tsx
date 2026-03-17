@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, Phone, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -74,12 +74,21 @@ export function Navbar() {
             ))}
           </ul>
           
-          <a 
-            href="#contact"
-            className="bg-accent text-warm-black px-6 py-3 text-xs font-semibold tracking-[0.1em] uppercase hover:bg-accent-light transition-colors duration-300 shadow-sm"
-          >
-            Get a Quote
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="tel:2155191795"
+              className="hidden lg:inline-flex items-center gap-2 border border-sand/20 px-4 py-3 text-xs font-semibold tracking-[0.1em] uppercase text-cream/80 transition-colors duration-300 hover:border-accent hover:text-accent"
+            >
+              <Phone size={14} />
+              Call Scott
+            </a>
+            <a
+              href="#contact"
+              className="bg-accent px-6 py-3 text-xs font-semibold tracking-[0.1em] uppercase text-warm-black transition-colors duration-300 shadow-sm hover:bg-accent-light"
+            >
+              Get a Quote
+            </a>
+          </div>
         </nav>
 
         {/* Mobile Toggle */}
@@ -124,12 +133,19 @@ export function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="mt-8"
+                className="mt-8 flex flex-col gap-4"
               >
-                <a 
+                <a
+                  href="tel:2155191795"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="border border-sand/20 px-8 py-4 text-sm font-semibold tracking-[0.1em] uppercase text-cream"
+                >
+                  Call Scott
+                </a>
+                <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="bg-accent text-warm-black px-8 py-4 text-sm font-semibold tracking-[0.1em] uppercase block"
+                  className="bg-accent px-8 py-4 text-sm font-semibold tracking-[0.1em] uppercase text-warm-black block"
                 >
                   Get a Quote
                 </a>

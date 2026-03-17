@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CONTACT_INFO } from '@/lib/constants';
+import { CheckCircle2, Clock, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { CONTACT_INFO, CONTACT_TRUST_POINTS } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';
-import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react';
 
 interface FormData {
   firstName: string;
@@ -30,165 +30,273 @@ export function Contact() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     setStatus('loading');
     setErrorMessage('');
 
     try {
-      const res = await fetch('/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
-      const data = await res.json();
+      const data = await response.json();
 
-      if (!res.ok) {
+      if (!response.ok) {
         throw new Error(data.error || 'Something went wrong.');
       }
 
       setStatus('success');
       setFormData(initialFormData);
-    } catch (err) {
+    } catch (error) {
       setStatus('error');
-      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again or call us directly.');
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : 'Something went wrong. Please try again or call us directly.'
+      );
     }
   };
 
   return (
-    <section id="contact" className="section-padding bg-cream relative">
-      <div className="container mx-auto px-6 max-w-7xl">
-
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+    <section id="contact" className="relative section-padding bg-cream">
+      <div className="container mx-auto max-w-7xl px-6">
+        <div className="mx-auto mb-16 max-w-3xl text-center md:mb-24">
           <ScrollReveal>
             <SectionLabel className="justify-center">Get In Touch</SectionLabel>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-charcoal leading-tight">
+            <h2 className="font-display text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
               Ready to Start Your Project?
             </h2>
           </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="mt-6 text-lg leading-relaxed text-steel">
+              Tell us what you&apos;re planning and we&apos;ll help you figure out the best next step without the runaround.
+            </p>
+          </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-
-          {/* Contact Info */}
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
           <div className="order-2 lg:order-1">
             <ScrollReveal direction="right">
-              <h3 className="font-display text-3xl text-charcoal mb-6">
-                Let's Talk About Your Home
-              </h3>
-              <p className="text-steel text-lg leading-relaxed mb-12">
-                Whether you're planning a major renovation or just exploring ideas, we're happy to talk it through. Reach out for a free, no-obligation consultation.
+              <h3 className="mb-6 font-display text-3xl text-charcoal">Let&apos;s Talk About Your Home</h3>
+              <p className="mb-12 text-lg leading-relaxed text-steel">
+                Whether you&apos;re planning a major renovation or just exploring ideas, you&apos;ll get straightforward answers, a no-pressure estimate, and a clear sense of what comes next.
               </p>
 
-              <div className="space-y-8">
+              <div className="mb-12 grid gap-4">
+                {CONTACT_TRUST_POINTS.map((point) => (
+                  <div
+                    key={point.id}
+                    className="border border-sand/30 bg-white px-5 py-4 shadow-sm shadow-charcoal/5"
+                  >
+                    <div className="mb-2 flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
+                        <ShieldCheck size={18} />
+                      </div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.14em] text-charcoal">
+                        {point.title}
+                      </p>
+                    </div>
+                    <p className="text-sm leading-relaxed text-steel">{point.description}</p>
+                  </div>
+                ))}
+              </div>
 
-                <div className="flex items-start gap-6 group">
-                  <div className="w-12 h-12 bg-charcoal text-accent flex items-center justify-center shrink-0 rounded-sm group-hover:bg-accent group-hover:text-warm-black transition-colors duration-300">
+              <div className="space-y-8">
+                <div className="group flex items-start gap-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-charcoal text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-warm-black">
                     <Phone size={20} />
                   </div>
                   <div>
-                    <span className="block text-xs font-semibold tracking-widest uppercase text-steel mb-1">Phone</span>
-                    <a href={`tel:${CONTACT_INFO.phone.replace(/[^0-9]/g, '')}`} className="text-charcoal font-medium text-lg hover:text-accent transition-colors">
+                    <span className="mb-1 block text-xs font-semibold uppercase tracking-widest text-steel">
+                      Phone
+                    </span>
+                    <a
+                      href={`tel:${CONTACT_INFO.phone.replace(/[^0-9]/g, '')}`}
+                      className="text-lg font-medium text-charcoal transition-colors hover:text-accent"
+                    >
                       {CONTACT_INFO.phone}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-6 group">
-                  <div className="w-12 h-12 bg-charcoal text-accent flex items-center justify-center shrink-0 rounded-sm group-hover:bg-accent group-hover:text-warm-black transition-colors duration-300">
+                <div className="group flex items-start gap-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-charcoal text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-warm-black">
                     <Mail size={20} />
                   </div>
                   <div>
-                    <span className="block text-xs font-semibold tracking-widest uppercase text-steel mb-1">Email</span>
-                    <a href={`mailto:${CONTACT_INFO.email}`} className="text-charcoal font-medium text-lg hover:text-accent transition-colors">
+                    <span className="mb-1 block text-xs font-semibold uppercase tracking-widest text-steel">
+                      Email
+                    </span>
+                    <a
+                      href={`mailto:${CONTACT_INFO.email}`}
+                      className="text-lg font-medium text-charcoal transition-colors hover:text-accent"
+                    >
                       {CONTACT_INFO.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-6 group">
-                  <div className="w-12 h-12 bg-charcoal text-accent flex items-center justify-center shrink-0 rounded-sm group-hover:bg-accent group-hover:text-warm-black transition-colors duration-300">
+                <div className="group flex items-start gap-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-charcoal text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-warm-black">
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <span className="block text-xs font-semibold tracking-widest uppercase text-steel mb-1">Location</span>
-                    <p className="text-charcoal font-medium text-lg">
-                      {CONTACT_INFO.address}
-                    </p>
+                    <span className="mb-1 block text-xs font-semibold uppercase tracking-widest text-steel">
+                      Location
+                    </span>
+                    <p className="text-lg font-medium text-charcoal">{CONTACT_INFO.address}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-6 group">
-                  <div className="w-12 h-12 bg-charcoal text-accent flex items-center justify-center shrink-0 rounded-sm group-hover:bg-accent group-hover:text-warm-black transition-colors duration-300">
+                <div className="group flex items-start gap-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-charcoal text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-warm-black">
                     <Clock size={20} />
                   </div>
                   <div>
-                    <span className="block text-xs font-semibold tracking-widest uppercase text-steel mb-1">Hours</span>
-                    {CONTACT_INFO.hours.map((hour, i) => (
-                      <p key={i} className="text-charcoal font-medium text-lg">
+                    <span className="mb-1 block text-xs font-semibold uppercase tracking-widest text-steel">
+                      Hours
+                    </span>
+                    {CONTACT_INFO.hours.map((hour) => (
+                      <p key={hour} className="text-lg font-medium text-charcoal">
                         {hour}
                       </p>
                     ))}
                   </div>
                 </div>
-
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Form */}
           <div className="order-1 lg:order-2">
             <ScrollReveal direction="left" delay={0.2}>
               {status === 'success' ? (
-                <div className="bg-white p-8 md:p-12 border border-sand/30 shadow-2xl shadow-charcoal/5 text-center">
-                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="border border-sand/30 bg-white p-8 text-center shadow-2xl shadow-charcoal/5 md:p-12">
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10">
                     <CheckCircle2 size={32} className="text-accent" />
                   </div>
-                  <h3 className="font-display text-2xl text-charcoal mb-3">Thank You!</h3>
-                  <p className="text-steel text-base leading-relaxed mb-8">
+                  <h3 className="mb-3 font-display text-2xl text-charcoal">Thank You!</h3>
+                  <p className="mb-8 text-base leading-relaxed text-steel">
                     Your message has been sent. Scott will get back to you within one business day.
                   </p>
                   <button
                     onClick={() => setStatus('idle')}
-                    className="text-accent font-semibold text-sm tracking-widest uppercase hover:text-accent-dark transition-colors"
+                    className="text-sm font-semibold uppercase tracking-widest text-accent transition-colors hover:text-accent-dark"
                   >
                     Send Another Message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="bg-white p-8 md:p-12 border border-sand/30 shadow-2xl shadow-charcoal/5">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <form
+                  onSubmit={handleSubmit}
+                  className="border border-sand/30 bg-white p-8 shadow-2xl shadow-charcoal/5 md:p-12"
+                >
+                  <div className="mb-6 border border-accent/20 bg-accent/5 px-5 py-4">
+                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-charcoal">
+                      Free estimate. No pressure. Clear next steps.
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-steel">
+                      Share a few details below and Scott will follow up to discuss the project, answer questions, and talk through timing.
+                    </p>
+                  </div>
+
+                  <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="firstName" className="text-xs font-semibold tracking-widest uppercase text-steel">First Name</label>
-                      <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required className="px-4 py-3.5 bg-cream/50 border border-sand/50 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-charcoal" />
+                      <label
+                        htmlFor="firstName"
+                        className="text-xs font-semibold uppercase tracking-widest text-steel"
+                      >
+                        First Name
+                      </label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
+                        className="border border-sand/50 bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all focus:border-accent focus:ring-1 focus:ring-accent"
+                      />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="lastName" className="text-xs font-semibold tracking-widest uppercase text-steel">Last Name</label>
-                      <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} required className="px-4 py-3.5 bg-cream/50 border border-sand/50 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-charcoal" />
+                      <label
+                        htmlFor="lastName"
+                        className="text-xs font-semibold uppercase tracking-widest text-steel"
+                      >
+                        Last Name
+                      </label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required
+                        className="border border-sand/50 bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all focus:border-accent focus:ring-1 focus:ring-accent"
+                      />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="email" className="text-xs font-semibold tracking-widest uppercase text-steel">Email</label>
-                      <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="px-4 py-3.5 bg-cream/50 border border-sand/50 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-charcoal" />
+                      <label
+                        htmlFor="email"
+                        className="text-xs font-semibold uppercase tracking-widest text-steel"
+                      >
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="border border-sand/50 bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all focus:border-accent focus:ring-1 focus:ring-accent"
+                      />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="phone" className="text-xs font-semibold tracking-widest uppercase text-steel">Phone</label>
-                      <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="px-4 py-3.5 bg-cream/50 border border-sand/50 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-charcoal" />
+                      <label
+                        htmlFor="phone"
+                        className="text-xs font-semibold uppercase tracking-widest text-steel"
+                      >
+                        Phone
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="border border-sand/50 bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all focus:border-accent focus:ring-1 focus:ring-accent"
+                      />
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-2 mb-6">
-                    <label htmlFor="projectType" className="text-xs font-semibold tracking-widest uppercase text-steel">Project Type</label>
-                    <select id="projectType" name="projectType" value={formData.projectType} onChange={handleChange} className="px-4 py-3.5 bg-cream/50 border border-sand/50 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-charcoal appearance-none">
+                  <div className="mb-6 flex flex-col gap-2">
+                    <label
+                      htmlFor="projectType"
+                      className="text-xs font-semibold uppercase tracking-widest text-steel"
+                    >
+                      Project Type
+                    </label>
+                    <select
+                      id="projectType"
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleChange}
+                      className="appearance-none border border-sand/50 bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all focus:border-accent focus:ring-1 focus:ring-accent"
+                    >
                       <option value="">Select a service...</option>
                       <option>Home Remodeling</option>
                       <option>Addition</option>
@@ -200,13 +308,26 @@ export function Contact() {
                     </select>
                   </div>
 
-                  <div className="flex flex-col gap-2 mb-8">
-                    <label htmlFor="message" className="text-xs font-semibold tracking-widest uppercase text-steel">Tell Us About Your Project</label>
-                    <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={5} placeholder="Describe your project, timeline, and any questions you have..." className="px-4 py-3.5 bg-cream/50 border border-sand/50 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-charcoal resize-y min-h-[120px]"></textarea>
+                  <div className="mb-8 flex flex-col gap-2">
+                    <label
+                      htmlFor="message"
+                      className="text-xs font-semibold uppercase tracking-widest text-steel"
+                    >
+                      Tell Us About Your Project
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={5}
+                      placeholder="Describe your project, timeline, and any questions you have..."
+                      className="min-h-[120px] resize-y border border-sand/50 bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all focus:border-accent focus:ring-1 focus:ring-accent"
+                    />
                   </div>
 
                   {status === 'error' && (
-                    <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 text-sm">
+                    <div className="mb-6 border border-red-200 bg-red-50 p-4 text-sm text-red-700">
                       {errorMessage}
                     </div>
                   )}
@@ -214,11 +335,21 @@ export function Contact() {
                   <Button type="submit" className="w-full md:w-auto" disabled={status === 'loading'}>
                     {status === 'loading' ? 'Sending...' : 'Send Request'}
                   </Button>
+
+                  <p className="mt-4 text-xs leading-relaxed text-steel">
+                    Prefer to talk now? Call{' '}
+                    <a
+                      href="tel:2155191795"
+                      className="font-semibold text-charcoal transition-colors hover:text-accent"
+                    >
+                      (215) 519-1795
+                    </a>
+                    .
+                  </p>
                 </form>
               )}
             </ScrollReveal>
           </div>
-
         </div>
       </div>
     </section>

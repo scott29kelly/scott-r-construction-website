@@ -26,7 +26,7 @@ export function TestimonialCard({ testimonial, className }: TestimonialCardProps
       </div>
       
       <blockquote className="relative z-10 text-concrete italic leading-relaxed flex-grow mb-8">
-        "{testimonial.quote}"
+        &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
       
       <div className="mt-auto pt-6 border-t border-sand/30">

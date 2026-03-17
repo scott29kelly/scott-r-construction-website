@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ABOUT_CONTENT } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { Camera, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export function About() {
   return (

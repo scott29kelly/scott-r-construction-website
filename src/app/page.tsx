@@ -7,6 +7,7 @@ import { Portfolio } from '@/components/sections/Portfolio';
 import { Process } from '@/components/sections/Process';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { Contact } from '@/components/sections/Contact';
+import { StickyMobileCTA } from '@/components/ui/StickyMobileCTA';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Contact />
       
       <Footer />
+      <StickyMobileCTA />
     </main>
   );
 }

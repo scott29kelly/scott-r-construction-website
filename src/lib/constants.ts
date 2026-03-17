@@ -1,4 +1,4 @@
-import { Service, PortfolioItem, Testimonial, ProcessStep, ContactInfo } from '@/types';
+import { Service, PortfolioItem, Testimonial, ProcessStep, ContactInfo, TrustPoint } from '@/types';
 
 export const SITE_INFO = {
   name: 'Scott Romanoski Construction',
@@ -177,4 +177,22 @@ export const CONTACT_INFO: ContactInfo = {
 
 export const SERVICE_AREAS = [
   'Langhorne', 'Newtown', 'Yardley', 'Morrisville', 'Levittown', 'Doylestown', 'Warminster', 'Bensalem', 'Bristol', 'Fairless Hills', 'and surrounding Bucks County & South Jersey communities'
+];
+
+export const CONTACT_TRUST_POINTS: TrustPoint[] = [
+  {
+    id: 'owner-led',
+    title: 'Owner-led projects',
+    description: 'Scott stays directly involved so communication stays clear from estimate to final walkthrough.',
+  },
+  {
+    id: 'response-time',
+    title: 'Fast follow-up',
+    description: 'Most inquiries receive a response within one business day.',
+  },
+  {
+    id: 'no-pressure',
+    title: 'No-pressure estimates',
+    description: 'Reach out early, ask questions, and get honest guidance before committing to a project.',
+  },
 ];

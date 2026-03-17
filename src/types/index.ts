@@ -35,3 +35,9 @@ export interface ContactInfo {
   address: string;
   hours: string[];
 }
+
+export interface TrustPoint {
+  id: string;
+  title: string;
+  description: string;
+}
