@@ -4,6 +4,9 @@ interface ContactFormData {
   email: string;
   phone?: string;
   projectType?: string;
+  projectLocation: string;
+  targetTimeline: string;
+  budgetRange?: string;
   message?: string;
 }
 
@@ -33,6 +36,19 @@ export function buildContactEmail(data: ContactFormData): string {
         <tr>
           <td style="padding: 8px 0; font-size: 13px; color: #6b6b6b; vertical-align: top;">Project Type</td>
           <td style="padding: 8px 0; font-size: 15px;">${data.projectType}</td>
+        </tr>` : ''}
+        <tr>
+          <td style="padding: 8px 0; font-size: 13px; color: #6b6b6b; vertical-align: top;">Project Location</td>
+          <td style="padding: 8px 0; font-size: 15px;">${data.projectLocation}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; font-size: 13px; color: #6b6b6b; vertical-align: top;">Timeline</td>
+          <td style="padding: 8px 0; font-size: 15px;">${data.targetTimeline}</td>
+        </tr>
+        ${data.budgetRange ? `
+        <tr>
+          <td style="padding: 8px 0; font-size: 13px; color: #6b6b6b; vertical-align: top;">Budget Range</td>
+          <td style="padding: 8px 0; font-size: 15px;">${data.budgetRange}</td>
         </tr>` : ''}
       </table>
 

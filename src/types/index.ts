@@ -41,3 +41,16 @@ export interface TrustPoint {
   title: string;
   description: string;
 }
+
+export interface ProofStat {
+  id: string;
+  value: string;
+  label: string;
+  description: string;
+}
+
+export interface ReassurancePoint {
+  id: string;
+  title: string;
+  description: string;
+}

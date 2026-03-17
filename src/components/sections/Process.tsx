@@ -1,7 +1,9 @@
 import React from 'react';
+import { ArrowRight, Phone } from 'lucide-react';
 import { PROCESS_STEPS } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { Button } from '@/components/ui/Button';
 
 export function Process() {
   return (
@@ -50,7 +52,46 @@ export function Process() {
             </ScrollReveal>
           ))}
         </div>
-        
+
+        <ScrollReveal delay={0.15} className="mt-20 md:mt-24">
+          <div className="grid gap-6 border border-sand/15 bg-white/5 p-8 backdrop-blur-sm md:grid-cols-[1.2fr_0.8fr] md:p-10">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
+                Need clarity before you commit?
+              </p>
+              <h3 className="mt-4 font-display text-3xl leading-tight text-cream md:text-4xl">
+                Ask about budget, timing, or whether your project is a good fit before you spend weeks chasing quotes.
+              </h3>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-ash">
+                Scott can usually tell you quickly whether the scope, location, and timeline sound realistic, and what the best next step should be.
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-between gap-6 border-t border-sand/15 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+              <div className="space-y-3 text-sm leading-relaxed text-ash">
+                <p>Best for homeowners wondering:</p>
+                <p>&ldquo;Should I do this now or wait?&rdquo;</p>
+                <p>&ldquo;Is my budget in the right ballpark?&rdquo;</p>
+                <p>&ldquo;Do you work in my town?&rdquo;</p>
+              </div>
+
+              <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
+                <Button asChild>
+                  <a href="#contact">
+                    Request Project Guidance
+                    <ArrowRight size={16} />
+                  </a>
+                </Button>
+                <Button asChild variant="secondary">
+                  <a href="tel:2155191795">
+                    <Phone size={16} />
+                    Call Scott
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

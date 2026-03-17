@@ -2,7 +2,12 @@
 
 import React, { useState } from 'react';
 import { CheckCircle2, Clock, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
-import { CONTACT_INFO, CONTACT_TRUST_POINTS } from '@/lib/constants';
+import {
+  BUDGET_RANGE_OPTIONS,
+  CONTACT_INFO,
+  CONTACT_TRUST_POINTS,
+  TARGET_TIMELINE_OPTIONS,
+} from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';
@@ -13,6 +18,9 @@ interface FormData {
   email: string;
   phone: string;
   projectType: string;
+  projectLocation: string;
+  targetTimeline: string;
+  budgetRange: string;
   message: string;
 }
 
@@ -22,6 +30,9 @@ const initialFormData: FormData = {
   email: '',
   phone: '',
   projectType: '',
+  projectLocation: '',
+  targetTimeline: '',
+  budgetRange: '',
   message: '',
 };
 
@@ -206,7 +217,7 @@ export function Contact() {
                       Free estimate. No pressure. Clear next steps.
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-steel">
-                      Share a few details below and Scott will follow up to discuss the project, answer questions, and talk through timing.
+                      Share a few details below and Scott will follow up to confirm fit, answer questions, and talk through timing.
                     </p>
                   </div>
 
@@ -308,6 +319,74 @@ export function Contact() {
                     </select>
                   </div>
 
+                  <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div className="flex flex-col gap-2">
+                      <label
+                        htmlFor="projectLocation"
+                        className="text-xs font-semibold uppercase tracking-widest text-steel"
+                      >
+                        Project Town / Area
+                      </label>
+                      <input
+                        type="text"
+                        id="projectLocation"
+                        name="projectLocation"
+                        value={formData.projectLocation}
+                        onChange={handleChange}
+                        required
+                        placeholder="Langhorne, Newtown, Yardley..."
+                        className="border border-sand/50 bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all focus:border-accent focus:ring-1 focus:ring-accent"
+                      />
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                      <label
+                        htmlFor="targetTimeline"
+                        className="text-xs font-semibold uppercase tracking-widest text-steel"
+                      >
+                        Target Timeline
+                      </label>
+                      <select
+                        id="targetTimeline"
+                        name="targetTimeline"
+                        value={formData.targetTimeline}
+                        onChange={handleChange}
+                        required
+                        className="appearance-none border border-sand/50 bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all focus:border-accent focus:ring-1 focus:ring-accent"
+                      >
+                        <option value="">Select timing...</option>
+                        {TARGET_TIMELINE_OPTIONS.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="mb-6 flex flex-col gap-2">
+                    <label
+                      htmlFor="budgetRange"
+                      className="text-xs font-semibold uppercase tracking-widest text-steel"
+                    >
+                      Approximate Budget Range
+                    </label>
+                    <select
+                      id="budgetRange"
+                      name="budgetRange"
+                      value={formData.budgetRange}
+                      onChange={handleChange}
+                      className="appearance-none border border-sand/50 bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all focus:border-accent focus:ring-1 focus:ring-accent"
+                    >
+                      <option value="">Select a range...</option>
+                      {BUDGET_RANGE_OPTIONS.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
                   <div className="mb-8 flex flex-col gap-2">
                     <label
                       htmlFor="message"
@@ -321,7 +400,7 @@ export function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={5}
-                      placeholder="Describe your project, timeline, and any questions you have..."
+                      placeholder="Describe the project scope, the space involved, and anything important Scott should know before reaching out..."
                       className="min-h-[120px] resize-y border border-sand/50 bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all focus:border-accent focus:ring-1 focus:ring-accent"
                     />
                   </div>
@@ -337,7 +416,7 @@ export function Contact() {
                   </Button>
 
                   <p className="mt-4 text-xs leading-relaxed text-steel">
-                    Prefer to talk now? Call{' '}
+                    Serving Bucks County and nearby South Jersey communities. Prefer to talk now? Call{' '}
                     <a
                       href="tel:2155191795"
                       className="font-semibold text-charcoal transition-colors hover:text-accent"
@@ -345,6 +424,10 @@ export function Contact() {
                       (215) 519-1795
                     </a>
                     .
+                  </p>
+
+                  <p className="mt-2 text-xs leading-relaxed text-steel">
+                    Most estimate requests receive a response within one business day.
                   </p>
                 </form>
               )}

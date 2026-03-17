@@ -1,4 +1,13 @@
-import { Service, PortfolioItem, Testimonial, ProcessStep, ContactInfo, TrustPoint } from '@/types';
+import {
+  Service,
+  PortfolioItem,
+  Testimonial,
+  ProcessStep,
+  ContactInfo,
+  TrustPoint,
+  ProofStat,
+  ReassurancePoint,
+} from '@/types';
 
 export const SITE_INFO = {
   name: 'Scott Romanoski Construction',
@@ -179,6 +188,63 @@ export const SERVICE_AREAS = [
   'Langhorne', 'Newtown', 'Yardley', 'Morrisville', 'Levittown', 'Doylestown', 'Warminster', 'Bensalem', 'Bristol', 'Fairless Hills', 'and surrounding Bucks County & South Jersey communities'
 ];
 
+export const PROOF_STATS: ProofStat[] = [
+  {
+    id: 'experience',
+    value: '18+',
+    label: 'Years of hands-on experience',
+    description: 'Owner-led residential remodeling and exterior improvement work across Bucks County.',
+  },
+  {
+    id: 'licensed-insured',
+    value: 'PA + NJ',
+    label: 'Licensed and fully insured',
+    description: 'Homeowners get a contractor who is credentialed for local work and protected for the job.',
+  },
+  {
+    id: 'response',
+    value: '1 business day',
+    label: 'Typical response window',
+    description: 'Most estimate requests get a direct follow-up from Scott within one business day.',
+  },
+];
+
+export const HOMEOWNER_REASSURANCE_POINTS: ReassurancePoint[] = [
+  {
+    id: 'owner-led',
+    title: 'Scott stays involved from estimate to walkthrough',
+    description: 'You are not handed off to a sales team after the first call. The owner who prices the work stays accountable through the build.',
+  },
+  {
+    id: 'service-area',
+    title: 'Clear service area for faster scheduling',
+    description: 'Serving Langhorne, Newtown, Yardley, Levittown, Bensalem, and surrounding Bucks County and South Jersey communities.',
+  },
+  {
+    id: 'testimonial-framing',
+    title: 'Recommendations built on workmanship and trust',
+    description: 'Client feedback consistently highlights careful craftsmanship, respectful job sites, and the confidence of working with someone who treats the home like his own.',
+  },
+];
+
+export const TARGET_TIMELINE_OPTIONS: string[] = [
+  'As soon as possible',
+  'Within 1 month',
+  '1-3 months',
+  '3-6 months',
+  '6+ months',
+  'Just planning / researching',
+];
+
+export const BUDGET_RANGE_OPTIONS: string[] = [
+  'Under $10,000',
+  '$10,000-$25,000',
+  '$25,000-$50,000',
+  '$50,000-$100,000',
+  '$100,000+',
+  'Prefer to discuss',
+];
+
 export const CONTACT_TRUST_POINTS: TrustPoint[] = [
   {
     id: 'owner-led',
@@ -186,13 +252,18 @@ export const CONTACT_TRUST_POINTS: TrustPoint[] = [
     description: 'Scott stays directly involved so communication stays clear from estimate to final walkthrough.',
   },
   {
+    id: 'licensed-insured',
+    title: 'Licensed and insured',
+    description: 'Homeowners get peace of mind knowing the job is handled by a properly credentialed contractor.',
+  },
+  {
     id: 'response-time',
     title: 'Fast follow-up',
     description: 'Most inquiries receive a response within one business day.',
   },
   {
-    id: 'no-pressure',
-    title: 'No-pressure estimates',
-    description: 'Reach out early, ask questions, and get honest guidance before committing to a project.',
+    id: 'service-area',
+    title: 'Local service area',
+    description: 'Serving Bucks County and nearby South Jersey communities with clear scheduling expectations.',
   },
 ];
