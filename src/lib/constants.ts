@@ -7,6 +7,8 @@ import {
   TrustPoint,
   ProofStat,
   ReassurancePoint,
+  ComparisonPoint,
+  FaqItem,
 } from '@/types';
 
 export const SITE_INFO = {
@@ -80,6 +82,9 @@ export const PORTFOLIO: PortfolioItem[] = [
     location: 'Langhorne, PA',
     image: '/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg',
     imageAlt: 'Complete kitchen remodel with custom island and cabinetry in Langhorne, PA',
+    outcome: 'Opened up daily flow for cooking, seating, and family gathering.',
+    summary: 'A full kitchen refresh with custom cabinetry, expanded prep space, and a more welcoming layout for everyday use.',
+    tags: ['Better layout', 'Custom finishes', 'Family-friendly'],
     isTall: true
   },
   {
@@ -87,35 +92,50 @@ export const PORTFOLIO: PortfolioItem[] = [
     title: 'Bathroom Renovation',
     location: 'Langhorne, PA',
     image: '/images/Projects/710 Parker St. Langhorne, Pa/bathroom-full-room.jpg',
-    imageAlt: 'Full bathroom renovation with custom vanity and tile work in Langhorne, PA'
+    imageAlt: 'Full bathroom renovation with custom vanity and tile work in Langhorne, PA',
+    outcome: 'Turned an outdated bath into a cleaner, more comfortable daily routine space.',
+    summary: 'Updated finishes, better storage, and durable materials helped this bathroom feel brighter and easier to maintain.',
+    tags: ['Updated finishes', 'More comfort', 'Easy upkeep'],
   },
   {
     id: 'custom-staircase',
     title: 'Custom Staircase & Entry',
     location: 'Langhorne, PA',
     image: '/images/Projects/710 Parker St. Langhorne, Pa/staircase-newel-entry.jpg',
-    imageAlt: 'Custom oak staircase with turned newel post and marble entry floor'
+    imageAlt: 'Custom oak staircase with turned newel post and marble entry floor',
+    outcome: 'Created a stronger first impression the moment guests walk through the door.',
+    summary: 'Custom trim, woodwork, and entry details elevated the home’s character while tying the space together.',
+    tags: ['Curb appeal', 'Custom millwork', 'Refined entry'],
   },
   {
     id: 'fireplace-trim',
     title: 'Fireplace & Trim Work',
     location: 'Langhorne, PA',
     image: '/images/Projects/710 Parker St. Langhorne, Pa/fireplace-mantel.jpg',
-    imageAlt: 'Custom fireplace mantel with crown molding and brick surround'
+    imageAlt: 'Custom fireplace mantel with crown molding and brick surround',
+    outcome: 'Gave the living space a true focal point with warmer, more finished detail.',
+    summary: 'A custom mantel and trim package brought visual weight and polish to the main gathering room.',
+    tags: ['Living room focal point', 'Finish carpentry', 'Custom detail'],
   },
   {
     id: 'tray-ceiling',
     title: 'Tray Ceiling & Crown Molding',
     location: 'Langhorne, PA',
     image: '/images/Projects/710 Parker St. Langhorne, Pa/bedroom-tray-ceiling.jpg',
-    imageAlt: 'Master bedroom with custom tray ceiling and crown molding detail'
+    imageAlt: 'Master bedroom with custom tray ceiling and crown molding detail',
+    outcome: 'Made the primary bedroom feel more custom, finished, and restful.',
+    summary: 'Architectural ceiling detail and crown molding added depth, character, and a more upscale feel.',
+    tags: ['Primary suite upgrade', 'Architectural detail', 'Custom finish'],
   },
   {
     id: 'powder-room',
     title: 'Powder Room',
     location: 'Langhorne, PA',
     image: '/images/Projects/710 Parker St. Langhorne, Pa/powder-room-vanity.jpg',
-    imageAlt: 'Powder room renovation with dark wood vanity and granite countertop'
+    imageAlt: 'Powder room renovation with dark wood vanity and granite countertop',
+    outcome: 'Turned a small room into a polished space guests actually notice.',
+    summary: 'The updated vanity, countertop, and finishes gave this compact powder room more style and function.',
+    tags: ['Small-space impact', 'Guest-ready', 'Finish upgrade'],
   }
 ];
 
@@ -125,29 +145,58 @@ export const TESTIMONIALS: Testimonial[] = [
     quote: "Scott is without a doubt the best all around contractor I've come across from framing to finish work, masonry the list goes on. Many contractors claim to treat your house like their own but Scott truly does treat every house like it's his own.",
     author: 'Josh Sharpe',
     location: 'Facebook Recommendation',
-    stars: 5
+    stars: 5,
+    highlight: 'Treats every home like his own',
+    concern: 'For homeowners worried about workmanship and trust inside their home.',
   },
   {
     id: 't2',
     quote: "Love Scott's work!",
     author: 'Tom Aquilone',
     location: 'Facebook Recommendation',
-    stars: 5
+    stars: 5,
+    highlight: 'Work that stands out right away',
+    concern: 'A quick endorsement of the finished result and overall quality.',
   },
   {
     id: 't3',
     quote: "I know who to call when I do my master bath!",
     author: 'Kelley Graff McConnell',
     location: 'Facebook Recommendation',
-    stars: 5
+    stars: 5,
+    highlight: 'The kind of work people remember for their own project',
+    concern: 'Signals confidence strong enough to earn future renovation calls.',
   },
   {
     id: 't4',
     quote: "Beautiful work. Wow!",
     author: 'Maria Anderson',
     location: 'Facebook Recommendation',
-    stars: 5
+    stars: 5,
+    highlight: 'Beautiful finished spaces',
+    concern: 'Reinforces the visual impact homeowners want from a remodel.',
   }
+];
+
+export const WHY_HOMEOWNERS_CHOOSE_SCOTT: ComparisonPoint[] = [
+  {
+    id: 'owner-involved',
+    title: 'Owner involvement',
+    scottApproach: 'The same person estimating the work stays connected through the job and final walkthrough.',
+    homeownerConcern: 'Homeowners often worry about being handed off after the first call.',
+  },
+  {
+    id: 'clear-fit',
+    title: 'Project fit upfront',
+    scottApproach: 'Town, timing, and budget expectations are discussed early so both sides can move forward clearly.',
+    homeownerConcern: 'Many estimate requests drag on before anyone confirms whether the project is a fit.',
+  },
+  {
+    id: 'craftsmanship-trust',
+    title: 'Craftsmanship you can feel confident in',
+    scottApproach: 'Recommendations repeatedly point to detail-oriented work and respect for the home.',
+    homeownerConcern: 'Homeowners want more than promises when inviting a contractor into lived-in spaces.',
+  },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
@@ -265,5 +314,28 @@ export const CONTACT_TRUST_POINTS: TrustPoint[] = [
     id: 'service-area',
     title: 'Local service area',
     description: 'Serving Bucks County and nearby South Jersey communities with clear scheduling expectations.',
+  },
+];
+
+export const FAQ_ITEMS: FaqItem[] = [
+  {
+    id: 'faq-estimates',
+    question: 'Do you offer free estimates?',
+    answer: 'Yes. Scott offers free estimate conversations so homeowners can ask questions, confirm project fit, and understand realistic next steps before committing.',
+  },
+  {
+    id: 'faq-budget',
+    question: 'Can I reach out if I am still figuring out budget or scope?',
+    answer: 'Yes. If you have a rough idea of the space, timeline, and investment range, Scott can help clarify what makes sense and whether the project is ready for an estimate now.',
+  },
+  {
+    id: 'faq-schedule',
+    question: 'How quickly will I hear back?',
+    answer: 'Most contact requests receive a response within one business day. Sharing your town, timing, and project type helps speed up that first conversation.',
+  },
+  {
+    id: 'faq-service-area',
+    question: 'What areas do you serve?',
+    answer: 'Scott Romanoski Construction serves Langhorne, Newtown, Yardley, Levittown, Bensalem, and surrounding Bucks County and nearby South Jersey communities.',
   },
 ];

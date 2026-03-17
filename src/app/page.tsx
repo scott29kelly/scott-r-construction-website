@@ -8,6 +8,7 @@ import { LocalFit } from '@/components/sections/LocalFit';
 import { Process } from '@/components/sections/Process';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { Proof } from '@/components/sections/Proof';
+import { Faq } from '@/components/sections/Faq';
 import { Contact } from '@/components/sections/Contact';
 import { StickyMobileCTA } from '@/components/ui/StickyMobileCTA';
 
@@ -24,6 +25,7 @@ export default function Home() {
       <Process />
       <Testimonials />
       <Proof />
+      <Faq />
       <Contact />
       
       <Footer />

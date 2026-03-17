@@ -10,31 +10,42 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ testimonial, className }: TestimonialCardProps) {
   return (
-    <div className={cn(
-      "relative p-8 md:p-10 bg-cream border border-sand/30 flex flex-col h-full",
-      className
-    )}>
-      {/* Quote Mark Decoration */}
+    <div
+      className={cn(
+        'relative flex h-full flex-col border border-sand/30 bg-cream p-8 md:p-10',
+        className
+      )}
+    >
       <span className="absolute top-6 left-6 font-display text-6xl md:text-[5rem] text-accent opacity-15 leading-none select-none pointer-events-none">
         &ldquo;
       </span>
-      
-      <div className="flex gap-1 mb-6 relative z-10">
+
+      <div className="relative z-10 mb-4 flex flex-wrap items-center gap-3">
+        <span className="inline-flex border border-accent/30 bg-accent/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-charcoal">
+          {testimonial.highlight}
+        </span>
+        <span className="text-xs font-medium uppercase tracking-[0.16em] text-steel">
+          {testimonial.location}
+        </span>
+      </div>
+
+      <div className="relative z-10 mb-6 flex gap-1">
         {Array.from({ length: testimonial.stars }).map((_, i) => (
           <Star key={i} size={16} className="fill-accent text-accent" />
         ))}
       </div>
-      
-      <blockquote className="relative z-10 text-concrete italic leading-relaxed flex-grow mb-8">
+
+      <p className="relative z-10 mb-5 text-sm leading-relaxed text-steel">
+        {testimonial.concern}
+      </p>
+
+      <blockquote className="relative z-10 mb-8 flex-grow italic leading-relaxed text-concrete">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
-      
-      <div className="mt-auto pt-6 border-t border-sand/30">
-        <div className="font-semibold text-charcoal text-sm uppercase tracking-wider">
+
+      <div className="mt-auto border-t border-sand/30 pt-6">
+        <div className="text-sm font-semibold uppercase tracking-wider text-charcoal">
           {testimonial.author}
-        </div>
-        <div className="text-steel text-xs mt-1">
-          {testimonial.location}
         </div>
       </div>
     </div>

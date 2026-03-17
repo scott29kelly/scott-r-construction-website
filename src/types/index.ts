@@ -11,6 +11,9 @@ export interface PortfolioItem {
   location: string;
   image?: string;
   imageAlt: string;
+  outcome: string;
+  summary: string;
+  tags: string[];
   isTall?: boolean;
 }
 
@@ -20,6 +23,8 @@ export interface Testimonial {
   author: string;
   location: string;
   stars: number;
+  highlight: string;
+  concern: string;
 }
 
 export interface ProcessStep {
@@ -53,4 +58,17 @@ export interface ReassurancePoint {
   id: string;
   title: string;
   description: string;
+}
+
+export interface ComparisonPoint {
+  id: string;
+  title: string;
+  scottApproach: string;
+  homeownerConcern: string;
+}
+
+export interface FaqItem {
+  id: string;
+  question: string;
+  answer: string;
 }

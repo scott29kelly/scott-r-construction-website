@@ -1,5 +1,5 @@
 import React from 'react';
-import { TESTIMONIALS } from '@/lib/constants';
+import { TESTIMONIALS, WHY_HOMEOWNERS_CHOOSE_SCOTT } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { TestimonialCard } from '@/components/ui/TestimonialCard';
@@ -19,9 +19,26 @@ export function Testimonials() {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="mt-6 text-lg leading-relaxed text-steel">
-              These recommendations reflect the same themes homeowners ask about most: craftsmanship, reliability, and the confidence that Scott is personally invested in the outcome.
+              These recommendations line up with the same questions serious homeowners ask before reaching out: who will really be involved, how the work will be handled, and whether the result will be worth the investment.
             </p>
           </ScrollReveal>
+        </div>
+
+        <div className="mb-12 grid gap-6 lg:grid-cols-3">
+          {WHY_HOMEOWNERS_CHOOSE_SCOTT.map((item, index) => (
+            <ScrollReveal key={item.id} delay={0.08 * index} className="h-full">
+              <div className="flex h-full flex-col border border-sand/30 bg-cream p-7 shadow-sm shadow-charcoal/5">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                  Why homeowners choose Scott
+                </p>
+                <h3 className="mt-4 text-xl font-semibold text-charcoal">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-charcoal">{item.scottApproach}</p>
+                <p className="mt-4 border-t border-sand/30 pt-4 text-sm leading-relaxed text-steel">
+                  {item.homeownerConcern}
+                </p>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
