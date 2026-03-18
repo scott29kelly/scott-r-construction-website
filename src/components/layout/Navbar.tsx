@@ -92,12 +92,12 @@ export function Navbar() {
               <Phone size={14} />
               Call Scott
             </a>
-            <a
-              href="#contact"
+            <Link
+              href="/?leadSource=navbar-primary#contact"
               className="bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-warm-black transition-colors duration-300 shadow-sm hover:bg-accent-light"
             >
               Get a Quote
-            </a>
+            </Link>
           </div>
         </nav>
 
@@ -164,13 +164,13 @@ export function Navbar() {
                 >
                   Call Scott
                 </a>
-                <a
-                  href="#contact"
+                <Link
+                  href="/?leadSource=mobile-nav-primary#contact"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block bg-accent px-8 py-4 text-center text-sm font-semibold uppercase tracking-[0.1em] text-warm-black"
                 >
                   Get a Quote
-                </a>
+                </Link>
               </motion.div>
             </div>
           </motion.div>

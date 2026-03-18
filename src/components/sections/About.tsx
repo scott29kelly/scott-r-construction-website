@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import { ABOUT_CONTENT } from '@/lib/constants';
+import { ABOUT_CONTENT, HOMEOWNER_SAFEGUARDS, SITE_INFO } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ShieldCheck } from 'lucide-react';
 
 export function About() {
   return (
@@ -45,6 +45,35 @@ export function About() {
                 </ScrollReveal>
               ))}
             </div>
+
+            <ScrollReveal delay={0.62}>
+              <div className="mt-10 border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                    <ShieldCheck size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
+                      Why it feels safer to reach out
+                    </p>
+                    <h3 className="mt-3 font-display text-2xl leading-tight text-cream">
+                      Local, owner-operated, and established since {SITE_INFO.established}.
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="mt-6 grid gap-4">
+                  {HOMEOWNER_SAFEGUARDS.map((item) => (
+                    <div key={item.id} className="border border-white/10 bg-warm-black/30 px-5 py-4">
+                      <p className="text-sm font-semibold uppercase tracking-[0.12em] text-cream">
+                        {item.title}
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-ash">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
           
           {/* Image Wrapper */}

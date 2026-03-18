@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { PORTFOLIO, SERVICE_AREAS } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
@@ -93,10 +94,10 @@ export function LocalFit() {
                 </p>
                 <div className="mt-6">
                   <Button asChild variant="secondary">
-                    <a href="#contact">
+                    <Link href="/?leadSource=local-fit-check#contact">
                       Check Project Fit
                       <ArrowRight size={16} />
-                    </a>
+                    </Link>
                   </Button>
                 </div>
               </div>

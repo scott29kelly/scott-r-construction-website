@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   ArrowRight,
   BadgeCheck,
   ClipboardCheck,
+  History,
   MapPinned,
   MessageSquareQuote,
   ShieldCheck,
@@ -28,6 +30,7 @@ const reassuranceIcons: Record<string, LucideIcon> = {
 
 const featuredCaseStudies = PORTFOLIO.slice(0, 3);
 const authorityIcons: Record<string, LucideIcon> = {
+  established: History,
   'pa-license': ClipboardCheck,
   insurance: ShieldCheck,
   bbb: BadgeCheck,
@@ -118,10 +121,10 @@ export function Proof() {
 
               <div className="mt-8">
                 <Button asChild variant="secondary">
-                  <a href="#contact">
+                  <Link href="/?leadSource=proof-fit-check#contact">
                     Check Project Fit
                     <ArrowRight size={16} />
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>

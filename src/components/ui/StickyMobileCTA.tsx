@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Phone } from 'lucide-react';
 
 export function StickyMobileCTA() {
@@ -19,12 +20,12 @@ export function StickyMobileCTA() {
             <Phone size={16} />
             Call Scott
           </a>
-          <a
-            href="#contact"
+          <Link
+            href="/?leadSource=sticky-mobile-cta#contact"
             className="flex-1 bg-accent px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.1em] text-warm-black"
           >
             Free Estimate
-          </a>
+          </Link>
         </div>
       </div>
     </div>

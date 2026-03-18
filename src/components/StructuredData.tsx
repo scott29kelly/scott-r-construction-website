@@ -26,6 +26,7 @@ export function StructuredData() {
       },
     })),
     priceRange: '$$',
+    foundingDate: SITE_INFO.established,
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',

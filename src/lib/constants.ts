@@ -6,10 +6,12 @@ import {
   FeaturedProjectStory,
   FitChecklistItem,
   FitExpectation,
+  HomeownerSafeguard,
   PortfolioItem,
   ProcessStep,
   ProofStat,
   ReassurancePoint,
+  ReviewTheme,
   Service,
   Testimonial,
   TrustPoint,
@@ -24,6 +26,7 @@ export const SITE_INFO = {
   licensedIn: 'PA & NJ',
   bbbRating: 'A+',
   certifications: 'Bilco Certified Installer',
+  established: '2007',
 };
 
 export const SERVICES: Service[] = [
@@ -85,6 +88,27 @@ export const ABOUT_CONTENT = {
     'Fully Insured',
   ],
 };
+
+export const HOMEOWNER_SAFEGUARDS: HomeownerSafeguard[] = [
+  {
+    id: 'owner-contact',
+    title: 'You deal directly with the owner',
+    description:
+      'The person discussing your estimate is the same person whose name and reputation are attached to the work.',
+  },
+  {
+    id: 'credentials',
+    title: 'Credentials are clear before the job starts',
+    description:
+      'PA license PA012701, New Jersey licensing, insurance coverage, and Bilco certification are all part of the trust picture homeowners can verify.',
+  },
+  {
+    id: 'fit-first',
+    title: 'Fit is discussed before anyone wastes time',
+    description:
+      'Town, timing, and scope are addressed early so the first conversation is honest about whether the project makes sense now.',
+  },
+];
 
 export const PORTFOLIO: PortfolioItem[] = [
   {
@@ -384,6 +408,13 @@ export const HOMEOWNER_REASSURANCE_POINTS: ReassurancePoint[] = [
 
 export const AUTHORITY_SIGNALS: AuthoritySignal[] = [
   {
+    id: 'established',
+    title: 'Owner-operated since 2007',
+    detail: 'Established June 2007',
+    description:
+      'The business has been operating locally for nearly two decades, which adds stability beyond a brand-new lead-generation site.',
+  },
+  {
     id: 'pa-license',
     title: 'Pennsylvania licensed contractor',
     detail: 'PA012701',
@@ -410,6 +441,27 @@ export const AUTHORITY_SIGNALS: AuthoritySignal[] = [
     detail: 'Product-specific expertise',
     description:
       'Certification gives added confidence on basement-entry projects where fit, waterproofing, and installation details matter.',
+  },
+];
+
+export const REVIEW_THEMES: ReviewTheme[] = [
+  {
+    id: 'trust',
+    title: 'Trust inside the home',
+    description:
+      'The strongest recommendation specifically says Scott treats each home like his own, which addresses one of the biggest homeowner concerns before a remodel starts.',
+  },
+  {
+    id: 'craftsmanship',
+    title: 'Visible craftsmanship',
+    description:
+      'Multiple recommendations react to the finished work itself, which helps confirm that the quality is noticeable, not just promised in the estimate stage.',
+  },
+  {
+    id: 'future-intent',
+    title: 'Work that earns future calls',
+    description:
+      'One recommendation is effectively a future booking signal, showing the kind of confidence that makes homeowners keep Scott in mind for their next project.',
   },
 ];
 

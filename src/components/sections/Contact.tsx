@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   CheckCircle2,
   CircleHelp,
@@ -16,11 +16,13 @@ import {
   CONTACT_TRUST_POINTS,
   ESTIMATE_EXPECTATIONS,
   ESTIMATE_FIT_CHECKLIST,
+  SITE_INFO,
   TARGET_TIMELINE_OPTIONS,
 } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';
+import { formatLeadSource } from '@/lib/contact-source';
 
 interface FormData {
   firstName: string;
@@ -33,6 +35,8 @@ interface FormData {
   budgetRange: string;
   message: string;
   companyName: string;
+  leadSource: string;
+  entryPage: string;
 }
 
 type FormErrors = Partial<Record<keyof FormData, string>>;
@@ -49,6 +53,8 @@ const initialFormData: FormData = {
   budgetRange: '',
   message: '',
   companyName: '',
+  leadSource: '',
+  entryPage: '',
 };
 
 function normalizeFormData(formData: FormData): FormData {
@@ -64,6 +70,8 @@ function normalizeFormData(formData: FormData): FormData {
     budgetRange: formData.budgetRange.trim(),
     message: formData.message.trim(),
     companyName: formData.companyName.trim(),
+    leadSource: formData.leadSource.trim(),
+    entryPage: formData.entryPage.trim(),
   };
 }
 
@@ -127,6 +135,18 @@ export function Contact() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<SubmissionStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const leadSource = searchParams.get('leadSource') ?? '';
+    const entryPage = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+
+    setFormData((prev) => ({
+      ...prev,
+      leadSource,
+      entryPage,
+    }));
+  }, []);
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -423,6 +443,30 @@ export function Contact() {
                       Share a few details below and Scott will follow up to confirm fit, answer
                       questions, and talk through timing.
                     </p>
+                    <p className="mt-2 text-xs leading-relaxed text-steel">
+                      Lead source: {formatLeadSource(formData.leadSource)}
+                    </p>
+                  </div>
+
+                  <div className="mb-6 grid gap-3 sm:grid-cols-3">
+                    <div className="border border-sand/30 bg-cream/60 px-4 py-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-steel">
+                        Established
+                      </p>
+                      <p className="mt-2 text-sm font-semibold text-charcoal">{SITE_INFO.established}</p>
+                    </div>
+                    <div className="border border-sand/30 bg-cream/60 px-4 py-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-steel">
+                        PA license
+                      </p>
+                      <p className="mt-2 text-sm font-semibold text-charcoal">PA012701</p>
+                    </div>
+                    <div className="border border-sand/30 bg-cream/60 px-4 py-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-steel">
+                        Response window
+                      </p>
+                      <p className="mt-2 text-sm font-semibold text-charcoal">1 business day</p>
+                    </div>
                   </div>
 
                   <div className="mb-6 grid gap-4 md:grid-cols-2">
@@ -669,6 +713,20 @@ export function Contact() {
                       autoComplete="off"
                       value={formData.companyName}
                       onChange={handleChange}
+                    />
+                    <input
+                      type="text"
+                      id="leadSource"
+                      name="leadSource"
+                      value={formData.leadSource}
+                      readOnly
+                    />
+                    <input
+                      type="text"
+                      id="entryPage"
+                      name="entryPage"
+                      value={formData.entryPage}
+                      readOnly
                     />
                   </div>
 

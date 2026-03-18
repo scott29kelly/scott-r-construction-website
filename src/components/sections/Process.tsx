@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Phone } from 'lucide-react';
 import { PROCESS_STEPS, SCHEDULING_SIGNALS } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
@@ -80,10 +81,10 @@ export function Process() {
 
               <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
                 <Button asChild>
-                  <a href="#contact">
+                  <Link href="/?leadSource=process-guidance#contact">
                     Request Project Guidance
                     <ArrowRight size={16} />
-                  </a>
+                  </Link>
                 </Button>
                 <Button asChild variant="secondary">
                   <a href="tel:2155191795">

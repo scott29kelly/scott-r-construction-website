@@ -90,6 +90,18 @@ export interface FeaturedProjectStory {
   }[];
 }
 
+export interface ReviewTheme {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface HomeownerSafeguard {
+  id: string;
+  title: string;
+  description: string;
+}
+
 export interface ComparisonPoint {
   id: string;
   title: string;

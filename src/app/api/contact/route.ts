@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { buildContactEmail } from '@/lib/email-template';
+import { formatLeadSource } from '@/lib/contact-source';
 
 interface ContactRequestBody {
   firstName?: string;
@@ -13,6 +14,8 @@ interface ContactRequestBody {
   budgetRange?: string;
   message?: string;
   companyName?: string;
+  leadSource?: string;
+  entryPage?: string;
 }
 
 function normalizeValue(value: string | undefined): string {
@@ -33,6 +36,8 @@ export async function POST(request: Request) {
     const budgetRange = normalizeValue(body.budgetRange);
     const message = normalizeValue(body.message);
     const companyName = normalizeValue(body.companyName);
+    const leadSource = normalizeValue(body.leadSource);
+    const entryPage = normalizeValue(body.entryPage);
 
     if (companyName) {
       return NextResponse.json({ success: true });
@@ -82,13 +87,15 @@ export async function POST(request: Request) {
       targetTimeline,
       budgetRange,
       message,
+      leadSource,
+      entryPage,
     });
 
     await resend.emails.send({
       from: 'Scott Romanoski Construction <onboarding@resend.dev>',
       to: 'sroman2@verizon.net',
       replyTo: email,
-      subject: `New Inquiry from ${firstName} ${lastName} - ${projectType}`,
+      subject: `[${formatLeadSource(leadSource)}] ${firstName} ${lastName} - ${projectType}`,
       html,
     });
 
