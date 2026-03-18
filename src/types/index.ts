@@ -29,6 +29,8 @@ export interface Testimonial {
   stars: number;
   highlight: string;
   concern: string;
+  sourceLabel: string;
+  sourceDetail: string;
 }
 
 export interface ProcessStep {
@@ -62,6 +64,30 @@ export interface ReassurancePoint {
   id: string;
   title: string;
   description: string;
+}
+
+export interface AuthoritySignal {
+  id: string;
+  title: string;
+  detail: string;
+  description: string;
+}
+
+export interface FeaturedProjectStory {
+  id: string;
+  eyebrow: string;
+  title: string;
+  location: string;
+  summary: string;
+  homeownerNeed: string;
+  scottApproach: string;
+  result: string;
+  outcomePoints: string[];
+  images: {
+    src: string;
+    alt: string;
+    caption: string;
+  }[];
 }
 
 export interface ComparisonPoint {

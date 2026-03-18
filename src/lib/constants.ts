@@ -1,7 +1,9 @@
 import {
+  AuthoritySignal,
   ComparisonPoint,
   ContactInfo,
   FaqItem,
+  FeaturedProjectStory,
   FitChecklistItem,
   FitExpectation,
   PortfolioItem,
@@ -221,6 +223,8 @@ export const TESTIMONIALS: Testimonial[] = [
     stars: 5,
     highlight: 'Treats every home like his own',
     concern: 'For homeowners worried about workmanship and trust inside their home.',
+    sourceLabel: 'Facebook Recommendation',
+    sourceDetail: 'Public recommendation highlighting craftsmanship, trust, and respect for the home.',
   },
   {
     id: 't2',
@@ -230,6 +234,8 @@ export const TESTIMONIALS: Testimonial[] = [
     stars: 5,
     highlight: 'Work that stands out right away',
     concern: 'A quick endorsement of the finished result and overall quality.',
+    sourceLabel: 'Facebook Recommendation',
+    sourceDetail: 'Short public recommendation focused on the visible quality of the finished work.',
   },
   {
     id: 't3',
@@ -239,6 +245,8 @@ export const TESTIMONIALS: Testimonial[] = [
     stars: 5,
     highlight: 'The kind of work people remember for their own project',
     concern: 'Signals confidence strong enough to earn future renovation calls.',
+    sourceLabel: 'Facebook Recommendation',
+    sourceDetail: 'A recommendation that shows the work is strong enough to drive future project interest.',
   },
   {
     id: 't4',
@@ -248,6 +256,8 @@ export const TESTIMONIALS: Testimonial[] = [
     stars: 5,
     highlight: 'Beautiful finished spaces',
     concern: 'Reinforces the visual impact homeowners want from a remodel.',
+    sourceLabel: 'Facebook Recommendation',
+    sourceDetail: 'Public recommendation centered on the finished look and homeowner reaction.',
   },
 ];
 
@@ -372,6 +382,74 @@ export const HOMEOWNER_REASSURANCE_POINTS: ReassurancePoint[] = [
   },
 ];
 
+export const AUTHORITY_SIGNALS: AuthoritySignal[] = [
+  {
+    id: 'pa-license',
+    title: 'Pennsylvania licensed contractor',
+    detail: 'PA012701',
+    description:
+      'Licensing clarity matters when homeowners want to confirm they are talking to a legitimate local contractor before inviting someone into the house.',
+  },
+  {
+    id: 'insurance',
+    title: 'Fully insured for residential work',
+    detail: 'Coverage in place',
+    description:
+      'Insurance and credentialing help reduce the uncertainty homeowners feel when comparing serious bids for work around the home.',
+  },
+  {
+    id: 'bbb',
+    title: 'BBB rating and complaint history',
+    detail: 'A+ rating, zero complaints',
+    description:
+      'This adds a third-party trust signal beyond marketing copy and reinforces a track record homeowners can feel better about.',
+  },
+  {
+    id: 'bilco-certified',
+    title: 'Bilco Certified Installer',
+    detail: 'Product-specific expertise',
+    description:
+      'Certification gives added confidence on basement-entry projects where fit, waterproofing, and installation details matter.',
+  },
+];
+
+export const FEATURED_PROJECT_STORY: FeaturedProjectStory = {
+  id: 'langhorne-kitchen-story',
+  eyebrow: 'Featured project story',
+  title: 'Langhorne kitchen remodel built around everyday family use',
+  location: 'Langhorne, PA',
+  summary:
+    'Instead of only showing the finished room, this project explains what changed for the homeowners: better circulation, more usable prep space, and a kitchen that supports real daily traffic.',
+  homeownerNeed:
+    'The family wanted a kitchen that felt more open, handled daily movement better, and created seating and prep space that actually worked for regular use.',
+  scottApproach:
+    'The remodel centered on custom cabinetry, a larger island, and a layout that made cooking, gathering, and day-to-day movement feel easier without making the room feel disconnected from the rest of the home.',
+  result:
+    'The finished kitchen gave the homeowners a cleaner workflow, more seating utility, and a space that feels designed for both family life and entertaining.',
+  outcomePoints: [
+    'Custom cabinetry for more organized daily storage',
+    'Expanded island for prep, seating, and better traffic flow',
+    'A finished look that feels natural to the home instead of overdone',
+  ],
+  images: [
+    {
+      src: '/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg',
+      alt: 'Wide view of the completed Langhorne kitchen remodel with island and cabinetry',
+      caption: 'Finished layout with clearer circulation and a stronger family gathering zone',
+    },
+    {
+      src: '/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-seating.jpg',
+      alt: 'Kitchen island seating area in the Langhorne remodel',
+      caption: 'Seating and island placement designed to support everyday use, not just looks',
+    },
+    {
+      src: '/images/Projects/710 Parker St. Langhorne, Pa/kitchen-floor-detail.jpg',
+      alt: 'Kitchen floor and finish detail from the Langhorne remodel',
+      caption: 'Finish details that help the project feel complete up close as well as from across the room',
+    },
+  ],
+};
+
 export const TARGET_TIMELINE_OPTIONS: string[] = [
   'As soon as possible',
   'Within 1 month',
@@ -399,9 +477,9 @@ export const CONTACT_TRUST_POINTS: TrustPoint[] = [
   },
   {
     id: 'licensed-insured',
-    title: 'Licensed and insured',
+    title: 'Licensed, insured, and accountable',
     description:
-      'Homeowners get peace of mind knowing the job is handled by a properly credentialed contractor.',
+      'PA licensure, New Jersey licensing, insurance coverage, and an owner-led process give homeowners clearer accountability.',
   },
   {
     id: 'response-time',

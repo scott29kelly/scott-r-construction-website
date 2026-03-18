@@ -43,7 +43,15 @@ export function TestimonialCard({ testimonial, className }: TestimonialCardProps
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
 
-      <div className="mt-auto border-t border-sand/30 pt-6">
+      <div className="mt-auto space-y-4 border-t border-sand/30 pt-6">
+        <div className="border border-sand/30 bg-white/60 px-4 py-3">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-charcoal">
+            Review source
+          </p>
+          <p className="mt-1 text-sm font-medium text-charcoal">{testimonial.sourceLabel}</p>
+          <p className="mt-1 text-xs leading-relaxed text-steel">{testimonial.sourceDetail}</p>
+        </div>
+
         <div className="text-sm font-semibold uppercase tracking-wider text-charcoal">
           {testimonial.author}
         </div>

@@ -1,6 +1,21 @@
 import React from 'react';
-import { ArrowRight, BadgeCheck, MapPinned, MessageSquareQuote, type LucideIcon } from 'lucide-react';
-import { HOMEOWNER_REASSURANCE_POINTS, PORTFOLIO, PROOF_STATS } from '@/lib/constants';
+import Image from 'next/image';
+import {
+  ArrowRight,
+  BadgeCheck,
+  ClipboardCheck,
+  MapPinned,
+  MessageSquareQuote,
+  ShieldCheck,
+  type LucideIcon,
+} from 'lucide-react';
+import {
+  AUTHORITY_SIGNALS,
+  FEATURED_PROJECT_STORY,
+  HOMEOWNER_REASSURANCE_POINTS,
+  PORTFOLIO,
+  PROOF_STATS,
+} from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';
@@ -12,6 +27,12 @@ const reassuranceIcons: Record<string, LucideIcon> = {
 };
 
 const featuredCaseStudies = PORTFOLIO.slice(0, 3);
+const authorityIcons: Record<string, LucideIcon> = {
+  'pa-license': ClipboardCheck,
+  insurance: ShieldCheck,
+  bbb: BadgeCheck,
+  'bilco-certified': BadgeCheck,
+};
 
 export function Proof() {
   return (
@@ -105,6 +126,126 @@ export function Proof() {
               </div>
             </div>
           </ScrollReveal>
+        </div>
+
+        <div className="mt-16 md:mt-20">
+          <ScrollReveal>
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                  Credentials homeowners can verify
+                </p>
+                <h3 className="mt-3 font-display text-3xl leading-tight text-charcoal md:text-4xl">
+                  Authority signals that go beyond marketing language.
+                </h3>
+              </div>
+              <p className="max-w-md text-sm leading-relaxed text-steel">
+                When homeowners compare contractors, they are usually looking for signs that
+                the business is real, accountable, and equipped to carry a project through.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {AUTHORITY_SIGNALS.map((signal, index) => {
+              const Icon = authorityIcons[signal.id];
+
+              return (
+                <ScrollReveal key={signal.id} delay={0.08 * index} className="h-full">
+                  <article className="flex h-full flex-col border border-sand/30 bg-white p-6 shadow-sm shadow-charcoal/5">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent/10 text-accent">
+                      <Icon size={18} />
+                    </div>
+                    <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-steel">
+                      {signal.detail}
+                    </p>
+                    <h4 className="mt-2 text-lg font-semibold text-charcoal">{signal.title}</h4>
+                    <p className="mt-3 text-sm leading-relaxed text-steel">{signal.description}</p>
+                  </article>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-10 border border-sand/30 bg-white p-6 shadow-sm shadow-charcoal/5 md:mt-20 md:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+          <ScrollReveal className="h-full">
+            <div className="flex h-full flex-col">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                {FEATURED_PROJECT_STORY.eyebrow}
+              </p>
+              <h3 className="mt-3 font-display text-3xl leading-tight text-charcoal md:text-4xl">
+                {FEATURED_PROJECT_STORY.title}
+              </h3>
+              <p className="mt-3 text-sm font-semibold uppercase tracking-[0.14em] text-steel">
+                {FEATURED_PROJECT_STORY.location}
+              </p>
+              <p className="mt-6 text-base leading-relaxed text-steel">
+                {FEATURED_PROJECT_STORY.summary}
+              </p>
+
+              <div className="mt-8 space-y-5">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-charcoal">
+                    What the homeowner needed
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-steel">
+                    {FEATURED_PROJECT_STORY.homeownerNeed}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-charcoal">
+                    How the project was handled
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-steel">
+                    {FEATURED_PROJECT_STORY.scottApproach}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-charcoal">
+                    Result
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-charcoal">
+                    {FEATURED_PROJECT_STORY.result}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                {FEATURED_PROJECT_STORY.outcomePoints.map((point) => (
+                  <div key={point} className="border border-sand/30 bg-cream px-4 py-4 text-sm leading-relaxed text-steel">
+                    {point}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-2">
+            {FEATURED_PROJECT_STORY.images.map((image, index) => (
+              <ScrollReveal
+                key={image.src}
+                delay={0.08 * index}
+                direction="left"
+                className={index === 0 ? 'sm:col-span-3 lg:col-span-2' : ''}
+              >
+                <figure className="border border-sand/30 bg-cream p-3">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      sizes={index === 0 ? '(max-width: 1024px) 100vw, 50vw' : '(max-width: 768px) 100vw, 25vw'}
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-sm leading-relaxed text-steel">
+                    {image.caption}
+                  </figcaption>
+                </figure>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
 
         <div className="mt-16 md:mt-20">

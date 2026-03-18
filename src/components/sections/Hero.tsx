@@ -66,7 +66,7 @@ export function Hero() {
             className="mb-8 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.12em] text-sand/85"
           >
             <span className="border border-sand/20 bg-white/5 px-4 py-2">Owner on every job</span>
-            <span className="border border-sand/20 bg-white/5 px-4 py-2">Free estimates</span>
+            <span className="border border-sand/20 bg-white/5 px-4 py-2">A+ BBB rating</span>
             <span className="border border-sand/20 bg-white/5 px-4 py-2">Replies within 1 business day</span>
           </motion.div>
 

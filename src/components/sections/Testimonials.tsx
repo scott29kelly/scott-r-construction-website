@@ -5,6 +5,8 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { TestimonialCard } from '@/components/ui/TestimonialCard';
 
 export function Testimonials() {
+  const recommendationCountLabel = `${TESTIMONIALS.length} public recommendations shown`;
+
   return (
     <section id="testimonials" className="section-padding bg-white">
       <div className="container mx-auto max-w-7xl px-6">
@@ -23,6 +25,27 @@ export function Testimonials() {
             </p>
           </ScrollReveal>
         </div>
+
+        <ScrollReveal delay={0.05}>
+          <div className="mb-12 flex flex-col gap-4 border border-sand/30 bg-cream px-6 py-5 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                Review credibility
+              </p>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-steel">
+                These quotes are presented as public Facebook recommendations and are paired
+                with the homeowner concern they help answer, so the proof is easier to scan
+                and more useful before an estimate request.
+              </p>
+            </div>
+            <div className="shrink-0 border border-charcoal/10 bg-white px-4 py-3 text-center">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-steel">
+                At a glance
+              </p>
+              <p className="mt-1 text-sm font-semibold text-charcoal">{recommendationCountLabel}</p>
+            </div>
+          </div>
+        </ScrollReveal>
 
         <div className="mb-12 grid gap-6 lg:grid-cols-3">
           {WHY_HOMEOWNERS_CHOOSE_SCOTT.map((item, index) => (

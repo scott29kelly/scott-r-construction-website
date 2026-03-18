@@ -1,4 +1,4 @@
-import { SITE_INFO, CONTACT_INFO, SERVICE_AREAS, SERVICES } from '@/lib/constants';
+import { CONTACT_INFO, SERVICE_AREAS, SERVICES, SITE_INFO, TESTIMONIALS } from '@/lib/constants';
 
 export function StructuredData() {
   const schema = {
@@ -52,6 +52,28 @@ export function StructuredData() {
         },
       })),
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: 5,
+      reviewCount: TESTIMONIALS.length,
+    },
+    review: TESTIMONIALS.map((testimonial) => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: testimonial.author,
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: testimonial.stars,
+        bestRating: 5,
+      },
+      reviewBody: testimonial.quote,
+      publisher: {
+        '@type': 'Organization',
+        name: testimonial.sourceLabel,
+      },
+    })),
   };
 
   return (
