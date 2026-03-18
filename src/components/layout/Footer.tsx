@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SITE_INFO, SERVICE_AREAS } from '@/lib/constants';
+import { PRIMARY_NAV_LINKS } from '@/lib/navigation';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,7 +16,7 @@ export function Footer() {
           
           {/* Brand Column (Spans 4) */}
           <div className="md:col-span-4">
-            <Link href="#" className="inline-flex items-center gap-3 mb-6 group">
+            <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
               <div className="w-16 h-16 relative overflow-hidden rounded-sm">
                 <Image 
                   src="/images/logo.webp"
@@ -49,11 +50,11 @@ export function Footer() {
               <span className="absolute -bottom-2 left-0 w-8 h-px bg-accent" />
             </h4>
             <ul className="flex flex-col gap-4">
-              {['Services', 'About', 'Portfolio', 'Process', 'Contact'].map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase()}`} className="text-ash hover:text-accent text-sm transition-colors duration-200">
-                    {link}
-                  </a>
+              {PRIMARY_NAV_LINKS.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-ash hover:text-accent text-sm transition-colors duration-200">
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>

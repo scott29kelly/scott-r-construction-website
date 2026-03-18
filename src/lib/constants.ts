@@ -36,6 +36,10 @@ export const SERVICES: Service[] = [
     description:
       'Complete interior renovations for kitchens, bathrooms, basements, and whole-home transformations. We modernize your living space while respecting the character of your home.',
     icon: 'Hammer',
+    bestFit: 'Best fit for kitchens, baths, basements, and larger interior upgrades with a clear space in mind.',
+    qualificationPrompt: 'Helpful to know which room you want to improve, what is not working now, and your ideal start window.',
+    ctaLabel: 'Plan my remodel estimate',
+    contactProjectType: 'Home Remodeling',
   },
   {
     id: 'additions',
@@ -43,6 +47,10 @@ export const SERVICES: Service[] = [
     description:
       'Need more room? We design and build home additions that blend seamlessly with your existing structure, from extra bedrooms to expanded living areas.',
     icon: 'Home',
+    bestFit: 'A strong fit when you need meaningful square footage and want the new space to feel original to the home.',
+    qualificationPrompt: 'Estimate requests move faster when you can share the planned use, approximate size, and target timing.',
+    ctaLabel: 'Talk through my addition',
+    contactProjectType: 'Addition',
   },
   {
     id: 'decks-patios',
@@ -50,6 +58,10 @@ export const SERVICES: Service[] = [
     description:
       'Custom-built outdoor living spaces tailored to your property and lifestyle. Composite, wood, and stone options with lasting craftsmanship.',
     icon: 'TreePine',
+    bestFit: 'Ideal for homeowners improving outdoor living, entertaining space, backyard flow, or access to the yard.',
+    qualificationPrompt: 'Sharing the yard layout, preferred materials, and whether it is a deck or patio helps qualify the first conversation.',
+    ctaLabel: 'Price out my outdoor project',
+    contactProjectType: 'Patio / Hardscaping',
   },
   {
     id: 'bilco',
@@ -57,6 +69,10 @@ export const SERVICES: Service[] = [
     description:
       'As a Certified Bilco Installer, we provide expert basement door replacement and installation with proper fit, waterproofing, and code compliance.',
     icon: 'DoorOpen',
+    bestFit: 'Best for basement-entry replacements where fit, drainage, waterproofing, and product-specific installation details matter.',
+    qualificationPrompt: 'A photo of the current opening, any water concerns, and whether this is replacement or new access helps Scott assess fit quickly.',
+    ctaLabel: 'Request a Bilco estimate',
+    contactProjectType: 'Bilco Door Installation',
   },
   {
     id: 'windows-doors',
@@ -64,6 +80,10 @@ export const SERVICES: Service[] = [
     description:
       'Energy-efficient window and door replacements that improve comfort, security, and curb appeal. Professional installation backed by manufacturer warranties.',
     icon: 'AppWindow',
+    bestFit: 'A good fit when drafts, failing units, exterior wear, or curb-appeal upgrades are pushing the project forward.',
+    qualificationPrompt: 'The first reply is more useful when you know roughly how many openings are involved and what issues you are seeing.',
+    ctaLabel: 'Get window and door guidance',
+    contactProjectType: 'Windows & Doors',
   },
   {
     id: 'contracting',
@@ -71,6 +91,10 @@ export const SERVICES: Service[] = [
     description:
       'Full-service project management from permits to final walkthrough. One point of contact, transparent communication, and work done right the first time.',
     icon: 'HardHat',
+    bestFit: 'Useful when the job spans multiple trades and you want one accountable contractor managing the full scope.',
+    qualificationPrompt: 'Share the overall project goal, the major work involved, and whether you already have plans or are still shaping scope.',
+    ctaLabel: 'Discuss my project scope',
+    contactProjectType: 'Other / Not sure yet',
   },
 ];
 

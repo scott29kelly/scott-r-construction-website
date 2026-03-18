@@ -21,6 +21,7 @@ import {
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';
+import { buildContactHref } from '@/lib/contact-link';
 
 const reassuranceIcons: Record<string, LucideIcon> = {
   'owner-led': BadgeCheck,
@@ -121,7 +122,7 @@ export function Proof() {
 
               <div className="mt-8">
                 <Button asChild variant="secondary">
-                  <Link href="/?leadSource=proof-fit-check#contact">
+                  <Link href={buildContactHref({ leadSource: 'proof-fit-check' })}>
                     Check Project Fit
                     <ArrowRight size={16} />
                   </Link>

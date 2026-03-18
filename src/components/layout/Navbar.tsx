@@ -6,11 +6,15 @@ import { Menu, Phone, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SCHEDULING_SIGNALS } from '@/lib/constants';
+import { buildContactHref } from '@/lib/contact-link';
+import { PRIMARY_NAV_LINKS } from '@/lib/navigation';
 import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,14 +33,6 @@ export function Navbar() {
     };
   }, [mobileMenuOpen]);
 
-  const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Process', href: '#process' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
   return (
     <header
       className={cn(
@@ -47,7 +43,7 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto flex max-w-7xl items-center justify-between px-6">
-        <Link href="#home" className="group relative z-50 flex items-center gap-3">
+        <Link href="/" className="group relative z-50 flex items-center gap-3">
           <div className="relative h-14 w-14 overflow-hidden rounded-sm transition-transform duration-500 group-hover:scale-105 md:h-16 md:w-16">
             <Image
               src="/images/logo.webp"
@@ -68,15 +64,18 @@ export function Navbar() {
 
         <nav className="hidden items-center gap-10 md:flex">
           <ul className="flex items-center gap-8">
-            {navLinks.map((link) => (
+            {PRIMARY_NAV_LINKS.map((link) => (
               <li key={link.name}>
-                <a
+                <Link
                   href={link.href}
-                  className="group relative py-2 text-xs font-medium uppercase tracking-[0.1em] text-cream/70 transition-colors duration-300 hover:text-accent"
+                  className={cn(
+                    'group relative py-2 text-xs font-medium uppercase tracking-[0.1em] transition-colors duration-300 hover:text-accent',
+                    pathname === link.href ? 'text-accent' : 'text-cream/70'
+                  )}
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 h-px w-full origin-right scale-x-0 bg-accent transition-transform duration-300 group-hover:origin-left group-hover:scale-x-100" />
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -93,7 +92,7 @@ export function Navbar() {
               Call Scott
             </a>
             <Link
-              href="/?leadSource=navbar-primary#contact"
+              href={buildContactHref({ leadSource: 'navbar-primary' })}
               className="bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-warm-black transition-colors duration-300 shadow-sm hover:bg-accent-light"
             >
               Get a Quote
@@ -133,20 +132,20 @@ export function Navbar() {
               </div>
 
               <ul className="flex flex-col gap-5 text-center">
-                {navLinks.map((link, index) => (
+                {PRIMARY_NAV_LINKS.map((link, index) => (
                   <motion.li
                     key={link.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.08 + 0.08, duration: 0.4 }}
                   >
-                    <a
+                    <Link
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className="block border border-sand/15 px-6 py-4 font-display text-2xl text-cream transition-colors duration-300 hover:text-accent"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
@@ -165,7 +164,7 @@ export function Navbar() {
                   Call Scott
                 </a>
                 <Link
-                  href="/?leadSource=mobile-nav-primary#contact"
+                  href={buildContactHref({ leadSource: 'mobile-nav-primary' })}
                   onClick={() => setMobileMenuOpen(false)}
                   className="block bg-accent px-8 py-4 text-center text-sm font-semibold uppercase tracking-[0.1em] text-warm-black"
                 >

@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Phone } from 'lucide-react';
+import { buildContactHref } from '@/lib/contact-link';
 
 export function StickyMobileCTA() {
   return (
@@ -21,7 +22,7 @@ export function StickyMobileCTA() {
             Call Scott
           </a>
           <Link
-            href="/?leadSource=sticky-mobile-cta#contact"
+            href={buildContactHref({ leadSource: 'sticky-mobile-cta' })}
             className="flex-1 bg-accent px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.1em] text-warm-black"
           >
             Free Estimate

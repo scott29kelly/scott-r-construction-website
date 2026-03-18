@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Clock3, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { buildContactHref } from '@/lib/contact-link';
 import { SCHEDULING_SIGNALS, SITE_INFO } from '@/lib/constants';
 
 export function Hero() {
@@ -78,7 +79,7 @@ export function Hero() {
             className="flex flex-wrap items-center gap-6"
           >
             <Button asChild size="lg">
-              <Link href="/?leadSource=hero-primary#contact">Request a Free Estimate</Link>
+              <Link href={buildContactHref({ leadSource: 'hero-primary' })}>Request a Free Estimate</Link>
             </Button>
             <Button asChild variant="secondary" size="lg">
               <a href="tel:2155191795">

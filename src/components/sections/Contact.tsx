@@ -16,6 +16,7 @@ import {
   CONTACT_TRUST_POINTS,
   ESTIMATE_EXPECTATIONS,
   ESTIMATE_FIT_CHECKLIST,
+  SERVICES,
   SITE_INFO,
   TARGET_TIMELINE_OPTIONS,
 } from '@/lib/constants';
@@ -56,6 +57,22 @@ const initialFormData: FormData = {
   leadSource: '',
   entryPage: '',
 };
+
+interface ContactProps {
+  initialLeadSource?: string;
+  initialProjectType?: string;
+}
+
+function getInitialFormData(initialValues?: {
+  leadSource?: string;
+  projectType?: string;
+}): FormData {
+  return {
+    ...initialFormData,
+    projectType: initialValues?.projectType ?? '',
+    leadSource: initialValues?.leadSource ?? '',
+  };
+}
 
 function normalizeFormData(formData: FormData): FormData {
   return {
@@ -130,23 +147,33 @@ function getFieldClasses(hasError: boolean): string {
   ].join(' ');
 }
 
-export function Contact() {
+export function Contact({
+  initialLeadSource = '',
+  initialProjectType = '',
+}: ContactProps) {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<SubmissionStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const leadSource = searchParams.get('leadSource') ?? '';
+    const nextInitialData = getInitialFormData({
+      leadSource: initialLeadSource,
+      projectType: initialProjectType,
+    });
     const entryPage = `${window.location.pathname}${window.location.search}${window.location.hash}`;
 
     setFormData((prev) => ({
       ...prev,
-      leadSource,
+      projectType: nextInitialData.projectType,
+      leadSource: nextInitialData.leadSource,
       entryPage,
     }));
-  }, []);
+  }, [initialLeadSource, initialProjectType]);
+
+  const selectedService = SERVICES.find(
+    (service) => service.contactProjectType === formData.projectType
+  );
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -215,7 +242,13 @@ export function Contact() {
       }
 
       setStatus('success');
-      setFormData(initialFormData);
+      setFormData((prev) => ({
+        ...getInitialFormData({
+          leadSource: initialLeadSource,
+          projectType: initialProjectType,
+        }),
+        entryPage: prev.entryPage,
+      }));
     } catch (error) {
       setStatus('error');
       setErrorMessage(
@@ -448,6 +481,20 @@ export function Contact() {
                     </p>
                   </div>
 
+                  {selectedService && (
+                    <div className="mb-6 border border-charcoal/10 bg-charcoal px-5 py-4 text-cream">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-accent-light">
+                        Service selected
+                      </p>
+                      <p className="mt-2 font-display text-2xl leading-tight">
+                        {selectedService.title}
+                      </p>
+                      <p className="mt-3 text-sm leading-relaxed text-ash">
+                        {selectedService.qualificationPrompt}
+                      </p>
+                    </div>
+                  )}
+
                   <div className="mb-6 grid gap-3 sm:grid-cols-3">
                     <div className="border border-sand/30 bg-cream/60 px-4 py-4">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-steel">
@@ -602,7 +649,7 @@ export function Contact() {
                       <option>Other / Not sure yet</option>
                     </select>
                     <p id="projectType-help" className="text-xs leading-relaxed text-steel">
-                      This helps Scott respond with the right questions and next step.
+                      This helps Scott respond with the right questions and the most useful next step.
                     </p>
                     {errors.projectType && <p id="projectType-error" className="text-sm text-red-700">{errors.projectType}</p>}
                   </div>

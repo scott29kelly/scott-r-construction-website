@@ -25,6 +25,18 @@ export function Services() {
               From concept to completion, we handle every detail of your home improvement project with the uncompromising craftsmanship it deserves.
             </p>
           </ScrollReveal>
+
+          <ScrollReveal delay={0.3}>
+            <div className="mt-8 max-w-2xl border border-sand/30 bg-cream/70 px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-charcoal">
+                Better estimate requests start here
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-steel">
+                Choose the service closest to your project and we&apos;ll carry that context into
+                the estimate form so it&apos;s easier to share scope, timing, and location.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

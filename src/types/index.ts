@@ -3,6 +3,10 @@ export interface Service {
   title: string;
   description: string;
   icon: string;
+  bestFit: string;
+  qualificationPrompt: string;
+  ctaLabel: string;
+  contactProjectType: string;
 }
 
 export interface PortfolioItem {

@@ -5,6 +5,7 @@ import { PROCESS_STEPS, SCHEDULING_SIGNALS } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';
+import { buildContactHref } from '@/lib/contact-link';
 
 export function Process() {
   return (
@@ -81,7 +82,7 @@ export function Process() {
 
               <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
                 <Button asChild>
-                  <Link href="/?leadSource=process-guidance#contact">
+                  <Link href={buildContactHref({ leadSource: 'process-guidance' })}>
                     Request Project Guidance
                     <ArrowRight size={16} />
                   </Link>

@@ -5,6 +5,7 @@ import { PORTFOLIO, SERVICE_AREAS } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';
+import { buildContactHref } from '@/lib/contact-link';
 
 const featuredProjects = PORTFOLIO.slice(0, 4);
 
@@ -94,7 +95,7 @@ export function LocalFit() {
                 </p>
                 <div className="mt-6">
                   <Button asChild variant="secondary">
-                    <Link href="/?leadSource=local-fit-check#contact">
+                    <Link href={buildContactHref({ leadSource: 'local-fit-check' })}>
                       Check Project Fit
                       <ArrowRight size={16} />
                     </Link>
