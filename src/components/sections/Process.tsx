@@ -9,23 +9,22 @@ import { buildContactHref } from '@/lib/contact-link';
 
 export function Process() {
   return (
-    <section id="process" className="relative overflow-hidden section-padding text-cream">
-      <div className="absolute inset-0 bg-warm-black bg-noise" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(181,123,67,0.16),transparent_28%)]" />
+    <section id="process" className="relative overflow-hidden section-padding text-charcoal">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(181,123,67,0.08),transparent_22%),linear-gradient(180deg,rgba(249,245,238,0.86),rgba(243,238,229,0.92))]" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
           <div className="max-w-3xl">
             <ScrollReveal>
-              <SectionLabel light>How It Works</SectionLabel>
+              <SectionLabel>How It Works</SectionLabel>
             </ScrollReveal>
             <ScrollReveal delay={0.08}>
-              <h2 className="font-display text-4xl leading-[1.02] text-cream md:text-5xl lg:text-6xl">
+              <h2 className="font-display text-4xl leading-[1.02] text-charcoal md:text-5xl lg:text-6xl">
                 A straightforward path from first call to final walkthrough.
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.16}>
-              <p className="mt-6 text-lg leading-relaxed text-ash">
+              <p className="mt-6 text-lg leading-relaxed text-steel">
                 The process is meant to feel clear, human, and accountable. You always know
                 who you are talking to, what the next step is, and how the project is moving.
               </p>
@@ -33,14 +32,14 @@ export function Process() {
           </div>
 
           <ScrollReveal delay={0.2}>
-            <div className="site-panel-dark bg-noise p-7 md:p-8">
-              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent-light">
+            <div className="site-panel p-7 md:p-8">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent">
                 Scheduling note
               </p>
-              <h3 className="mt-4 font-display text-3xl leading-tight text-cream">
+              <h3 className="mt-4 font-display text-3xl leading-tight text-charcoal">
                 Reach out early if timing matters.
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-ash">
+              <p className="mt-4 text-sm leading-relaxed text-steel">
                 {SCHEDULING_SIGNALS.processMessage}
               </p>
             </div>
@@ -50,12 +49,12 @@ export function Process() {
         <div className="mt-12 grid gap-6 lg:grid-cols-4">
           {PROCESS_STEPS.map((step, index) => (
             <ScrollReveal key={step.id} delay={0.08 * index} className="relative h-full">
-              <div className="site-panel-dark flex h-full flex-col p-7">
-                <p className="font-display text-6xl leading-none text-accent/24">{step.number}</p>
-                <h3 className="mt-6 font-display text-3xl leading-tight text-cream">
+              <div className="site-panel flex h-full flex-col p-7">
+                <p className="font-display text-6xl leading-none text-accent/22">{step.number}</p>
+                <h3 className="mt-6 font-display text-3xl leading-tight text-charcoal">
                   {step.title}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-ash">{step.description}</p>
+                <p className="mt-4 text-sm leading-relaxed text-steel">{step.description}</p>
               </div>
             </ScrollReveal>
           ))}

@@ -33,7 +33,7 @@ export function PageHero({ eyebrow, title, description, leadSource }: PageHeroPr
     <section className="relative overflow-hidden border-b border-sand/20 pt-32 md:pt-40">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(181,123,67,0.1),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(216,197,168,0.24),transparent_26%),linear-gradient(180deg,rgba(249,245,238,0.96),rgba(243,238,229,0.98))]" />
 
-      <div className="container relative z-10 mx-auto max-w-7xl px-6 pb-18 md:pb-24">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6 pb-20 md:pb-24">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end">
           <div>
             <SectionLabel>{eyebrow}</SectionLabel>

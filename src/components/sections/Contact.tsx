@@ -293,19 +293,19 @@ export function Contact({
                 sense of what comes next.
               </p>
 
-              <div className="site-panel-dark mb-12 bg-noise p-7 text-cream md:p-8">
+              <div className="site-panel mb-12 p-7 text-charcoal md:p-8">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                     <CircleHelp size={20} />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
                       Estimate fit guide
                     </p>
                     <h3 className="mt-3 font-display text-2xl leading-tight">
                       Not sure if you&apos;re ready to reach out yet? This usually means yes.
                     </h3>
-                    <p className="mt-4 text-sm leading-relaxed text-ash">
+                    <p className="mt-4 text-sm leading-relaxed text-steel">
                       If two or three of these sound like you, the form is probably the right
                       next step.
                     </p>
@@ -314,14 +314,14 @@ export function Contact({
 
                 <div className="mt-8 grid gap-4">
                   {ESTIMATE_FIT_CHECKLIST.map((item) => (
-                    <div key={item.id} className="border border-white/10 bg-white/5 px-5 py-4">
+                    <div key={item.id} className="border border-sand/25 bg-white/72 px-5 py-4">
                       <div className="flex items-start gap-3">
                         <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-accent" />
                         <div>
-                          <p className="text-sm font-semibold uppercase tracking-[0.12em] text-cream">
+                          <p className="text-sm font-semibold uppercase tracking-[0.12em] text-charcoal">
                             {item.title}
                           </p>
-                          <p className="mt-2 text-sm leading-relaxed text-ash">
+                          <p className="mt-2 text-sm leading-relaxed text-steel">
                             {item.description}
                           </p>
                         </div>
@@ -476,14 +476,14 @@ export function Contact({
                   </div>
 
                   {selectedService && (
-                    <div className="site-panel-dark mb-6 px-5 py-4 text-cream">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-accent-light">
+                    <div className="site-panel mb-6 px-5 py-4 text-charcoal">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-accent">
                         Service selected
                       </p>
                       <p className="mt-2 font-display text-2xl leading-tight">
                         {selectedService.title}
                       </p>
-                      <p className="mt-3 text-sm leading-relaxed text-ash">
+                      <p className="mt-3 text-sm leading-relaxed text-steel">
                         {selectedService.qualificationPrompt}
                       </p>
                     </div>

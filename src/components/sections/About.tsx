@@ -7,19 +7,18 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 
 export function About() {
   return (
-    <section id="about" className="relative overflow-hidden section-padding text-cream">
-      <div className="absolute inset-0 bg-warm-black bg-noise" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(181,123,67,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(216,197,168,0.08),transparent_22%)]" />
+    <section id="about" className="relative overflow-hidden section-padding text-charcoal">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(181,123,67,0.08),transparent_22%),linear-gradient(180deg,rgba(249,245,238,0.9),rgba(243,238,229,0.94))]" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <ScrollReveal>
-              <SectionLabel light>About Scott</SectionLabel>
+              <SectionLabel>About Scott</SectionLabel>
             </ScrollReveal>
 
             <ScrollReveal delay={0.08}>
-              <h2 className="max-w-4xl whitespace-pre-line font-display text-4xl leading-[1.02] text-cream md:text-5xl lg:text-6xl">
+              <h2 className="max-w-4xl whitespace-pre-line font-display text-4xl leading-[1.02] text-charcoal md:text-5xl lg:text-6xl">
                 {ABOUT_CONTENT.heading}
               </h2>
             </ScrollReveal>
@@ -30,8 +29,8 @@ export function About() {
                   <p
                     className={
                       index === 0
-                        ? 'text-lg leading-relaxed text-warm-sand'
-                        : 'text-lg leading-relaxed text-ash'
+                        ? 'text-lg leading-relaxed text-charcoal'
+                        : 'text-lg leading-relaxed text-steel'
                     }
                   >
                     {text}
@@ -45,11 +44,11 @@ export function About() {
                 {ABOUT_CONTENT.credentials.map((credential) => (
                   <div
                     key={credential}
-                    className="border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm"
+                    className="border border-sand/25 bg-white/72 px-5 py-4"
                   >
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-accent-light" />
-                      <p className="text-sm leading-relaxed text-cream/90">{credential}</p>
+                      <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-accent" />
+                      <p className="text-sm leading-relaxed text-steel">{credential}</p>
                     </div>
                   </div>
                 ))}
@@ -57,16 +56,16 @@ export function About() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.34}>
-              <div className="site-panel-dark mt-10 bg-noise p-6 md:p-8">
+              <div className="site-panel mt-10 p-6 md:p-8">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-accent/20 bg-accent/10 text-accent-light">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-accent/20 bg-accent/10 text-accent">
                     <ShieldCheck size={20} />
                   </div>
                   <div>
-                    <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent-light">
+                    <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent">
                       Why it feels safer to reach out
                     </p>
-                    <h3 className="mt-3 font-display text-3xl leading-tight text-cream">
+                    <h3 className="mt-3 font-display text-3xl leading-tight text-charcoal">
                       Local, owner-operated, and established since {SITE_INFO.established}.
                     </h3>
                   </div>
@@ -74,11 +73,11 @@ export function About() {
 
                 <div className="mt-6 grid gap-4">
                   {HOMEOWNER_SAFEGUARDS.map((item) => (
-                    <div key={item.id} className="border border-white/10 bg-white/5 px-5 py-4">
-                      <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-warm-sand">
+                    <div key={item.id} className="border border-sand/25 bg-white/72 px-5 py-4">
+                      <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-accent-dark">
                         {item.title}
                       </p>
-                      <p className="mt-2 text-sm leading-relaxed text-ash">{item.description}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-steel">{item.description}</p>
                     </div>
                   ))}
                 </div>
@@ -88,7 +87,7 @@ export function About() {
 
           <div>
             <ScrollReveal direction="left" delay={0.18}>
-              <div className="site-frame">
+              <div className="site-panel p-3 md:p-4">
                 <div className="relative aspect-[4/5] overflow-hidden border border-white/10 bg-white/5">
                   <Image
                     src="/images/scott-romanoski-self-photo-1.jpeg"
@@ -97,14 +96,16 @@ export function About() {
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 42vw"
                   />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-warm-black via-warm-black/80 to-transparent p-6 md:p-8">
-                    <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent-light">
+                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                    <div className="max-w-md border border-white/40 bg-white/88 p-5 backdrop-blur-sm">
+                      <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent">
                       Owner-led by design
-                    </p>
-                    <p className="mt-3 max-w-md text-base leading-relaxed text-cream/90">
+                      </p>
+                      <p className="mt-3 text-base leading-relaxed text-steel">
                       Homeowners are not handed off to a sales layer. The same person discussing
                       the estimate is accountable for how the work gets built.
-                    </p>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

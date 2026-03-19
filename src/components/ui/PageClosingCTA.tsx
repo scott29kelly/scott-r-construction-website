@@ -20,31 +20,31 @@ export function PageClosingCTA({
   projectType,
 }: PageClosingCTAProps) {
   return (
-    <section className="relative overflow-hidden border-t border-sand/15 bg-warm-black bg-noise py-20 text-cream md:py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(181,123,67,0.18),transparent_28%)]" />
+    <section className="relative overflow-hidden border-t border-sand/20 py-20 md:py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(181,123,67,0.1),transparent_24%),linear-gradient(180deg,rgba(249,245,238,0.92),rgba(243,238,229,0.98))]" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
-        <div className="site-panel-dark grid gap-8 p-8 md:grid-cols-[1.15fr_0.85fr] md:p-10">
+        <div className="site-panel grid gap-8 p-8 text-charcoal md:grid-cols-[1.15fr_0.85fr] md:p-10">
           <div>
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent-light">
+            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent">
               {eyebrow}
             </p>
             <h2 className="mt-4 max-w-3xl font-display text-3xl leading-tight md:text-5xl">
               {title}
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-ash md:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-steel md:text-lg">
               {description}
             </p>
           </div>
 
-          <div className="flex flex-col justify-between gap-6 border-t border-white/10 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
-            <div className="border border-white/10 bg-white/5 px-5 py-4">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-warm-sand">
-                Better estimate requests
+          <div className="flex flex-col justify-between gap-6 border-t border-sand/20 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+            <div className="border border-sand/25 bg-white/72 px-5 py-4">
+              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-accent-dark">
+                Helpful first message
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-cream/90">
-                Include the project type, town, and timing window so Scott can confirm fit and
-                recommend the right next step faster.
+              <p className="mt-2 text-sm leading-relaxed text-steel">
+                Include the project type, town, and timing window so Scott can give you a more
+                useful first reply.
               </p>
             </div>
 
