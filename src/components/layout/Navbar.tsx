@@ -1,48 +1,19 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Menu, Phone, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { SCHEDULING_SIGNALS } from '@/lib/constants';
 import { buildContactHref } from '@/lib/contact-link';
 import { PRIMARY_NAV_LINKS } from '@/lib/navigation';
 import { cn } from '@/lib/utils';
 
-const navStats = [
-  {
-    label: 'Owner led',
-    value: 'Scott stays on the job from estimate through walkthrough.',
-  },
-  {
-    label: 'Response',
-    value: 'Most estimate requests hear back within one business day.',
-  },
-];
-
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const { scrollYProgress } = useScroll();
   const shouldReduceMotion = useReducedMotion();
-  const progress = useSpring(scrollYProgress, {
-    stiffness: 120,
-    damping: 30,
-    mass: 0.25,
-  });
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 32);
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
@@ -54,23 +25,17 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6">
+      <header className="absolute inset-x-0 top-0 z-40 px-4 pt-4 md:px-6">
         <div className="mx-auto max-w-7xl">
-          <div
-            className={cn(
-              'relative overflow-hidden border border-sand/15 bg-warm-black/68 px-4 py-4 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-500 md:px-6',
-              isScrolled ? 'md:py-4' : 'md:py-5'
-            )}
-          >
-            <motion.span
+          <div className="relative overflow-hidden border border-sand/30 bg-white/78 px-4 py-4 shadow-[0_20px_55px_rgba(38,35,32,0.08)] backdrop-blur-xl md:px-6 md:py-5">
+            <span
               aria-hidden="true"
-              className="absolute inset-x-0 top-0 h-px origin-left bg-gradient-to-r from-transparent via-accent to-transparent"
-              style={shouldReduceMotion ? undefined : { scaleX: progress }}
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent"
             />
 
             <div className="flex items-center justify-between gap-4">
               <Link href="/" className="group relative z-50 flex min-w-0 items-center gap-3">
-                <div className="relative h-12 w-12 shrink-0 overflow-hidden border border-sand/20 bg-white/5 md:h-14 md:w-14">
+                <div className="relative h-12 w-12 shrink-0 overflow-hidden border border-sand/25 bg-white md:h-14 md:w-14">
                   <Image
                     src="/images/logo.webp"
                     alt="Scott Romanoski Construction Logo"
@@ -79,10 +44,10 @@ export function Navbar() {
                   />
                 </div>
                 <div className="min-w-0">
-                  <p className="truncate font-display text-lg font-semibold tracking-[0.01em] text-cream">
+                  <p className="truncate font-display text-lg font-semibold tracking-[0.01em] text-charcoal">
                     Scott Romanoski
                   </p>
-                  <p className="font-mono text-[10px] font-bold uppercase tracking-[0.26em] text-warm-sand md:text-[11px]">
+                  <p className="font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-accent-dark md:text-[11px]">
                     Construction
                   </p>
                 </div>
@@ -95,8 +60,10 @@ export function Navbar() {
                       <Link
                         href={link.href}
                         className={cn(
-                          'group relative font-mono text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-300',
-                          pathname === link.href ? 'text-cream' : 'text-ash hover:text-cream'
+                          'group relative font-mono text-[11px] font-bold uppercase tracking-[0.18em] transition-colors duration-300',
+                          pathname === link.href
+                            ? 'text-charcoal'
+                            : 'text-steel hover:text-charcoal'
                         )}
                       >
                         {link.name}
@@ -111,13 +78,10 @@ export function Navbar() {
                   ))}
                 </ul>
 
-                <div className="flex items-center gap-3 border-l border-white/10 pl-6">
-                  <span className="site-chip-dark hidden xl:inline-flex">
-                    {SCHEDULING_SIGNALS.navMessage}
-                  </span>
+                <div className="flex items-center gap-3 border-l border-sand/25 pl-6">
                   <a
                     href="tel:2155191795"
-                    className="inline-flex items-center gap-2 border border-sand/20 px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-cream transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-light hover:bg-white/5"
+                    className="inline-flex items-center gap-2 border border-sand/35 bg-white/70 px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-charcoal transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-white"
                   >
                     <Phone size={14} />
                     Call Scott
@@ -139,7 +103,7 @@ export function Navbar() {
                   Estimate
                 </Link>
                 <button
-                  className="relative z-50 inline-flex h-12 w-12 items-center justify-center border border-sand/20 bg-white/5 text-cream transition-colors duration-300 hover:border-accent-light"
+                  className="relative z-50 inline-flex h-12 w-12 items-center justify-center border border-sand/30 bg-white/75 text-charcoal transition-colors duration-300 hover:border-accent hover:bg-white"
                   onClick={() => setMobileMenuOpen((prev) => !prev)}
                   aria-label="Toggle navigation"
                   aria-expanded={mobileMenuOpen}
@@ -161,35 +125,25 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-warm-black/96 px-5 pb-8 pt-28 backdrop-blur-2xl lg:hidden"
+            className="fixed inset-0 z-40 bg-[rgba(249,245,238,0.82)] px-5 pb-8 pt-28 backdrop-blur-xl lg:hidden"
           >
             <div className="mx-auto flex h-full max-w-xl flex-col">
               <motion.div
                 initial={shouldReduceMotion ? undefined : { opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="site-panel-dark bg-noise p-6"
+                className="site-panel p-6 text-charcoal"
               >
-                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent-light">
+                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent">
                   Owner-led remodeling
                 </p>
-                <h2 className="mt-4 max-w-lg font-display text-3xl leading-tight text-cream">
-                  Crafted work, straight answers, and the person pricing the job still on-site.
+                <h2 className="mt-4 max-w-lg font-display text-3xl leading-tight text-charcoal">
+                  Clear communication, well-built work, and one direct point of contact.
                 </h2>
-                <p className="mt-4 text-sm leading-relaxed text-ash">
-                  {SCHEDULING_SIGNALS.heroMessage}
+                <p className="mt-4 text-sm leading-relaxed text-steel">
+                  Use the menu below to jump straight to the page you need, or request an
+                  estimate now.
                 </p>
-
-                <div className="mt-6 grid gap-3">
-                  {navStats.map((stat) => (
-                    <div key={stat.label} className="border border-white/10 bg-white/5 px-4 py-4">
-                      <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-warm-sand">
-                        {stat.label}
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-cream/88">{stat.value}</p>
-                    </div>
-                  ))}
-                </div>
               </motion.div>
 
               <ul className="mt-6 grid gap-3">
@@ -198,20 +152,23 @@ export function Navbar() {
                     key={link.name}
                     initial={shouldReduceMotion ? undefined : { opacity: 0, x: 16 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: shouldReduceMotion ? 0 : index * 0.06 + 0.08, duration: 0.35 }}
+                    transition={{
+                      delay: shouldReduceMotion ? 0 : index * 0.06 + 0.08,
+                      duration: 0.35,
+                    }}
                   >
                     <Link
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={cn(
-                        'flex items-center justify-between border px-5 py-4 font-display text-2xl text-cream transition-all duration-300',
+                        'flex items-center justify-between border px-5 py-4 font-display text-2xl text-charcoal transition-all duration-300',
                         pathname === link.href
-                          ? 'border-accent/50 bg-white/6'
-                          : 'border-white/10 bg-transparent hover:border-accent/40 hover:bg-white/5'
+                          ? 'border-accent/40 bg-white'
+                          : 'border-sand/30 bg-white/70 hover:border-accent/40 hover:bg-white'
                       )}
                     >
                       {link.name}
-                      <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-warm-sand">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent-dark">
                         Open
                       </span>
                     </Link>
@@ -223,7 +180,7 @@ export function Navbar() {
                 <a
                   href="tel:2155191795"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex items-center justify-center gap-2 border border-sand/20 bg-white/5 px-5 py-4 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-cream"
+                  className="inline-flex items-center justify-center gap-2 border border-sand/35 bg-white/75 px-5 py-4 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-charcoal"
                 >
                   <Phone size={16} />
                   Call Scott

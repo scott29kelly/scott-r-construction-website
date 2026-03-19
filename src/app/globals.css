@@ -22,7 +22,7 @@
 
   html {
     scroll-behavior: smooth;
-    background: rgb(var(--warm-black));
+    background: rgb(var(--white));
   }
 
   body {
@@ -30,13 +30,14 @@
     position: relative;
     @apply bg-cream text-charcoal font-body antialiased;
     background:
-      radial-gradient(circle at top left, rgb(var(--accent) / 0.16), transparent 28%),
-      radial-gradient(circle at 88% 10%, rgb(var(--warm-sand) / 0.18), transparent 24%),
+      radial-gradient(circle at top left, rgb(var(--accent) / 0.12), transparent 24%),
+      radial-gradient(circle at 88% 8%, rgb(var(--warm-sand) / 0.22), transparent 20%),
+      radial-gradient(circle at 50% 0%, rgb(var(--white) / 0.82), transparent 36%),
       linear-gradient(
         180deg,
-        rgb(var(--warm-black)) 0,
-        rgb(var(--warm-black)) 18rem,
-        rgb(var(--cream)) 50rem,
+        rgb(var(--white)) 0,
+        rgb(var(--cream)) 26rem,
+        rgb(247 243 236) 52rem,
         rgb(var(--white)) 100%
       );
   }
@@ -48,14 +49,14 @@
     z-index: 0;
     pointer-events: none;
     background:
-      linear-gradient(to right, rgb(var(--sand) / 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(var(--sand) / 0.05) 1px, transparent 1px);
-    background-size: min(24vw, 220px) 100%, 100% 7rem;
+      linear-gradient(to right, rgb(var(--sand) / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--sand) / 0.04) 1px, transparent 1px);
+    background-size: min(24vw, 220px) 100%, 100% 7.5rem;
     mask-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.32),
-      rgba(0, 0, 0, 0.12) 26%,
-      transparent 52%
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.08) 22%,
+      transparent 48%
     );
   }
 
@@ -113,11 +114,11 @@
     border: 1px solid rgb(var(--sand) / 0.28);
     background: linear-gradient(
       180deg,
-      rgb(var(--white) / 0.94) 0%,
-      rgb(var(--cream) / 0.86) 100%
+      rgb(var(--white) / 0.96) 0%,
+      rgb(var(--cream) / 0.92) 100%
     );
     box-shadow:
-      0 24px 80px rgb(var(--warm-black) / 0.08),
+      0 22px 60px rgb(var(--warm-black) / 0.07),
       inset 0 1px 0 rgb(var(--white) / 0.8);
     backdrop-filter: blur(14px);
   }
@@ -141,11 +142,11 @@
     border: 1px solid rgb(var(--sand) / 0.18);
     background: linear-gradient(
       180deg,
-      rgb(var(--warm-black) / 0.92) 0%,
-      rgb(var(--charcoal) / 0.88) 100%
+      rgb(91 79 69 / 0.96) 0%,
+      rgb(66 58 51 / 0.94) 100%
     );
     box-shadow:
-      0 28px 90px rgb(var(--warm-black) / 0.34),
+      0 24px 72px rgb(var(--warm-black) / 0.18),
       inset 0 1px 0 rgb(var(--white) / 0.08);
     backdrop-filter: blur(14px);
   }
@@ -194,15 +195,15 @@
     display: inline-flex;
     align-items: center;
     gap: 0.65rem;
-    border: 1px solid rgb(var(--sand) / 0.18);
-    background: rgb(var(--white) / 0.04);
+    border: 1px solid rgb(var(--sand) / 0.28);
+    background: rgb(var(--white) / 0.74);
     padding: 0.7rem 0.95rem;
     font-family: var(--font-mono), monospace;
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgb(var(--warm-sand));
+    color: rgb(var(--accent-dark));
   }
 
   .field-shell {

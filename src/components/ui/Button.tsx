@@ -17,13 +17,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants = {
       primary:
-        'border-accent bg-accent text-warm-black shadow-[0_18px_40px_rgb(var(--accent)/0.18)] hover:-translate-y-0.5 hover:bg-accent-light hover:shadow-[0_22px_48px_rgb(var(--accent)/0.26)]',
+        'border-accent bg-accent text-warm-black shadow-[0_16px_32px_rgb(var(--accent)/0.16)] hover:-translate-y-0.5 hover:bg-accent-light hover:shadow-[0_20px_40px_rgb(var(--accent)/0.2)]',
       secondary:
-        'border-sand/25 bg-transparent text-cream hover:-translate-y-0.5 hover:border-accent-light hover:bg-white/5 hover:text-white',
+        'border-sand/35 bg-white/72 text-charcoal hover:-translate-y-0.5 hover:border-accent hover:bg-white hover:text-charcoal',
       dark:
         'border-charcoal bg-charcoal text-cream hover:-translate-y-0.5 hover:bg-slate hover:text-white',
       outline:
-        'border-charcoal/20 bg-white/40 text-charcoal hover:-translate-y-0.5 hover:border-accent hover:bg-white/80 hover:text-accent',
+        'border-charcoal/16 bg-white/55 text-charcoal hover:-translate-y-0.5 hover:border-accent hover:bg-white hover:text-accent',
     };
 
     const sizes = {

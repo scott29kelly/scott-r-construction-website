@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import { SiteShell } from '@/components/layout/SiteShell';
 import { Hero } from '@/components/sections/Hero';
-import { Services } from '@/components/sections/Services';
-import { Testimonials } from '@/components/sections/Testimonials';
-import { Proof } from '@/components/sections/Proof';
 
 export const metadata: Metadata = {
   title: 'Scott Romanoski Construction | Langhorne, PA',
@@ -15,9 +12,6 @@ export default function Home() {
   return (
     <SiteShell>
       <Hero />
-      <Services />
-      <Proof />
-      <Testimonials />
     </SiteShell>
   );
 }
