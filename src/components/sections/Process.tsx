@@ -2,92 +2,100 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Phone } from 'lucide-react';
 import { PROCESS_STEPS, SCHEDULING_SIGNALS } from '@/lib/constants';
-import { SectionLabel } from '@/components/ui/SectionLabel';
-import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 import { buildContactHref } from '@/lib/contact-link';
 
 export function Process() {
   return (
-    <section id="process" className="section-padding bg-charcoal bg-noise relative border-t border-sand/10">
-      <div className="container mx-auto px-6 max-w-7xl">
-        
-        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-32">
-          <ScrollReveal>
-            <SectionLabel light className="justify-center">How It Works</SectionLabel>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-tight mb-6">
-              From First Call to Final Walkthrough
-            </h2>
-          </ScrollReveal>
+    <section id="process" className="relative overflow-hidden section-padding text-cream">
+      <div className="absolute inset-0 bg-warm-black bg-noise" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(181,123,67,0.16),transparent_28%)]" />
+
+      <div className="container relative z-10 mx-auto max-w-7xl px-6">
+        <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
+          <div className="max-w-3xl">
+            <ScrollReveal>
+              <SectionLabel light>How It Works</SectionLabel>
+            </ScrollReveal>
+            <ScrollReveal delay={0.08}>
+              <h2 className="font-display text-4xl leading-[1.02] text-cream md:text-5xl lg:text-6xl">
+                A straightforward path from first call to final walkthrough.
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.16}>
+              <p className="mt-6 text-lg leading-relaxed text-ash">
+                The process is meant to feel clear, human, and accountable. You always know
+                who you are talking to, what the next step is, and how the project is moving.
+              </p>
+            </ScrollReveal>
+          </div>
+
           <ScrollReveal delay={0.2}>
-            <p className="text-ash text-lg leading-relaxed">
-              A straightforward process with clear communication at every step. No surprises, no runaround.
-            </p>
+            <div className="site-panel-dark bg-noise p-7 md:p-8">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent-light">
+                Scheduling note
+              </p>
+              <h3 className="mt-4 font-display text-3xl leading-tight text-cream">
+                Reach out early if timing matters.
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-ash">
+                {SCHEDULING_SIGNALS.processMessage}
+              </p>
+            </div>
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+        <div className="mt-12 grid gap-6 lg:grid-cols-4">
           {PROCESS_STEPS.map((step, index) => (
-            <ScrollReveal 
-              key={step.id} 
-              delay={0.1 * index}
-              className="relative"
-            >
-              {/* Connector line for desktop */}
-              {index < PROCESS_STEPS.length - 1 && (
-                <div className="hidden lg:block absolute top-12 left-1/2 w-full h-px bg-sand/10" />
-              )}
-              
-              <div className="relative z-10 flex flex-col md:items-start lg:items-center text-left lg:text-center">
-                <span className="font-display text-6xl md:text-7xl text-accent/10 leading-none mb-6 block font-bold">
-                  {step.number}
-                </span>
-                <h4 className="font-display text-2xl text-cream mb-4">
+            <ScrollReveal key={step.id} delay={0.08 * index} className="relative h-full">
+              <div className="site-panel-dark flex h-full flex-col p-7">
+                <p className="font-display text-6xl leading-none text-accent/24">{step.number}</p>
+                <h3 className="mt-6 font-display text-3xl leading-tight text-cream">
                   {step.title}
-                </h4>
-                <p className="text-steel text-base leading-relaxed">
-                  {step.description}
-                </p>
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-ash">{step.description}</p>
               </div>
             </ScrollReveal>
           ))}
         </div>
 
-        <ScrollReveal delay={0.15} className="mt-20 md:mt-24">
-          <div className="grid gap-6 border border-sand/15 bg-white/5 p-8 backdrop-blur-sm md:grid-cols-[1.2fr_0.8fr] md:p-10">
+        <ScrollReveal delay={0.12}>
+          <div className="site-panel mt-12 grid gap-8 p-8 text-charcoal md:grid-cols-[1.15fr_0.85fr] md:p-10">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent">
                 Need clarity before you commit?
               </p>
-              <h3 className="mt-4 font-display text-3xl leading-tight text-cream md:text-4xl">
-                Ask about budget, timing, or whether your project is a good fit before you spend weeks chasing quotes.
+              <h3 className="mt-4 max-w-3xl font-display text-4xl leading-tight text-charcoal">
+                Ask about budget, timing, or whether your project is a good fit before you
+                spend weeks chasing quotes.
               </h3>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-ash">
-                Scott can usually tell you quickly whether the scope, location, and timeline sound realistic, and what the best next step should be.
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-steel">
+                Scott can usually tell you quickly whether the scope, location, and timeline
+                sound realistic, and what the best next step should be.
               </p>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-accent-light">
+              <p className="mt-4 text-sm leading-relaxed text-accent-dark">
                 {SCHEDULING_SIGNALS.processMessage}
               </p>
             </div>
 
-            <div className="flex flex-col justify-between gap-6 border-t border-sand/15 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
-              <div className="space-y-3 text-sm leading-relaxed text-ash">
+            <div className="flex flex-col justify-between gap-6 border-t border-sand/25 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+              <div className="space-y-3 text-sm leading-relaxed text-steel">
                 <p>Best for homeowners wondering:</p>
                 <p>&ldquo;Should I do this now or wait?&rdquo;</p>
                 <p>&ldquo;Is my budget in the right ballpark?&rdquo;</p>
                 <p>&ldquo;Do you work in my town?&rdquo;</p>
               </div>
 
-              <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
+              <div className="flex flex-col gap-3">
                 <Button asChild>
                   <Link href={buildContactHref({ leadSource: 'process-guidance' })}>
                     Request Project Guidance
                     <ArrowRight size={16} />
                   </Link>
                 </Button>
-                <Button asChild variant="secondary">
+                <Button asChild variant="outline">
                   <a href="tel:2155191795">
                     <Phone size={16} />
                     Call Scott

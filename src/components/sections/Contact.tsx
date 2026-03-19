@@ -140,10 +140,10 @@ function validateFormData(formData: FormData): FormErrors {
 
 function getFieldClasses(hasError: boolean): string {
   return [
-    'border bg-cream/50 px-4 py-3.5 text-charcoal outline-none transition-all',
+    'field-shell text-base',
     hasError
-      ? 'border-red-300 focus:border-red-400 focus:ring-1 focus:ring-red-300'
-      : 'border-sand/50 focus:border-accent focus:ring-1 focus:ring-accent',
+      ? 'border-red-300 focus:border-red-400 focus:ring-2 focus:ring-red-200'
+      : 'focus:border-accent focus:ring-2 focus:ring-accent/15',
   ].join(' ');
 }
 
@@ -263,7 +263,7 @@ export function Contact({
     <section id="contact" className="relative overflow-hidden bg-cream section-padding">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sand/30 to-transparent" />
 
-      <div className="container mx-auto max-w-7xl px-6">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6">
         <div className="mx-auto mb-16 max-w-3xl text-center md:mb-24">
           <ScrollReveal>
             <SectionLabel className="justify-center">Get In Touch</SectionLabel>
@@ -293,7 +293,7 @@ export function Contact({
                 sense of what comes next.
               </p>
 
-              <div className="mb-12 border border-charcoal bg-charcoal p-7 text-cream shadow-2xl shadow-charcoal/10">
+              <div className="site-panel-dark mb-12 bg-noise p-7 text-cream md:p-8">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                     <CircleHelp size={20} />
@@ -314,10 +314,7 @@ export function Contact({
 
                 <div className="mt-8 grid gap-4">
                   {ESTIMATE_FIT_CHECKLIST.map((item) => (
-                    <div
-                      key={item.id}
-                      className="border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm"
-                    >
+                    <div key={item.id} className="border border-white/10 bg-white/5 px-5 py-4">
                       <div className="flex items-start gap-3">
                         <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-accent" />
                         <div>
@@ -336,10 +333,7 @@ export function Contact({
 
               <div className="mb-12 grid gap-4">
                 {CONTACT_TRUST_POINTS.map((point) => (
-                  <div
-                    key={point.id}
-                    className="border border-sand/30 bg-white px-5 py-4 shadow-sm shadow-charcoal/5"
-                  >
+                  <div key={point.id} className="site-panel px-5 py-4">
                     <div className="mb-2 flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
                         <ShieldCheck size={18} />
@@ -354,7 +348,7 @@ export function Contact({
               </div>
 
               <div className="space-y-8">
-                <div className="group flex items-start gap-6">
+                <div className="site-panel group flex items-start gap-6 px-5 py-5">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-charcoal text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-warm-black">
                     <Phone size={20} />
                   </div>
@@ -371,7 +365,7 @@ export function Contact({
                   </div>
                 </div>
 
-                <div className="group flex items-start gap-6">
+                <div className="site-panel group flex items-start gap-6 px-5 py-5">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-charcoal text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-warm-black">
                     <Mail size={20} />
                   </div>
@@ -388,7 +382,7 @@ export function Contact({
                   </div>
                 </div>
 
-                <div className="group flex items-start gap-6">
+                <div className="site-panel group flex items-start gap-6 px-5 py-5">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-charcoal text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-warm-black">
                     <MapPin size={20} />
                   </div>
@@ -400,7 +394,7 @@ export function Contact({
                   </div>
                 </div>
 
-                <div className="group flex items-start gap-6">
+                <div className="site-panel group flex items-start gap-6 px-5 py-5">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-charcoal text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-warm-black">
                     <Clock size={20} />
                   </div>
@@ -422,7 +416,7 @@ export function Contact({
           <div className="order-1 lg:order-2">
             <ScrollReveal direction="left" delay={0.2}>
               {status === 'success' ? (
-                <div className="border border-sand/30 bg-white p-8 text-center shadow-2xl shadow-charcoal/5 md:p-12">
+                <div className="site-panel p-8 text-center md:p-12">
                   <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10">
                     <CheckCircle2 size={32} className="text-accent" />
                   </div>
@@ -432,7 +426,7 @@ export function Contact({
                     follow up within one business day with the best next step.
                   </p>
 
-                  <div className="mx-auto mb-8 max-w-xl border border-sand/30 bg-cream/60 p-5 text-left">
+                  <div className="mx-auto mb-8 max-w-xl border border-sand/30 bg-white/55 p-5 text-left">
                     <p className="text-sm font-semibold uppercase tracking-[0.14em] text-charcoal">
                       What happens next
                     </p>
@@ -466,7 +460,7 @@ export function Contact({
                 <form
                   onSubmit={handleSubmit}
                   noValidate
-                  className="border border-sand/30 bg-white p-8 shadow-2xl shadow-charcoal/5 md:p-12"
+                  className="site-panel p-8 md:p-12"
                 >
                   <div className="mb-6 border border-accent/20 bg-accent/5 px-5 py-4">
                     <p className="text-sm font-semibold uppercase tracking-[0.14em] text-charcoal">
@@ -482,7 +476,7 @@ export function Contact({
                   </div>
 
                   {selectedService && (
-                    <div className="mb-6 border border-charcoal/10 bg-charcoal px-5 py-4 text-cream">
+                    <div className="site-panel-dark mb-6 px-5 py-4 text-cream">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-accent-light">
                         Service selected
                       </p>
@@ -496,19 +490,19 @@ export function Contact({
                   )}
 
                   <div className="mb-6 grid gap-3 sm:grid-cols-3">
-                    <div className="border border-sand/30 bg-cream/60 px-4 py-4">
+                    <div className="border border-sand/30 bg-white/55 px-4 py-4">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-steel">
                         Established
                       </p>
                       <p className="mt-2 text-sm font-semibold text-charcoal">{SITE_INFO.established}</p>
                     </div>
-                    <div className="border border-sand/30 bg-cream/60 px-4 py-4">
+                    <div className="border border-sand/30 bg-white/55 px-4 py-4">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-steel">
                         PA license
                       </p>
                       <p className="mt-2 text-sm font-semibold text-charcoal">PA012701</p>
                     </div>
-                    <div className="border border-sand/30 bg-cream/60 px-4 py-4">
+                    <div className="border border-sand/30 bg-white/55 px-4 py-4">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-steel">
                         Response window
                       </p>
@@ -518,7 +512,7 @@ export function Contact({
 
                   <div className="mb-6 grid gap-4 md:grid-cols-2">
                     {ESTIMATE_EXPECTATIONS.map((group) => (
-                      <div key={group.id} className="border border-sand/30 bg-cream/60 px-5 py-4">
+                      <div key={group.id} className="border border-sand/30 bg-white/55 px-5 py-4">
                         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-charcoal">
                           {group.heading}
                         </p>
@@ -534,7 +528,7 @@ export function Contact({
                     ))}
                   </div>
 
-                  <div className="mb-6 rounded-sm border border-dashed border-sand/40 bg-cream/40 px-5 py-4">
+                  <div className="mb-6 border border-dashed border-sand/40 bg-white/45 px-5 py-4">
                     <p className="text-sm font-semibold uppercase tracking-[0.14em] text-charcoal">
                       Faster fit check
                     </p>

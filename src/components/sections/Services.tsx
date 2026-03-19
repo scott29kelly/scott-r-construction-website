@@ -1,56 +1,75 @@
 import React from 'react';
-import { SERVICES } from '@/lib/constants';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ServiceCard } from '@/components/ui/ServiceCard';
+import { SERVICES } from '@/lib/constants';
+import { cn } from '@/lib/utils';
 
 export function Services() {
   return (
-    <section id="services" className="section-padding bg-white relative">
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        
-        <div className="max-w-3xl mb-16 md:mb-24">
-          <ScrollReveal>
-            <SectionLabel>What We Do</SectionLabel>
-          </ScrollReveal>
-          
-          <ScrollReveal delay={0.1}>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-charcoal leading-tight mb-6">
-              Comprehensive Home Construction Services
-            </h2>
-          </ScrollReveal>
-          
-          <ScrollReveal delay={0.2}>
-            <p className="text-steel text-lg leading-relaxed max-w-2xl">
-              From concept to completion, we handle every detail of your home improvement project with the uncompromising craftsmanship it deserves.
-            </p>
-          </ScrollReveal>
+    <section id="services" className="relative section-padding">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sand/30 to-transparent" />
 
-          <ScrollReveal delay={0.3}>
-            <div className="mt-8 max-w-2xl border border-sand/30 bg-cream/70 px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-charcoal">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6">
+        <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
+          <div className="max-w-3xl">
+            <ScrollReveal>
+              <SectionLabel>What We Do</SectionLabel>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.08}>
+              <h2 className="font-display text-4xl leading-[1.02] text-charcoal md:text-5xl lg:text-6xl">
+                Built for the spaces homeowners actually live in every day.
+              </h2>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.16}>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-steel">
+                From kitchens and baths to additions, decks, and Bilco door work, Scott takes
+                on projects where accountability, communication, and clean execution still
+                matter as much as the finished look.
+              </p>
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal delay={0.2}>
+            <div className="site-panel p-6 md:p-8">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent">
                 Better estimate requests start here
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-steel">
-                Choose the service closest to your project and we&apos;ll carry that context into
-                the estimate form so it&apos;s easier to share scope, timing, and location.
-              </p>
+              <h3 className="mt-4 font-display text-3xl leading-tight text-charcoal">
+                Pick the service closest to your goal so the next conversation starts with real
+                context.
+              </h3>
+              <div className="mt-5 grid gap-4 text-sm leading-relaxed text-steel sm:grid-cols-2">
+                <p>
+                  That helps Scott respond with the right questions about scope, timing, and fit
+                  instead of sending a generic follow-up.
+                </p>
+                <p>
+                  If you are between categories, choose the closest match and use the message
+                  field to explain the bigger picture.
+                </p>
+              </div>
             </div>
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, index) => (
-            <ScrollReveal 
-              key={service.id} 
-              delay={0.1 * (index % 3)} // Stagger based on column
-              className="h-full"
+            <ScrollReveal
+              key={service.id}
+              delay={0.08 * (index % 3)}
+              className={cn(
+                'h-full',
+                index % 3 === 1 ? 'lg:translate-y-10' : '',
+                index % 3 === 2 ? 'lg:translate-y-4' : ''
+              )}
             >
-              <ServiceCard service={service} className="h-full" />
+              <ServiceCard service={service} index={index} className="h-full" />
             </ScrollReveal>
           ))}
         </div>
-        
       </div>
     </section>
   );

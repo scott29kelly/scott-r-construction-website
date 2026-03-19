@@ -1,62 +1,72 @@
 import React from 'react';
+import { CheckCircle2, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { ABOUT_CONTENT, HOMEOWNER_SAFEGUARDS, SITE_INFO } from '@/lib/constants';
-import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { CheckCircle2, ShieldCheck } from 'lucide-react';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 
 export function About() {
   return (
-    <section id="about" className="relative section-padding bg-warm-black bg-noise overflow-hidden">
-      
-      {/* Decorative architectural line */}
-      <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-accent/20 to-transparent hidden lg:block" style={{ right: '15%' }} />
-      
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-          
-          {/* Text Content */}
-          <div className="lg:col-span-6 lg:pr-10">
+    <section id="about" className="relative overflow-hidden section-padding text-cream">
+      <div className="absolute inset-0 bg-warm-black bg-noise" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(181,123,67,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(216,197,168,0.08),transparent_22%)]" />
+
+      <div className="container relative z-10 mx-auto max-w-7xl px-6">
+        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div>
             <ScrollReveal>
               <SectionLabel light>About Scott</SectionLabel>
             </ScrollReveal>
-            
-            <ScrollReveal delay={0.1}>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-[1.1] mb-10 whitespace-pre-line">
+
+            <ScrollReveal delay={0.08}>
+              <h2 className="max-w-4xl whitespace-pre-line font-display text-4xl leading-[1.02] text-cream md:text-5xl lg:text-6xl">
                 {ABOUT_CONTENT.heading}
               </h2>
             </ScrollReveal>
-            
-            <div className="space-y-6 mb-12">
-              {ABOUT_CONTENT.paragraphs.map((text, i) => (
-                <ScrollReveal key={i} delay={0.2 + (i * 0.1)}>
-                  <p className={`text-lg leading-relaxed ${i === 0 ? 'text-sand/90 font-medium' : 'text-ash font-light'}`}>
+
+            <div className="mt-8 space-y-6">
+              {ABOUT_CONTENT.paragraphs.map((text, index) => (
+                <ScrollReveal key={text} delay={0.14 + index * 0.06}>
+                  <p
+                    className={
+                      index === 0
+                        ? 'text-lg leading-relaxed text-warm-sand'
+                        : 'text-lg leading-relaxed text-ash'
+                    }
+                  >
                     {text}
                   </p>
                 </ScrollReveal>
               ))}
             </div>
-            
-            <div className="space-y-4">
-              {ABOUT_CONTENT.credentials.map((cred, i) => (
-                <ScrollReveal key={i} delay={0.4 + (i * 0.05)} className="flex items-start gap-4">
-                  <CheckCircle2 size={20} className="text-accent shrink-0 mt-1" />
-                  <span className="text-cream/80 text-base">{cred}</span>
-                </ScrollReveal>
-              ))}
-            </div>
 
-            <ScrollReveal delay={0.62}>
-              <div className="mt-10 border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <ScrollReveal delay={0.28}>
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                {ABOUT_CONTENT.credentials.map((credential) => (
+                  <div
+                    key={credential}
+                    className="border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm"
+                  >
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-accent-light" />
+                      <p className="text-sm leading-relaxed text-cream/90">{credential}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.34}>
+              <div className="site-panel-dark mt-10 bg-noise p-6 md:p-8">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-accent/20 bg-accent/10 text-accent-light">
                     <ShieldCheck size={20} />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
+                    <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent-light">
                       Why it feels safer to reach out
                     </p>
-                    <h3 className="mt-3 font-display text-2xl leading-tight text-cream">
+                    <h3 className="mt-3 font-display text-3xl leading-tight text-cream">
                       Local, owner-operated, and established since {SITE_INFO.established}.
                     </h3>
                   </div>
@@ -64,8 +74,8 @@ export function About() {
 
                 <div className="mt-6 grid gap-4">
                   {HOMEOWNER_SAFEGUARDS.map((item) => (
-                    <div key={item.id} className="border border-white/10 bg-warm-black/30 px-5 py-4">
-                      <p className="text-sm font-semibold uppercase tracking-[0.12em] text-cream">
+                    <div key={item.id} className="border border-white/10 bg-white/5 px-5 py-4">
+                      <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-warm-sand">
                         {item.title}
                       </p>
                       <p className="mt-2 text-sm leading-relaxed text-ash">{item.description}</p>
@@ -75,24 +85,44 @@ export function About() {
               </div>
             </ScrollReveal>
           </div>
-          
-          {/* Image Wrapper */}
-          <div className="lg:col-span-6">
-            <ScrollReveal direction="left" delay={0.3} className="relative w-full aspect-[4/5] lg:aspect-[3/4] group">
-              {/* Offset decorative border */}
-              <div className="absolute -inset-2 md:-inset-4 lg:-inset-6 border border-sand/20 z-0 translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 lg:translate-x-6 lg:translate-y-6 transition-transform duration-700 ease-out group-hover:translate-x-2 group-hover:translate-y-2" />
-              
-              <div className="absolute inset-0 z-10 overflow-hidden border border-sand/10">
-                <Image 
-                  src="/images/scott-romanoski-self-photo-1.jpeg"
-                  alt="Scott Romanoski"
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
+
+          <div>
+            <ScrollReveal direction="left" delay={0.18}>
+              <div className="site-frame">
+                <div className="relative aspect-[4/5] overflow-hidden border border-white/10 bg-white/5">
+                  <Image
+                    src="/images/scott-romanoski-self-photo-1.jpeg"
+                    alt="Scott Romanoski"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-warm-black via-warm-black/80 to-transparent p-6 md:p-8">
+                    <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent-light">
+                      Owner-led by design
+                    </p>
+                    <p className="mt-3 max-w-md text-base leading-relaxed text-cream/90">
+                      Homeowners are not handed off to a sales layer. The same person discussing
+                      the estimate is accountable for how the work gets built.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.26}>
+              <div className="site-panel mt-8 p-6 text-charcoal">
+                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent">
+                  The working style
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-steel">
+                  Scott&apos;s reputation is tied to clean communication, realistic expectations,
+                  and making sure the finished work still feels right once people are living in
+                  the space every day.
+                </p>
               </div>
             </ScrollReveal>
           </div>
-          
         </div>
       </div>
     </section>

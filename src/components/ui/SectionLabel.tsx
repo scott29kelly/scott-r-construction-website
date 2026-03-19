@@ -9,8 +9,19 @@ interface SectionLabelProps {
 
 export function SectionLabel({ children, className, light = false }: SectionLabelProps) {
   return (
-    <div className={cn('flex items-center gap-3 text-xs font-semibold tracking-[0.18em] uppercase mb-4', light ? 'text-accent-light' : 'text-accent', className)}>
-      <span className={cn('w-6 h-px', light ? 'bg-accent-light' : 'bg-accent')} />
+    <div
+      className={cn(
+        'mb-5 inline-flex items-center gap-3 font-mono text-[11px] font-bold uppercase tracking-[0.24em]',
+        light ? 'text-accent-light' : 'text-accent',
+        className
+      )}
+    >
+      <span
+        className={cn(
+          'h-px w-10 bg-current opacity-80',
+          light ? 'text-accent-light' : 'text-accent'
+        )}
+      />
       {children}
     </div>
   );

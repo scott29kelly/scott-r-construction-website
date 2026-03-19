@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -9,28 +9,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: '#2e2e2e',
-        'warm-black': '#242424',
-        slate: '#454545',
-        concrete: '#525252',
-        steel: '#6b6b6b',
-        ash: '#9a9a9a',
-        sand: '#c4b5a0',
-        'warm-sand': '#d4c4ad',
-        cream: '#f8f6f3',
-        white: '#fafaf8',
+        charcoal: 'rgb(var(--charcoal) / <alpha-value>)',
+        'warm-black': 'rgb(var(--warm-black) / <alpha-value>)',
+        slate: 'rgb(var(--slate) / <alpha-value>)',
+        concrete: 'rgb(var(--concrete) / <alpha-value>)',
+        steel: 'rgb(var(--steel) / <alpha-value>)',
+        ash: 'rgb(var(--ash) / <alpha-value>)',
+        sand: 'rgb(var(--sand) / <alpha-value>)',
+        'warm-sand': 'rgb(var(--warm-sand) / <alpha-value>)',
+        cream: 'rgb(var(--cream) / <alpha-value>)',
+        white: 'rgb(var(--white) / <alpha-value>)',
         accent: {
-          DEFAULT: '#B08D57',
-          light: '#CBAE80',
-          dark: '#8C6F42'
-        }
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          light: 'rgb(var(--accent-light) / <alpha-value>)',
+          dark: 'rgb(var(--accent-dark) / <alpha-value>)',
+        },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'sans-serif'],
+        display: ['var(--font-display)', 'serif'],
         body: ['var(--font-body)', 'sans-serif'],
-      }
+        mono: ['var(--font-mono)', 'monospace'],
+      },
     },
   },
   plugins: [],
-}
-export default config
+};
+
+export default config;

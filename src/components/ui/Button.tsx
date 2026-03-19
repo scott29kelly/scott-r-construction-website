@@ -8,20 +8,28 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', asChild = false, children, ...props }, ref) => {
-    const baseStyles = 'inline-flex items-center justify-center gap-2 font-body font-semibold tracking-[0.08em] uppercase transition-all duration-300 ease-out cursor-pointer';
+  (
+    { className, variant = 'primary', size = 'md', asChild = false, children, ...props },
+    ref
+  ) => {
+    const baseStyles =
+      'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-none border font-mono font-bold uppercase tracking-[0.18em] transition-all duration-500 ease-out disabled:pointer-events-none disabled:opacity-60';
 
     const variants = {
-      primary: 'bg-accent text-warm-black hover:bg-accent-light hover:-translate-y-0.5 shadow-sm hover:shadow-md',
-      secondary: 'bg-transparent text-cream border border-sand/30 hover:border-accent hover:text-accent',
-      dark: 'bg-charcoal text-cream hover:bg-slate',
-      outline: 'bg-transparent text-charcoal border border-charcoal/20 hover:border-accent hover:text-accent',
+      primary:
+        'border-accent bg-accent text-warm-black shadow-[0_18px_40px_rgb(var(--accent)/0.18)] hover:-translate-y-0.5 hover:bg-accent-light hover:shadow-[0_22px_48px_rgb(var(--accent)/0.26)]',
+      secondary:
+        'border-sand/25 bg-transparent text-cream hover:-translate-y-0.5 hover:border-accent-light hover:bg-white/5 hover:text-white',
+      dark:
+        'border-charcoal bg-charcoal text-cream hover:-translate-y-0.5 hover:bg-slate hover:text-white',
+      outline:
+        'border-charcoal/20 bg-white/40 text-charcoal hover:-translate-y-0.5 hover:border-accent hover:bg-white/80 hover:text-accent',
     };
-    
+
     const sizes = {
-      sm: 'px-4 py-2.5 text-xs',
-      md: 'px-8 py-4 text-sm',
-      lg: 'px-10 py-5 text-base',
+      sm: 'px-4 py-3 text-[10px]',
+      md: 'px-6 py-4 text-[11px]',
+      lg: 'px-8 py-5 text-[11px] md:text-xs',
     };
 
     const buttonClassName = cn(baseStyles, variants[variant], sizes[size], className);
@@ -33,11 +41,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     }
 
     return (
-      <button
-        ref={ref}
-        className={buttonClassName}
-        {...props}
-      >
+      <button ref={ref} className={buttonClassName} {...props}>
         {children}
       </button>
     );

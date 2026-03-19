@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
-import { Montserrat, Manrope } from 'next/font/google';
+import { Fraunces, Manrope, Space_Mono } from 'next/font/google';
 import { StructuredData } from '@/components/StructuredData';
 import './globals.css';
 
-// Load our Canva-compatible modern font pairing
-const montserrat = Montserrat({
+const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
@@ -15,13 +14,20 @@ const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
-  weight: ['300', '400', '500', '600'],
+});
+
+const spaceMono = Space_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://scottromconstruction.com'),
   title: 'Scott Romanoski Construction | Langhorne, PA',
-  description: 'Building Better Spaces for Bucks County Families. Remodeling, additions, decks, and patios — crafted with 18+ years of hands-on experience.',
+  description:
+    'Building better spaces for Bucks County families. Remodeling, additions, decks, and patios crafted with 18+ years of hands-on experience.',
   keywords: [
     'home remodeling Langhorne PA',
     'construction contractor Bucks County',
@@ -35,7 +41,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Scott Romanoski Construction | Langhorne, PA',
-    description: 'Remodeling, additions, decks, and patios — crafted with 18+ years of hands-on experience. Licensed in PA & NJ. A+ BBB Rating.',
+    description:
+      'Remodeling, additions, decks, and patios crafted with 18+ years of hands-on experience. Licensed in PA & NJ. A+ BBB rating.',
     url: 'https://scottromconstruction.com',
     siteName: 'Scott Romanoski Construction',
     locale: 'en_US',
@@ -44,7 +51,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Scott Romanoski Construction | Langhorne, PA',
-    description: 'Remodeling, additions, decks, and patios — crafted with 18+ years of hands-on experience.',
+    description:
+      'Remodeling, additions, decks, and patios crafted with 18+ years of hands-on experience.',
   },
   robots: {
     index: true,
@@ -58,7 +66,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${manrope.variable} scroll-smooth`}>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${manrope.variable} ${spaceMono.variable} scroll-smooth`}
+    >
       <body className="font-body bg-cream text-charcoal antialiased selection:bg-accent selection:text-white">
         <StructuredData />
         {children}

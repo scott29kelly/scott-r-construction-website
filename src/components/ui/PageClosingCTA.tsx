@@ -20,34 +20,48 @@ export function PageClosingCTA({
   projectType,
 }: PageClosingCTAProps) {
   return (
-    <section className="border-t border-sand/10 bg-charcoal bg-noise py-20 text-cream">
-      <div className="container mx-auto max-w-7xl px-6">
-        <div className="grid gap-8 border border-sand/15 bg-white/5 p-8 backdrop-blur-sm md:grid-cols-[1.15fr_0.85fr] md:p-10">
+    <section className="relative overflow-hidden border-t border-sand/15 bg-warm-black bg-noise py-20 text-cream md:py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(181,123,67,0.18),transparent_28%)]" />
+
+      <div className="container relative z-10 mx-auto max-w-7xl px-6">
+        <div className="site-panel-dark grid gap-8 p-8 md:grid-cols-[1.15fr_0.85fr] md:p-10">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
+            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-accent-light">
               {eyebrow}
             </p>
-            <h2 className="mt-4 max-w-3xl font-display text-3xl leading-tight md:text-4xl">
+            <h2 className="mt-4 max-w-3xl font-display text-3xl leading-tight md:text-5xl">
               {title}
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-ash">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-ash md:text-lg">
               {description}
             </p>
           </div>
 
-          <div className="flex flex-col justify-center gap-4 border-t border-sand/15 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
-            <Button asChild>
-              <Link href={buildContactHref({ leadSource, projectType })}>
-                Request an Estimate
-                <ArrowRight size={16} />
-              </Link>
-            </Button>
-            <Button asChild variant="secondary">
-              <a href="tel:2155191795">
-                <Phone size={16} />
-                Call Scott
-              </a>
-            </Button>
+          <div className="flex flex-col justify-between gap-6 border-t border-white/10 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+            <div className="border border-white/10 bg-white/5 px-5 py-4">
+              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-warm-sand">
+                Better estimate requests
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-cream/90">
+                Include the project type, town, and timing window so Scott can confirm fit and
+                recommend the right next step faster.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <Button asChild>
+                <Link href={buildContactHref({ leadSource, projectType })}>
+                  Request an Estimate
+                  <ArrowRight size={16} />
+                </Link>
+              </Button>
+              <Button asChild variant="secondary">
+                <a href="tel:2155191795">
+                  <Phone size={16} />
+                  Call Scott
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
