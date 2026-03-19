@@ -62,10 +62,10 @@ export function Portfolio() {
               <div className="absolute inset-0 bg-gradient-to-t from-warm-black via-warm-black/55 to-warm-black/10" />
 
               <div className="absolute inset-x-0 top-0 z-10 flex flex-wrap gap-2 p-5 md:p-6">
-                {item.tags.map((tag) => (
+                {item.tags.slice(0, 2).map((tag) => (
                   <span
                     key={tag}
-                    className="border border-white/20 bg-warm-black/45 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm"
+                    className="border border-white/15 bg-warm-black/45 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm"
                   >
                     {tag}
                   </span>
@@ -73,32 +73,24 @@ export function Portfolio() {
               </div>
 
               <div className="absolute inset-x-0 bottom-0 z-10 p-6 md:p-8">
-                <span className="block text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-                  {item.location}
-                </span>
-                <h4 className="mt-2 font-display text-2xl text-cream">{item.title}</h4>
-                <p className="mt-3 text-sm font-semibold uppercase tracking-[0.14em] text-sand/90">
-                  Homeowner goal
-                </p>
-                <p className="mt-2 max-w-md text-sm leading-relaxed text-cream">
-                  {item.homeownerGoal}
-                </p>
+                <div className="max-w-sm">
+                  <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-accent/95">
+                    {item.location}
+                  </span>
+                  <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-sand/90">
+                    {item.scope}
+                  </p>
+                  <h4 className="mt-3 font-display text-2xl leading-[1.05] text-cream md:text-[2rem]">
+                    {item.title}
+                  </h4>
+                  <p className="mt-3 max-w-[28ch] text-sm leading-6 text-cream/90">
+                    {item.summary}
+                  </p>
 
-                <div className="mt-4 border-t border-white/15 pt-4">
-                  <p className="text-sm font-medium leading-relaxed text-cream">{item.outcome}</p>
-                </div>
-
-                <div className="mt-4 space-y-4 md:max-h-0 md:overflow-hidden md:opacity-0 md:transition-all md:duration-500 md:ease-out md:group-hover:max-h-64 md:group-hover:opacity-100">
-                  <p className="max-w-md text-sm leading-relaxed text-ash">{item.projectStory}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {item.projectHighlights.map((highlight) => (
-                      <span
-                        key={highlight}
-                        className="border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream"
-                      >
-                        {highlight}
-                      </span>
-                    ))}
+                  <div className="mt-4 overflow-hidden border-t border-white/15 pt-4">
+                    <p className="text-sm font-medium leading-6 text-ash md:translate-y-3 md:text-ash/0 md:transition-all md:duration-500 md:ease-out md:group-hover:translate-y-0 md:group-hover:text-ash">
+                      {item.outcome}
+                    </p>
                   </div>
                 </div>
               </div>
