@@ -1,0 +1,73 @@
+
+> home-remodeling-website@1.0.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.2.0.2:3000
+
+✓ Starting...
+✓ Ready in 582ms
+ GET / 200 in 1698ms (compile: 998ms, render: 700ms)
+ GET /icon?d0f0dd5c042f4b5d 200 in 117ms (compile: 41ms, render: 76ms)
+ GET / 200 in 156ms (compile: 66ms, render: 90ms)
+ GET /about 200 in 250ms (compile: 47ms, render: 203ms)
+ GET /contact?leadSource=test-check&projectType=Home%20Remodeling 200 in 104ms (compile: 48ms, render: 56ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 81ms (compile: 27ms, render: 54ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 29ms (compile: 2ms, render: 26ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 23ms (compile: 3ms, render: 20ms)
+✓ Compiled in 36ms
+✓ Compiled in 34ms
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 29ms (compile: 3ms, render: 26ms)
+✓ Compiled in 74ms
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 85ms (compile: 33ms, render: 52ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 27ms (compile: 3ms, render: 24ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 29ms (compile: 3ms, render: 26ms)
+✓ Compiled in 40ms
+✓ Compiled in 72ms
+✓ Compiled in 26ms
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 87ms (compile: 34ms, render: 53ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 32ms (compile: 3ms, render: 29ms)
+✓ Compiled in 41ms
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 60ms (compile: 30ms, render: 30ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 48ms (compile: 26ms, render: 23ms)
+✓ Compiled in 30ms
+ GET / 200 in 1117ms (compile: 125ms, render: 992ms)
+ GET /icon?d0f0dd5c042f4b5d 200 in 36ms (compile: 4ms, render: 32ms)
+ GET / 200 in 974ms (compile: 27ms, render: 947ms)
+✓ Compiled in 109ms
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 366ms (compile: 39ms, render: 326ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 187ms (compile: 4ms, render: 183ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 106ms (compile: 3ms, render: 103ms)
+ GET / 200 in 399ms (compile: 90ms, render: 309ms)
+ GET / 200 in 220ms (compile: 16ms, render: 204ms)
+ GET / 200 in 139ms (compile: 16ms, render: 123ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 322ms (compile: 117ms, render: 205ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 178ms (compile: 75ms, render: 103ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 88ms (compile: 55ms, render: 33ms)
+ GET / 200 in 353ms (compile: 30ms, render: 323ms)
+ GET / 200 in 209ms (compile: 4ms, render: 205ms)
+ GET / 200 in 117ms (compile: 3ms, render: 114ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 105ms (compile: 2ms, render: 103ms)
+ GET / 200 in 105ms (compile: 27ms, render: 78ms)
+ GET /contact?leadSource=test-check&projectType=Home+Remodeling 200 in 118ms (compile: 3ms, render: 115ms)
+ GET / 200 in 114ms (compile: 29ms, render: 85ms)
+✓ Compiled in 36ms
+✓ Compiled in 61ms
+ GET / 200 in 83ms (compile: 29ms, render: 54ms)
+ GET / 200 in 36ms (compile: 1993µs, render: 34ms)
+ GET / 200 in 18ms (compile: 2ms, render: 16ms)
+ GET / 200 in 210ms (compile: 31ms, render: 179ms)
+ GET / 200 in 124ms (compile: 2ms, render: 122ms)
+ GET / 200 in 74ms (compile: 2ms, render: 72ms)
+ GET / 200 in 729ms (compile: 1858µs, render: 727ms)
+ GET / 200 in 272ms (compile: 39ms, render: 233ms)
+ GET / 200 in 157ms (compile: 2ms, render: 155ms)
+ GET / 200 in 94ms (compile: 2ms, render: 92ms)
+ GET /login?role=rep 404 in 458ms (compile: 413ms, render: 44ms)
+✓ Compiled in 165ms
+✓ Compiled in 464ms
+ GET / 200 in 296ms (compile: 103ms, render: 192ms)
+ GET / 200 in 125ms (compile: 4ms, render: 120ms)
+ GET / 200 in 79ms (compile: 4ms, render: 74ms)
+ GET / 200 in 44ms (compile: 5ms, render: 39ms)
