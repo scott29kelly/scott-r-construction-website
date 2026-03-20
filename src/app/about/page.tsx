@@ -5,7 +5,7 @@ import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
 
 export const metadata: Metadata = {
-  title: 'About | Scott Romanoski Construction',
+  title: 'About',
   description:
     'Learn more about Scott Romanoski Construction, the owner-led approach, credentials, and the trust signals behind the work.',
 };
@@ -18,6 +18,24 @@ export default function AboutPage() {
         title="Owner-led construction with accountability homeowners can actually feel."
         description="Get a clearer sense of who is handling the work, how Scott stays involved, and why homeowners reach out when they want straightforward answers and quality craftsmanship."
         leadSource="about-page-hero"
+        chips={['Owner-operated since 2007', 'PA License #PA012701', 'Direct communication']}
+        facts={[
+          {
+            label: 'Working style',
+            value: 'Scott stays involved from estimate to walkthrough instead of handing you off.',
+          },
+          {
+            label: 'Credentials',
+            value: 'Licensed in Pennsylvania and New Jersey, fully insured, and Bilco certified.',
+          },
+          {
+            label: 'Best fit',
+            value: 'Homeowners who want a capable builder and a calmer, more accountable process.',
+          },
+        ]}
+        asideEyebrow="Why homeowners reach out"
+        asideTitle="A clearer picture of who is actually showing up for the work."
+        asideDescription="This page is built to answer the trust, communication, and accountability questions homeowners usually have before they reach out."
       />
       <About />
       <PageClosingCTA

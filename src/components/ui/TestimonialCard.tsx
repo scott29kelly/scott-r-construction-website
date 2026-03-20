@@ -16,10 +16,10 @@ export function TestimonialCard({ testimonial, className }: TestimonialCardProps
       </span>
 
       <div className="relative z-10 flex flex-wrap items-center gap-3">
-        <span className="border border-accent/20 bg-accent/10 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-charcoal">
+        <span className="border border-accent/20 bg-accent/10 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-charcoal">
           {testimonial.highlight}
         </span>
-        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-steel">
+        <span className="border border-sand/30 bg-white/55 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-steel">
           {testimonial.location}
         </span>
       </div>

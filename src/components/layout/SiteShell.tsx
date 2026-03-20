@@ -9,10 +9,18 @@ interface SiteShellProps {
 
 export function SiteShell({ children }: SiteShellProps) {
   return (
-    <main className="relative z-10 min-h-screen overflow-x-clip selection:bg-accent selection:text-white">
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_top_left,rgba(181,123,67,0.12),transparent_28%),radial-gradient(circle_at_top_right,rgba(216,197,168,0.22),transparent_22%)]" />
+    <main className="page-shell relative z-10 min-h-screen overflow-x-clip">
+      <a
+        href="#content"
+        className="sr-only fixed left-4 top-4 z-[70] border border-accent bg-white px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-charcoal focus:not-sr-only"
+      >
+        Skip to content
+      </a>
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[42rem] bg-[radial-gradient(circle_at_12%_0%,rgba(183,126,73,0.16),transparent_24%),radial-gradient(circle_at_88%_10%,rgba(225,207,181,0.18),transparent_18%)]" />
       <Navbar />
-      {children}
+      <div id="content" className="relative z-10">
+        {children}
+      </div>
       <Footer />
       <StickyMobileCTA />
     </main>

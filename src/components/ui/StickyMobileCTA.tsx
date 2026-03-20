@@ -8,17 +8,17 @@ import { buildContactHref } from '@/lib/contact-link';
 export function StickyMobileCTA() {
   return (
     <>
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-sand/25 bg-[rgba(249,245,238,0.92)] px-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 shadow-[0_-14px_32px_rgba(38,35,32,0.08)] backdrop-blur-xl md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[rgba(23,20,18,0.9)] px-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 shadow-[0_-14px_32px_rgba(23,20,18,0.18)] backdrop-blur-xl md:hidden">
         <div className="mx-auto max-w-md">
-          <div className="site-panel px-4 py-4">
-            <p className="text-center font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent-dark">
+          <div className="site-panel-dark bg-noise px-4 py-4">
+            <p className="text-center font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-warm-sand">
               Free estimate. Reply within 1 business day.
             </p>
 
             <div className="mt-4 flex items-center gap-3">
               <a
                 href="tel:2155191795"
-                className="flex min-w-0 flex-1 items-center justify-center gap-2 border border-sand/35 bg-white/70 px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-charcoal"
+                className="flex min-w-0 flex-1 items-center justify-center gap-2 border border-white/12 bg-white/8 px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-cream"
               >
                 <Phone size={16} />
                 Call Scott
@@ -35,7 +35,13 @@ export function StickyMobileCTA() {
       </div>
 
       <div className="fixed bottom-6 right-6 z-50 hidden md:block">
-        <div className="flex items-center gap-3 border border-sand/30 bg-white/90 p-3 shadow-[0_18px_40px_rgba(38,35,32,0.08)] backdrop-blur-xl">
+        <div className="flex items-center gap-3 border border-white/10 bg-[rgba(29,25,22,0.9)] p-3 shadow-[0_20px_48px_rgba(23,20,18,0.24)] backdrop-blur-xl">
+          <div className="hidden border-r border-white/10 pr-3 lg:block">
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-warm-sand">
+              Owner-led estimate
+            </p>
+            <p className="mt-1 text-sm text-ash">Direct follow-up within 1 business day</p>
+          </div>
           <Link
             href={buildContactHref({ leadSource: 'floating-desktop-cta' })}
             className="inline-flex items-center justify-center border border-accent bg-accent px-5 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-warm-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-light"
@@ -45,7 +51,7 @@ export function StickyMobileCTA() {
           <a
             href="tel:2155191795"
             aria-label="Call Scott"
-            className="inline-flex h-11 w-11 items-center justify-center border border-sand/30 bg-white/75 text-charcoal transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-white"
+            className="inline-flex h-11 w-11 items-center justify-center border border-white/12 bg-white/10 text-cream transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-white/14"
           >
             <Phone size={18} />
           </a>
