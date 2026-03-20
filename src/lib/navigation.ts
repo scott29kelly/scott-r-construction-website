@@ -8,5 +8,6 @@ export const PRIMARY_NAV_LINKS: NavigationLink[] = [
   { name: 'About', href: '/about' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Process', href: '/process' },
+  { name: 'Testimonials', href: '/#testimonials' },
   { name: 'Contact', href: '/contact' },
 ];

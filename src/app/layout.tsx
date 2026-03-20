@@ -1,26 +1,20 @@
 import type { Metadata } from 'next';
-import { Fraunces, Manrope, Space_Mono } from 'next/font/google';
+import { Belleza, Lato } from 'next/font/google';
 import { StructuredData } from '@/components/StructuredData';
 import './globals.css';
 
-const fraunces = Fraunces({
+const belleza = Belleza({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: '400',
 });
 
-const manrope = Manrope({
+const lato = Lato({
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
-});
-
-const spaceMono = Space_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  display: 'swap',
-  weight: ['400', '700'],
+  weight: ['300', '400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -71,9 +65,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${manrope.variable} ${spaceMono.variable} scroll-smooth`}
+      className={`${belleza.variable} ${lato.variable} scroll-smooth`}
     >
-      <body className="min-h-screen overflow-x-clip bg-cream font-body text-charcoal antialiased selection:bg-accent selection:text-warm-black">
+      <body className="min-h-screen overflow-x-clip bg-white font-body text-text-body antialiased">
         <StructuredData />
         {children}
       </body>
