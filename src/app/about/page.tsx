@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SiteShell } from '@/components/layout/SiteShell';
 import { About } from '@/components/sections/About';
+import { Team } from '@/components/sections/Team';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
 
@@ -38,6 +39,7 @@ export default function AboutPage() {
         asideDescription="This page is built to answer the trust, communication, and accountability questions homeowners usually have before they reach out."
       />
       <About />
+      <Team />
       <PageClosingCTA
         eyebrow="Work with the owner directly"
         title="If the person estimating the work matters to you, this is the right time to start the conversation."

@@ -1,8 +1,6 @@
 import React from 'react';
+import { ArrowRight, Phone } from 'lucide-react';
 import Link from 'next/link';
-import { Phone } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { SectionLabel } from '@/components/ui/SectionLabel';
 import { SCHEDULING_SIGNALS, SITE_INFO } from '@/content';
 import { buildContactHref } from '@/lib/contact-link';
 
@@ -54,65 +52,77 @@ export function PageHero({
   ];
 
   return (
-    <section className="relative overflow-hidden border-b border-sand/20 pt-36 md:pt-44">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(183,126,73,0.14),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(221,183,132,0.18),transparent_24%),linear-gradient(180deg,rgba(251,248,242,0.98),rgba(244,239,231,0.98))]" />
-
-      <div className="container relative z-10 mx-auto max-w-7xl px-6 pb-20 md:pb-24">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end">
+    <section className="bg-navy pt-36 text-white md:pt-44">
+      <div className="mx-auto max-w-site px-[50px] pb-20 max-lg:px-6 md:pb-24">
+        <div className="grid gap-10 lg:grid-cols-[1fr_340px] lg:items-end">
+          {/* Main content */}
           <div>
-            <SectionLabel>{eyebrow}</SectionLabel>
-            <h1 className="max-w-5xl text-balance font-display text-5xl leading-[0.94] text-charcoal sm:text-6xl lg:text-[4.8rem]">
+            <p className="section-label text-white/60">{eyebrow}</p>
+
+            <h1 className="mt-4 max-w-[900px] text-balance font-display text-section-heading max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
               {title}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-steel md:text-xl">
+
+            <p className="mt-6 max-w-[640px] text-body-lg text-white/75">
               {description}
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button asChild size="lg">
-                <Link href={buildContactHref({ leadSource })}>Request an Estimate</Link>
-              </Button>
-              <Button asChild variant="secondary" size="lg">
-                <a href="tel:2155191795">
-                  <Phone size={18} />
-                  Call (215) 519-1795
-                </a>
-              </Button>
+              <Link
+                href={buildContactHref({ leadSource })}
+                className="btn-primary btn-primary-light"
+              >
+                Request an Estimate
+                <ArrowRight className="btn-arrow" />
+              </Link>
+              <a
+                href="tel:2155191795"
+                className="btn-outline btn-outline-light"
+              >
+                <Phone size={14} />
+                Call (215) 519-1795
+              </a>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
               {heroChips.map((chip) => (
-                <span key={chip} className="site-chip">
+                <span
+                  key={chip}
+                  className="border border-white/30 px-4 py-2 text-btn-sm uppercase text-white/90"
+                >
                   {chip}
                 </span>
               ))}
             </div>
           </div>
 
-          <aside className="site-panel-dark bg-noise p-6 text-cream md:p-7">
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.24em] text-warm-sand">
-              {asideEyebrow}
-            </p>
-            <h2 className="mt-4 font-display text-3xl leading-tight text-cream">
+          {/* Aside panel */}
+          <aside className="border border-white/15 bg-white/5 p-6 md:p-7">
+            <p className="section-label text-white/50">{asideEyebrow}</p>
+
+            <h2 className="mt-4 font-display text-card-heading text-white max-md:text-[24px] max-md:leading-[30px]">
               {asideTitle}
             </h2>
 
             <div className="mt-5 grid gap-3">
               {facts.map((fact) => (
-                <div key={fact.label} className="border border-white/10 bg-white/6 px-4 py-4">
-                  <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-warm-sand">
-                    {fact.label}
+                <div
+                  key={fact.label}
+                  className="border border-white/10 bg-white/5 px-4 py-4"
+                >
+                  <p className="section-label text-white/50">{fact.label}</p>
+                  <p className="mt-2 text-body-sm text-white/70">
+                    {fact.value}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-ash">{fact.value}</p>
                 </div>
               ))}
             </div>
 
             <div className="mt-6 border-t border-white/10 pt-5">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-warm-sand">
-                Timing note
+              <p className="section-label text-white/50">Timing note</p>
+              <p className="mt-2 text-body-sm text-white/70">
+                {asideDescription}
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-ash">{asideDescription}</p>
             </div>
           </aside>
         </div>

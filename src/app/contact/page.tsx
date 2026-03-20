@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SiteShell } from '@/components/layout/SiteShell';
 import { Contact } from '@/components/sections/Contact';
+import { Faq } from '@/components/sections/Faq';
 import { PageHero } from '@/components/ui/PageHero';
 
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         asideTitle="A little context up front makes the consult feel more useful right away."
         asideDescription="If you already know your town, rough scope, and timing window, Scott can usually answer fit and scheduling questions much faster."
       />
+      <Faq />
       <Contact
         initialLeadSource={leadSource}
         initialProjectType={projectType}
