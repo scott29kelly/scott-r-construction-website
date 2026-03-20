@@ -23,15 +23,20 @@ export function ServiceCard({ service, className, index = 0 }: ServiceCardProps)
   return (
     <div className={cn('site-panel group flex h-full flex-col p-7 md:p-8', className)}>
       <div className="flex items-start justify-between gap-5">
-        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-accent">
-          {formattedIndex}
-        </span>
+        <div>
+          <span className="font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-accent">
+            Service {formattedIndex}
+          </span>
+          <p className="mt-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-steel">
+            Owner-led planning + execution
+          </p>
+        </div>
         <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-accent/20 bg-accent/10 text-accent transition-transform duration-500 group-hover:-translate-y-1">
           <Icon size={24} strokeWidth={1.6} />
         </div>
       </div>
 
-      <h3 className="mt-6 font-display text-3xl leading-tight text-charcoal">
+      <h3 className="mt-8 font-display text-3xl leading-tight text-charcoal">
         {service.title}
       </h3>
 
@@ -44,9 +49,14 @@ export function ServiceCard({ service, className, index = 0 }: ServiceCardProps)
         <p className="mt-2 text-sm leading-relaxed text-charcoal">{service.bestFit}</p>
       </div>
 
-      <p className="mt-5 flex-grow text-sm leading-relaxed text-steel">
-        {service.qualificationPrompt}
-      </p>
+      <div className="mt-5 border-t border-sand/20 pt-5">
+        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-accent-dark">
+          Helpful for the first call
+        </p>
+        <p className="mt-2 flex-grow text-sm leading-relaxed text-steel">
+          {service.qualificationPrompt}
+        </p>
+      </div>
 
       <div className="mt-8 border-t border-sand/25 pt-5">
         <Link

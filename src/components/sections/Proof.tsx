@@ -20,7 +20,7 @@ import {
   HOMEOWNER_REASSURANCE_POINTS,
   PORTFOLIO,
   PROOF_STATS,
-} from '@/lib/constants';
+} from '@/content';
 import { buildContactHref } from '@/lib/contact-link';
 
 const reassuranceIcons: Record<string, LucideIcon> = {

@@ -17,13 +17,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants = {
       primary:
-        'border-accent bg-accent text-warm-black shadow-[0_16px_32px_rgb(var(--accent)/0.16)] hover:-translate-y-0.5 hover:bg-accent-light hover:shadow-[0_20px_40px_rgb(var(--accent)/0.2)]',
+        'border-accent bg-accent text-warm-black shadow-[0_18px_40px_rgb(var(--accent)/0.18)] hover:-translate-y-0.5 hover:border-accent-light hover:bg-accent-light hover:shadow-[0_22px_44px_rgb(var(--accent)/0.24)]',
       secondary:
-        'border-sand/35 bg-white/72 text-charcoal hover:-translate-y-0.5 hover:border-accent hover:bg-white hover:text-charcoal',
+        'border-sand/38 bg-white/78 text-charcoal shadow-[0_14px_30px_rgb(var(--warm-black)/0.06)] hover:-translate-y-0.5 hover:border-accent/65 hover:bg-white hover:text-charcoal',
       dark:
-        'border-charcoal bg-charcoal text-cream hover:-translate-y-0.5 hover:bg-slate hover:text-white',
+        'border-white/12 bg-charcoal text-cream shadow-[0_20px_44px_rgb(var(--warm-black)/0.2)] hover:-translate-y-0.5 hover:border-warm-sand/40 hover:bg-slate hover:text-white',
       outline:
-        'border-charcoal/16 bg-white/55 text-charcoal hover:-translate-y-0.5 hover:border-accent hover:bg-white hover:text-accent',
+        'border-charcoal/14 bg-transparent text-charcoal hover:-translate-y-0.5 hover:border-accent/70 hover:bg-white/72 hover:text-accent',
     };
 
     const sizes = {

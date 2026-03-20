@@ -25,9 +25,12 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://scottromconstruction.com'),
-  title: 'Scott Romanoski Construction | Langhorne, PA',
+  title: {
+    default: 'Scott Romanoski Construction | Owner-Led Remodeling in Langhorne, PA',
+    template: '%s | Scott Romanoski Construction',
+  },
   description:
-    'Building better spaces for Bucks County families. Remodeling, additions, decks, and patios crafted with 18+ years of hands-on experience.',
+    'Owner-led remodeling, additions, decks, patios, and Bilco door work for Bucks County homeowners who want direct communication and refined craftsmanship.',
   keywords: [
     'home remodeling Langhorne PA',
     'construction contractor Bucks County',
@@ -70,7 +73,7 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${manrope.variable} ${spaceMono.variable} scroll-smooth`}
     >
-      <body className="font-body bg-cream text-charcoal antialiased selection:bg-accent selection:text-white">
+      <body className="min-h-screen overflow-x-clip bg-cream font-body text-charcoal antialiased selection:bg-accent selection:text-warm-black">
         <StructuredData />
         {children}
       </body>

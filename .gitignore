@@ -2,6 +2,12 @@
 node_modules/
 .vercel
 .env*
+.next-dev.log
+.next-dev.err.log
+.next-start.log
+.next-start.err.log
+.chrome-headless/
+.edge-headless/
 
 # Large original assets (compressed versions committed instead)
 public/images/scott-romanoski-construction-logo-1-no-bg.png

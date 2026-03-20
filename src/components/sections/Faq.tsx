@@ -1,5 +1,5 @@
 import React from 'react';
-import { FAQ_ITEMS } from '@/lib/constants';
+import { FAQ_ITEMS } from '@/content';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 

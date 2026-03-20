@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, MapPin } from 'lucide-react';
-import { PORTFOLIO, SERVICE_AREAS } from '@/lib/constants';
+import { PORTFOLIO, SERVICE_AREAS } from '@/content';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/Button';

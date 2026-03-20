@@ -5,7 +5,7 @@ import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Scott Romanoski Construction',
+  title: 'Portfolio',
   description:
     'Browse featured remodeling and finish projects from Langhorne and nearby Bucks County communities to see the kind of homeowner outcomes Scott delivers.',
 };
@@ -18,6 +18,24 @@ export default function PortfolioPage() {
         title="See the spaces homeowners trusted Scott to improve."
         description="These featured projects show the rooms, goals, and practical outcomes behind the finished work, not just polished photos."
         leadSource="portfolio-page-hero"
+        chips={['Curated local projects', 'Outcome-led stories', 'Everyday-use focused']}
+        facts={[
+          {
+            label: 'What to look for',
+            value: 'Homeowner goals, layout decisions, and the finished result that changed daily life.',
+          },
+          {
+            label: 'What is curated',
+            value: 'A tighter selection of projects that show how Scott approaches fit, detail, and follow-through.',
+          },
+          {
+            label: 'Best use',
+            value: 'Compare the story closest to your project and use that context when you reach out.',
+          },
+        ]}
+        asideEyebrow="Project-story approach"
+        asideTitle="Less gallery browsing, more evidence of how the work actually comes together."
+        asideDescription="These portfolio selections are meant to show what changed for the homeowner, why the project mattered, and how the finished result supports everyday use."
       />
       <Portfolio />
       <PageClosingCTA
