@@ -1,39 +1,39 @@
 import React from 'react';
 import { FAQ_ITEMS } from '@/content';
-import { SectionLabel } from '@/components/ui/SectionLabel';
-import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export function Faq() {
   return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <div className="max-w-2xl">
-            <ScrollReveal>
-              <SectionLabel>Common Questions</SectionLabel>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <h2 className="font-display text-4xl leading-tight text-charcoal md:text-5xl">
-                A few answers homeowners usually want before reaching out
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <p className="mt-6 text-lg leading-relaxed text-steel">
-                This is meant to make the first conversation easier. If your project is still early, that is completely fine.
-              </p>
-            </ScrollReveal>
+    <section className="bg-cream section-padding">
+      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+        {/* Header */}
+        <div className="grid items-end gap-10 lg:grid-cols-[1fr_1fr]">
+          <div>
+            <p className="section-label text-navy/60">Common Questions</p>
+            <h2 className="mt-4 font-display text-section-heading text-navy max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+              Before You Reach Out
+            </h2>
           </div>
+          <p className="max-w-[520px] text-body-lg text-navy/70 lg:ml-auto">
+            Answers to the questions homeowners usually ask before starting a
+            project conversation.
+          </p>
+        </div>
 
-          <div className="grid gap-4">
-            {FAQ_ITEMS.map((item, index) => (
-              <ScrollReveal key={item.id} delay={0.08 * index}>
-                <div className="border border-sand/30 bg-cream p-6 shadow-sm shadow-charcoal/5">
-                  <h3 className="text-lg font-semibold text-charcoal">{item.question}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-steel">{item.answer}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+        {/* FAQ grid */}
+        <div className="mt-16 grid gap-6 lg:grid-cols-2">
+          {FAQ_ITEMS.map((item) => (
+            <div
+              key={item.id}
+              className="border border-border bg-white p-[35px]"
+            >
+              <h3 className="font-display text-[24px] leading-[30px] text-navy">
+                {item.question}
+              </h3>
+              <p className="mt-4 text-body-sm text-navy/70">
+                {item.answer}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
