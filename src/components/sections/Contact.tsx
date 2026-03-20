@@ -14,10 +14,11 @@ import {
   CONTACT_INFO,
   CONTACT_TRUST_POINTS,
   ESTIMATE_FIT_CHECKLIST,
-  SERVICES,
+  SERVICE_DETAILS,
+  SERVICE_PROJECT_TYPE_OPTIONS,
   SITE_INFO,
   TARGET_TIMELINE_OPTIONS,
-} from '@/lib/constants';
+} from '@/content';
 import { Button } from '@/components/ui/Button';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SectionLabel } from '@/components/ui/SectionLabel';
@@ -158,8 +159,10 @@ export function Contact({
     }));
   }, [initialLeadSource, initialProjectType]);
 
-  const selectedService = SERVICES.find(
-    (service) => service.contactProjectType === formData.projectType
+  const selectedService = SERVICE_DETAILS.find(
+    (service) =>
+      service.contactProjectType === formData.projectType ||
+      service.projectTypeOptions.includes(formData.projectType)
   );
 
   const handleChange = (
@@ -598,13 +601,11 @@ export function Contact({
                       className={`appearance-none ${getFieldClasses(Boolean(errors.projectType))}`}
                     >
                       <option value="">Select a service...</option>
-                      <option>Home Remodeling</option>
-                      <option>Addition</option>
-                      <option>Deck</option>
-                      <option>Patio / Hardscaping</option>
-                      <option>Bilco Door Installation</option>
-                      <option>Windows & Doors</option>
-                      <option>Other / Not sure yet</option>
+                        {SERVICE_PROJECT_TYPE_OPTIONS.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
                     </select>
                     {errors.projectType && <p className="text-sm text-red-300">{errors.projectType}</p>}
                   </div>

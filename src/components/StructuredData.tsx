@@ -1,4 +1,4 @@
-import { CONTACT_INFO, SERVICE_AREAS, SERVICES, SITE_INFO, TESTIMONIALS } from '@/lib/constants';
+import { CONTACT_INFO, SERVICE_AREAS, SERVICES, SITE_INFO, TESTIMONIALS } from '@/content';
 
 export function StructuredData() {
   const schema = {

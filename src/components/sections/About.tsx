@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle2, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
-import { ABOUT_CONTENT, HOMEOWNER_SAFEGUARDS, SITE_INFO } from '@/lib/constants';
+import { ABOUT_CONTENT, HOMEOWNER_SAFEGUARDS, SITE_INFO } from '@/content';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 

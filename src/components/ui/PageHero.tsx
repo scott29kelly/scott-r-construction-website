@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Phone } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { SectionLabel } from '@/components/ui/SectionLabel';
-import { SCHEDULING_SIGNALS, SITE_INFO } from '@/lib/constants';
+import { SCHEDULING_SIGNALS, SITE_INFO } from '@/content';
 import { buildContactHref } from '@/lib/contact-link';
 
 interface PageHeroProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Phone } from 'lucide-react';
-import { PROCESS_STEPS, SCHEDULING_SIGNALS } from '@/lib/constants';
+import { PROCESS_STEPS, SCHEDULING_SIGNALS } from '@/content';
 import { Button } from '@/components/ui/Button';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SectionLabel } from '@/components/ui/SectionLabel';

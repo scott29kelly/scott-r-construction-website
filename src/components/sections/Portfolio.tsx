@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { BadgeCheck, MapPin } from 'lucide-react';
-import { PORTFOLIO } from '@/lib/constants';
+import { PORTFOLIO } from '@/content';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 

@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { buildContactHref } from '@/lib/contact-link';
-import { SCHEDULING_SIGNALS, SITE_INFO } from '@/lib/constants';
+import { SCHEDULING_SIGNALS, SITE_INFO } from '@/content';
 import { PRIMARY_NAV_LINKS } from '@/lib/navigation';
 import { cn } from '@/lib/utils';
 

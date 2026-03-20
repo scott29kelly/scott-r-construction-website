@@ -6,7 +6,7 @@ import { ArrowRight, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { FEATURED_PROJECT_STORY, SCHEDULING_SIGNALS, SITE_INFO } from '@/lib/constants';
+import { FEATURED_PROJECT_STORY, SCHEDULING_SIGNALS, SITE_INFO } from '@/content';
 import { buildContactHref } from '@/lib/contact-link';
 
 const heroFacts = [

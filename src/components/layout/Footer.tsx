@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CONTACT_INFO, SCHEDULING_SIGNALS, SERVICE_AREAS, SITE_INFO } from '@/lib/constants';
+import { CONTACT_INFO, SCHEDULING_SIGNALS, SERVICE_AREAS, SITE_INFO } from '@/content';
 import { buildContactHref } from '@/lib/contact-link';
 import { PRIMARY_NAV_LINKS } from '@/lib/navigation';
 

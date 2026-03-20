@@ -12,7 +12,7 @@ import {
 import { Button } from '@/components/ui/Button';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SectionLabel } from '@/components/ui/SectionLabel';
-import { SERVICES } from '@/lib/constants';
+import { SERVICE_DETAILS } from '@/content';
 import { buildContactHref } from '@/lib/contact-link';
 
 const serviceIcons = [Home, BriefcaseBusiness, MapPinned, ShieldCheck, Ruler, Wrench];
@@ -67,7 +67,7 @@ export function Services() {
         </div>
 
         <div className="mt-12 grid gap-6">
-          {SERVICES.map((service, index) => {
+          {SERVICE_DETAILS.map((service, index) => {
             const Icon = serviceIcons[index] ?? Wrench;
 
             return (
@@ -120,12 +120,12 @@ export function Services() {
                             Narrative preview
                           </p>
                           <h4 className="mt-3 max-w-2xl font-display text-2xl leading-tight text-charcoal">
-                            A clearer way to frame future detail pages without launching them yet.
+                            {service.narrativePreview}
                           </h4>
                           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-steel">
-                            This service is positioned as a conversation about the room, the goal,
-                            and the level of coordination the project needs, which sets up a more
-                            useful future case-study or detail page later.
+                            The story stays focused on scope, fit, and the way the space needs to
+                            work for the homeowner, which gives us stronger content now without
+                            launching thin service-detail routes.
                           </p>
                         </div>
 
@@ -134,12 +134,7 @@ export function Services() {
                             What Scott is listening for
                           </p>
                           <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ash">
-                            {[
-                              'What the space needs to do every day',
-                              'What is not working now',
-                              'Whether the project has a real timing window',
-                              'How much coordination the job may require',
-                            ].map((item) => (
+                            {service.listeningPoints.map((item) => (
                               <li key={item} className="flex items-start gap-3">
                                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-warm-sand" />
                                 <span>{item}</span>
