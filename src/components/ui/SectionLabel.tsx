@@ -11,18 +11,20 @@ export function SectionLabel({ children, className, light = false }: SectionLabe
   return (
     <div
       className={cn(
-        'mb-5 inline-flex items-center gap-3 font-mono text-[11px] font-bold uppercase tracking-[0.24em]',
+        'mb-6 inline-flex items-center gap-3 font-mono text-[10px] font-bold uppercase tracking-[0.24em]',
         light ? 'text-accent-light' : 'text-accent',
         className
       )}
     >
+      <span className="h-px w-8 bg-current opacity-70" />
       <span
         className={cn(
-          'h-px w-10 bg-current opacity-80',
-          light ? 'text-accent-light' : 'text-accent'
+          'border px-3 py-2',
+          light ? 'border-white/12 bg-white/5' : 'border-sand/35 bg-white/55'
         )}
-      />
-      {children}
+      >
+        {children}
+      </span>
     </div>
   );
 }

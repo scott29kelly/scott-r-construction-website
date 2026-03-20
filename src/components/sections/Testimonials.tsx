@@ -1,5 +1,5 @@
 import React from 'react';
-import { REVIEW_THEMES, SITE_INFO, TESTIMONIALS, WHY_HOMEOWNERS_CHOOSE_SCOTT } from '@/lib/constants';
+import { REVIEW_THEMES, SITE_INFO, TESTIMONIALS, WHY_HOMEOWNERS_CHOOSE_SCOTT } from '@/content';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { TestimonialCard } from '@/components/ui/TestimonialCard';

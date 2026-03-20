@@ -1,3 +1,33 @@
+export interface SiteInfo {
+  name: string;
+  tagline: string;
+  description: string;
+  yearsExperience: string;
+  licensedIn: string;
+  bbbRating: string;
+  certifications: string;
+  established: string;
+}
+
+export interface AboutContent {
+  heading: string;
+  paragraphs: string[];
+  credentials: string[];
+}
+
+export interface SchedulingSignals {
+  eyebrow: string;
+  heroMessage: string;
+  navMessage: string;
+  processMessage: string;
+}
+
+export interface ContentImage {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
 export interface Service {
   id: string;
   title: string;
@@ -9,11 +39,18 @@ export interface Service {
   contactProjectType: string;
 }
 
+export interface ServiceDetail extends Service {
+  narrativePreview: string;
+  listeningPoints: string[];
+  projectTypeOptions: string[];
+  relatedProjectIds: string[];
+}
+
 export interface PortfolioItem {
   id: string;
   title: string;
   location: string;
-  image?: string;
+  image: string;
   imageAlt: string;
   scope: string;
   homeownerGoal: string;
@@ -24,6 +61,18 @@ export interface PortfolioItem {
   tags: string[];
   isTall?: boolean;
 }
+
+export interface ProjectCaseStudy extends PortfolioItem {
+  eyebrow: string;
+  serviceId: Service['id'];
+  homeownerNeed: string;
+  scottApproach: string;
+  result: string;
+  outcomePoints: string[];
+  images: ContentImage[];
+}
+
+export type FeaturedProjectStory = ProjectCaseStudy;
 
 export interface Testimonial {
   id: string;
@@ -75,23 +124,6 @@ export interface AuthoritySignal {
   title: string;
   detail: string;
   description: string;
-}
-
-export interface FeaturedProjectStory {
-  id: string;
-  eyebrow: string;
-  title: string;
-  location: string;
-  summary: string;
-  homeownerNeed: string;
-  scottApproach: string;
-  result: string;
-  outcomePoints: string[];
-  images: {
-    src: string;
-    alt: string;
-    caption: string;
-  }[];
 }
 
 export interface ReviewTheme {
