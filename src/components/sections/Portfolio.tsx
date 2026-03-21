@@ -28,8 +28,9 @@ export function Portfolio() {
             const aspect = index === 0 ? 'aspect-[4/3]' : 'aspect-[4/3]';
 
             return (
-              <article
+              <Link
                 key={project.id}
+                href={`/portfolio/${project.id}`}
                 className={`group relative overflow-hidden ${span}`}
               >
                 <div className={`relative ${aspect} w-full overflow-hidden`}>
@@ -58,7 +59,7 @@ export function Portfolio() {
                     </div>
                   </div>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>

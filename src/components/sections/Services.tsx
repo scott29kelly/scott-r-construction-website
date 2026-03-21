@@ -63,16 +63,23 @@ export function Services() {
                   {service.description}
                 </p>
 
-                <div className="mt-6">
+                <div className="mt-6 flex flex-col gap-3">
+                  <Link
+                    href={`/services/${service.id}`}
+                    className="btn-sm-card"
+                  >
+                    Learn More
+                    <ArrowRight className="btn-arrow" />
+                  </Link>
                   <Link
                     href={buildContactHref({
                       leadSource: `services-${service.id}`,
                       projectType: service.contactProjectType,
                     })}
-                    className="btn-sm-card"
+                    className="inline-flex items-center gap-1.5 text-btn-sm font-medium uppercase text-navy/60 transition-colors hover:text-navy"
                   >
                     {service.ctaLabel}
-                    <ArrowRight className="btn-arrow" />
+                    <ArrowRight size={12} />
                   </Link>
                 </div>
               </div>

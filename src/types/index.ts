@@ -149,6 +149,7 @@ export interface FaqItem {
   id: string;
   question: string;
   answer: string;
+  serviceId?: string;
 }
 
 export interface FitChecklistItem {

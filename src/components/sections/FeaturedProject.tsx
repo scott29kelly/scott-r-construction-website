@@ -51,10 +51,10 @@ export function FeaturedProject() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/portfolio"
+              href="/portfolio/kitchen-remodel"
               className="btn-primary btn-primary-light"
             >
-              View Our Work
+              View This Project
               <ArrowRight className="btn-arrow" />
             </Link>
             <Link
