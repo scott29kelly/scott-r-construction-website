@@ -256,6 +256,325 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
       },
     ],
   },
+  {
+    id: 'warnock-exterior',
+    eyebrow: 'Featured project story',
+    title: 'Historic Rowhome Renovation',
+    location: 'Philadelphia, PA',
+    serviceId: 'contracting',
+    image:
+      '/images/Projects/251 Warnock St. Philadelphia, Pa/exterior-front-brick-shutters.jpg',
+    imageAlt:
+      'Historic brick rowhome exterior with colorful shutters at 251 Warnock St, Philadelphia',
+    scope: 'Full gut renovation of a historic Philadelphia rowhome',
+    homeownerGoal:
+      'Transform a neglected historic rowhome into a modern, livable space while preserving its original character.',
+    homeownerNeed:
+      'The property needed a complete gut renovation — structural reinforcement, new mechanicals, and a fully reimagined interior — while respecting the historic brick facade.',
+    outcome:
+      'Brought a neglected rowhome back to life with a full gut renovation that honored its historic character.',
+    summary:
+      'A complete gut renovation of a historic Philadelphia rowhome, from structural demo through finished exterior, preserving the original brick facade and adding modern curb appeal.',
+    projectStory:
+      'This rowhome on Warnock Street had great bones but needed everything else. Scott took it down to the studs, reinforced the structure, and rebuilt it from the inside out — keeping the historic brick front intact while modernizing every system and surface.',
+    scottApproach:
+      'Scott managed the full scope personally — from structural demo and roof work through exterior finishing — ensuring the historic facade was preserved while the home was completely rebuilt behind it.',
+    result:
+      'The finished exterior showcases restored brickwork, new shutters, and clean curb appeal that respects the block character while signaling a fully modernized interior.',
+    projectHighlights: [
+      'Full gut renovation',
+      'Historic facade preservation',
+      'Complete structural rebuild',
+    ],
+    outcomePoints: [
+      'Restored historic brick exterior with new shutters and curb appeal',
+      'Complete structural reinforcement from foundation to roof',
+      'A neglected property transformed into a move-in-ready modern home',
+    ],
+    tags: ['Historic renovation', 'Gut rehab', 'Curb appeal'],
+    isTall: true,
+    images: [
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/exterior-front-brick-shutters.jpg',
+        alt: 'Finished brick rowhome exterior with colorful shutters on Warnock Street',
+        caption:
+          'The completed exterior — restored brickwork, new shutters, and clean curb appeal that fits the block',
+      },
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/exterior-rear-view.jpg',
+        alt: 'Rear view of the rowhome during renovation',
+        caption: 'Rear elevation showing the scope of the full rebuild',
+      },
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/first-floor-demo-brick.jpg',
+        alt: 'First floor during demo with exposed brick walls',
+        caption:
+          'First-floor demo revealing the original brick structure that was preserved throughout',
+      },
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/interior-demo-exposed-joists.jpg',
+        alt: 'Interior demo showing exposed floor joists and structural framing',
+        caption:
+          'Exposed joists during structural assessment — every beam was evaluated and reinforced as needed',
+      },
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/rooftop-work-progress.jpg',
+        alt: 'Rooftop work in progress during the renovation',
+        caption:
+          'Roof work underway — new structure and weatherproofing from the top down',
+      },
+    ],
+  },
+  {
+    id: 'warnock-spiral-staircase',
+    eyebrow: 'Project case study',
+    title: 'Custom Spiral Staircase',
+    location: 'Philadelphia, PA',
+    serviceId: 'contracting',
+    image:
+      '/images/Projects/251 Warnock St. Philadelphia, Pa/spiral-staircase-detail.jpg',
+    imageAlt: 'Custom metal spiral staircase with curved railing in Philadelphia rowhome',
+    scope: 'Custom spiral staircase fabrication and installation',
+    homeownerGoal:
+      'Add a space-efficient staircase that connects all three levels without eating into the compact rowhome floor plan.',
+    homeownerNeed:
+      'A traditional staircase would have consumed too much of the narrow rowhome footprint. The design needed a vertical solution that felt intentional, not compromised.',
+    outcome:
+      'Installed a custom spiral staircase that connects all levels while preserving usable floor space.',
+    summary:
+      'A custom-fabricated spiral staircase that maximizes the rowhome footprint while serving as a striking architectural feature.',
+    projectStory:
+      'In a narrow Philadelphia rowhome, every square foot matters. Scott worked with a custom fabricator to design and install a spiral staircase that threads through all three levels — turning a space constraint into the home standout feature.',
+    scottApproach:
+      'Scott coordinated the custom fabrication, structural support, and multi-floor installation to ensure the staircase was both structurally sound and visually striking within the tight rowhome layout.',
+    result:
+      'The spiral staircase became the centerpiece of the renovation — a functional, eye-catching solution that freed up floor space and gave the home a distinctive character.',
+    projectHighlights: [
+      'Custom metal fabrication',
+      'Multi-floor connectivity',
+      'Space-saving design',
+    ],
+    outcomePoints: [
+      'Custom-fabricated spiral staircase connecting all three levels',
+      'Maximized usable floor area in a compact rowhome layout',
+      'A striking architectural centerpiece that doubles as practical circulation',
+    ],
+    tags: ['Custom fabrication', 'Space-saving', 'Architectural feature'],
+    images: [
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/spiral-staircase-detail.jpg',
+        alt: 'Finished spiral staircase with curved metal railing',
+        caption:
+          'The completed spiral staircase — custom-fabricated to fit the rowhome perfectly',
+      },
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/staircase-demo-exposed-brick.jpg',
+        alt: 'Staircase area during demo with exposed brick walls',
+        caption:
+          'The staircase opening during demo — exposed brick reveals the character that inspired the design',
+      },
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/first-floor-demo-staircase.jpg',
+        alt: 'First floor demo showing staircase framing in progress',
+        caption:
+          'Structural framing for the staircase opening before the spiral was installed',
+      },
+    ],
+  },
+  {
+    id: 'warnock-bedroom',
+    eyebrow: 'Project case study',
+    title: 'Bedroom Remodel',
+    location: 'Philadelphia, PA',
+    serviceId: 'remodeling',
+    image:
+      '/images/Projects/251 Warnock St. Philadelphia, Pa/bedroom-closets-hardwood.jpg',
+    imageAlt: 'Finished bedroom with hardwood floors and new closet doors in Philadelphia rowhome',
+    scope: 'Full bedroom buildout from gutted shell',
+    homeownerGoal:
+      'Create a comfortable, move-in-ready bedroom with proper closet storage and quality finishes.',
+    homeownerNeed:
+      'Starting from a completely gutted space, the bedroom needed walls, flooring, closets, and trim — built to feel like a finished home, not a renovation.',
+    outcome:
+      'Built a clean, comfortable bedroom from a gutted shell with hardwood floors and built-in closets.',
+    summary:
+      'A full bedroom buildout from bare studs to finished space, featuring hardwood floors, custom closet doors, and clean trim work.',
+    projectStory:
+      'This bedroom started as nothing more than exposed framing and subfloor. Scott built it out completely — hardwood flooring, drywall, closet framing and doors, and finished trim — creating a room that feels like it was always part of the home.',
+    scottApproach:
+      'Every element was built from scratch with attention to proportion and finish quality, ensuring the bedroom would feel complete and comfortable from day one.',
+    result:
+      'The finished bedroom delivers warm hardwood floors, functional closet storage, and clean lines that make the space feel settled and livable.',
+    projectHighlights: [
+      'Hardwood floor installation',
+      'Custom closet buildout',
+      'Complete room finishing',
+    ],
+    outcomePoints: [
+      'Warm hardwood flooring throughout the bedroom',
+      'Built-in closets with finished doors for practical storage',
+      'Clean trim and finishing that make the room feel established',
+    ],
+    tags: ['Full buildout', 'Hardwood floors', 'Move-in ready'],
+    images: [
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/bedroom-closets-hardwood.jpg',
+        alt: 'Finished bedroom with hardwood floors and closet doors',
+        caption:
+          'The completed bedroom — hardwood floors, closet doors, and finished trim throughout',
+      },
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/attic-demo-roof-structure.jpg',
+        alt: 'Attic level during demo showing exposed roof structure',
+        caption:
+          'The upper level during demo — exposed roof structure before the bedroom was framed and finished',
+      },
+    ],
+  },
+  {
+    id: 'warnock-laundry',
+    eyebrow: 'Project case study',
+    title: 'Laundry Room',
+    location: 'Philadelphia, PA',
+    serviceId: 'remodeling',
+    image:
+      '/images/Projects/251 Warnock St. Philadelphia, Pa/laundry-room-washer-dryer.jpg',
+    imageAlt: 'Completed laundry room with washer, dryer, and utility sink in Philadelphia rowhome',
+    scope: 'Laundry room buildout with plumbing and utilities',
+    homeownerGoal:
+      'Add a dedicated, functional laundry space to a home that previously had none.',
+    homeownerNeed:
+      'The original rowhome had no designated laundry area. The renovation needed to carve out space, run new plumbing and electrical, and deliver a fully functional utility room.',
+    outcome:
+      'Created a fully functional laundry room where none existed before.',
+    summary:
+      'A dedicated laundry room built from scratch with new plumbing, electrical, and a practical layout for everyday use.',
+    projectStory:
+      'Adding a laundry room to a historic rowhome means working within tight constraints — routing new plumbing through old walls, finding space that does not compromise the living areas. Scott built this utility room to feel like it belongs, not like an afterthought.',
+    scottApproach:
+      'Scott handled the full scope — plumbing rough-in, electrical, flooring, and finishing — to deliver a laundry room that works hard in a small footprint without feeling cramped.',
+    result:
+      'The homeowners gained a dedicated laundry space with washer, dryer, and utility sink — a major quality-of-life upgrade in a home that previously lacked one.',
+    projectHighlights: [
+      'New plumbing and electrical',
+      'Space-efficient layout',
+      'Full utility room from scratch',
+    ],
+    outcomePoints: [
+      'Dedicated laundry space created where none existed',
+      'New plumbing and electrical run through historic structure',
+      'Practical layout with washer, dryer, and utility sink',
+    ],
+    tags: ['Utility room', 'New plumbing', 'Quality-of-life upgrade'],
+    images: [
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/laundry-room-washer-dryer.jpg',
+        alt: 'Completed laundry room with washer, dryer, and utility sink',
+        caption:
+          'The finished laundry room — a fully functional utility space built from scratch',
+      },
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/basement-staircase-laundry.jpg',
+        alt: 'Basement level staircase and laundry area during construction',
+        caption:
+          'The lower level during construction — plumbing and access routes being established',
+      },
+    ],
+  },
+  {
+    id: 'warnock-windows',
+    eyebrow: 'Project case study',
+    title: 'Window Trim & Finishing',
+    location: 'Philadelphia, PA',
+    serviceId: 'windows-doors',
+    image:
+      '/images/Projects/251 Warnock St. Philadelphia, Pa/room-finished-windows-trim.jpg',
+    imageAlt: 'Newly installed windows with custom trim work in historic Philadelphia rowhome',
+    scope: 'Window installation and interior trim finishing',
+    homeownerGoal:
+      'Replace aging windows with energy-efficient units and add clean, finished trim throughout.',
+    homeownerNeed:
+      'The original windows were beyond repair. New windows needed proper installation, insulation, and finished trim that matched the character of the renovation.',
+    outcome:
+      'Installed energy-efficient windows with clean custom trim that fits the renovated interior.',
+    summary:
+      'New window installation with custom interior trim, bringing better light, insulation, and a cleaner finished look to the renovated rowhome.',
+    projectStory:
+      'New windows in a historic rowhome require careful framing and trim work to look right. Scott installed energy-efficient units and finished each opening with custom trim that ties into the room design.',
+    scottApproach:
+      'Each window was properly framed, insulated, and trimmed to ensure a weather-tight seal and a clean interior finish that complements the renovation.',
+    result:
+      'The new windows deliver better natural light, improved energy efficiency, and a polished interior look with custom trim at every opening.',
+    projectHighlights: [
+      'Energy-efficient windows',
+      'Custom interior trim',
+      'Weather-tight installation',
+    ],
+    outcomePoints: [
+      'New energy-efficient windows replacing deteriorated originals',
+      'Custom trim work at every opening for a clean, finished look',
+      'Better natural light and insulation throughout',
+    ],
+    tags: ['Window replacement', 'Custom trim', 'Energy efficiency'],
+    images: [
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/room-finished-windows-trim.jpg',
+        alt: 'Finished room with new windows and custom trim',
+        caption:
+          'Completed window installation with custom trim — clean lines and better light',
+      },
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/room-demo-exposed-joists-windows.jpg',
+        alt: 'Room during demo with exposed joists and window openings',
+        caption:
+          'The same room during demo — exposed joists and rough openings before windows and trim were installed',
+      },
+    ],
+  },
+  {
+    id: 'warnock-sliding-door',
+    eyebrow: 'Project case study',
+    title: 'Sliding Door Installation',
+    location: 'Philadelphia, PA',
+    serviceId: 'windows-doors',
+    image:
+      '/images/Projects/251 Warnock St. Philadelphia, Pa/room-sliding-door-staircase.jpg',
+    imageAlt: 'New sliding glass door installation with spiral staircase access in Philadelphia rowhome',
+    scope: 'Sliding glass door installation and interior integration',
+    homeownerGoal:
+      'Add a sliding glass door to bring in natural light and connect the interior to the outdoors.',
+    homeownerNeed:
+      'The rowhome interior felt closed off. A sliding door would open up the space visually, improve airflow, and create a connection to the rear of the property.',
+    outcome:
+      'Opened up the interior with a sliding glass door that brings in light and connects to the outdoors.',
+    summary:
+      'A new sliding glass door installation that brightens the interior, improves airflow, and visually expands the living space.',
+    projectStory:
+      'In a compact rowhome, natural light is a premium. Scott installed a sliding glass door that floods the interior with daylight and creates an easy connection to the rear — making the whole floor feel bigger and more open.',
+    scottApproach:
+      'The installation required careful structural framing to support the wide opening, proper flashing and weatherproofing, and interior finishing that ties the door into the room design.',
+    result:
+      'The sliding door transformed the feel of the floor — more light, better airflow, and a visual connection to the outside that makes the space feel significantly larger.',
+    projectHighlights: [
+      'Structural framing for wide opening',
+      'Improved natural light',
+      'Indoor-outdoor connection',
+    ],
+    outcomePoints: [
+      'Sliding glass door that floods the interior with natural light',
+      'Structural framing to support the wide opening safely',
+      'A stronger connection between inside and outside living',
+    ],
+    tags: ['Sliding door', 'Natural light', 'Space enhancement'],
+    images: [
+      {
+        src: '/images/Projects/251 Warnock St. Philadelphia, Pa/room-sliding-door-staircase.jpg',
+        alt: 'Sliding glass door with spiral staircase visible',
+        caption:
+          'The installed sliding door with the spiral staircase beyond — light and circulation working together',
+      },
+    ],
+  },
 ];
 
 export const PORTFOLIO: PortfolioItem[] = PROJECT_CASE_STUDIES;
