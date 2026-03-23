@@ -5,8 +5,8 @@ import { About } from '@/components/sections/About';
 import { Services } from '@/components/sections/Services';
 import { FeaturedProject } from '@/components/sections/FeaturedProject';
 import { Proof } from '@/components/sections/Proof';
-import { Testimonials } from '@/components/sections/Testimonials';
-import { Contact } from '@/components/sections/Contact';
+import { TestimonialsTeaser } from '@/components/sections/TestimonialsTeaser';
+import { HomeCTA } from '@/components/sections/HomeCTA';
 
 export const metadata: Metadata = {
   title: 'Owner-Led Remodeling in Langhorne, PA',
@@ -22,8 +22,8 @@ export default function Home() {
       <Services />
       <FeaturedProject />
       <Proof />
-      <Testimonials />
-      <Contact />
+      <TestimonialsTeaser />
+      <HomeCTA />
     </SiteShell>
   );
 }
