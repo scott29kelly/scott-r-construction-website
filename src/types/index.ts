@@ -163,3 +163,19 @@ export interface FitExpectation {
   heading: string;
   points: string[];
 }
+
+export interface BlogSection {
+  heading?: string;
+  paragraphs: string[];
+}
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  description: string;
+  publishedDate: string;
+  author: string;
+  category: string;
+  tags: string[];
+  sections: BlogSection[];
+}

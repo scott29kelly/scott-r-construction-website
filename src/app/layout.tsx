@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Belleza, Lato } from 'next/font/google';
 import { StructuredData } from '@/components/StructuredData';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import './globals.css';
 
 const belleza = Belleza({
@@ -69,6 +70,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen overflow-x-clip bg-white font-body text-text-body antialiased">
         <StructuredData />
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

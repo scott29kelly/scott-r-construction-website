@@ -4,6 +4,7 @@ import { About } from '@/components/sections/About';
 import { Team } from '@/components/sections/Team';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <SiteShell>
+      <Breadcrumbs items={[{ label: 'About' }]} />
       <PageHero
         eyebrow="About Scott"
         title="Owner-led construction with accountability homeowners can actually feel."

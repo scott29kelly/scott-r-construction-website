@@ -575,6 +575,231 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
       },
     ],
   },
+  {
+    id: 'front-porch-build',
+    eyebrow: 'Featured project story',
+    title: 'Front Porch Build',
+    location: 'Bucks County, PA',
+    serviceId: 'decks-patios',
+    image: '/images/Projects/front-porch 2019/porch-finished-wide-front.jpg',
+    imageAlt:
+      'Completed covered front porch with PVC columns, stone veneer steps, and standing seam metal roof',
+    scope: 'Full front porch build with covered roof, composite decking, and stone veneer',
+    homeownerGoal:
+      'Transform a basic front entry into a full covered porch that adds curb appeal and usable outdoor living space.',
+    homeownerNeed:
+      'The home needed a more welcoming front entry — a space that looked substantial from the street and gave the family a comfortable place to sit outside.',
+    outcome:
+      'Delivered a covered front porch that dramatically improved curb appeal and added everyday outdoor living space.',
+    summary:
+      'A full front porch build featuring composite decking, a standing seam metal roof, PVC columns, and stone veneer base and steps — built from the ground up to feel like it was always part of the home.',
+    projectStory:
+      'This project started with a home that had little to no front porch presence. Scott designed and built a full covered porch from scratch — composite decking, a copper-tone standing seam metal roof, white PVC columns, and a stone veneer base with matching steps. The result is a porch that looks like it was always part of the house.',
+    scottApproach:
+      'Scott handled the full build — framing, roofing, decking, column installation, and stone veneer work — coordinating each trade to ensure the porch tied into the existing roofline and facade seamlessly.',
+    result:
+      'The finished porch gave the homeowners a striking new front elevation with real outdoor living space — a place to sit, a stronger first impression, and a significant boost to the home curb appeal.',
+    projectHighlights: [
+      'Covered porch with standing seam metal roof',
+      'Stone veneer base and steps',
+      'Composite decking and PVC columns',
+    ],
+    outcomePoints: [
+      'A full covered porch built from scratch that feels original to the home',
+      'Stone veneer steps and base that add weight and permanence to the entry',
+      'A copper-tone metal roof and white columns that elevate the entire front elevation',
+    ],
+    tags: ['Covered porch', 'Stone veneer', 'Curb appeal'],
+    isTall: true,
+    images: [
+      {
+        src: '/images/Projects/front-porch 2019/porch-finished-wide-front.jpg',
+        alt: 'Wide front view of completed covered porch with columns, metal roof, and stone steps',
+        caption:
+          'The completed porch — standing seam metal roof, PVC columns, and stone veneer steps',
+      },
+      {
+        src: '/images/Projects/front-porch 2019/porch-finished-right-side.jpg',
+        alt: 'Finished porch from the right side showing stone facade and wrap-around view',
+        caption:
+          'Side view showing how the stone veneer and columns wrap the full porch elevation',
+      },
+      {
+        src: '/images/Projects/front-porch 2019/porch-columns-finished-angle.jpg',
+        alt: 'Finished porch from angled view with white columns, stone base, and landscaping',
+        caption:
+          'Angled view with columns, stone base, and landscaping starting to fill in around the new entry',
+      },
+      {
+        src: '/images/Projects/front-porch 2019/deck-side-stone-steps.jpg',
+        alt: 'Side view of finished deck with composite boards, stone steps, and white fascia',
+        caption:
+          'Composite decking and stone steps — durable materials that look sharp up close',
+      },
+      {
+        src: '/images/Projects/front-porch 2019/porch-framing-wide-front.jpg',
+        alt: 'Wide front view during porch framing with lumber and roof structure going up',
+        caption:
+          'Framing stage — the roof structure taking shape over the new porch footprint',
+      },
+      {
+        src: '/images/Projects/front-porch 2019/porch-framing-scott-onsite.jpg',
+        alt: 'Porch framing in progress with Scott visible on the deck',
+        caption:
+          'Scott on site during framing — hands-on from the first board to the last detail',
+      },
+      {
+        src: '/images/Projects/front-porch 2019/porch-framing-roof-joists.jpg',
+        alt: 'Close-up of roof joist framing over the porch entry',
+        caption:
+          'Roof joist framing detail — the structural work behind the finished metal roof',
+      },
+    ],
+  },
+  {
+    id: 'kitchen-remodel-2020',
+    eyebrow: 'Featured project story',
+    title: 'Kitchen Remodel',
+    location: 'Bucks County, PA',
+    serviceId: 'remodeling',
+    image: '/images/Projects/kitchen-2020/kitchen-galley-range-cabinetry.jpg',
+    imageAlt:
+      'Remodeled galley kitchen with gas range, white cabinetry, and blue tile backsplash',
+    scope: 'Full kitchen remodel with dining nook',
+    homeownerGoal:
+      'Modernize a dated kitchen with brighter finishes, better workspace, and a comfortable dining area that connects to the rest of the home.',
+    homeownerNeed:
+      'The homeowners wanted a kitchen that felt fresh and functional — better countertop space, updated cabinetry, and a dining nook that made everyday meals more enjoyable.',
+    outcome:
+      'Delivered a bright, functional kitchen with custom cabinetry, brass fixtures, and a welcoming dining nook.',
+    summary:
+      'A full kitchen remodel featuring white cabinetry, brass hardware, blue patterned backsplash tile, and a dining nook with French glass pocket doors.',
+    projectStory:
+      'This kitchen had good bones but felt closed off and dated. Scott opened up the workflow, installed new cabinetry with brass fixtures, added a distinctive blue tile backsplash, and created a dining nook that doubles as a bright gathering spot with views to the yard.',
+    scottApproach:
+      'Scott handled layout planning, cabinetry installation, tile work, and finish coordination — making sure the brass fixtures, blue backsplash, and white cabinetry worked together without competing for attention.',
+    result:
+      'The finished kitchen feels brighter, more organized, and more connected to the rest of the home. The dining nook with French doors became the family favorite spot.',
+    projectHighlights: [
+      'Custom white cabinetry with brass hardware',
+      'Blue patterned backsplash tile',
+      'Dining nook with French glass pocket doors',
+    ],
+    outcomePoints: [
+      'A brighter galley layout with better prep and storage flow',
+      'Brass fixtures and blue tile that give the kitchen distinctive character',
+      'A dining nook with French doors that connects indoor and outdoor living',
+    ],
+    tags: ['Kitchen remodel', 'Custom finishes', 'Dining nook'],
+    isTall: true,
+    images: [
+      {
+        src: '/images/Projects/kitchen-2020/kitchen-galley-range-cabinetry.jpg',
+        alt: 'Galley view with gas range, white cabinetry, brass fixtures, and blue tile backsplash',
+        caption:
+          'The finished galley — gas range, custom cabinetry, and a blue tile backsplash that ties the room together',
+      },
+      {
+        src: '/images/Projects/kitchen-2020/dining-nook-window-view.jpg',
+        alt: 'Dining nook with window looking out to the neighborhood',
+        caption:
+          'The dining nook — a bright, comfortable spot with neighborhood views',
+      },
+      {
+        src: '/images/Projects/kitchen-2020/sink-brass-faucet-backsplash.jpg',
+        alt: 'Undermount sink with brass faucet and blue patterned backsplash tile',
+        caption:
+          'Brass faucet and blue patterned tile — small details that elevate everyday use',
+      },
+      {
+        src: '/images/Projects/kitchen-2020/refrigerator-cabinetry-backsplash.jpg',
+        alt: 'French door refrigerator with white cabinetry and tile backsplash',
+        caption:
+          'Clean cabinetry and backsplash wrapping the refrigerator wall for a built-in feel',
+      },
+      {
+        src: '/images/Projects/kitchen-2020/dining-nook-french-doors.jpg',
+        alt: 'Dining area with French glass pocket doors, window, and hardwood floors',
+        caption:
+          'French glass pocket doors that open the dining nook to the rest of the home',
+      },
+      {
+        src: '/images/Projects/kitchen-2020/dining-french-doors-wide.jpg',
+        alt: 'Wide view of dining area with French doors and kitchen counter visible',
+        caption:
+          'The full dining area — French doors, hardwood floors, and a clear sightline back to the kitchen',
+      },
+    ],
+  },
+  {
+    id: 'kitchen-remodel-2019',
+    eyebrow: 'Featured project story',
+    title: 'Two-Tone Kitchen Remodel',
+    location: 'Bucks County, PA',
+    serviceId: 'remodeling',
+    image: '/images/Projects/kitchen-2019/peninsula-wide-view.jpg',
+    imageAlt:
+      'Two-tone kitchen remodel with gray lower cabinets, white upper cabinets, and herringbone marble backsplash',
+    scope: 'Full kitchen remodel with two-tone cabinetry and peninsula',
+    homeownerGoal:
+      'Update a dated kitchen with refined finishes, more counter space, and a layout that supports everyday cooking and gathering.',
+    homeownerNeed:
+      'The homeowners wanted a kitchen that balanced warmth and brightness — a space that felt elevated without being cold, with enough workspace for real daily use.',
+    outcome:
+      'Delivered a refined two-tone kitchen with a functional peninsula, herringbone marble backsplash, and brass accents throughout.',
+    summary:
+      'A full kitchen remodel featuring two-tone cabinetry (gray lowers, white shaker uppers), herringbone marble backsplash, quartz countertops, brass hardware, and a peninsula with turned legs.',
+    projectStory:
+      'This kitchen needed more than a surface refresh — the homeowners wanted a space that felt warmer, more intentional, and better suited to how they actually cook and gather. Scott designed a two-tone palette with gray lower cabinets and white shaker uppers, added a herringbone marble backsplash for texture, and built a peninsula with turned legs that anchors the room without closing it off.',
+    scottApproach:
+      'Scott coordinated the full scope — cabinetry selection, layout reconfiguration, tile installation, and finish detailing — making sure the two-tone palette, brass hardware, and herringbone pattern worked together as a cohesive whole.',
+    result:
+      'The finished kitchen strikes a balance between warmth and brightness, with a functional peninsula for prep and seating, a built-in refrigerator surround for a cleaner look, and material choices that feel elevated without being overdone.',
+    projectHighlights: [
+      'Two-tone cabinetry (gray + white)',
+      'Herringbone marble backsplash',
+      'Peninsula with turned legs',
+    ],
+    outcomePoints: [
+      'A two-tone palette that balances warmth and brightness throughout the kitchen',
+      'Herringbone marble backsplash and quartz countertops for refined texture',
+      'A peninsula with turned legs that adds prep space and casual seating',
+    ],
+    tags: ['Two-tone design', 'Herringbone backsplash', 'Refined finishes'],
+    isTall: true,
+    images: [
+      {
+        src: '/images/Projects/kitchen-2019/peninsula-wide-view.jpg',
+        alt: 'Wide view of two-tone kitchen with peninsula, cabinetry, sliding door, and pendant lights',
+        caption:
+          'The full kitchen — two-tone cabinetry, peninsula with turned legs, and pendant lighting',
+      },
+      {
+        src: '/images/Projects/kitchen-2019/peninsula-counter-open-shelving.jpg',
+        alt: 'Kitchen peninsula with turned legs, open corner shelving, and herringbone backsplash',
+        caption:
+          'Peninsula detail — turned legs, open shelving, and herringbone backsplash working together',
+      },
+      {
+        src: '/images/Projects/kitchen-2019/range-wall-cabinetry.jpg',
+        alt: 'Range and microwave wall with gray lower cabinets, white upper cabinets, and herringbone backsplash',
+        caption:
+          'Range wall with two-tone cabinetry and herringbone marble tile carrying through the room',
+      },
+      {
+        src: '/images/Projects/kitchen-2019/refrigerator-built-in-surround.jpg',
+        alt: 'Built-in refrigerator surround with white cabinetry and crown molding',
+        caption:
+          'Built-in refrigerator surround — white cabinetry and crown molding for a cleaner, integrated look',
+      },
+      {
+        src: '/images/Projects/kitchen-2019/sink-window-herringbone-backsplash.jpg',
+        alt: 'Kitchen sink under window with gray lower cabinets, herringbone backsplash, and dishwasher',
+        caption:
+          'Sink wall with herringbone backsplash, quartz counters, and brass hardware details',
+      },
+    ],
+  },
 ];
 
 export const PORTFOLIO: PortfolioItem[] = PROJECT_CASE_STUDIES;

@@ -28,6 +28,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       'fireplace-trim',
       'tray-ceiling',
       'powder-room',
+      'kitchen-remodel-2019',
     ],
   },
   {

@@ -3,6 +3,7 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { Process } from '@/components/sections/Process';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Process',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function ProcessPage() {
   return (
     <SiteShell>
+      <Breadcrumbs items={[{ label: 'Our Process' }]} />
       <PageHero
         eyebrow="Process"
         title="A straightforward path from first conversation to final walkthrough."

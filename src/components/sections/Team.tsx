@@ -57,7 +57,7 @@ export function Team() {
           {/* Image column */}
           <div className="relative aspect-[3/4] overflow-hidden max-lg:aspect-[4/3]">
             <Image
-              src="/images/scott-romanoski-construction-logo-1.jpg"
+              src="/images/scott-romanoski-self-photo-1.jpeg"
               alt="Scott Romanoski, owner of Scott Romanoski Construction"
               fill
               className="object-cover"

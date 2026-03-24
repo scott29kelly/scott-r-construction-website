@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import { SiteShell } from '@/components/layout/SiteShell';
+import { FaqStructuredData } from '@/components/FaqStructuredData';
 import { Contact } from '@/components/sections/Contact';
 import { Faq } from '@/components/sections/Faq';
 import { PageHero } from '@/components/ui/PageHero';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { FAQ_ITEMS } from '@/content';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -23,8 +26,12 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
     ? resolvedSearchParams.projectType[0]
     : resolvedSearchParams.projectType;
 
+  const generalFaqs = FAQ_ITEMS.filter((item) => !item.serviceId);
+
   return (
     <SiteShell>
+      <FaqStructuredData items={generalFaqs} />
+      <Breadcrumbs items={[{ label: 'Contact' }]} />
       <PageHero
         eyebrow="Contact"
         title="Request an estimate with the details that make the first reply more useful."

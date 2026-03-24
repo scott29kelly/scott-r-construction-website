@@ -8,10 +8,10 @@ import { buildContactHref } from '@/lib/contact-link';
 /* Map each service to a representative project image */
 const SERVICE_IMAGES: Record<string, string> = {
   remodeling: '/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg',
-  additions: '/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-seating.jpg',
-  'decks-patios': '/images/Projects/710 Parker St. Langhorne, Pa/window-plantation-shutters.jpg',
-  bilco: '/images/Projects/710 Parker St. Langhorne, Pa/bathroom-full-room.jpg',
-  'windows-doors': '/images/Projects/710 Parker St. Langhorne, Pa/kitchen-floor-detail.jpg',
+  additions: '/images/Projects/kitchen-2020/dining-nook-french-doors.jpg',
+  'decks-patios': '/images/Projects/front-porch 2019/porch-finished-wide-front.jpg',
+  bilco: '/images/Projects/251 Warnock St. Philadelphia, Pa/basement-staircase-laundry.jpg',
+  'windows-doors': '/images/Projects/710 Parker St. Langhorne, Pa/window-plantation-shutters.jpg',
   contracting: '/images/Projects/710 Parker St. Langhorne, Pa/staircase-newel-entry.jpg',
 };
 

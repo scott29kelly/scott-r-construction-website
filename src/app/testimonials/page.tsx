@@ -3,6 +3,7 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Testimonials',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function TestimonialsPage() {
   return (
     <SiteShell>
+      <Breadcrumbs items={[{ label: 'Testimonials' }]} />
       <PageHero
         eyebrow="Testimonials"
         title="Trust built the old-fashioned way: with work people remember."

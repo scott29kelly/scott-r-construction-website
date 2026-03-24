@@ -3,6 +3,7 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { Portfolio } from '@/components/sections/Portfolio';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <SiteShell>
+      <Breadcrumbs items={[{ label: 'Portfolio' }]} />
       <PageHero
         eyebrow="Portfolio"
         title="See the spaces homeowners trusted Scott to improve."
@@ -37,7 +39,7 @@ export default function PortfolioPage() {
         asideTitle="Less gallery browsing, more evidence of how the work actually comes together."
         asideDescription="These portfolio selections are meant to show what changed for the homeowner, why the project mattered, and how the finished result supports everyday use."
       />
-      <Portfolio />
+      <Portfolio hideViewAll />
       <PageClosingCTA
         eyebrow="Like what you see?"
         title="Tell Scott what space you want to upgrade and what outcome you are hoping for."

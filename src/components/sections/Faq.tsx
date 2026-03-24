@@ -1,7 +1,14 @@
 import React from 'react';
+import type { FaqItem } from '@/types';
 import { FAQ_ITEMS } from '@/content';
 
-export function Faq() {
+interface FaqProps {
+  items?: FaqItem[];
+}
+
+export function Faq({ items }: FaqProps) {
+  const resolvedItems = items ?? FAQ_ITEMS.filter((item) => !item.serviceId);
+
   return (
     <section className="bg-cream section-padding">
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
@@ -21,7 +28,7 @@ export function Faq() {
 
         {/* FAQ grid */}
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
-          {FAQ_ITEMS.map((item) => (
+          {resolvedItems.map((item) => (
             <div
               key={item.id}
               className="border border-border bg-white p-[35px]"

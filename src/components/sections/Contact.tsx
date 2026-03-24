@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { trackEvent } from '@/lib/analytics';
 import {
   ArrowRight,
   CheckCircle2,
@@ -209,6 +210,10 @@ export function Contact({
       if (!res.ok) throw new Error(data.error || 'Something went wrong.');
 
       setStatus('success');
+      trackEvent('generate_lead', {
+        lead_source: normalized.leadSource,
+        project_type: normalized.projectType,
+      });
       setFormData((prev) => ({
         ...getInitialFormData({
           leadSource: initialLeadSource,

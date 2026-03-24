@@ -9,6 +9,7 @@ import { ListeningPoints } from '@/components/sections/ListeningPoints';
 import { RelatedProjects } from '@/components/sections/RelatedProjects';
 import { ServiceFaq } from '@/components/sections/ServiceFaq';
 import { ServiceStructuredData } from '@/components/ServiceStructuredData';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { getServiceBySlug, getFaqsForService } from '@/lib/services';
 
 interface Props {
@@ -45,6 +46,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   return (
     <SiteShell>
       <ServiceStructuredData service={service} faqs={faqs} />
+      <Breadcrumbs items={[{ label: 'Services', href: '/services' }, { label: service.title }]} />
       <PageHero
         eyebrow={service.title}
         title={`${service.title} for Bucks County homeowners.`}

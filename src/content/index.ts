@@ -7,3 +7,4 @@ export * from '@/content/proof';
 export * from '@/content/reviews';
 export * from '@/content/services';
 export * from '@/content/site';
+export * from '@/content/blog';
