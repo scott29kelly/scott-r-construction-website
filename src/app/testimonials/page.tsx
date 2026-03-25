@@ -21,23 +21,7 @@ export default function TestimonialsPage() {
         description="These recommendations come from homeowners who experienced the work firsthand — the craftsmanship, the communication, and the follow-through."
         leadSource="testimonials-page-hero"
         chips={['5-star reviews', 'Facebook recommendations', 'Real homeowner feedback']}
-        facts={[
-          {
-            label: 'What clients notice',
-            value: 'Craftsmanship, respect for the home, and communication that stays direct throughout.',
-          },
-          {
-            label: 'Trust signal',
-            value: 'A+ BBB rating with zero complaints — a third-party record homeowners can verify.',
-          },
-          {
-            label: 'What it means for you',
-            value: 'The same care and accountability these homeowners experienced is what you can expect.',
-          },
-        ]}
-        asideEyebrow="Why this matters"
-        asideTitle="Recommendations that answer the questions you are already asking."
-        asideDescription="Before reaching out, most homeowners want to know: will the contractor respect my home, communicate clearly, and deliver quality work? These reviews answer that."
+        heroImage="/images/Projects/front-porch-2019-may/porch-entry-steps-front.jpg"
       />
       <Testimonials />
       <PageClosingCTA

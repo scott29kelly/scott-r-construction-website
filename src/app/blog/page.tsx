@@ -23,23 +23,7 @@ export default function BlogPage() {
         description="Tips, timelines, and honest advice from an owner-led contractor who has seen what works and what does not."
         leadSource="blog-page-hero"
         chips={['Remodeling tips', 'Project planning', 'Local expertise']}
-        facts={[
-          {
-            label: 'Who writes these',
-            value: 'Scott Romanoski — the same contractor who shows up for the estimate and the walkthrough.',
-          },
-          {
-            label: 'What to expect',
-            value: 'Straightforward guidance based on real projects in Bucks County and nearby communities.',
-          },
-          {
-            label: 'Best use',
-            value: 'Read before reaching out so your first conversation is more productive.',
-          },
-        ]}
-        asideEyebrow="Why a blog?"
-        asideTitle="Better-informed homeowners make better project decisions."
-        asideDescription="These articles answer the questions homeowners typically ask before starting a project — so you can move forward with more confidence."
+        heroImage="/images/Projects/kitchen-2019/peninsula-wide-view.jpg"
       />
 
       <section className="bg-cream section-padding">

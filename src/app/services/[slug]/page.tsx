@@ -12,6 +12,15 @@ import { ServiceStructuredData } from '@/components/ServiceStructuredData';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { getServiceBySlug, getFaqsForService } from '@/lib/services';
 
+const SERVICE_IMAGES: Record<string, string> = {
+  remodeling: '/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg',
+  additions: '/images/Projects/kitchen-2020/dining-nook-french-doors.jpg',
+  'decks-patios': '/images/Projects/front-porch-2019-aug/porch-finished-wide-front.jpg',
+  bilco: '/images/Projects/251 Warnock St. Philadelphia, Pa/basement-staircase-laundry.jpg',
+  'windows-doors': '/images/Projects/710 Parker St. Langhorne, Pa/window-plantation-shutters.jpg',
+  contracting: '/images/Projects/710 Parker St. Langhorne, Pa/staircase-newel-entry.jpg',
+};
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -53,23 +62,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         description={service.description}
         leadSource={`service-detail-${service.id}`}
         chips={service.projectTypeOptions}
-        facts={[
-          {
-            label: 'Best fit',
-            value: service.bestFit,
-          },
-          {
-            label: 'What helps',
-            value: service.qualificationPrompt,
-          },
-          {
-            label: 'Next step',
-            value: 'Share your project details for a more useful first conversation.',
-          },
-        ]}
-        asideEyebrow="Service details"
-        asideTitle="What to know before reaching out."
-        asideDescription={service.qualificationPrompt}
+        heroImage={SERVICE_IMAGES[service.id]}
       />
       <ServiceNarrative service={service} />
       <ListeningPoints points={service.listeningPoints} />

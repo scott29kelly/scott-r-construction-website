@@ -4,8 +4,9 @@ import { PROJECT_CASE_STUDIES } from '@/content';
 import { SiteShell } from '@/components/layout/SiteShell';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { ProjectHero } from '@/components/project/ProjectHero';
-import { ProjectNarrative } from '@/components/project/ProjectNarrative';
+import { ProjectOverview } from '@/components/project/ProjectOverview';
 import { ProjectBeforeAfter } from '@/components/project/ProjectBeforeAfter';
+import { ProjectStory } from '@/components/project/ProjectStory';
 import { ProjectGallery } from '@/components/project/ProjectGallery';
 import { ProjectNavigation } from '@/components/project/ProjectNavigation';
 import { ProjectStructuredData } from '@/components/project/ProjectStructuredData';
@@ -43,6 +44,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Max images to weave into the story sections
+const MAX_STORY_IMAGES = 6;
+
 export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
@@ -50,14 +54,18 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   const { prev, next } = getAdjacentProjects(slug);
 
+  // Story gets up to MAX_STORY_IMAGES; gallery always shows all images
+  const storyImages = project.images.slice(0, MAX_STORY_IMAGES);
+
   return (
     <SiteShell>
       <ProjectStructuredData project={project} />
       <ProjectHero project={project} />
-      <ProjectNarrative project={project} />
+      <ProjectOverview project={project} />
       {project.beforeAfterPairs && project.beforeAfterPairs.length > 0 && (
         <ProjectBeforeAfter pairs={project.beforeAfterPairs} />
       )}
+      <ProjectStory project={project} storyImages={storyImages} allImages={project.images} />
       <ProjectGallery images={project.images} />
       <ProjectNavigation prev={prev} next={next} />
       <PageClosingCTA

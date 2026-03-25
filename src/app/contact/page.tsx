@@ -39,23 +39,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         description="Share your project type, town, timing, and a short scope summary to help Scott confirm fit, answer early questions, and recommend the best next step."
         leadSource="contact-page-hero"
         chips={['Free estimate', '1 business day reply', 'No sales handoff']}
-        facts={[
-          {
-            label: 'Best first details',
-            value: 'Project type, town, timeline, and a short note about what is not working now.',
-          },
-          {
-            label: 'What you get back',
-            value: 'A direct response about fit, timing, and the most sensible next step.',
-          },
-          {
-            label: 'Who responds',
-            value: 'The same owner-led business you are hiring, not a detached intake team.',
-          },
-        ]}
-        asideEyebrow="Before you submit"
-        asideTitle="A little context up front makes the consult feel more useful right away."
-        asideDescription="If you already know your town, rough scope, and timing window, Scott can usually answer fit and scheduling questions much faster."
+        heroImage="/images/Projects/front-porch-2019-aug/porch-columns-finished-angle.jpg"
       />
       <Faq />
       <Contact

@@ -21,23 +21,7 @@ export default function PortfolioPage() {
         description="These featured projects show the rooms, goals, and practical outcomes behind the finished work, not just polished photos."
         leadSource="portfolio-page-hero"
         chips={['Curated local projects', 'Outcome-led stories', 'Everyday-use focused']}
-        facts={[
-          {
-            label: 'What to look for',
-            value: 'Homeowner goals, layout decisions, and the finished result that changed daily life.',
-          },
-          {
-            label: 'What is curated',
-            value: 'A tighter selection of projects that show how Scott approaches fit, detail, and follow-through.',
-          },
-          {
-            label: 'Best use',
-            value: 'Compare the story closest to your project and use that context when you reach out.',
-          },
-        ]}
-        asideEyebrow="Project-story approach"
-        asideTitle="Less gallery browsing, more evidence of how the work actually comes together."
-        asideDescription="These portfolio selections are meant to show what changed for the homeowner, why the project mattered, and how the finished result supports everyday use."
+        heroImage="/images/Projects/251 Warnock St. Philadelphia, Pa/exterior-front-brick-shutters.jpg"
       />
       <Portfolio hideViewAll />
       <PageClosingCTA

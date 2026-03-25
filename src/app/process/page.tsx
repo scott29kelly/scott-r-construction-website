@@ -21,23 +21,7 @@ export default function ProcessPage() {
         description="See how Scott handles early fit checks, estimate conversations, project planning, and owner-led execution so you know what to expect before reaching out."
         leadSource="process-page-hero"
         chips={['Fit first', 'Clear communication', 'Owner-led execution']}
-        facts={[
-          {
-            label: 'Before you commit',
-            value: 'Scott helps confirm whether the project, location, and timing sound like a real fit.',
-          },
-          {
-            label: 'During the work',
-            value: 'Communication stays direct and practical instead of being filtered through layers.',
-          },
-          {
-            label: 'At the end',
-            value: 'The walkthrough matters just as much as the estimate because details still count then.',
-          },
-        ]}
-        asideEyebrow="What this page should answer"
-        asideTitle="How the job feels to live through is part of the quality."
-        asideDescription="This page is meant to clarify expectations around timing, communication, and project fit before you spend energy chasing multiple bids."
+        heroImage="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg"
       />
       <Process />
       <PageClosingCTA

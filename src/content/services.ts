@@ -76,7 +76,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       'Whether drainage, access, or slope issues need to be solved along the way',
     ],
     projectTypeOptions: ['Deck', 'Patio / Hardscaping'],
-    relatedProjectIds: [],
+    relatedProjectIds: ['front-porch-build', 'front-porch-entry'],
   },
   {
     id: 'bilco',

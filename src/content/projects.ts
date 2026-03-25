@@ -924,6 +924,143 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
       },
     ],
   },
+  {
+    id: 'bathroom-renovation-2018',
+    eyebrow: 'Project case study',
+    title: 'Master Bathroom Renovation',
+    location: 'Bucks County, PA',
+    serviceId: 'remodeling',
+    image: '/images/Projects/bathroom-2018/bathroom-wide-tub-shower-vanity.jpg',
+    imageAlt:
+      'Renovated master bathroom with freestanding soaking tub, walk-in shower, and gray vanity',
+    scope: 'Full master bathroom renovation with custom tile and freestanding tub',
+    homeownerGoal:
+      'Transform a dated master bath into a spa-inspired retreat with a freestanding tub, walk-in shower, and premium tile work throughout.',
+    homeownerNeed:
+      'The homeowners wanted a bathroom that felt like a true escape — natural stone, a statement tub, and custom tile details that would hold up to daily use while looking elevated.',
+    outcome:
+      'Delivered a spa-quality master bathroom with a freestanding tub on a fieldstone surround, marble walk-in shower, and natural stone finishes throughout.',
+    summary:
+      'A full master bathroom renovation featuring a freestanding soaking tub on a custom fieldstone surround, a marble walk-in shower with leaf mosaic accents and built-in bench, natural stone tile throughout, and a gray vanity with granite countertops.',
+    projectStory:
+      'This master bathroom renovation brought together two distinct material palettes in one cohesive space. The walk-in shower features marble subway tile with decorative leaf mosaic accent panels and a built-in bench, while the tub area showcases a freestanding soaker set on a custom fieldstone surround with a granite cap. Natural stone tile and wood-look flooring tie both zones together.',
+    scottApproach:
+      'Scott coordinated the full scope — plumbing relocation, custom tile layout, fieldstone surround construction, and vanity installation — ensuring the marble shower details and natural stone tub area felt intentional and connected rather than competing.',
+    result:
+      'The finished bathroom delivers the spa feel the homeowners wanted — a freestanding tub that serves as the room centerpiece, a walk-in shower with custom mosaic accents, and durable natural stone finishes that elevate everyday use.',
+    projectHighlights: [
+      'Freestanding tub on fieldstone surround',
+      'Marble shower with leaf mosaic accents',
+      'Natural stone tile throughout',
+    ],
+    outcomePoints: [
+      'A freestanding soaking tub on a custom fieldstone surround with granite cap',
+      'Walk-in shower with marble tile, leaf mosaic panels, and built-in bench',
+      'Natural stone and wood-look flooring that ties the full room together',
+    ],
+    tags: ['Spa-inspired', 'Custom tile', 'Natural stone'],
+    isTall: true,
+    images: [
+      {
+        src: '/images/Projects/bathroom-2018/bathroom-wide-tub-shower-vanity.jpg',
+        alt: 'Full bathroom view with freestanding soaking tub, walk-in shower, and gray vanity with granite countertop',
+        caption:
+          'The full room — freestanding tub, walk-in shower, and gray vanity working together as one cohesive space',
+      },
+      {
+        src: '/images/Projects/bathroom-2018/freestanding-tub-stone-surround.jpg',
+        alt: 'Freestanding soaking tub on custom fieldstone surround with granite cap and window',
+        caption:
+          'The statement tub — freestanding soaker set on a fieldstone surround with granite cap and natural light',
+      },
+      {
+        src: '/images/Projects/bathroom-2018/marble-shower-bench-leaf-mosaic.jpg',
+        alt: 'Marble walk-in shower with built-in bench seat and decorative leaf mosaic accent panels',
+        caption:
+          'Walk-in shower with marble tile, built-in bench, and leaf mosaic accents flanking the seat',
+      },
+      {
+        src: '/images/Projects/bathroom-2018/marble-shower-mosaic-panel-detail.jpg',
+        alt: 'Large decorative leaf mosaic panel on marble subway tile shower wall',
+        caption:
+          'Leaf mosaic centerpiece panel — a focal point that elevates the entire shower enclosure',
+      },
+      {
+        src: '/images/Projects/bathroom-2018/marble-shower-niche-mosaic-corner.jpg',
+        alt: 'Marble shower corner with recessed storage niche and leaf mosaic accent wall',
+        caption:
+          'Recessed niche and mosaic detail — practical storage with decorative finishing',
+      },
+      {
+        src: '/images/Projects/bathroom-2018/stone-tile-shower-hand-bar-niche.jpg',
+        alt: 'Walk-in shower with natural stone tile, hand shower bar, recessed niche, and pebble mosaic floor',
+        caption:
+          'Natural stone shower with hand bar, recessed niche, and pebble mosaic floor for texture and grip',
+      },
+      {
+        src: '/images/Projects/bathroom-2018/shower-subway-tile-corner-shelves.jpg',
+        alt: 'Walk-in shower with white subway tile walls, corner shelves, and hexagonal marble floor tile',
+        caption:
+          'White subway tile shower with corner shelves and hexagonal marble floor — clean and functional',
+      },
+    ],
+  },
+  {
+    id: 'front-porch-entry',
+    eyebrow: 'Project case study',
+    title: 'Front Porch & Entry',
+    location: 'Bucks County, PA',
+    serviceId: 'decks-patios',
+    image: '/images/Projects/front-porch-2019-may/porch-entry-steps-front.jpg',
+    imageAlt:
+      'Covered entry porch with composite decking, white PVC railings, and bluestone walkway',
+    scope: 'Covered entry porch build with composite decking and PVC railings',
+    homeownerGoal:
+      'Add a welcoming covered entry porch that matches the traditional character of the home.',
+    homeownerNeed:
+      'The home lacked a proper front entry — the homeowners wanted a porch that felt built-in, with durable materials and a style that complemented the existing architecture.',
+    outcome:
+      'Delivered a covered entry porch with composite decking, PVC railings, lattice skirting, and a bluestone walkway that looks original to the home.',
+    summary:
+      'A covered entry porch featuring composite wood decking and risers, white PVC railings and columns, lattice skirting panels, and a bluestone walkway — traditional style matching the home character.',
+    projectStory:
+      'This project gave the home a proper front entry it was missing. Scott built a covered porch with composite decking, white PVC railings, and lattice skirting that ties into the home traditional style. A bluestone walkway connects the porch to the driveway for a polished, welcoming arrival.',
+    scottApproach:
+      'Scott handled the full build — framing, composite decking, PVC railing and column installation, lattice skirting, and bluestone walkway — ensuring every detail matched the home existing character.',
+    result:
+      'The finished porch gives the homeowners a welcoming covered entry with durable, low-maintenance materials and a traditional look that feels like it was always part of the house.',
+    projectHighlights: [
+      'Composite wood decking and risers',
+      'White PVC railings and columns',
+      'Lattice skirting and bluestone walkway',
+    ],
+    outcomePoints: [
+      'A covered entry porch that matches the home traditional character',
+      'Durable composite decking and PVC railings for low maintenance',
+      'Lattice skirting and bluestone walkway for a polished, complete look',
+    ],
+    tags: ['Entry porch', 'Composite decking', 'Traditional style'],
+    images: [
+      {
+        src: '/images/Projects/front-porch-2019-may/porch-entry-steps-front.jpg',
+        alt: 'Front view of covered entry porch with composite steps, railings, and wreath on door',
+        caption:
+          'The completed entry porch — composite steps, PVC railings, and a welcoming front door',
+      },
+      {
+        src: '/images/Projects/front-porch-2019-may/porch-side-railings-lattice.jpg',
+        alt: 'Side angle showing white PVC railings, composite steps, and lattice skirting',
+        caption:
+          'Side view — white railings, composite risers, and lattice skirting that ties into the home',
+      },
+      {
+        src: '/images/Projects/front-porch-2019-may/porch-corner-angle-skirting.jpg',
+        alt: 'Corner angle showing deck depth, lattice panels, and bluestone walkway',
+        caption:
+          'Corner angle — deck depth, lattice panels, and bluestone walkway completing the entry',
+      },
+    ],
+  },
 ];
 
 export const PORTFOLIO: PortfolioItem[] = PROJECT_CASE_STUDIES;
