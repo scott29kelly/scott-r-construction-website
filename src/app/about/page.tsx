@@ -5,6 +5,7 @@ import { Team } from '@/components/sections/Team';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -24,14 +25,20 @@ export default function AboutPage() {
         chips={['Owner-operated since 2007', 'PA License #PA012701', 'Direct communication']}
         heroImage="/images/Projects/front-porch-2019-aug/porch-framing-scott-onsite.jpg"
       />
-      <About />
-      <Team />
-      <PageClosingCTA
+      <ScrollReveal>
+        <About />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Team />
+      </ScrollReveal>
+      <ScrollReveal>
+        <PageClosingCTA
         eyebrow="Work with the owner directly"
         title="If the person estimating the work matters to you, this is the right time to start the conversation."
         description="Reach out with your project type, location, and timing goals and Scott will let you know what makes sense next without handing you off to a sales process."
         leadSource="about-page-cta"
       />
+      </ScrollReveal>
     </SiteShell>
   );
 }

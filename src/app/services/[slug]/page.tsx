@@ -10,6 +10,7 @@ import { RelatedProjects } from '@/components/sections/RelatedProjects';
 import { ServiceFaq } from '@/components/sections/ServiceFaq';
 import { ServiceStructuredData } from '@/components/ServiceStructuredData';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { getServiceBySlug, getFaqsForService } from '@/lib/services';
 
 const SERVICE_IMAGES: Record<string, string> = {
@@ -64,17 +65,27 @@ export default async function ServiceDetailPage({ params }: Props) {
         chips={service.projectTypeOptions}
         heroImage={SERVICE_IMAGES[service.id]}
       />
-      <ServiceNarrative service={service} />
-      <ListeningPoints points={service.listeningPoints} />
-      <RelatedProjects projectIds={service.relatedProjectIds} />
-      <ServiceFaq items={faqs} serviceTitle={service.title} />
-      <PageClosingCTA
+      <ScrollReveal>
+        <ServiceNarrative service={service} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <ListeningPoints points={service.listeningPoints} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <RelatedProjects projectIds={service.relatedProjectIds} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <ServiceFaq items={faqs} serviceTitle={service.title} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <PageClosingCTA
         eyebrow={`Ready to discuss ${service.title.toLowerCase()}?`}
         title="Share your project goals and Scott will follow up with practical next steps."
         description="Include the room or area, your timing window, and what is driving the project to get the most useful first reply."
         leadSource={`service-detail-${service.id}-cta`}
         projectType={service.contactProjectType}
       />
+      </ScrollReveal>
     </SiteShell>
   );
 }

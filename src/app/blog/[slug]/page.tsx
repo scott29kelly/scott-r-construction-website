@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { SiteShell } from '@/components/layout/SiteShell';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { BlogStructuredData } from '@/components/blog/BlogStructuredData';
 import { getBlogPostBySlug, getAllBlogSlugs } from '@/lib/blog';
 
@@ -44,6 +45,7 @@ export default async function BlogDetailPage({ params }: Props) {
       <div className="pt-28 md:pt-36">
       <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: post.title }]} />
 
+      <ScrollReveal>
       <article className="bg-white section-padding">
         <div className="mx-auto max-w-[800px] px-[50px] max-lg:px-6">
           {/* Header */}
@@ -87,14 +89,17 @@ export default async function BlogDetailPage({ params }: Props) {
           </div>
         </div>
       </article>
+      </ScrollReveal>
       </div>
 
-      <PageClosingCTA
+      <ScrollReveal>
+        <PageClosingCTA
         eyebrow="Ready to start your project?"
         title="Share your project goals and Scott will follow up with practical next steps."
         description="Include the room or area, your timing window, and what is driving the project to get the most useful first reply."
         leadSource={`blog-${post.id}-cta`}
       />
+      </ScrollReveal>
     </SiteShell>
   );
 }

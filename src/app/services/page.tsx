@@ -3,6 +3,7 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { Services } from '@/components/sections/Services';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -21,13 +22,17 @@ export default function ServicesPage() {
         chips={['Remodeling + additions', 'Exterior living upgrades', 'Bilco expertise']}
         heroImage="/images/Projects/front-porch-2019-aug/porch-finished-wide-front.jpg"
       />
-      <Services />
-      <PageClosingCTA
-        eyebrow="Need help choosing the right service?"
-        title="Describe the room, structure, or exterior area you want to improve and Scott can point you toward the best next step."
-        description="You do not need a fully finalized scope yet. A short note about the project type, town, and target timing is usually enough to start a more useful estimate conversation."
-        leadSource="services-page-cta"
-      />
+      <ScrollReveal>
+        <Services />
+      </ScrollReveal>
+      <ScrollReveal>
+        <PageClosingCTA
+          eyebrow="Need help choosing the right service?"
+          title="Describe the room, structure, or exterior area you want to improve and Scott can point you toward the best next step."
+          description="You do not need a fully finalized scope yet. A short note about the project type, town, and target timing is usually enough to start a more useful estimate conversation."
+          leadSource="services-page-cta"
+        />
+      </ScrollReveal>
     </SiteShell>
   );
 }

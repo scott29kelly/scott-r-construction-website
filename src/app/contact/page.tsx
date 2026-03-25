@@ -6,6 +6,7 @@ import { Faq } from '@/components/sections/Faq';
 import { ServiceAreaMap } from '@/components/ServiceAreaMap';
 import { PageHero } from '@/components/ui/PageHero';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { FAQ_ITEMS } from '@/content';
 
 export const metadata: Metadata = {
@@ -41,12 +42,18 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         chips={['Free estimate', '1 business day reply', 'No sales handoff']}
         heroImage="/images/Projects/front-porch-2019-aug/porch-columns-finished-angle.jpg"
       />
-      <Faq />
-      <Contact
-        initialLeadSource={leadSource}
-        initialProjectType={projectType}
-      />
-      <ServiceAreaMap />
+      <ScrollReveal>
+        <Faq />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Contact
+          initialLeadSource={leadSource}
+          initialProjectType={projectType}
+        />
+      </ScrollReveal>
+      <ScrollReveal>
+        <ServiceAreaMap />
+      </ScrollReveal>
     </SiteShell>
   );
 }

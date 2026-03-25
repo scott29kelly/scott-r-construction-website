@@ -4,6 +4,7 @@ import { Portfolio } from '@/components/sections/Portfolio';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -23,13 +24,17 @@ export default function PortfolioPage() {
         chips={['Curated local projects', 'Outcome-led stories', 'Everyday-use focused']}
         heroImage="/images/Projects/251 Warnock St. Philadelphia, Pa/exterior-front-brick-shutters.jpg"
       />
-      <Portfolio hideViewAll />
-      <PageClosingCTA
+      <ScrollReveal>
+        <Portfolio hideViewAll />
+      </ScrollReveal>
+      <ScrollReveal>
+        <PageClosingCTA
         eyebrow="Like what you see?"
         title="Tell Scott what space you want to upgrade and what outcome you are hoping for."
         description="The most helpful estimate requests usually include the room or exterior area involved, what is not working now, and when you would ideally like to start."
         leadSource="portfolio-page-cta"
       />
+      </ScrollReveal>
     </SiteShell>
   );
 }

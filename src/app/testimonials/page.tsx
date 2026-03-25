@@ -4,6 +4,7 @@ import { Testimonials } from '@/components/sections/Testimonials';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Testimonials',
@@ -23,13 +24,17 @@ export default function TestimonialsPage() {
         chips={['5-star reviews', 'Facebook recommendations', 'Real homeowner feedback']}
         heroImage="/images/Projects/front-porch-2019-may/porch-entry-steps-front.jpg"
       />
-      <Testimonials />
-      <PageClosingCTA
+      <ScrollReveal>
+        <Testimonials />
+      </ScrollReveal>
+      <ScrollReveal>
+        <PageClosingCTA
         eyebrow="Ready to experience it yourself?"
         title="Start with a conversation about your project and see why homeowners keep coming back."
         description="Share your project type, town, and timing and Scott will follow up within one business day with clear next steps."
         leadSource="testimonials-page-cta"
       />
+      </ScrollReveal>
     </SiteShell>
   );
 }

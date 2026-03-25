@@ -4,6 +4,7 @@ import { Process } from '@/components/sections/Process';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { PageHero } from '@/components/ui/PageHero';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Process',
@@ -23,13 +24,17 @@ export default function ProcessPage() {
         chips={['Fit first', 'Clear communication', 'Owner-led execution']}
         heroImage="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg"
       />
-      <Process />
-      <PageClosingCTA
+      <ScrollReveal>
+        <Process />
+      </ScrollReveal>
+      <ScrollReveal>
+        <PageClosingCTA
         eyebrow="Ready for the first step?"
         title="Share your scope, timing, and location and Scott can tell you whether an estimate, site visit, or later follow-up makes the most sense."
         description="This is especially helpful if you are still deciding whether to move now, compare timing, or get clarity before chasing multiple bids."
         leadSource="process-page-cta"
       />
+      </ScrollReveal>
     </SiteShell>
   );
 }

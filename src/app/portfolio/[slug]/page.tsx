@@ -11,6 +11,7 @@ import { ProjectGallery } from '@/components/project/ProjectGallery';
 import { ProjectNavigation } from '@/components/project/ProjectNavigation';
 import { ProjectStructuredData } from '@/components/project/ProjectStructuredData';
 import { getProjectBySlug, getAdjacentProjects } from '@/lib/projects';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -61,20 +62,30 @@ export default async function ProjectDetailPage({ params }: Props) {
     <SiteShell>
       <ProjectStructuredData project={project} />
       <ProjectHero project={project} />
-      <ProjectOverview project={project} />
+      <ScrollReveal>
+        <ProjectOverview project={project} />
+      </ScrollReveal>
       {project.beforeAfterPairs && project.beforeAfterPairs.length > 0 && (
-        <ProjectBeforeAfter pairs={project.beforeAfterPairs} />
+        <ScrollReveal>
+          <ProjectBeforeAfter pairs={project.beforeAfterPairs} />
+        </ScrollReveal>
       )}
-      <ProjectStory project={project} storyImages={storyImages} allImages={project.images} />
-      <ProjectGallery images={project.images} />
+      <ScrollReveal>
+        <ProjectStory project={project} storyImages={storyImages} allImages={project.images} />
+      </ScrollReveal>
+      <ScrollReveal variant="fade">
+        <ProjectGallery images={project.images} />
+      </ScrollReveal>
       <ProjectNavigation prev={prev} next={next} />
-      <PageClosingCTA
+      <ScrollReveal>
+        <PageClosingCTA
         eyebrow="Inspired by this project?"
         title="Share your goals and Scott will follow up with practical next steps."
         description="Include the room or area, your timing window, and what is driving the project to get the most useful first reply."
         leadSource={`project-detail-${project.id}-cta`}
         projectType={project.serviceId}
       />
+      </ScrollReveal>
     </SiteShell>
   );
 }

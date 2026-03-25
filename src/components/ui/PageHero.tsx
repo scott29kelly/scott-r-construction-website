@@ -1,7 +1,10 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { motion, useReducedMotion } from 'framer-motion';
 import { SITE_INFO } from '@/content';
 import { buildContactHref } from '@/lib/contact-link';
 
@@ -22,6 +25,8 @@ export function PageHero({
   chips,
   heroImage,
 }: PageHeroProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   const heroChips = chips ?? [
     `Established ${SITE_INFO.established}`,
     `Licensed in ${SITE_INFO.licensedIn}`,
@@ -48,17 +53,39 @@ export function PageHero({
       )}
 
       <div className="relative z-10 mx-auto max-w-site px-[50px] pb-24 max-lg:px-6 md:pb-28">
-        <p className="section-label text-white/60">{eyebrow}</p>
+        <motion.p
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="section-label text-white/60"
+        >
+          {eyebrow}
+        </motion.p>
 
-        <h1 className="mt-4 max-w-[900px] text-balance font-display text-section-heading max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+        <motion.h1
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-4 max-w-[900px] text-balance font-display text-section-heading max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]"
+        >
           {title}
-        </h1>
+        </motion.h1>
 
-        <p className="mt-6 max-w-[640px] text-body-lg text-white/75">
+        <motion.p
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-6 max-w-[640px] text-body-lg text-white/75"
+        >
           {description}
-        </p>
+        </motion.p>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <motion.div
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-10 flex flex-wrap gap-4"
+        >
           <Link
             href={buildContactHref({ leadSource })}
             className="btn-primary btn-primary-light"
@@ -73,9 +100,14 @@ export function PageHero({
             <Phone size={14} />
             Call (215) 519-1795
           </a>
-        </div>
+        </motion.div>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <motion.div
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-8 flex flex-wrap gap-3"
+        >
           {heroChips.map((chip) => (
             <span
               key={chip}
@@ -84,7 +116,7 @@ export function PageHero({
               {chip}
             </span>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

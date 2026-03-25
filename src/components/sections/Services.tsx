@@ -40,7 +40,7 @@ export function Services() {
           {SERVICE_DETAILS.map((service) => (
             <article
               key={service.id}
-              className="group flex flex-col overflow-hidden border border-border bg-white"
+              className="group flex flex-col overflow-hidden border border-border bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
             >
               {/* Card image */}
               <div className="relative aspect-[4/3] overflow-hidden">

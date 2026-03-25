@@ -5,6 +5,7 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { PageHero } from '@/components/ui/PageHero';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { BLOG_POSTS } from '@/content';
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function BlogPage() {
         heroImage="/images/Projects/kitchen-2019/peninsula-wide-view.jpg"
       />
 
+      <ScrollReveal>
       <section className="bg-cream section-padding">
         <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
           <div className="grid gap-6 md:grid-cols-2">
@@ -33,7 +35,7 @@ export default function BlogPage() {
               <Link
                 key={post.id}
                 href={`/blog/${post.id}`}
-                className="group border border-border bg-white p-[35px] transition-colors hover:border-navy/30"
+                className="group border border-border bg-white p-[35px] transition-all duration-300 hover:border-navy/30 hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <p className="text-btn-sm uppercase text-navy/50">
                   {post.category}
@@ -65,13 +67,16 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
-      <PageClosingCTA
+      <ScrollReveal>
+        <PageClosingCTA
         eyebrow="Ready to start your project?"
         title="Share your project goals and Scott will follow up with practical next steps."
         description="Include the room or area, your timing window, and what is driving the project to get the most useful first reply."
         leadSource="blog-page-cta"
       />
+      </ScrollReveal>
     </SiteShell>
   );
 }

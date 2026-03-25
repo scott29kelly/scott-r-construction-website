@@ -7,6 +7,7 @@ import { FeaturedProject } from '@/components/sections/FeaturedProject';
 import { Proof } from '@/components/sections/Proof';
 import { TestimonialsTeaser } from '@/components/sections/TestimonialsTeaser';
 import { HomeCTA } from '@/components/sections/HomeCTA';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Owner-Led Remodeling in Langhorne, PA',
@@ -18,12 +19,24 @@ export default function Home() {
   return (
     <SiteShell>
       <Hero />
-      <About />
-      <Services />
-      <FeaturedProject />
-      <Proof />
-      <TestimonialsTeaser />
-      <HomeCTA />
+      <ScrollReveal>
+        <About />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Services />
+      </ScrollReveal>
+      <ScrollReveal variant="fade">
+        <FeaturedProject />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Proof />
+      </ScrollReveal>
+      <ScrollReveal>
+        <TestimonialsTeaser />
+      </ScrollReveal>
+      <ScrollReveal>
+        <HomeCTA />
+      </ScrollReveal>
     </SiteShell>
   );
 }
