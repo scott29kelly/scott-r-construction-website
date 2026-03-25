@@ -1,4 +1,4 @@
-import type { FeaturedProjectStory, PortfolioItem, ProjectCaseStudy } from '@/types';
+import type { BeforeAfterPair, FeaturedProjectStory, PortfolioItem, ProjectCaseStudy } from '@/types';
 
 export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
   {
@@ -293,6 +293,34 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
     ],
     tags: ['Historic renovation', 'Gut rehab', 'Curb appeal'],
     isTall: true,
+    beforeAfterPairs: [
+      {
+        label: 'Attic to Finished Bedroom',
+        before: {
+          src: '/images/Projects/251 Warnock St. Philadelphia, Pa/attic-demo-roof-structure.jpg',
+          alt: 'Attic level during demo showing exposed roof structure',
+          caption: 'Upper level during demo — exposed roof structure before buildout',
+        },
+        after: {
+          src: '/images/Projects/251 Warnock St. Philadelphia, Pa/bedroom-closets-hardwood.jpg',
+          alt: 'Finished bedroom with hardwood floors and closet doors',
+          caption: 'Finished bedroom with hardwood floors and built-in closets',
+        },
+      },
+      {
+        label: 'First Floor Demo to Finished Room',
+        before: {
+          src: '/images/Projects/251 Warnock St. Philadelphia, Pa/first-floor-demo-brick.jpg',
+          alt: 'First floor during demo with exposed brick walls',
+          caption: 'First-floor demo revealing the original brick structure',
+        },
+        after: {
+          src: '/images/Projects/251 Warnock St. Philadelphia, Pa/room-finished-windows-trim.jpg',
+          alt: 'Finished room with new windows and custom trim',
+          caption: 'Completed room with new windows, custom trim, and clean finishes',
+        },
+      },
+    ],
     images: [
       {
         src: '/images/Projects/251 Warnock St. Philadelphia, Pa/exterior-front-brick-shutters.jpg',
@@ -581,7 +609,7 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
     title: 'Front Porch Build',
     location: 'Bucks County, PA',
     serviceId: 'decks-patios',
-    image: '/images/Projects/front-porch 2019/porch-finished-wide-front.jpg',
+    image: '/images/Projects/front-porch-2019-aug/porch-finished-wide-front.jpg',
     imageAlt:
       'Completed covered front porch with PVC columns, stone veneer steps, and standing seam metal roof',
     scope: 'Full front porch build with covered roof, composite decking, and stone veneer',
@@ -611,48 +639,57 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
     ],
     tags: ['Covered porch', 'Stone veneer', 'Curb appeal'],
     isTall: true,
+    beforeAfterPairs: [
+      {
+        label: 'Framing to Finished Porch',
+        before: {
+          src: '/images/Projects/front-porch-2019-aug/porch-framing-wide-front.jpg',
+          alt: 'Wide front view during porch framing with lumber and roof structure going up',
+          caption: 'Framing stage — the roof structure taking shape over the new porch footprint',
+        },
+        after: {
+          src: '/images/Projects/front-porch-2019-aug/porch-finished-wide-front.jpg',
+          alt: 'Wide front view of completed covered porch with columns, metal roof, and stone steps',
+          caption: 'The completed porch — standing seam metal roof, PVC columns, and stone veneer steps',
+        },
+      },
+    ],
     images: [
       {
-        src: '/images/Projects/front-porch 2019/porch-finished-wide-front.jpg',
+        src: '/images/Projects/front-porch-2019-aug/porch-finished-wide-front.jpg',
         alt: 'Wide front view of completed covered porch with columns, metal roof, and stone steps',
         caption:
           'The completed porch — standing seam metal roof, PVC columns, and stone veneer steps',
       },
       {
-        src: '/images/Projects/front-porch 2019/porch-finished-right-side.jpg',
+        src: '/images/Projects/front-porch-2019-aug/porch-finished-right-side.jpg',
         alt: 'Finished porch from the right side showing stone facade and wrap-around view',
         caption:
           'Side view showing how the stone veneer and columns wrap the full porch elevation',
       },
       {
-        src: '/images/Projects/front-porch 2019/porch-columns-finished-angle.jpg',
+        src: '/images/Projects/front-porch-2019-aug/porch-columns-finished-angle.jpg',
         alt: 'Finished porch from angled view with white columns, stone base, and landscaping',
         caption:
           'Angled view with columns, stone base, and landscaping starting to fill in around the new entry',
       },
       {
-        src: '/images/Projects/front-porch 2019/deck-side-stone-steps.jpg',
+        src: '/images/Projects/front-porch-2019-aug/deck-side-stone-steps.jpg',
         alt: 'Side view of finished deck with composite boards, stone steps, and white fascia',
         caption:
           'Composite decking and stone steps — durable materials that look sharp up close',
       },
       {
-        src: '/images/Projects/front-porch 2019/porch-framing-wide-front.jpg',
+        src: '/images/Projects/front-porch-2019-aug/porch-framing-wide-front.jpg',
         alt: 'Wide front view during porch framing with lumber and roof structure going up',
         caption:
           'Framing stage — the roof structure taking shape over the new porch footprint',
       },
       {
-        src: '/images/Projects/front-porch 2019/porch-framing-scott-onsite.jpg',
+        src: '/images/Projects/front-porch-2019-aug/porch-framing-scott-onsite.jpg',
         alt: 'Porch framing in progress with Scott visible on the deck',
         caption:
           'Scott on site during framing — hands-on from the first board to the last detail',
-      },
-      {
-        src: '/images/Projects/front-porch 2019/porch-framing-roof-joists.jpg',
-        alt: 'Close-up of roof joist framing over the porch entry',
-        caption:
-          'Roof joist framing detail — the structural work behind the finished metal roof',
       },
     ],
   },
@@ -797,6 +834,93 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
         alt: 'Kitchen sink under window with gray lower cabinets, herringbone backsplash, and dishwasher',
         caption:
           'Sink wall with herringbone backsplash, quartz counters, and brass hardware details',
+      },
+    ],
+  },
+  {
+    id: 'bathroom-renovation-2019',
+    eyebrow: 'Project case study',
+    title: 'Bathroom Renovations',
+    location: 'Bucks County, PA',
+    serviceId: 'remodeling',
+    image: '/images/Projects/bathroom-2019/walk-in-shower-marble-tile.jpg',
+    imageAlt:
+      'Walk-in shower with large gray and white marble-look tile and corner marble seat',
+    scope: 'Two full bathroom renovations in a single home',
+    homeownerGoal:
+      'Renovate two bathrooms — a powder room and a full bath — with cohesive style, modern fixtures, and lasting materials.',
+    homeownerNeed:
+      'Both bathrooms were outdated and needed a complete refresh. The homeowners wanted chrome fixtures throughout, subway and patterned tile work, and practical upgrades like radiator covers and dual showerheads.',
+    outcome:
+      'Delivered two fully renovated bathrooms with cohesive finishes, custom tile work, and thoughtful details throughout.',
+    summary:
+      'Two bathroom renovations in the same Bucks County home — a powder room with geometric patterned floor tile and subway wainscoting, and a full bath with a walk-in shower featuring marble-look tile and a corner seat, plus a tub/shower combo with dual showerheads.',
+    projectStory:
+      'This project covered two bathrooms in the same home. The powder room got a complete makeover with geometric blue and black patterned floor tile, subway wainscoting, and a chrome-fixture vanity. The full bath features a walk-in shower with large marble-look tile and a corner marble seat, a tub/shower combo with rain and handheld showerheads, decorative radiator covers, and sconce lighting.',
+    scottApproach:
+      'Scott coordinated both bathroom renovations simultaneously — managing tile layout, plumbing upgrades, and finish selections so the two rooms feel connected in style while each has its own character.',
+    result:
+      'The homeowners got two beautifully finished bathrooms that feel cohesive but distinct. Chrome fixtures, thoughtful tile choices, and details like radiator covers and built-in shower niches make both rooms feel elevated and easy to maintain.',
+    projectHighlights: [
+      'Walk-in shower with marble-look tile and corner seat',
+      'Geometric patterned floor tile in powder room',
+      'Dual showerheads in tub/shower combo',
+    ],
+    outcomePoints: [
+      'Two bathrooms renovated with cohesive chrome fixtures and tile work',
+      'A walk-in shower with marble-look tile, corner seat, and mosaic floor',
+      'A powder room with geometric patterned tile and subway wainscoting',
+    ],
+    tags: ['Bathroom renovation', 'Custom tile', 'Chrome fixtures'],
+    isTall: true,
+    images: [
+      {
+        src: '/images/Projects/bathroom-2019/walk-in-shower-marble-tile.jpg',
+        alt: 'Walk-in shower with large gray and white marble-look tile, handheld shower, and corner marble seat',
+        caption:
+          'Walk-in shower with marble-look tile and a built-in corner seat for comfort and style',
+      },
+      {
+        src: '/images/Projects/bathroom-2019/walk-in-shower-seat-mosaic-floor.jpg',
+        alt: 'Walk-in shower wider view showing corner seat, mosaic floor tile, and curtain',
+        caption:
+          'Wider view of the walk-in shower — mosaic floor tile and corner seat with clean finishing',
+      },
+      {
+        src: '/images/Projects/bathroom-2019/tub-shower-dual-heads-niche.jpg',
+        alt: 'Tub/shower combo with white subway tile, rain and hand showerheads, and built-in niche',
+        caption:
+          'Tub/shower combo with dual showerheads, subway tile, and a built-in niche for everyday use',
+      },
+      {
+        src: '/images/Projects/bathroom-2019/vanity-radiator-cover-sconces.jpg',
+        alt: 'Larger bathroom vanity with decorative radiator cover, sconce lighting, and gray tile floor',
+        caption:
+          'Vanity area with sconce lighting, decorative radiator cover, and gray tile flooring',
+      },
+      {
+        src: '/images/Projects/bathroom-2019/toilet-window-radiator-cover.jpg',
+        alt: 'Toilet area with dark-framed window, white trim, radiator cover, and gray floor tile',
+        caption:
+          'Toilet area with radiator cover, dark-framed window, and consistent gray tile throughout',
+      },
+      {
+        src: '/images/Projects/bathroom-2019/vanity-patterned-floor-tile.jpg',
+        alt: 'White vanity with chrome faucet and geometric blue and black patterned floor tile',
+        caption:
+          'Powder room vanity with chrome faucet and striking geometric patterned floor tile',
+      },
+      {
+        src: '/images/Projects/bathroom-2019/powder-room-wide-window.jpg',
+        alt: 'Wide view of powder room with toilet, vanity, patterned floor tile, subway wainscoting, and double windows',
+        caption:
+          'Full powder room view — patterned floor tile, subway wainscoting, and natural light from double windows',
+      },
+      {
+        src: '/images/Projects/bathroom-2019/vanity-door-patterned-floor.jpg',
+        alt: 'Vanity and door detail showing patterned floor tile and chrome fixtures',
+        caption:
+          'Vanity detail with chrome fixtures and the geometric patterned tile running through the room',
       },
     ],
   },

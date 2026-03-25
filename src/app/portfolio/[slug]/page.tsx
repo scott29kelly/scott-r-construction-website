@@ -5,6 +5,7 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { ProjectHero } from '@/components/project/ProjectHero';
 import { ProjectNarrative } from '@/components/project/ProjectNarrative';
+import { ProjectBeforeAfter } from '@/components/project/ProjectBeforeAfter';
 import { ProjectGallery } from '@/components/project/ProjectGallery';
 import { ProjectNavigation } from '@/components/project/ProjectNavigation';
 import { ProjectStructuredData } from '@/components/project/ProjectStructuredData';
@@ -54,6 +55,9 @@ export default async function ProjectDetailPage({ params }: Props) {
       <ProjectStructuredData project={project} />
       <ProjectHero project={project} />
       <ProjectNarrative project={project} />
+      {project.beforeAfterPairs && project.beforeAfterPairs.length > 0 && (
+        <ProjectBeforeAfter pairs={project.beforeAfterPairs} />
+      )}
       <ProjectGallery images={project.images} />
       <ProjectNavigation prev={prev} next={next} />
       <PageClosingCTA

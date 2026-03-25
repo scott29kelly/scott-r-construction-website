@@ -25,6 +25,12 @@ export function StructuredData() {
         name: 'Pennsylvania',
       },
     })),
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 40.1746,
+      longitude: -74.8648,
+    },
+    image: 'https://scottromconstruction.com/opengraph-image',
     priceRange: '$$',
     foundingDate: SITE_INFO.established,
     openingHoursSpecification: [

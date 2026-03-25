@@ -29,6 +29,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       'tray-ceiling',
       'powder-room',
       'kitchen-remodel-2019',
+      'bathroom-renovation-2019',
     ],
   },
   {

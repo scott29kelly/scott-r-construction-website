@@ -12,5 +12,8 @@ node_modules/
 # Large original assets (compressed versions committed instead)
 public/images/scott-romanoski-construction-logo-1-no-bg.png
 
+# Reference / inspo folders
+inspo_reference_site_watermarkdesignbuild/
+
 # Scraped data
 dataset_*.json

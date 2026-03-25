@@ -9,7 +9,7 @@ import { buildContactHref } from '@/lib/contact-link';
 const SERVICE_IMAGES: Record<string, string> = {
   remodeling: '/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg',
   additions: '/images/Projects/kitchen-2020/dining-nook-french-doors.jpg',
-  'decks-patios': '/images/Projects/front-porch 2019/porch-finished-wide-front.jpg',
+  'decks-patios': '/images/Projects/front-porch-2019-aug/porch-finished-wide-front.jpg',
   bilco: '/images/Projects/251 Warnock St. Philadelphia, Pa/basement-staircase-laundry.jpg',
   'windows-doors': '/images/Projects/710 Parker St. Langhorne, Pa/window-plantation-shutters.jpg',
   contracting: '/images/Projects/710 Parker St. Langhorne, Pa/staircase-newel-entry.jpg',

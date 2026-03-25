@@ -70,6 +70,13 @@ export interface ProjectCaseStudy extends PortfolioItem {
   result: string;
   outcomePoints: string[];
   images: ContentImage[];
+  beforeAfterPairs?: BeforeAfterPair[];
+}
+
+export interface BeforeAfterPair {
+  label: string;
+  before: ContentImage;
+  after: ContentImage;
 }
 
 export type FeaturedProjectStory = ProjectCaseStudy;

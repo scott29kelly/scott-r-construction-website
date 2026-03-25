@@ -3,6 +3,11 @@ import { Resend } from 'resend';
 import { buildContactEmail } from '@/lib/email-template';
 import { formatLeadSource } from '@/lib/contact-source';
 
+interface PhotoAttachment {
+  filename: string;
+  content: string;
+}
+
 interface ContactRequestBody {
   firstName?: string;
   lastName?: string;
@@ -16,6 +21,7 @@ interface ContactRequestBody {
   companyName?: string;
   leadSource?: string;
   entryPage?: string;
+  photoAttachments?: PhotoAttachment[];
 }
 
 function normalizeValue(value: string | undefined): string {
@@ -91,12 +97,20 @@ export async function POST(request: Request) {
       entryPage,
     });
 
+    const attachments = body.photoAttachments
+      ?.filter((a) => a.filename && a.content)
+      .map((a) => ({
+        filename: a.filename,
+        content: Buffer.from(a.content, 'base64'),
+      }));
+
     await resend.emails.send({
       from: 'Scott Romanoski Construction <onboarding@resend.dev>',
       to: 'sroman2@verizon.net',
       replyTo: email,
       subject: `[${formatLeadSource(leadSource)}] ${firstName} ${lastName} - ${projectType}`,
       html,
+      ...(attachments && attachments.length > 0 ? { attachments } : {}),
     });
 
     return NextResponse.json({ success: true });

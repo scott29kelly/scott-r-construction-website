@@ -3,6 +3,7 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { FaqStructuredData } from '@/components/FaqStructuredData';
 import { Contact } from '@/components/sections/Contact';
 import { Faq } from '@/components/sections/Faq';
+import { ServiceAreaMap } from '@/components/ServiceAreaMap';
 import { PageHero } from '@/components/ui/PageHero';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { FAQ_ITEMS } from '@/content';
@@ -61,6 +62,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         initialLeadSource={leadSource}
         initialProjectType={projectType}
       />
+      <ServiceAreaMap />
     </SiteShell>
   );
 }
