@@ -41,6 +41,7 @@ export default async function BlogDetailPage({ params }: Props) {
   return (
     <SiteShell>
       <BlogStructuredData post={post} />
+      <div className="pt-28 md:pt-36">
       <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: post.title }]} />
 
       <article className="bg-white section-padding">
@@ -86,6 +87,7 @@ export default async function BlogDetailPage({ params }: Props) {
           </div>
         </div>
       </article>
+      </div>
 
       <PageClosingCTA
         eyebrow="Ready to start your project?"

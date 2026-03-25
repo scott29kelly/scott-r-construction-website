@@ -66,7 +66,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${belleza.variable} ${lato.variable} scroll-smooth`}
+      className={`${belleza.variable} ${lato.variable}`}
     >
       <body className="min-h-screen overflow-x-clip bg-white font-body text-text-body antialiased">
         <StructuredData />
