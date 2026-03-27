@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
 
@@ -22,13 +23,31 @@ export function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > 20);
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <header
-        className="fixed inset-x-0 top-0 z-[9999] bg-navy"
+        className={cn(
+          'fixed inset-x-0 top-0 z-[9999] transition-all duration-300',
+          scrolled
+            ? 'bg-warm-black/95 shadow-lg backdrop-blur-md'
+            : 'bg-warm-black'
+        )}
         style={{ borderBottom: '0.667px solid rgba(255,255,255,0.36)' }}
       >
-        <div className="mx-auto flex max-w-site items-center justify-between px-[50px] py-[25px] max-lg:px-5 max-lg:py-4">
+        <div
+          className={cn(
+            'mx-auto flex max-w-site items-center justify-between px-[50px] transition-all duration-300 max-lg:px-5 max-lg:py-2',
+            scrolled ? 'py-[9px]' : 'py-[12px]'
+          )}
+        >
           {/* Logo — 20% */}
           <Link href="/" className="flex shrink-0 items-center">
             <Image
@@ -36,7 +55,10 @@ export function Navbar() {
               alt="Scott Romanoski Construction"
               width={187}
               height={50}
-              className="h-auto w-[140px] lg:w-[187px]"
+              className={cn(
+                'h-auto w-[140px] transition-all duration-300',
+                scrolled ? 'lg:w-[130px]' : 'lg:w-[150px]'
+              )}
               priority
             />
           </Link>
@@ -64,7 +86,7 @@ export function Navbar() {
             <Link
               href={buildContactHref({ leadSource: 'navbar-primary' })}
               className="btn-outline btn-outline-light"
-              style={{ padding: '14px 28px' }}
+              style={{ padding: '10px 22px' }}
             >
               Book a Consult
               <ArrowRight className="btn-arrow" />
@@ -91,7 +113,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[9998] bg-navy px-6 pb-8 pt-24 lg:hidden"
+            className="fixed inset-0 z-[9998] bg-warm-black px-6 pb-8 pt-16 lg:hidden"
           >
             <nav className="flex h-full flex-col">
               <ul className="space-y-1">

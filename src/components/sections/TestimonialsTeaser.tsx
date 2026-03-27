@@ -11,7 +11,7 @@ function StarRating({ count }: { count: number }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          size={16}
+          size={18}
           className={i < count ? 'fill-star-gold text-star-gold' : 'fill-star-empty text-star-empty'}
         />
       ))}
@@ -31,8 +31,8 @@ export function TestimonialsTeaser() {
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
         {/* Header */}
         <div className="text-center">
-          <p className="section-label text-navy/60">From Our Clients</p>
-          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-navy max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <p className="section-label text-steel">From Our Clients</p>
+          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
             Trust Built on Work People Remember
           </h2>
         </div>
@@ -43,7 +43,7 @@ export function TestimonialsTeaser() {
             <div className="absolute -left-5 top-1/2 z-10 -translate-y-1/2 max-lg:hidden">
               <button
                 onClick={() => setPairIndex((i) => (i - 1 + totalPairs) % totalPairs)}
-                className="flex h-10 w-10 items-center justify-center border border-border bg-white text-navy/60 transition-colors hover:bg-cream hover:text-navy"
+                className="flex h-10 w-10 items-center justify-center border border-sand/30 bg-white text-steel transition-colors hover:bg-cream hover:text-charcoal"
                 aria-label="Previous testimonials"
               >
                 <ChevronLeft size={20} />
@@ -58,19 +58,20 @@ export function TestimonialsTeaser() {
               return (
                 <article
                   key={testimonial.id}
-                  className={`border border-border bg-cream p-[35px] transition-opacity duration-300 ${stagger}`}
+                  className={`relative overflow-hidden border border-sand/30 bg-cream p-[35px] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${stagger}`}
                 >
+                  <span className="absolute -top-2 right-4 select-none pointer-events-none font-display text-[80px] leading-none text-charcoal/[0.04]">&ldquo;</span>
                   <StarRating count={testimonial.stars} />
 
-                  <blockquote className="mt-6 font-display text-card-heading leading-[1.35] text-navy max-md:text-[24px] max-md:leading-[32px]">
+                  <blockquote className="mt-6 font-display text-card-heading leading-[1.35] text-charcoal max-md:text-[24px] max-md:leading-[32px]">
                     &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
 
-                  <div className="mt-8 border-t border-border pt-6">
-                    <p className="font-body text-[15px] font-medium uppercase tracking-nav text-navy">
+                  <div className="mt-8 border-t border-sand/30 pt-6">
+                    <p className="font-body text-[15px] font-medium uppercase tracking-nav text-charcoal">
                       {testimonial.author}
                     </p>
-                    <p className="mt-1 text-body-sm text-navy/50">
+                    <p className="mt-1 text-body-sm text-ash">
                       {testimonial.sourceLabel}
                     </p>
                   </div>
@@ -83,7 +84,7 @@ export function TestimonialsTeaser() {
             <div className="absolute -right-5 top-1/2 z-10 -translate-y-1/2 max-lg:hidden">
               <button
                 onClick={() => setPairIndex((i) => (i + 1) % totalPairs)}
-                className="flex h-10 w-10 items-center justify-center border border-border bg-white text-navy/60 transition-colors hover:bg-cream hover:text-navy"
+                className="flex h-10 w-10 items-center justify-center border border-sand/30 bg-white text-steel transition-colors hover:bg-cream hover:text-charcoal"
                 aria-label="Next testimonials"
               >
                 <ChevronRight size={20} />
@@ -97,17 +98,17 @@ export function TestimonialsTeaser() {
           <div className="mt-8 flex items-center justify-center gap-4 lg:hidden">
             <button
               onClick={() => setPairIndex((i) => (i - 1 + totalPairs) % totalPairs)}
-              className="flex h-10 w-10 items-center justify-center border border-border bg-white text-navy/60 transition-colors hover:bg-cream hover:text-navy"
+              className="flex h-10 w-10 items-center justify-center border border-sand/30 bg-white text-steel transition-colors hover:bg-cream hover:text-charcoal"
               aria-label="Previous testimonials"
             >
               <ChevronLeft size={20} />
             </button>
-            <span className="text-body-sm text-navy/50">
+            <span className="text-body-sm text-ash">
               {pairIndex + 1} / {totalPairs}
             </span>
             <button
               onClick={() => setPairIndex((i) => (i + 1) % totalPairs)}
-              className="flex h-10 w-10 items-center justify-center border border-border bg-white text-navy/60 transition-colors hover:bg-cream hover:text-navy"
+              className="flex h-10 w-10 items-center justify-center border border-sand/30 bg-white text-steel transition-colors hover:bg-cream hover:text-charcoal"
               aria-label="Next testimonials"
             >
               <ChevronRight size={20} />

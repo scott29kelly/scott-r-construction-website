@@ -11,7 +11,7 @@ export function SiteShell({ children }: SiteShellProps) {
     <>
       <a
         href="#content"
-        className="sr-only fixed left-4 top-4 z-[10000] bg-white px-4 py-3 text-btn uppercase text-navy focus:not-sr-only"
+        className="sr-only fixed left-4 top-4 z-[10000] bg-white px-4 py-3 text-btn uppercase text-charcoal focus:not-sr-only"
       >
         Skip to content
       </a>

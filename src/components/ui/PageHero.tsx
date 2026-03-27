@@ -34,7 +34,7 @@ export function PageHero({
   ];
 
   return (
-    <section className="relative overflow-hidden bg-navy pt-44 text-white md:pt-52 min-h-[480px] md:min-h-[560px]">
+    <section className="relative overflow-hidden bg-warm-black pt-44 text-white md:pt-52 min-h-[480px] md:min-h-[560px]">
       {heroImage && (
         <>
           <Image
@@ -47,7 +47,7 @@ export function PageHero({
           />
           <div
             className="absolute inset-0"
-            style={{ background: 'rgba(11, 21, 49, 0.65)' }}
+            style={{ background: 'rgba(0, 0, 0, 0.6)' }}
           />
         </>
       )}

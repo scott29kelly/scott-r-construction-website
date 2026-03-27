@@ -25,7 +25,7 @@ export function Hero() {
       {/* Dark overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: 'rgba(11, 21, 49, 0.25)' }}
+        style={{ background: 'rgba(0, 0, 0, 0.3)' }}
       />
 
       {/* Content */}

@@ -30,8 +30,8 @@ export function PortfolioFilterGrid({ projects, services }: PortfolioFilterGridP
           onClick={() => setActiveFilter('all')}
           className={`px-4 py-2 text-btn-sm uppercase transition-colors ${
             activeFilter === 'all'
-              ? 'bg-navy text-white'
-              : 'border border-border text-navy/60 hover:text-navy'
+              ? 'bg-warm-black text-white'
+              : 'border border-sand/30 text-steel hover:text-charcoal'
           }`}
         >
           All
@@ -42,8 +42,8 @@ export function PortfolioFilterGrid({ projects, services }: PortfolioFilterGridP
             onClick={() => setActiveFilter(service.id)}
             className={`px-4 py-2 text-btn-sm uppercase transition-colors ${
               activeFilter === service.id
-                ? 'bg-navy text-white'
-                : 'border border-border text-navy/60 hover:text-navy'
+                ? 'bg-warm-black text-white'
+                : 'border border-sand/30 text-steel hover:text-charcoal'
             }`}
           >
             {service.title}
@@ -71,7 +71,7 @@ export function PortfolioFilterGrid({ projects, services }: PortfolioFilterGridP
                   href={`/portfolio/${project.id}`}
                   className="group relative block overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
                 >
-                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden img-shimmer">
                     <Image
                       src={project.image}
                       alt={project.imageAlt}
@@ -83,7 +83,7 @@ export function PortfolioFilterGrid({ projects, services }: PortfolioFilterGridP
                           : '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
                       }
                     />
-                    <div className="absolute inset-0 flex flex-col justify-end bg-navy/0 p-6 transition-all duration-300 group-hover:bg-navy/60">
+                    <div className="absolute inset-0 flex flex-col justify-end bg-warm-black/0 p-6 transition-all duration-300 group-hover:bg-warm-black/60">
                       <div className="translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                         <p className="section-label text-white/70">{project.location}</p>
                         <h3 className="mt-2 font-display text-card-heading text-white">

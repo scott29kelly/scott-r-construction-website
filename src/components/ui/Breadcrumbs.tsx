@@ -36,7 +36,7 @@ export function Breadcrumbs({ items, variant = 'dark' }: BreadcrumbsProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <nav aria-label="Breadcrumb" className={isLight ? '' : 'mx-auto max-w-site px-[50px] pt-6 max-lg:px-6'}>
-        <ol className={`flex items-center gap-2 text-btn-sm uppercase ${isLight ? 'text-white/50' : 'text-navy/50'}`}>
+        <ol className={`flex items-center gap-2 text-btn-sm uppercase ${isLight ? 'text-white/50' : 'text-ash'}`}>
           {allItems.map((item, index) => (
             <React.Fragment key={item.label}>
               {index > 0 && <li aria-hidden="true">/</li>}
@@ -44,12 +44,12 @@ export function Breadcrumbs({ items, variant = 'dark' }: BreadcrumbsProps) {
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className={`transition-colors ${isLight ? 'hover:text-white/80' : 'hover:text-navy/80'}`}
+                    className={`transition-colors ${isLight ? 'hover:text-white/80' : 'hover:text-charcoal/80'}`}
                   >
                     {item.label}
                   </Link>
                 ) : (
-                  <span className={isLight ? 'text-white/80' : 'text-navy/80'}>{item.label}</span>
+                  <span className={isLight ? 'text-white/80' : 'text-charcoal/80'}>{item.label}</span>
                 )}
               </li>
             </React.Fragment>

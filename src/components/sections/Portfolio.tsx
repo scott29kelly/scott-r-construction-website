@@ -17,11 +17,11 @@ export function Portfolio({ hideViewAll }: PortfolioProps) {
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
         {/* Header */}
         <div className="text-center">
-          <p className="section-label text-navy/60">Our Work</p>
-          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-navy max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <p className="section-label text-steel">Our Work</p>
+          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
             Projects That Speak for Themselves
           </h2>
-          <p className="mx-auto mt-6 max-w-[600px] text-body-lg text-navy/70">
+          <p className="mx-auto mt-6 max-w-[600px] text-body-lg text-concrete">
             Every project tells a story about what the homeowner needed and how
             the finished space supports their daily life.
           </p>

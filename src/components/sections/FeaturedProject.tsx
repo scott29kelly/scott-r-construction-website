@@ -21,7 +21,7 @@ export function FeaturedProject() {
       {/* Dark overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: 'rgba(11, 21, 49, 0.55)' }}
+        style={{ background: 'rgba(0, 0, 0, 0.5)' }}
       />
 
       {/* Text overlay */}

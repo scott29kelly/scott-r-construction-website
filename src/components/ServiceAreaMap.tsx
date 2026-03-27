@@ -12,12 +12,12 @@ export function ServiceAreaMap() {
     <section className="bg-cream section-padding">
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
         <div className="text-center">
-          <p className="section-label text-navy/60">Service Area</p>
-          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-navy max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <p className="section-label text-steel">Service Area</p>
+          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
             Serving Bucks County &amp; Surrounding Areas
           </h2>
         </div>
-        <div className="mt-12 overflow-hidden border border-border">
+        <div className="mt-12 overflow-hidden border border-sand/30">
           <iframe
             src={src}
             width="100%"

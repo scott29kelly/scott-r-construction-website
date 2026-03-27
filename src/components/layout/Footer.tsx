@@ -9,12 +9,15 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy text-white">
+    <footer className="bg-warm-black text-white">
+      {/* Gold accent line */}
+      <div className="border-t-2 border-accent" />
+
       <div className="mx-auto max-w-site section-padding px-[50px] max-lg:px-6">
         <div className="grid gap-12 lg:grid-cols-5">
           {/* Col 1: Logo + description */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block transition-opacity hover:opacity-80">
               <Image
                 src="/images/logo.webp"
                 alt="Scott Romanoski Construction"
@@ -29,8 +32,15 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Col 2: spacer on large screens */}
-          <div className="hidden lg:block" />
+          {/* Col 2: Service Areas */}
+          <div>
+            <p className="section-label text-white/60">Service Areas</p>
+            <ul className="mt-4 columns-2 gap-x-4 space-y-1.5 text-body-sm font-light text-white/80">
+              {SERVICE_AREAS.map((area) => (
+                <li key={area}>{area}</li>
+              ))}
+            </ul>
+          </div>
 
           {/* Col 3: Location */}
           <div>

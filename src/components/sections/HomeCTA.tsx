@@ -6,7 +6,7 @@ import { CONTACT_INFO } from '@/content';
 
 export function HomeCTA() {
   return (
-    <section className="bg-navy section-padding">
+    <section className="bg-warm-black section-padding">
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
         <div className="mx-auto max-w-[700px] text-center">
           <p className="section-label text-white/50">Ready to Start?</p>

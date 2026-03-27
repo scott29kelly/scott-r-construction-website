@@ -46,7 +46,7 @@ export function ProjectStory({ project, storyImages, allImages }: ProjectStoryPr
   return (
     <section className="bg-cream section-padding">
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
-        <p className="section-label text-navy/60">Project Story</p>
+        <p className="section-label text-steel">Project Story</p>
 
         <div className="mt-8 grid gap-16">
           {narrativeSections.map(({ label, key }, sectionIndex) => {
@@ -63,10 +63,10 @@ export function ProjectStory({ project, storyImages, allImages }: ProjectStoryPr
                     }`}
                   >
                     <div className={isEven ? 'lg:order-2' : ''}>
-                      <h2 className="font-display text-card-heading text-navy">
+                      <h2 className="font-display text-card-heading text-charcoal">
                         {label}
                       </h2>
-                      <p className="mt-3 text-body-lg text-navy/70">
+                      <p className="mt-3 text-body-lg text-concrete">
                         {project[key]}
                       </p>
                       {isResult && (
@@ -79,7 +79,7 @@ export function ProjectStory({ project, storyImages, allImages }: ProjectStoryPr
                           key={img.src}
                           type="button"
                           onClick={() => openLightbox(img)}
-                          className="group relative aspect-[4/3] overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
+                          className="group relative aspect-[4/3] overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charcoal"
                         >
                           <Image
                             src={img.src}
@@ -88,17 +88,17 @@ export function ProjectStory({ project, storyImages, allImages }: ProjectStoryPr
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                             sizes="(max-width: 1024px) 100vw, 50vw"
                           />
-                          <div className="absolute inset-0 bg-navy/0 transition-colors duration-300 group-hover:bg-navy/20" />
+                          <div className="absolute inset-0 bg-warm-black/0 transition-colors duration-300 group-hover:bg-charcoal/20" />
                         </button>
                       ))}
                     </div>
                   </div>
                 ) : (
                   <div className="max-w-[720px]">
-                    <h2 className="font-display text-card-heading text-navy">
+                    <h2 className="font-display text-card-heading text-charcoal">
                       {label}
                     </h2>
-                    <p className="mt-3 text-body-lg text-navy/70">
+                    <p className="mt-3 text-body-lg text-concrete">
                       {project[key]}
                     </p>
                     {isResult && (
@@ -116,7 +116,7 @@ export function ProjectStory({ project, storyImages, allImages }: ProjectStoryPr
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="border border-border px-3 py-1.5 text-btn-sm uppercase text-navy/60"
+              className="border border-sand/30 px-3 py-1.5 text-btn-sm uppercase text-steel"
             >
               {tag}
             </span>
@@ -140,8 +140,8 @@ function ResultDetails({ project }: { project: ProjectCaseStudy }) {
     <div className="mt-6 grid gap-3">
       {project.outcomePoints.map((point) => (
         <div key={point} className="flex gap-3">
-          <CheckCircle size={18} className="mt-0.5 shrink-0 text-navy/40" />
-          <p className="text-body-sm text-navy/80">{point}</p>
+          <CheckCircle size={18} className="mt-0.5 shrink-0 text-ash/80" />
+          <p className="text-body-sm text-charcoal/80">{point}</p>
         </div>
       ))}
     </div>

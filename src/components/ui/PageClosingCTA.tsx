@@ -21,7 +21,7 @@ export function PageClosingCTA({
   return (
     <section className="bg-cream section-padding">
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
-        <div className="grid gap-8 bg-navy p-8 text-white md:grid-cols-[1.15fr_0.85fr] md:p-10">
+        <div className="grid gap-8 bg-warm-black p-8 text-white md:grid-cols-[1.15fr_0.85fr] md:p-10">
           {/* Left content */}
           <div>
             <p className="section-label text-white/60">{eyebrow}</p>

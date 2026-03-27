@@ -15,12 +15,12 @@ export function Faq({ items }: FaqProps) {
         {/* Header */}
         <div className="grid items-end gap-10 lg:grid-cols-[1fr_1fr]">
           <div>
-            <p className="section-label text-navy/60">Common Questions</p>
-            <h2 className="mt-4 font-display text-section-heading text-navy max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+            <p className="section-label text-steel">Common Questions</p>
+            <h2 className="mt-4 font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
               Before You Reach Out
             </h2>
           </div>
-          <p className="max-w-[520px] text-body-lg text-navy/70 lg:ml-auto">
+          <p className="max-w-[520px] text-body-lg text-concrete lg:ml-auto">
             Answers to the questions homeowners usually ask before starting a
             project conversation.
           </p>
@@ -31,12 +31,12 @@ export function Faq({ items }: FaqProps) {
           {resolvedItems.map((item) => (
             <div
               key={item.id}
-              className="border border-border bg-white p-[35px]"
+              className="border border-sand/30 bg-white p-[35px]"
             >
-              <h3 className="font-display text-[24px] leading-[30px] text-navy">
+              <h3 className="font-display text-[24px] leading-[30px] text-charcoal">
                 {item.question}
               </h3>
-              <p className="mt-4 text-body-sm text-navy/70">
+              <p className="mt-4 text-body-sm text-concrete">
                 {item.answer}
               </p>
             </div>

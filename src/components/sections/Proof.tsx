@@ -1,12 +1,15 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { AUTHORITY_SIGNALS, PROOF_STATS } from '@/content';
 import { buildContactHref } from '@/lib/contact-link';
+import { AnimatedValue } from '@/components/ui/AnimatedValue';
 
 export function Proof() {
   return (
-    <section className="bg-navy section-padding text-white">
+    <section className="bg-warm-black section-padding text-white">
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
         {/* Header */}
         <div className="text-center">
@@ -24,7 +27,7 @@ export function Proof() {
               className="border border-white/15 p-[35px] text-center"
             >
               <p className="font-display text-[56px] leading-none tracking-tight">
-                {stat.value}
+                <AnimatedValue value={stat.value} />
               </p>
               <p className="section-label mt-4 text-white/60">{stat.label}</p>
               <p className="mt-4 text-body-sm text-white/70">

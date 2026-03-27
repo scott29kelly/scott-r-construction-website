@@ -23,7 +23,7 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          backgroundColor: '#1B2A4A',
+          backgroundColor: '#242424',
           padding: '60px 80px',
           fontFamily: 'sans-serif',
         }}

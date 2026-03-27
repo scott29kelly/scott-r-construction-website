@@ -35,21 +35,21 @@ export default function BlogPage() {
               <Link
                 key={post.id}
                 href={`/blog/${post.id}`}
-                className="group border border-border bg-white p-[35px] transition-all duration-300 hover:border-navy/30 hover:-translate-y-0.5 hover:shadow-lg"
+                className="group border border-sand/30 bg-white p-[35px] transition-all duration-300 hover:border-charcoal/30 hover:-translate-y-0.5 hover:shadow-lg"
               >
-                <p className="text-btn-sm uppercase text-navy/50">
+                <p className="text-btn-sm uppercase text-ash">
                   {post.category}
                 </p>
-                <h2 className="mt-3 font-display text-card-heading text-navy">
+                <h2 className="mt-3 font-display text-card-heading text-charcoal">
                   {post.title}
                 </h2>
-                <p className="mt-3 text-body-sm text-navy/70">
+                <p className="mt-3 text-body-sm text-concrete">
                   {post.description}
                 </p>
                 <div className="mt-4 flex items-center justify-between">
                   <time
                     dateTime={post.publishedDate}
-                    className="text-btn-sm text-navy/40"
+                    className="text-btn-sm text-ash/80"
                   >
                     {new Date(post.publishedDate).toLocaleDateString('en-US', {
                       year: 'numeric',
@@ -57,7 +57,7 @@ export default function BlogPage() {
                       day: 'numeric',
                     })}
                   </time>
-                  <span className="flex items-center gap-1 text-btn-sm uppercase text-navy/60 transition-colors group-hover:text-navy">
+                  <span className="flex items-center gap-1 text-btn-sm uppercase text-steel transition-colors group-hover:text-charcoal">
                     Read More
                     <ArrowRight size={14} />
                   </span>

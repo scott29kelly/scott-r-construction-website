@@ -24,9 +24,7 @@ export default function ProcessPage() {
         chips={['Fit first', 'Clear communication', 'Owner-led execution']}
         heroImage="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg"
       />
-      <ScrollReveal>
-        <Process />
-      </ScrollReveal>
+      <Process />
       <ScrollReveal>
         <PageClosingCTA
         eyebrow="Ready for the first step?"

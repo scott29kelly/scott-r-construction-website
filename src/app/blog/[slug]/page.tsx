@@ -49,12 +49,12 @@ export default async function BlogDetailPage({ params }: Props) {
       <article className="bg-white section-padding">
         <div className="mx-auto max-w-[800px] px-[50px] max-lg:px-6">
           {/* Header */}
-          <div className="border-b border-border pb-8">
-            <p className="text-btn-sm uppercase text-navy/50">{post.category}</p>
-            <h1 className="mt-3 font-display text-section-heading text-navy max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <div className="border-b border-sand/30 pb-8">
+            <p className="text-btn-sm uppercase text-ash">{post.category}</p>
+            <h1 className="mt-3 font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
               {post.title}
             </h1>
-            <div className="mt-4 flex items-center gap-4 text-body-sm text-navy/50">
+            <div className="mt-4 flex items-center gap-4 text-body-sm text-ash">
               <span>{post.author}</span>
               <span aria-hidden="true">&middot;</span>
               <time dateTime={post.publishedDate}>
@@ -72,14 +72,14 @@ export default async function BlogDetailPage({ params }: Props) {
             {post.sections.map((section, index) => (
               <div key={index}>
                 {section.heading && (
-                  <h2 className="mb-4 font-display text-[24px] leading-[30px] text-navy">
+                  <h2 className="mb-4 font-display text-[24px] leading-[30px] text-charcoal">
                     {section.heading}
                   </h2>
                 )}
                 {section.paragraphs.map((paragraph, pIndex) => (
                   <p
                     key={pIndex}
-                    className="mt-3 text-body-lg leading-relaxed text-navy/70 first:mt-0"
+                    className="mt-3 text-body-lg leading-relaxed text-concrete first:mt-0"
                   >
                     {paragraph}
                   </p>

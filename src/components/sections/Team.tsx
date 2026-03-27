@@ -11,24 +11,24 @@ export function Team() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Text column */}
           <div>
-            <p className="section-label text-navy/60">Meet Your Contractor</p>
+            <p className="section-label text-steel">Meet Your Contractor</p>
 
-            <h2 className="mt-4 font-display text-section-heading text-navy max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+            <h2 className="mt-4 font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
               Scott Romanoski
             </h2>
 
-            <p className="mt-2 font-display text-sub-heading text-navy/50 max-md:text-[28px] max-md:leading-[34px]">
+            <p className="mt-2 font-display text-sub-heading text-ash max-md:text-[28px] max-md:leading-[34px]">
               Owner &amp; Lead Craftsman
             </p>
 
-            <p className="mt-8 text-body-lg text-navy/70">
+            <p className="mt-8 text-body-lg text-concrete">
               With {SITE_INFO.yearsExperience} years in the trade, Scott founded{' '}
               {SITE_INFO.name} on a straightforward idea: homeowners deserve a
               contractor who shows up, communicates clearly, and treats their
               home like his own.
             </p>
 
-            <p className="mt-5 text-body-lg text-navy/70">
+            <p className="mt-5 text-body-lg text-concrete">
               As an owner-operator, Scott is on every job site — managing the
               work, coordinating subs, and making sure the details match what
               was promised. Licensed in {SITE_INFO.licensedIn} with an{' '}

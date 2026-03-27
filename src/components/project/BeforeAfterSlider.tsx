@@ -40,7 +40,7 @@ export function BeforeAfterSlider({ before, after }: BeforeAfterSliderProps) {
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[4/3] select-none overflow-hidden"
+      className={`relative aspect-[4/3] select-none overflow-hidden ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -83,16 +83,16 @@ export function BeforeAfterSlider({ before, after }: BeforeAfterSliderProps) {
         className="absolute bottom-0 top-0 w-0.5 bg-white shadow-lg"
         style={{ left: `${position}%` }}
       >
-        <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-navy/80 text-white shadow-lg">
+        <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-warm-black/80 text-white shadow-lg ring-2 ring-white/20 transition-transform hover:scale-110">
           <span className="text-xs font-bold">&#8596;</span>
         </div>
       </div>
 
       {/* Labels */}
-      <span className="absolute left-3 top-3 bg-navy/70 px-2 py-1 text-btn-sm uppercase text-white">
+      <span className="absolute left-3 top-3 bg-warm-black/70 px-2 py-1 text-btn-sm uppercase text-white">
         Before
       </span>
-      <span className="absolute right-3 top-3 bg-navy/70 px-2 py-1 text-btn-sm uppercase text-white">
+      <span className="absolute right-3 top-3 bg-warm-black/70 px-2 py-1 text-btn-sm uppercase text-white">
         After
       </span>
     </div>

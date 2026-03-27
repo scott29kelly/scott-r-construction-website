@@ -18,8 +18,8 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
     <section className="bg-cream section-padding">
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
         <div className="text-center">
-          <p className="section-label text-navy/60">Project Gallery</p>
-          <h2 className="mx-auto mt-4 max-w-[700px] font-display text-sub-heading text-navy max-md:text-[28px] max-md:leading-[34px]">
+          <p className="section-label text-steel">Project Gallery</p>
+          <h2 className="mx-auto mt-4 max-w-[700px] font-display text-sub-heading text-charcoal max-md:text-[28px] max-md:leading-[34px]">
             A Closer Look
           </h2>
         </div>
@@ -37,7 +37,7 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
             <button
               key={image.src}
               onClick={() => setSelectedIndex(index)}
-              className="group relative aspect-[4/3] overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
+              className="group relative aspect-[4/3] overflow-hidden img-shimmer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charcoal"
             >
               <Image
                 src={image.src}
@@ -50,7 +50,7 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
                     : '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
                 }
               />
-              <div className="absolute inset-0 bg-navy/0 transition-colors duration-300 group-hover:bg-navy/20" />
+              <div className="absolute inset-0 bg-warm-black/0 transition-colors duration-300 group-hover:bg-charcoal/20" />
             </button>
           ))}
         </div>

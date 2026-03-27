@@ -20,14 +20,14 @@ export function ProjectNarrative({ project }: ProjectNarrativeProps) {
         <div className="grid gap-10 lg:grid-cols-[1fr_360px]">
           {/* Left — story sections */}
           <div>
-            <p className="section-label text-navy/60">Project Story</p>
+            <p className="section-label text-steel">Project Story</p>
             <div className="mt-8 grid gap-10">
               {narrativeSections.map(({ label, key }) => (
                 <div key={key}>
-                  <h2 className="font-display text-card-heading text-navy">
+                  <h2 className="font-display text-card-heading text-charcoal">
                     {label}
                   </h2>
-                  <p className="mt-3 text-body-lg text-navy/70">
+                  <p className="mt-3 text-body-lg text-concrete">
                     {project[key]}
                   </p>
                 </div>
@@ -37,16 +37,16 @@ export function ProjectNarrative({ project }: ProjectNarrativeProps) {
 
           {/* Right — outcome points */}
           <aside className="lg:sticky lg:top-32 lg:self-start">
-            <div className="border border-border bg-cream p-6">
-              <p className="section-label text-navy/60">Key Outcomes</p>
+            <div className="border border-sand/30 bg-cream p-6">
+              <p className="section-label text-steel">Key Outcomes</p>
               <div className="mt-4 grid gap-4">
                 {project.outcomePoints.map((point) => (
                   <div key={point} className="flex gap-3">
                     <CheckCircle
                       size={18}
-                      className="mt-0.5 shrink-0 text-navy/40"
+                      className="mt-0.5 shrink-0 text-ash/80"
                     />
-                    <p className="text-body-sm text-navy/80">{point}</p>
+                    <p className="text-body-sm text-charcoal/80">{point}</p>
                   </div>
                 ))}
               </div>
@@ -57,7 +57,7 @@ export function ProjectNarrative({ project }: ProjectNarrativeProps) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="border border-border px-3 py-1.5 text-btn-sm uppercase text-navy/60"
+                  className="border border-sand/30 px-3 py-1.5 text-btn-sm uppercase text-steel"
                 >
                   {tag}
                 </span>

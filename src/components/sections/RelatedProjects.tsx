@@ -19,8 +19,8 @@ export function RelatedProjects({ projectIds }: RelatedProjectsProps) {
     <section className="bg-white section-padding">
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
         <div className="text-center">
-          <p className="section-label text-navy/60">Related Work</p>
-          <h2 className="mx-auto mt-4 max-w-[700px] font-display text-sub-heading text-navy max-md:text-[28px] max-md:leading-[34px]">
+          <p className="section-label text-steel">Related Work</p>
+          <h2 className="mx-auto mt-4 max-w-[700px] font-display text-sub-heading text-charcoal max-md:text-[28px] max-md:leading-[34px]">
             Projects in This Category
           </h2>
         </div>
@@ -30,9 +30,9 @@ export function RelatedProjects({ projectIds }: RelatedProjectsProps) {
             <Link
               key={project.id}
               href={`/portfolio/${project.id}`}
-              className="group overflow-hidden border border-border bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="group overflow-hidden border border-sand/30 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden img-shimmer">
                 <Image
                   src={project.image}
                   alt={project.imageAlt}
@@ -42,13 +42,13 @@ export function RelatedProjects({ projectIds }: RelatedProjectsProps) {
                 />
               </div>
               <div className="p-[35px]">
-                <h3 className="font-display text-card-heading text-navy">
+                <h3 className="font-display text-card-heading text-charcoal">
                   {project.title}
                 </h3>
-                <p className="mt-3 text-body-sm text-navy/70">
+                <p className="mt-3 text-body-sm text-concrete">
                   {project.outcome}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-btn-sm font-medium uppercase text-navy">
+                <span className="mt-4 inline-flex items-center gap-1.5 text-btn-sm font-medium uppercase text-charcoal">
                   View Project
                   <ArrowRight size={14} className="btn-arrow" />
                 </span>

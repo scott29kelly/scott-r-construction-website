@@ -22,13 +22,13 @@ export function Services() {
         {/* Header row */}
         <div className="grid items-end gap-10 lg:grid-cols-[1fr_1fr]">
           <div>
-            <p className="section-label text-navy/60">What We Do</p>
-            <h2 className="mt-4 font-display text-section-heading text-navy max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+            <p className="section-label text-steel">What We Do</p>
+            <h2 className="mt-4 font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
               Services Built Around How You Actually Live
             </h2>
           </div>
 
-          <p className="max-w-[520px] text-body-lg text-navy/70 lg:ml-auto">
+          <p className="max-w-[520px] text-body-lg text-concrete lg:ml-auto">
             Every project starts with a conversation about what isn&apos;t working
             and what you&apos;d like your home to feel like when we&apos;re done.
             Pick the service that fits and we&apos;ll take it from there.
@@ -40,10 +40,10 @@ export function Services() {
           {SERVICE_DETAILS.map((service) => (
             <article
               key={service.id}
-              className="group flex flex-col overflow-hidden border border-border bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="group flex flex-col overflow-hidden border border-sand/30 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
             >
               {/* Card image */}
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden img-shimmer">
                 <Image
                   src={SERVICE_IMAGES[service.id] ?? '/images/logo.webp'}
                   alt={service.title}
@@ -55,11 +55,11 @@ export function Services() {
 
               {/* Card body */}
               <div className="flex flex-1 flex-col p-[35px]">
-                <h3 className="font-display text-card-heading text-navy">
+                <h3 className="font-display text-card-heading text-charcoal">
                   {service.title}
                 </h3>
 
-                <p className="mt-3 flex-1 text-body-sm text-navy/70">
+                <p className="mt-3 flex-1 text-body-sm text-concrete">
                   {service.description}
                 </p>
 
@@ -76,7 +76,7 @@ export function Services() {
                       leadSource: `services-${service.id}`,
                       projectType: service.contactProjectType,
                     })}
-                    className="inline-flex items-center gap-1.5 text-btn-sm font-medium uppercase text-navy/60 transition-colors hover:text-navy"
+                    className="inline-flex items-center gap-1.5 text-btn-sm font-medium uppercase text-steel transition-colors hover:text-charcoal"
                   >
                     {service.ctaLabel}
                     <ArrowRight size={12} />

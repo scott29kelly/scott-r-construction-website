@@ -54,13 +54,13 @@ export function FileUpload({
         onDragOver={(e) => e.preventDefault()}
         onDrop={handleDrop}
         onClick={() => inputRef.current?.click()}
-        className="flex cursor-pointer flex-col items-center gap-3 border-2 border-dashed border-border px-6 py-8 text-center transition-colors hover:border-navy/40 hover:bg-cream/50"
+        className="flex cursor-pointer flex-col items-center gap-3 border-2 border-dashed border-sand/30 px-6 py-8 text-center transition-colors hover:border-charcoal/40 hover:bg-cream/50"
       >
-        <Upload size={24} className="text-navy/40" />
-        <p className="text-body-sm text-navy/60">
+        <Upload size={24} className="text-ash/80" />
+        <p className="text-body-sm text-steel">
           Drag photos here or click to browse
         </p>
-        <p className="text-[13px] text-navy/40">
+        <p className="text-[13px] text-ash/80">
           Up to {maxFiles} images, {maxSizeMB}MB each
         </p>
         <input
@@ -83,17 +83,17 @@ export function FileUpload({
               <img
                 src={URL.createObjectURL(file)}
                 alt={file.name}
-                className="h-20 w-20 rounded object-cover border border-border"
+                className="h-20 w-20 rounded object-cover border border-sand/30"
               />
               <button
                 type="button"
                 onClick={() => removeFile(i)}
-                className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-navy text-white opacity-0 transition-opacity group-hover:opacity-100"
+                className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-warm-black text-white opacity-0 transition-opacity group-hover:opacity-100"
                 aria-label={`Remove ${file.name}`}
               >
                 <X size={12} />
               </button>
-              <p className="mt-1 max-w-[80px] truncate text-[11px] text-navy/40">
+              <p className="mt-1 max-w-[80px] truncate text-[11px] text-ash/80">
                 {file.name}
               </p>
             </div>

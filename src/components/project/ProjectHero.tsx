@@ -20,7 +20,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
       />
       <div
         className="absolute inset-0"
-        style={{ background: 'rgba(11, 21, 49, 0.6)' }}
+        style={{ background: 'rgba(0, 0, 0, 0.55)' }}
       />
       <div className="relative z-10 mx-auto w-full max-w-site px-[50px] pb-16 pt-44 max-lg:px-6">
         <div className="mb-6">

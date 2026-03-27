@@ -157,8 +157,8 @@ async function fileToBase64(file: File): Promise<string> {
 }
 
 const baseField =
-  'w-full border bg-white px-4 py-3 font-body text-[15px] text-navy outline-none transition-colors';
-const fieldOk = `${baseField} border-border focus:border-navy`;
+  'w-full border bg-white px-4 py-3 font-body text-[15px] text-charcoal outline-none transition-colors';
+const fieldOk = `${baseField} border-sand/30 focus:border-charcoal`;
 const fieldErr = `${baseField} border-red-400 focus:border-red-500`;
 
 /* ------------------------------------------------------------------ */
@@ -181,15 +181,15 @@ function StepIndicator({ current }: { current: number }) {
             <div
               className={`flex h-8 w-8 items-center justify-center rounded-full text-[13px] font-medium transition-colors ${
                 step.num === current
-                  ? 'bg-navy text-white'
+                  ? 'bg-warm-black text-white'
                   : step.num < current
-                    ? 'bg-navy/20 text-navy'
-                    : 'border border-border text-navy/40'
+                    ? 'bg-charcoal/20 text-charcoal'
+                    : 'border border-sand/30 text-ash/80'
               }`}
             >
               {step.num < current ? <CheckCircle2 size={16} /> : step.num}
             </div>
-            <span className="text-[13px] font-medium uppercase tracking-nav text-navy/60 max-sm:hidden">
+            <span className="text-[13px] font-medium uppercase tracking-nav text-steel max-sm:hidden">
               {step.label}
             </span>
           </div>
@@ -345,11 +345,11 @@ export function Contact({
       <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
         {/* Header */}
         <div className="text-center">
-          <p className="section-label text-navy/60">Get In Touch</p>
-          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-navy max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <p className="section-label text-steel">Get In Touch</p>
+          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
             Start Your Project Conversation
           </h2>
-          <p className="mx-auto mt-6 max-w-[600px] text-body-lg text-navy/70">
+          <p className="mx-auto mt-6 max-w-[600px] text-body-lg text-concrete">
             Share the basics and Scott will follow up within one business day
             with clear next steps.
           </p>
@@ -359,12 +359,12 @@ export function Contact({
           {/* ---- Form column ---- */}
           <div>
             {status === 'success' ? (
-              <div className="border border-border bg-cream p-12 text-center">
-                <CheckCircle2 size={48} className="mx-auto text-navy" />
-                <h3 className="mt-6 font-display text-card-heading text-navy">
+              <div className="border border-sand/30 bg-cream p-12 text-center">
+                <CheckCircle2 size={48} className="mx-auto text-charcoal" />
+                <h3 className="mt-6 font-display text-card-heading text-charcoal">
                   Request Received
                 </h3>
-                <p className="mt-4 text-body-lg text-navy/70">
+                <p className="mt-4 text-body-lg text-concrete">
                   Scott will review the details and follow up within one
                   business day.
                 </p>
@@ -378,7 +378,7 @@ export function Contact({
                   <div>
                     {/* Project type */}
                     <div>
-                      <label htmlFor="projectType" className="section-label text-navy/60">
+                      <label htmlFor="projectType" className="section-label text-steel">
                         Project Type
                       </label>
                       <select
@@ -400,7 +400,7 @@ export function Contact({
                     </div>
 
                     {selectedService && (
-                      <p className="mt-3 text-body-sm italic text-navy/50">
+                      <p className="mt-3 text-body-sm italic text-ash">
                         {selectedService.qualificationPrompt}
                       </p>
                     )}
@@ -408,7 +408,7 @@ export function Contact({
                     {/* Location + Timeline */}
                     <div className="mt-6 grid gap-6 sm:grid-cols-2">
                       <div>
-                        <label htmlFor="projectLocation" className="section-label text-navy/60">
+                        <label htmlFor="projectLocation" className="section-label text-steel">
                           Project Town / Area
                         </label>
                         <input
@@ -427,7 +427,7 @@ export function Contact({
                         )}
                       </div>
                       <div>
-                        <label htmlFor="targetTimeline" className="section-label text-navy/60">
+                        <label htmlFor="targetTimeline" className="section-label text-steel">
                           Target Timeline
                         </label>
                         <select
@@ -456,8 +456,8 @@ export function Contact({
                   <div>
                     {/* Budget */}
                     <div>
-                      <label htmlFor="budgetRange" className="section-label text-navy/60">
-                        Approximate Budget <span className="normal-case tracking-normal text-navy/40">(optional)</span>
+                      <label htmlFor="budgetRange" className="section-label text-steel">
+                        Approximate Budget <span className="normal-case tracking-normal text-ash/80">(optional)</span>
                       </label>
                       <select
                         id="budgetRange"
@@ -476,7 +476,7 @@ export function Contact({
 
                     {/* Message */}
                     <div className="mt-6">
-                      <label htmlFor="message" className="section-label text-navy/60">
+                      <label htmlFor="message" className="section-label text-steel">
                         Tell Us About Your Project
                       </label>
                       <textarea
@@ -490,7 +490,7 @@ export function Contact({
                         placeholder="Describe the project scope, the space involved, and anything Scott should know..."
                         className={`mt-2 min-h-[140px] resize-y ${errors.message ? fieldErr : fieldOk}`}
                       />
-                      <div className="mt-1 flex justify-between text-[13px] text-navy/40">
+                      <div className="mt-1 flex justify-between text-[13px] text-ash/80">
                         <span>A few sentences is enough.</span>
                         <span>{formData.message.trim().length}/1500</span>
                       </div>
@@ -501,8 +501,8 @@ export function Contact({
 
                     {/* Photos */}
                     <div className="mt-6">
-                      <label className="section-label text-navy/60">
-                        Project Photos <span className="normal-case tracking-normal text-navy/40">(optional)</span>
+                      <label className="section-label text-steel">
+                        Project Photos <span className="normal-case tracking-normal text-ash/80">(optional)</span>
                       </label>
                       <div className="mt-2">
                         <FileUpload files={photos} onChange={setPhotos} maxFiles={5} maxSizeMB={10} />
@@ -517,7 +517,7 @@ export function Contact({
                     {/* Name row */}
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div>
-                        <label htmlFor="firstName" className="section-label text-navy/60">
+                        <label htmlFor="firstName" className="section-label text-steel">
                           First Name
                         </label>
                         <input
@@ -535,7 +535,7 @@ export function Contact({
                         )}
                       </div>
                       <div>
-                        <label htmlFor="lastName" className="section-label text-navy/60">
+                        <label htmlFor="lastName" className="section-label text-steel">
                           Last Name
                         </label>
                         <input
@@ -557,7 +557,7 @@ export function Contact({
                     {/* Email + Phone */}
                     <div className="mt-6 grid gap-6 sm:grid-cols-2">
                       <div>
-                        <label htmlFor="email" className="section-label text-navy/60">
+                        <label htmlFor="email" className="section-label text-steel">
                           Email
                         </label>
                         <input
@@ -576,8 +576,8 @@ export function Contact({
                         )}
                       </div>
                       <div>
-                        <label htmlFor="phone" className="section-label text-navy/60">
-                          Phone <span className="normal-case tracking-normal text-navy/40">(optional)</span>
+                        <label htmlFor="phone" className="section-label text-steel">
+                          Phone <span className="normal-case tracking-normal text-ash/80">(optional)</span>
                         </label>
                         <input
                           id="phone"
@@ -676,19 +676,19 @@ export function Contact({
           {/* ---- Info column ---- */}
           <div className="space-y-8">
             {/* Contact details */}
-            <div className="border border-border bg-cream p-[35px]">
-              <h3 className="font-display text-card-heading text-navy">
+            <div className="border border-sand/30 bg-cream p-[35px]">
+              <h3 className="font-display text-card-heading text-charcoal">
                 Contact Details
               </h3>
 
               <div className="mt-8 space-y-6">
                 <div className="flex items-start gap-4">
-                  <Phone size={20} className="mt-1 shrink-0 text-navy/40" />
+                  <Phone size={20} className="mt-1 shrink-0 text-ash/80" />
                   <div>
-                    <p className="section-label text-navy/50">Phone</p>
+                    <p className="section-label text-ash">Phone</p>
                     <a
                       href={`tel:${CONTACT_INFO.phone.replace(/[^0-9]/g, '')}`}
-                      className="mt-1 block text-body-lg text-navy transition-opacity hover:opacity-70"
+                      className="mt-1 block text-body-lg text-charcoal transition-opacity hover:opacity-70"
                     >
                       {CONTACT_INFO.phone}
                     </a>
@@ -696,12 +696,12 @@ export function Contact({
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Mail size={20} className="mt-1 shrink-0 text-navy/40" />
+                  <Mail size={20} className="mt-1 shrink-0 text-ash/80" />
                   <div>
-                    <p className="section-label text-navy/50">Email</p>
+                    <p className="section-label text-ash">Email</p>
                     <a
                       href={`mailto:${CONTACT_INFO.email}`}
-                      className="mt-1 block text-body-lg text-navy transition-opacity hover:opacity-70"
+                      className="mt-1 block text-body-lg text-charcoal transition-opacity hover:opacity-70"
                     >
                       {CONTACT_INFO.email}
                     </a>
@@ -709,21 +709,21 @@ export function Contact({
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <MapPin size={20} className="mt-1 shrink-0 text-navy/40" />
+                  <MapPin size={20} className="mt-1 shrink-0 text-ash/80" />
                   <div>
-                    <p className="section-label text-navy/50">Location</p>
-                    <p className="mt-1 text-body-lg text-navy">
+                    <p className="section-label text-ash">Location</p>
+                    <p className="mt-1 text-body-lg text-charcoal">
                       {CONTACT_INFO.address}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Clock size={20} className="mt-1 shrink-0 text-navy/40" />
+                  <Clock size={20} className="mt-1 shrink-0 text-ash/80" />
                   <div>
-                    <p className="section-label text-navy/50">Hours</p>
+                    <p className="section-label text-ash">Hours</p>
                     {CONTACT_INFO.hours.map((hour) => (
-                      <p key={hour} className="mt-1 text-body-lg text-navy">
+                      <p key={hour} className="mt-1 text-body-lg text-charcoal">
                         {hour}
                       </p>
                     ))}
@@ -733,7 +733,7 @@ export function Contact({
             </div>
 
             {/* Trust signals */}
-            <div className="border border-border bg-navy p-[35px] text-white">
+            <div className="border border-sand/30 bg-warm-black p-[35px] text-white">
               <h3 className="font-display text-card-heading">
                 Why Homeowners Trust Scott
               </h3>

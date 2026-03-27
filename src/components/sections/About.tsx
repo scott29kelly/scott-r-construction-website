@@ -6,7 +6,7 @@ import { SITE_INFO } from '@/content';
 
 export function About() {
   return (
-    <section className="bg-navy section-padding text-white">
+    <section className="bg-warm-black section-padding text-white">
       <div className="mx-auto max-w-site px-[50px] text-center max-lg:px-6">
         {/* Watermark icon / logo */}
         <div className="mx-auto mb-10 w-[80px]">
