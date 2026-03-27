@@ -7,10 +7,10 @@ import { CONTACT_INFO } from '@/content';
 export function HomeCTA() {
   return (
     <section className="bg-warm-black section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
-        <div className="mx-auto max-w-[700px] text-center">
+      <div className="mx-auto max-w-site section-padding-x">
+        <div className="mx-auto max-w-content-lg text-center">
           <p className="section-label text-white/50">Ready to Start?</p>
-          <h2 className="mt-4 font-display text-section-heading text-white max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <h2 className="mt-4 font-display text-section-heading text-white">
             Let&apos;s talk about your project.
           </h2>
           <p className="mt-6 text-body-lg text-white/70">

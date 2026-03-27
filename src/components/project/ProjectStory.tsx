@@ -45,7 +45,7 @@ export function ProjectStory({ project, storyImages, allImages }: ProjectStoryPr
 
   return (
     <section className="bg-cream section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         <p className="section-label text-steel">Project Story</p>
 
         <div className="mt-8 grid gap-16">
@@ -94,7 +94,7 @@ export function ProjectStory({ project, storyImages, allImages }: ProjectStoryPr
                     </div>
                   </div>
                 ) : (
-                  <div className="max-w-[720px]">
+                  <div className="max-w-content-lg">
                     <h2 className="font-display text-card-heading text-charcoal">
                       {label}
                     </h2>

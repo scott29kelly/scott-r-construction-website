@@ -17,7 +17,7 @@ export function ProjectNavigation({ prev, next }: ProjectNavigationProps) {
         {prev ? (
           <Link
             href={`/portfolio/${prev.id}`}
-            className="group flex items-center gap-4 px-[50px] py-8 transition-colors hover:bg-cream max-lg:px-6"
+            className="group flex items-center gap-4 section-padding-x py-8 transition-colors hover:bg-cream"
           >
             <ArrowLeft
               size={20}
@@ -37,7 +37,7 @@ export function ProjectNavigation({ prev, next }: ProjectNavigationProps) {
         {next ? (
           <Link
             href={`/portfolio/${next.id}`}
-            className="group flex items-center justify-end gap-4 border-t border-sand/30 px-[50px] py-8 text-right transition-colors hover:bg-cream max-lg:px-6 sm:border-l sm:border-t-0"
+            className="group flex items-center justify-end gap-4 border-t border-sand/30 section-padding-x py-8 text-right transition-colors hover:bg-cream sm:border-l sm:border-t-0"
           >
             <div>
               <p className="text-btn-sm uppercase text-ash">Next Project</p>

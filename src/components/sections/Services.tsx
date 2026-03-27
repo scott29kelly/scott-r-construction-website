@@ -18,17 +18,17 @@ const SERVICE_IMAGES: Record<string, string> = {
 export function Services() {
   return (
     <section id="services" className="bg-cream section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         {/* Header row */}
         <div className="grid items-end gap-10 lg:grid-cols-[1fr_1fr]">
           <div>
             <p className="section-label text-steel">What We Do</p>
-            <h2 className="mt-4 font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+            <h2 className="mt-4 font-display text-section-heading text-charcoal">
               Services Built Around How You Actually Live
             </h2>
           </div>
 
-          <p className="max-w-[520px] text-body-lg text-concrete lg:ml-auto">
+          <p className="max-w-content-sm text-body-lg text-concrete lg:ml-auto">
             Every project starts with a conversation about what isn&apos;t working
             and what you&apos;d like your home to feel like when we&apos;re done.
             Pick the service that fits and we&apos;ll take it from there.
@@ -54,7 +54,7 @@ export function Services() {
               </div>
 
               {/* Card body */}
-              <div className="flex flex-1 flex-col p-[35px]">
+              <div className="flex flex-1 flex-col p-card-pad">
                 <h3 className="font-display text-card-heading text-charcoal">
                   {service.title}
                 </h3>

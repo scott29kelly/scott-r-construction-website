@@ -13,8 +13,8 @@ export function ProjectBeforeAfter({ pairs }: ProjectBeforeAfterProps) {
 
   return (
     <section className="bg-cream section-padding">
-      <div className="mx-auto max-w-[800px] px-[50px] max-lg:px-6">
-        <h2 className="font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+      <div className="mx-auto max-w-content-xl section-padding-x">
+        <h2 className="font-display text-section-heading text-charcoal">
           Before &amp; After
         </h2>
 

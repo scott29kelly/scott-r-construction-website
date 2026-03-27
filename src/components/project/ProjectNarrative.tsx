@@ -16,7 +16,7 @@ const narrativeSections = [
 export function ProjectNarrative({ project }: ProjectNarrativeProps) {
   return (
     <section className="bg-white section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         <div className="grid gap-10 lg:grid-cols-[1fr_360px]">
           {/* Left — story sections */}
           <div>

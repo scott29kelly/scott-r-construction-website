@@ -19,17 +19,14 @@ export function FeaturedProject() {
       />
 
       {/* Dark overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ background: 'rgba(0, 0, 0, 0.5)' }}
-      />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Text overlay */}
-      <div className="relative z-10 mx-auto w-full max-w-site px-[50px] py-section-y max-lg:px-6">
-        <div className="max-w-[620px]">
+      <div className="relative z-10 mx-auto w-full max-w-site section-padding-x py-section-y">
+        <div className="max-w-content-md">
           <p className="section-label text-white/70">Featured Project</p>
 
-          <h2 className="mt-4 font-display text-section-heading text-white max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <h2 className="mt-4 font-display text-section-heading text-white">
             {project.title} — {project.location}
           </h2>
 

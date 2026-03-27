@@ -14,7 +14,7 @@ export function Process() {
 
   return (
     <section id="process" className="bg-cream section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         {/* Header */}
         <motion.div
           className="text-center"
@@ -28,10 +28,10 @@ export function Process() {
           transition={{ type: 'spring', damping: 25, stiffness: 120 }}
         >
           <p className="section-label text-steel">How It Works</p>
-          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <h2 className="mx-auto mt-4 max-w-content-xl font-display text-section-heading text-charcoal">
             A Straightforward Process from First Call to Final Walkthrough
           </h2>
-          <p className="mx-auto mt-6 max-w-[600px] text-body-lg text-concrete">
+          <p className="mx-auto mt-6 max-w-content-md text-body-lg text-concrete">
             No surprises, no runaround. Here&apos;s how every project moves
             forward — clearly, on schedule, and with Scott personally involved
             at every step.
@@ -39,7 +39,7 @@ export function Process() {
         </motion.div>
 
         {/* Vertical timeline */}
-        <div className="relative mx-auto mt-20 max-w-[900px]">
+        <div className="relative mx-auto mt-20 max-w-content-2xl">
           <div className="space-y-16 lg:space-y-24">
             {PROCESS_STEPS.map((step, index) => {
               const isEven = index % 2 === 0;

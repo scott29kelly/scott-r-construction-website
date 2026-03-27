@@ -35,7 +35,7 @@ export function Breadcrumbs({ items, variant = 'dark' }: BreadcrumbsProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <nav aria-label="Breadcrumb" className={isLight ? '' : 'mx-auto max-w-site px-[50px] pt-6 max-lg:px-6'}>
+      <nav aria-label="Breadcrumb" className={isLight ? '' : 'mx-auto max-w-site section-padding-x pt-6'}>
         <ol className={`flex items-center gap-2 text-btn-sm uppercase ${isLight ? 'text-white/50' : 'text-ash'}`}>
           {allItems.map((item, index) => (
             <React.Fragment key={item.label}>

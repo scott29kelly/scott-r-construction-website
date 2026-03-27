@@ -14,7 +14,7 @@ export function ProjectOverview({ project }: ProjectOverviewProps) {
 
   return (
     <section className="bg-white section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         <div className="grid gap-12 lg:grid-cols-[1fr_320px]">
           {/* Left — overview text */}
           <div>

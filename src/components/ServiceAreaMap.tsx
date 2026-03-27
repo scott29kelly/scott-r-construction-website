@@ -10,10 +10,10 @@ export function ServiceAreaMap() {
 
   return (
     <section className="bg-cream section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         <div className="text-center">
           <p className="section-label text-steel">Service Area</p>
-          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <h2 className="mx-auto mt-4 max-w-content-xl font-display text-section-heading text-charcoal">
             Serving Bucks County &amp; Surrounding Areas
           </h2>
         </div>

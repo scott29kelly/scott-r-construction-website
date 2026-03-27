@@ -342,14 +342,14 @@ export function Contact({
 
   return (
     <section id="contact" className="bg-white section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         {/* Header */}
         <div className="text-center">
           <p className="section-label text-steel">Get In Touch</p>
-          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <h2 className="mx-auto mt-4 max-w-content-xl font-display text-section-heading text-charcoal">
             Start Your Project Conversation
           </h2>
-          <p className="mx-auto mt-6 max-w-[600px] text-body-lg text-concrete">
+          <p className="mx-auto mt-6 max-w-content-md text-body-lg text-concrete">
             Share the basics and Scott will follow up within one business day
             with clear next steps.
           </p>
@@ -676,7 +676,7 @@ export function Contact({
           {/* ---- Info column ---- */}
           <div className="space-y-8">
             {/* Contact details */}
-            <div className="border border-sand/30 bg-cream p-[35px]">
+            <div className="border border-sand/30 bg-cream p-card-pad">
               <h3 className="font-display text-card-heading text-charcoal">
                 Contact Details
               </h3>
@@ -733,7 +733,7 @@ export function Contact({
             </div>
 
             {/* Trust signals */}
-            <div className="border border-sand/30 bg-warm-black p-[35px] text-white">
+            <div className="border border-sand/30 bg-warm-black p-card-pad text-white">
               <h3 className="font-display text-card-heading">
                 Why Homeowners Trust Scott
               </h3>

@@ -29,13 +29,13 @@ export default function BlogPage() {
 
       <ScrollReveal>
       <section className="bg-cream section-padding">
-        <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+        <div className="mx-auto max-w-site section-padding-x">
           <div className="grid gap-6 md:grid-cols-2">
             {BLOG_POSTS.map((post) => (
               <Link
                 key={post.id}
                 href={`/blog/${post.id}`}
-                className="group border border-sand/30 bg-white p-[35px] transition-all duration-300 hover:border-charcoal/30 hover:-translate-y-0.5 hover:shadow-lg"
+                className="group border border-sand/30 bg-white p-card-pad transition-all duration-300 hover:border-charcoal/30 hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <p className="text-btn-sm uppercase text-ash">
                   {post.category}

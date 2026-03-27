@@ -8,13 +8,13 @@ interface ListeningPointsProps {
 export function ListeningPoints({ points }: ListeningPointsProps) {
   return (
     <section className="bg-cream section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         <div className="text-center">
           <p className="section-label text-steel">The First Conversation</p>
-          <h2 className="mx-auto mt-4 max-w-[700px] font-display text-sub-heading text-charcoal max-md:text-[28px] max-md:leading-[34px]">
+          <h2 className="mx-auto mt-4 max-w-content-lg font-display text-sub-heading text-charcoal">
             What Scott Listens For
           </h2>
-          <p className="mx-auto mt-6 max-w-[580px] text-body-lg text-concrete">
+          <p className="mx-auto mt-6 max-w-content-md text-body-lg text-concrete">
             Every estimate starts with understanding what is driving the project.
             Here is what Scott pays attention to in the first conversation.
           </p>

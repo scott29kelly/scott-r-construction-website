@@ -16,10 +16,10 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
 
   return (
     <section className="bg-cream section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         <div className="text-center">
           <p className="section-label text-steel">Project Gallery</p>
-          <h2 className="mx-auto mt-4 max-w-[700px] font-display text-sub-heading text-charcoal max-md:text-[28px] max-md:leading-[34px]">
+          <h2 className="mx-auto mt-4 max-w-content-lg font-display text-sub-heading text-charcoal">
             A Closer Look
           </h2>
         </div>
@@ -27,7 +27,7 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
         <div
           className={`mt-12 grid gap-4 ${
             images.length === 1
-              ? 'mx-auto max-w-[800px]'
+              ? 'mx-auto max-w-content-xl'
               : images.length === 2
                 ? 'sm:grid-cols-2'
                 : 'sm:grid-cols-2 lg:grid-cols-3'

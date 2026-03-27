@@ -47,11 +47,11 @@ export default async function BlogDetailPage({ params }: Props) {
 
       <ScrollReveal>
       <article className="bg-white section-padding">
-        <div className="mx-auto max-w-[800px] px-[50px] max-lg:px-6">
+        <div className="mx-auto max-w-content-xl section-padding-x">
           {/* Header */}
           <div className="border-b border-sand/30 pb-8">
             <p className="text-btn-sm uppercase text-ash">{post.category}</p>
-            <h1 className="mt-3 font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+            <h1 className="mt-3 font-display text-section-heading text-charcoal">
               {post.title}
             </h1>
             <div className="mt-4 flex items-center gap-4 text-body-sm text-ash">
@@ -72,7 +72,7 @@ export default async function BlogDetailPage({ params }: Props) {
             {post.sections.map((section, index) => (
               <div key={index}>
                 {section.heading && (
-                  <h2 className="mb-4 font-display text-[24px] leading-[30px] text-charcoal">
+                  <h2 className="mb-4 font-display text-intro text-charcoal">
                     {section.heading}
                   </h2>
                 )}

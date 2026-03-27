@@ -20,17 +20,17 @@ export function PageClosingCTA({
 }: PageClosingCTAProps) {
   return (
     <section className="bg-cream section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         <div className="grid gap-8 bg-warm-black p-8 text-white md:grid-cols-[1.15fr_0.85fr] md:p-10">
           {/* Left content */}
           <div>
             <p className="section-label text-white/60">{eyebrow}</p>
 
-            <h2 className="mt-4 max-w-[700px] font-display text-sub-heading text-white max-md:text-[28px] max-md:leading-[34px]">
+            <h2 className="mt-4 max-w-content-lg font-display text-sub-heading text-white">
               {title}
             </h2>
 
-            <p className="mt-5 max-w-[600px] text-body-lg text-white/70">
+            <p className="mt-5 max-w-content-md text-body-lg text-white/70">
               {description}
             </p>
 

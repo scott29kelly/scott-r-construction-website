@@ -45,45 +45,42 @@ export function PageHero({
             className="object-cover"
             sizes="100vw"
           />
-          <div
-            className="absolute inset-0"
-            style={{ background: 'rgba(0, 0, 0, 0.6)' }}
-          />
+          <div className="absolute inset-0 bg-black/60" />
         </>
       )}
 
-      <div className="relative z-10 mx-auto max-w-site px-[50px] pb-24 max-lg:px-6 md:pb-28">
+      <div className="relative z-10 mx-auto max-w-site section-padding-x pb-24 md:pb-28">
         <motion.p
-          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 24, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ type: 'spring', damping: 25, stiffness: 120, delay: 0.1 }}
           className="section-label text-white/60"
         >
           {eyebrow}
         </motion.p>
 
         <motion.h1
-          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-4 max-w-[900px] text-balance font-display text-section-heading max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]"
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 24, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ type: 'spring', damping: 25, stiffness: 120, delay: 0.2 }}
+          className="mt-4 max-w-content-2xl text-balance font-display text-section-heading"
         >
           {title}
         </motion.h1>
 
         <motion.p
-          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-6 max-w-[640px] text-body-lg text-white/75"
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 24, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ type: 'spring', damping: 25, stiffness: 120, delay: 0.3 }}
+          className="mt-6 max-w-content-md text-body-lg text-white/75"
         >
           {description}
         </motion.p>
 
         <motion.div
-          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 24, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ type: 'spring', damping: 25, stiffness: 120, delay: 0.4 }}
           className="mt-10 flex flex-wrap gap-4"
         >
           <Link
@@ -103,9 +100,9 @@ export function PageHero({
         </motion.div>
 
         <motion.div
-          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 24, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ type: 'spring', damping: 25, stiffness: 120, delay: 0.5 }}
           className="mt-8 flex flex-wrap gap-3"
         >
           {heroChips.map((chip) => (

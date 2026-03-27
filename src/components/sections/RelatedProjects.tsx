@@ -17,10 +17,10 @@ export function RelatedProjects({ projectIds }: RelatedProjectsProps) {
 
   return (
     <section className="bg-white section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         <div className="text-center">
           <p className="section-label text-steel">Related Work</p>
-          <h2 className="mx-auto mt-4 max-w-[700px] font-display text-sub-heading text-charcoal max-md:text-[28px] max-md:leading-[34px]">
+          <h2 className="mx-auto mt-4 max-w-content-lg font-display text-sub-heading text-charcoal">
             Projects in This Category
           </h2>
         </div>
@@ -41,7 +41,7 @@ export function RelatedProjects({ projectIds }: RelatedProjectsProps) {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
-              <div className="p-[35px]">
+              <div className="p-card-pad">
                 <h3 className="font-display text-card-heading text-charcoal">
                   {project.title}
                 </h3>

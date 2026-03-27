@@ -13,7 +13,7 @@ export function Footer() {
       {/* Gold accent line */}
       <div className="border-t-2 border-accent" />
 
-      <div className="mx-auto max-w-site section-padding px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding section-padding-x">
         <div className="grid gap-12 lg:grid-cols-5">
           {/* Col 1: Logo + description */}
           <div className="lg:col-span-2">
@@ -82,13 +82,8 @@ export function Footer() {
       </div>
 
       {/* Copyright bar */}
-      <div
-        className="mx-auto max-w-site px-[50px] max-lg:px-6"
-        style={{ borderTop: '0.667px solid rgba(255,255,255,0.36)' }}
-      >
-        <div className="flex flex-col gap-3 py-6 text-sm max-md:text-center md:flex-row md:items-center md:justify-between"
-          style={{ color: 'rgba(255,255,255,0.78)' }}
-        >
+      <div className="mx-auto max-w-site section-padding-x border-t-nav">
+        <div className="flex flex-col gap-3 py-6 text-sm text-white/[0.78] max-md:text-center md:flex-row md:items-center md:justify-between">
           <p>
             &copy; {currentYear} {SITE_INFO.name}. All rights reserved.
           </p>

@@ -23,35 +23,32 @@ export function Hero() {
       />
 
       {/* Dark overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ background: 'rgba(0, 0, 0, 0.3)' }}
-      />
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-site px-[50px] text-center text-white max-lg:px-6">
+      <div className="relative z-10 mx-auto w-full max-w-site section-padding-x text-center text-white">
         <motion.p
-          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 24, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ type: 'spring', damping: 25, stiffness: 120, delay: 0.1 }}
           className="section-label text-white"
         >
           Owner-Led Remodeling in Bucks County
         </motion.p>
 
         <motion.h1
-          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mx-auto mt-6 max-w-[1100px] font-display text-hero-headline uppercase max-lg:text-[52px] max-lg:leading-[58px] max-md:text-[38px] max-md:leading-[44px]"
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 24, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ type: 'spring', damping: 25, stiffness: 120, delay: 0.2 }}
+          className="mx-auto mt-6 max-w-content-3xl font-display text-hero-headline uppercase"
         >
           Building Your Vision with Craftsmanship & Care
         </motion.h1>
 
         <motion.div
-          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 24, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ type: 'spring', damping: 25, stiffness: 120, delay: 0.4 }}
           className="mt-10"
         >
           <Link

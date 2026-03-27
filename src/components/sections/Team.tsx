@@ -7,17 +7,17 @@ import { SITE_INFO } from '@/content';
 export function Team() {
   return (
     <section id="team" className="bg-white section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Text column */}
           <div>
             <p className="section-label text-steel">Meet Your Contractor</p>
 
-            <h2 className="mt-4 font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+            <h2 className="mt-4 font-display text-section-heading text-charcoal">
               Scott Romanoski
             </h2>
 
-            <p className="mt-2 font-display text-sub-heading text-ash max-md:text-[28px] max-md:leading-[34px]">
+            <p className="mt-2 font-display text-sub-heading text-ash">
               Owner &amp; Lead Craftsman
             </p>
 

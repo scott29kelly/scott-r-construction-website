@@ -35,12 +35,11 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          'fixed inset-x-0 top-0 z-[9999] transition-all duration-300',
+          'fixed inset-x-0 top-0 z-[9999] border-b-nav transition-all duration-300',
           scrolled
             ? 'bg-warm-black/95 shadow-lg backdrop-blur-md'
             : 'bg-warm-black'
         )}
-        style={{ borderBottom: '0.667px solid rgba(255,255,255,0.36)' }}
       >
         <div
           className={cn(
@@ -85,8 +84,7 @@ export function Navbar() {
           <div className="hidden lg:block">
             <Link
               href={buildContactHref({ leadSource: 'navbar-primary' })}
-              className="btn-outline btn-outline-light"
-              style={{ padding: '10px 22px' }}
+              className="btn-outline btn-outline-light px-[22px] py-2.5"
             >
               Book a Consult
               <ArrowRight className="btn-arrow" />
@@ -128,12 +126,11 @@ export function Navbar() {
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={cn(
-                        'block py-4 font-display text-2xl transition-colors',
+                        'block border-b-mobile-nav py-4 font-display text-2xl transition-colors',
                         pathname === link.href
                           ? 'text-white'
                           : 'text-white/70 hover:text-white'
                       )}
-                      style={{ borderBottom: '0.667px solid rgba(255,255,255,0.12)' }}
                     >
                       {link.name}
                     </Link>

@@ -11,16 +11,16 @@ export function Faq({ items }: FaqProps) {
 
   return (
     <section className="bg-cream section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         {/* Header */}
         <div className="grid items-end gap-10 lg:grid-cols-[1fr_1fr]">
           <div>
             <p className="section-label text-steel">Common Questions</p>
-            <h2 className="mt-4 font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+            <h2 className="mt-4 font-display text-section-heading text-charcoal">
               Before You Reach Out
             </h2>
           </div>
-          <p className="max-w-[520px] text-body-lg text-concrete lg:ml-auto">
+          <p className="max-w-content-sm text-body-lg text-concrete lg:ml-auto">
             Answers to the questions homeowners usually ask before starting a
             project conversation.
           </p>
@@ -31,9 +31,9 @@ export function Faq({ items }: FaqProps) {
           {resolvedItems.map((item) => (
             <div
               key={item.id}
-              className="border border-sand/30 bg-white p-[35px]"
+              className="border border-sand/30 bg-white p-card-pad"
             >
-              <h3 className="font-display text-[24px] leading-[30px] text-charcoal">
+              <h3 className="font-display text-intro text-charcoal">
                 {item.question}
               </h3>
               <p className="mt-4 text-body-sm text-concrete">

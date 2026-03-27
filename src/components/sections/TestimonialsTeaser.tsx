@@ -28,11 +28,11 @@ export function TestimonialsTeaser() {
 
   return (
     <section id="testimonials" className="bg-white section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         {/* Header */}
         <div className="text-center">
           <p className="section-label text-steel">From Our Clients</p>
-          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading text-charcoal max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <h2 className="mx-auto mt-4 max-w-content-xl font-display text-section-heading text-charcoal">
             Trust Built on Work People Remember
           </h2>
         </div>
@@ -58,17 +58,17 @@ export function TestimonialsTeaser() {
               return (
                 <article
                   key={testimonial.id}
-                  className={`relative overflow-hidden border border-sand/30 bg-cream p-[35px] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${stagger}`}
+                  className={`relative overflow-hidden border border-sand/30 bg-cream p-card-pad transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${stagger}`}
                 >
                   <span className="absolute -top-2 right-4 select-none pointer-events-none font-display text-[80px] leading-none text-charcoal/[0.04]">&ldquo;</span>
                   <StarRating count={testimonial.stars} />
 
-                  <blockquote className="mt-6 font-display text-card-heading leading-[1.35] text-charcoal max-md:text-[24px] max-md:leading-[32px]">
+                  <blockquote className="mt-6 font-display text-card-heading leading-[1.35] text-charcoal">
                     &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
 
                   <div className="mt-8 border-t border-sand/30 pt-6">
-                    <p className="font-body text-[15px] font-medium uppercase tracking-nav text-charcoal">
+                    <p className="font-body text-label font-medium uppercase text-charcoal">
                       {testimonial.author}
                     </p>
                     <p className="mt-1 text-body-sm text-ash">

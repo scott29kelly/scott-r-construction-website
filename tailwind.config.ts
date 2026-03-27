@@ -31,6 +31,12 @@ const config: Config = {
       },
       maxWidth: {
         site: '1400px',
+        'content-sm': '520px',
+        'content-md': '640px',
+        'content-lg': '720px',
+        'content-xl': '800px',
+        'content-2xl': '900px',
+        'content-3xl': '1100px',
       },
       spacing: {
         'section-x': '50px',
@@ -42,10 +48,10 @@ const config: Config = {
         label: '2px',
       },
       fontSize: {
-        'hero-headline': ['90px', { lineHeight: '99px', letterSpacing: '0' }],
-        'section-heading': ['59.2px', { lineHeight: '59.2px', letterSpacing: '0.592px' }],
-        'card-heading': ['32px', { lineHeight: '38.4px', letterSpacing: '0' }],
-        'sub-heading': ['41.6px', { lineHeight: '49.92px', letterSpacing: '0' }],
+        'hero-headline': ['clamp(38px, 5vw + 20px, 90px)', { lineHeight: 'clamp(44px, 5.5vw + 22px, 99px)', letterSpacing: '0' }],
+        'section-heading': ['clamp(30px, 3.5vw + 10px, 59.2px)', { lineHeight: 'clamp(34px, 3.5vw + 12px, 59.2px)', letterSpacing: '0.592px' }],
+        'card-heading': ['clamp(24px, 2vw + 8px, 32px)', { lineHeight: 'clamp(32px, 2.4vw + 10px, 38.4px)', letterSpacing: '0' }],
+        'sub-heading': ['clamp(28px, 2.5vw + 10px, 41.6px)', { lineHeight: 'clamp(34px, 3vw + 10px, 49.92px)', letterSpacing: '0' }],
         'body-lg': ['19.2px', { lineHeight: '28.8px', letterSpacing: '0.384px' }],
         'body-sm': ['17.6px', { lineHeight: '26.4px', letterSpacing: '0.352px' }],
         'nav-link': ['13px', { lineHeight: '15.6px', letterSpacing: '1.625px' }],

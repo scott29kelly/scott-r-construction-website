@@ -16,15 +16,15 @@ export function ServiceFaq({ items, serviceTitle }: ServiceFaqProps) {
 
   return (
     <section className="bg-cream section-padding">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         <div className="text-center">
           <p className="section-label text-steel">Common Questions</p>
-          <h2 className="mx-auto mt-4 max-w-[700px] font-display text-sub-heading text-charcoal max-md:text-[28px] max-md:leading-[34px]">
+          <h2 className="mx-auto mt-4 max-w-content-lg font-display text-sub-heading text-charcoal">
             {serviceTitle} FAQ
           </h2>
         </div>
 
-        <div className="mx-auto mt-12 max-w-[800px]">
+        <div className="mx-auto mt-12 max-w-content-xl">
           {items.map((item) => {
             const isOpen = openId === item.id;
 

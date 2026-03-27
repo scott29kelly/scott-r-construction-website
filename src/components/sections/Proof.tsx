@@ -10,11 +10,11 @@ import { AnimatedValue } from '@/components/ui/AnimatedValue';
 export function Proof() {
   return (
     <section className="bg-warm-black section-padding text-white">
-      <div className="mx-auto max-w-site px-[50px] max-lg:px-6">
+      <div className="mx-auto max-w-site section-padding-x">
         {/* Header */}
         <div className="text-center">
           <p className="section-label text-white/50">Why Choose Us</p>
-          <h2 className="mx-auto mt-4 max-w-[800px] font-display text-section-heading max-lg:text-[40px] max-lg:leading-[44px] max-md:text-[30px] max-md:leading-[34px]">
+          <h2 className="mx-auto mt-4 max-w-content-xl font-display text-section-heading">
             The Proof Behind the Promise
           </h2>
         </div>
@@ -24,7 +24,7 @@ export function Proof() {
           {PROOF_STATS.map((stat) => (
             <div
               key={stat.id}
-              className="border border-white/15 p-[35px] text-center"
+              className="border border-white/15 p-card-pad text-center"
             >
               <p className="font-display text-[56px] leading-none tracking-tight">
                 <AnimatedValue value={stat.value} />
