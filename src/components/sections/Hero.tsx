@@ -28,7 +28,7 @@ export function Hero() {
       opacity: 1,
       rotate: 0,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         damping: 20,
         stiffness: 100,
         delay: 0.1 + i * 0.08,
