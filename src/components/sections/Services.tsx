@@ -1,11 +1,12 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { SERVICE_DETAILS } from '@/content';
-import { buildContactHref } from '@/lib/contact-link';
 
-/* Map each service to a representative project image */
 const SERVICE_IMAGES: Record<string, string> = {
   remodeling: '/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg',
   additions: '/images/Projects/kitchen-2020/dining-nook-french-doors.jpg',
@@ -15,75 +16,85 @@ const SERVICE_IMAGES: Record<string, string> = {
   contracting: '/images/Projects/710 Parker St. Langhorne, Pa/staircase-newel-entry.jpg',
 };
 
+const BENTO_CLASSES: Record<number, string> = {
+  0: 'md:col-span-2 md:row-span-2 min-h-[450px]',
+  1: 'md:col-span-2 md:row-span-1 min-h-[280px]',
+  2: 'md:col-span-1 md:row-span-1 min-h-[280px]',
+  3: 'md:col-span-1 md:row-span-1 min-h-[280px]',
+  4: 'md:col-span-2 md:row-span-1 min-h-[280px]',
+  5: 'md:col-span-2 md:row-span-1 min-h-[280px]',
+};
+
 export function Services() {
   return (
-    <section id="services" className="bg-cream section-padding">
+    <section id="services" className="bg-sand section-padding relative z-10">
       <div className="mx-auto max-w-site section-padding-x">
         {/* Header row */}
-        <div className="grid items-end gap-10 lg:grid-cols-[1fr_1fr]">
+        <div className="grid items-end gap-10 md:grid-cols-[1fr_1fr] mb-16">
           <div>
-            <p className="section-label text-steel">What We Do</p>
-            <h2 className="mt-4 font-display text-section-heading text-charcoal">
-              Services Built Around How You Actually Live
+            <div className="flex items-center gap-4 mb-8">
+              <div className="h-px w-12 bg-accent" />
+              <p className="font-body text-label text-accent uppercase tracking-widest">
+                Our Capabilities
+              </p>
+            </div>
+            <h2 className="font-display text-section-heading text-charcoal leading-tight">
+              Spaces Designed for How You Live
             </h2>
           </div>
 
-          <p className="max-w-content-sm text-body-lg text-concrete lg:ml-auto">
+          <p className="max-w-content-md text-body-lg text-concrete md:ml-auto md:text-right">
             Every project starts with a conversation about what isn&apos;t working
-            and what you&apos;d like your home to feel like when we&apos;re done.
-            Pick the service that fits and we&apos;ll take it from there.
+            and what you&apos;d like your home to feel like. We handle the rest.
           </p>
         </div>
 
-        {/* 3-column card grid */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICE_DETAILS.map((service) => (
-            <article
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-min">
+          {SERVICE_DETAILS.map((service, index) => (
+            <motion.article
               key={service.id}
-              className="group flex flex-col overflow-hidden border border-sand/30 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`group cursor-interact relative flex flex-col overflow-hidden rounded-[32px] bg-cream border border-accent/10 transition-transform duration-500 hover:scale-[1.01] hover:shadow-2xl ${BENTO_CLASSES[index] || 'col-span-1 row-span-1 min-h-[250px]'}`}
             >
-              {/* Card image */}
-              <div className="relative aspect-[4/3] overflow-hidden img-shimmer">
+              {/* Background Image with animated overlay */}
+              <div className="absolute inset-0 z-0 h-full w-full overflow-hidden bg-charcoal">
                 <Image
                   src={SERVICE_IMAGES[service.id] ?? '/images/logo.webp'}
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover opacity-60 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110 group-hover:opacity-80"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/40 to-transparent transition-opacity duration-500" />
               </div>
 
-              {/* Card body */}
-              <div className="flex flex-1 flex-col p-card-pad">
-                <h3 className="font-display text-card-heading text-charcoal">
+              {/* Card content */}
+              <div className="relative z-10 flex flex-1 flex-col justify-end p-8 md:p-10 text-cream">
+                <h3 className="font-display text-card-heading text-white">
                   {service.title}
                 </h3>
-
-                <p className="mt-3 flex-1 text-body-sm text-concrete">
+                
+                <p className="mt-3 text-body-sm text-sand/80 max-w-sm line-clamp-2 md:line-clamp-none md:translate-y-4 md:opacity-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-y-0 group-hover:opacity-100">
                   {service.description}
                 </p>
 
-                <div className="mt-6 flex flex-col gap-3">
+                <div className="mt-6 md:mt-8 flex items-center justify-between">
                   <Link
                     href={`/services/${service.id}`}
-                    className="btn-sm-card"
+                    className="inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[2px] text-white after:content-[''] after:absolute after:inset-0"
                   >
-                    Learn More
-                    <ArrowRight className="btn-arrow" />
-                  </Link>
-                  <Link
-                    href={buildContactHref({
-                      leadSource: `services-${service.id}`,
-                      projectType: service.contactProjectType,
-                    })}
-                    className="inline-flex items-center gap-1.5 text-btn-sm font-medium uppercase text-steel transition-colors hover:text-charcoal"
-                  >
-                    {service.ctaLabel}
-                    <ArrowRight size={12} />
+                    Explore
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-accent">
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-charcoal" />
+                    </span>
                   </Link>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

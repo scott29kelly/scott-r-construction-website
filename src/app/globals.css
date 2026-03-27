@@ -8,10 +8,36 @@
   }
 
   body {
-    font-weight: 300;
+    font-weight: 400; /* Updated for Inter */
     font-size: 19.2px;
     line-height: 28.8px;
     letter-spacing: 0.384px;
+    background-color: var(--color-white);
+    position: relative;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noiseFilter\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.85\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noiseFilter)\"/%3E%3C/svg%3E');
+    opacity: 0.03; /* Extremely subtle noise */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 
   h1, h2, h3, h4 {
@@ -61,31 +87,32 @@
   .btn-primary {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 22px 35px;
+    gap: 12px;
+    padding: 20px 40px;
     font-family: var(--font-body), sans-serif;
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 15.6px;
-    letter-spacing: 1.625px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     border: none;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 100px; /* Pill shape for premium feel */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, background 0.4s ease, color 0.4s ease;
   }
 
   .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
 
   .btn-primary-light {
     background: #ffffff;
-    color: #2e2e2e;
+    color: #0c0c0c;
   }
 
   .btn-primary-dark {
-    background: #2e2e2e;
+    background: #0c0c0c;
     color: #ffffff;
   }
 

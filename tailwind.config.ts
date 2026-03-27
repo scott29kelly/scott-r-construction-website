@@ -9,21 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: '#2e2e2e',
-        'warm-black': '#242424',
-        slate: '#454545',
-        concrete: '#525252',
-        steel: '#6b6b6b',
-        ash: '#9a9a9a',
-        sand: '#c4b5a0',
-        'warm-sand': '#d4c4ad',
-        cream: '#f8f6f3',
-        white: '#fafaf8',
-        accent: '#b08d57',
-        'accent-light': '#cbae80',
-        'accent-dark': '#8c6f42',
-        'star-gold': '#f2ca46',
-        'star-empty': '#c4b5a0',
+        charcoal: '#0C0C0C', // True deep onyx
+        'warm-black': '#1A1A1A', // Softer black
+        slate: '#333333',
+        concrete: '#737373',
+        steel: '#A3A3A3',
+        ash: '#D4D4D4',
+        sand: '#E6E1DA', // More sophisticated greige
+        'warm-sand': '#F0EBE1', // Lighter elegant greige
+        cream: '#FDFBF7', // Ultra high-end, gallery white
+        white: '#FFFFFF',
+        accent: '#C5A880', // Refined, softer aged brass/gold
+        'accent-light': '#DBCBA0',
+        'accent-dark': '#9A7D55',
+        'star-gold': '#D4AF37', // True metallic gold
+        'star-empty': '#E6E1DA',
       },
       fontFamily: {
         display: ['var(--font-display)', 'serif'],

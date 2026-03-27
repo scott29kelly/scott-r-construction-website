@@ -7,136 +7,78 @@ import Link from 'next/link';
 import { PROCESS_STEPS } from '@/content';
 import { buildContactHref } from '@/lib/contact-link';
 
-const viewportOnce = { once: true, amount: 0.3 } as const;
-
 export function Process() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="process" className="bg-cream section-padding">
+    <section id="process" className="bg-sand section-padding relative z-10">
       <div className="mx-auto max-w-site section-padding-x">
         {/* Header */}
         <motion.div
-          className="text-center"
+          className="text-center mb-24"
           initial={
             shouldReduceMotion
               ? undefined
-              : { opacity: 0, y: 24, filter: 'blur(8px)' }
+              : { opacity: 0, y: 24 }
           }
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ type: 'spring', damping: 25, stiffness: 120 }}
         >
-          <p className="section-label text-steel">How It Works</p>
-          <h2 className="mx-auto mt-4 max-w-content-xl font-display text-section-heading text-charcoal">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-12 bg-accent" />
+            <p className="font-body text-label text-accent uppercase tracking-widest">
+              How It Works
+            </p>
+            <div className="h-px w-12 bg-accent" />
+          </div>
+          <h2 className="mx-auto mt-4 max-w-content-xl font-display text-section-heading text-charcoal leading-tight">
             A Straightforward Process from First Call to Final Walkthrough
           </h2>
-          <p className="mx-auto mt-6 max-w-content-md text-body-lg text-concrete">
-            No surprises, no runaround. Here&apos;s how every project moves
-            forward — clearly, on schedule, and with Scott personally involved
-            at every step.
-          </p>
         </motion.div>
 
-        {/* Vertical timeline */}
-        <div className="relative mx-auto mt-20 max-w-content-2xl">
-          <div className="space-y-16 lg:space-y-24">
-            {PROCESS_STEPS.map((step, index) => {
-              const isEven = index % 2 === 0;
-              const delay = index * 0.2;
-
-              return (
-                <div key={step.id} className="relative lg:grid lg:grid-cols-2 lg:gap-16">
-                  {/* Connecting line segment between dots */}
-                  {index < PROCESS_STEPS.length - 1 && (
-                    shouldReduceMotion ? (
-                      <div className="absolute left-1/2 top-14 hidden h-[calc(100%+theme(spacing.24)-3.5rem)] w-px -translate-x-1/2 bg-gradient-to-b from-sand/40 to-sand/20 lg:block" />
-                    ) : (
-                      <motion.div
-                        className="absolute left-1/2 top-14 hidden h-[calc(100%+theme(spacing.24)-3.5rem)] w-px -translate-x-1/2 origin-top bg-gradient-to-b from-sand/40 to-sand/20 lg:block"
-                        initial={{ scaleY: 0 }}
-                        whileInView={{ scaleY: 1 }}
-                        viewport={{ once: true, amount: 0.1 }}
-                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
-                      />
-                    )
-                  )}
-
-                  {/* Timeline dot — ring reveal with glow */}
-                  {shouldReduceMotion ? (
-                    <div className="absolute left-1/2 top-0 z-10 hidden h-14 w-14 -translate-x-1/2 items-center justify-center rounded-lg border-2 border-accent bg-warm-black shadow-lg shadow-accent/20 lg:flex">
-                      <span className="font-display text-[22px] text-white">
-                        {step.number}
-                      </span>
-                    </div>
-                  ) : (
-                    <motion.div
-                      className="absolute left-1/2 top-0 z-10 hidden h-14 w-14 -translate-x-1/2 items-center justify-center rounded-lg border-2 border-accent bg-warm-black shadow-lg shadow-accent/20 lg:flex"
-                      initial={{ scale: 0, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      viewport={viewportOnce}
-                      transition={{
-                        type: 'spring',
-                        damping: 20,
-                        stiffness: 200,
-                        delay: delay + 0.1,
-                      }}
-                    >
-                      <span className="font-display text-[22px] text-white">
-                        {step.number}
-                      </span>
-                    </motion.div>
-                  )}
-
-                  {/* Content — blur-up reveal */}
-                  <motion.div
-                    className={
-                      isEven
-                        ? 'lg:col-start-1 lg:text-right lg:pr-12'
-                        : 'lg:col-start-2 lg:text-left lg:pl-12'
-                    }
-                    initial={
-                      shouldReduceMotion
-                        ? undefined
-                        : { opacity: 0, y: 24, filter: 'blur(8px)' }
-                    }
-                    whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    viewport={viewportOnce}
-                    transition={{
-                      type: 'spring',
-                      damping: 25,
-                      stiffness: 120,
-                      delay: delay + 0.15,
-                    }}
-                  >
-                    {/* Mobile step number */}
-                    <div className="mb-3 flex h-12 w-12 items-center justify-center border border-sand/30 bg-white lg:hidden">
-                      <span className="font-display text-[20px] text-charcoal">
-                        {step.number}
-                      </span>
-                    </div>
-
-                    <h3 className="font-display text-card-heading text-charcoal">
-                      {step.title}
-                    </h3>
-                    <p className="mt-3 text-body-sm text-concrete">
-                      {step.description}
-                    </p>
-                  </motion.div>
+        {/* Sticky Stacking Cards */}
+        <div className="relative mx-auto mt-20 max-w-content-2xl flex flex-col gap-6 md:gap-12 pb-32">
+          {PROCESS_STEPS.map((step, index) => {
+            return (
+              <div 
+                key={step.id} 
+                className="sticky flex flex-col md:flex-row bg-cream border border-accent/20 rounded-2xl p-8 md:p-16 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-transform duration-500 ease-out hover:scale-[1.01]"
+                style={{ 
+                  top: `calc(120px + ${index * 30}px)`,
+                  zIndex: index,
+                }}
+              >
+                <div className="md:w-1/3 border-b md:border-b-0 md:border-r border-accent/20 pb-8 md:pb-0 md:pr-12 flex flex-col justify-between">
+                  <span className="font-display text-[80px] leading-none text-accent/30 block mb-4">
+                    {step.number}
+                  </span>
+                  <h3 className="font-display text-card-heading text-charcoal">
+                    {step.title}
+                  </h3>
                 </div>
-              );
-            })}
-          </div>
+                
+                <div className="md:w-2/3 pt-8 md:pt-0 md:pl-12 flex items-center">
+                  <p className="text-body-lg text-concrete">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* CTA */}
-        <div className="mt-20 text-center">
+        <div className="mt-12 text-center relative z-20">
           <Link
             href={buildContactHref({ leadSource: 'process-cta' })}
-            className="btn-primary btn-primary-dark"
+            className="cursor-interact group relative inline-flex items-center gap-6 overflow-hidden rounded-full bg-charcoal px-8 py-5 text-sm font-medium uppercase tracking-[2px] text-white transition-transform hover:scale-105"
           >
-            Start With a Free Consultation
-            <ArrowRight className="btn-arrow" />
+            <span className="relative z-10 transition-colors">Start With a Free Consultation</span>
+            <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-white/20">
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </div>
+            <div className="absolute inset-0 z-0 h-full w-full translate-y-full bg-accent transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-y-0" />
           </Link>
         </div>
       </div>
