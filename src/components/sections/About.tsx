@@ -4,7 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { SITE_INFO } from '@/content';
 
-export function About() {
+interface AboutProps {
+  hideLink?: boolean;
+}
+
+export function About({ hideLink }: AboutProps) {
   return (
     <section className="bg-warm-black section-padding text-white">
       <div className="mx-auto max-w-site section-padding-x text-center">
@@ -30,15 +34,17 @@ export function About() {
           an {SITE_INFO.bbbRating} BBB rating.
         </p>
 
-        <div className="mt-10">
-          <Link
-            href="/about"
-            className="btn-outline btn-outline-light"
-          >
-            About Us
-            <ArrowRight className="btn-arrow" />
-          </Link>
-        </div>
+        {!hideLink && (
+          <div className="mt-10">
+            <Link
+              href="/about"
+              className="btn-outline btn-outline-light"
+            >
+              About Us
+              <ArrowRight className="btn-arrow" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

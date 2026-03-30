@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { buildContactHref } from '@/lib/contact-link';
 
@@ -45,14 +44,15 @@ export function Hero() {
         style={{ y, scale, opacity }} 
         className="absolute inset-0 z-0 h-full w-full"
       >
-        <Image
-          src="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg"
-          alt="Completed kitchen remodeling project"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-          quality={100}
+        <video
+          ref={useCallback((el: HTMLVideoElement | null) => { if (el) el.playbackRate = 0.75; }, [])}
+          src="/Videos/kitchen-island-wide-animated-loop.mp4"
+          poster="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-full-standard v2-2x.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full scale-110 object-cover"
         />
         {/* Dark overlay engineered for 'editorial dark mode' contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/30 to-charcoal/90" />

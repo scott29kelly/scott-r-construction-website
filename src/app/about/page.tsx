@@ -26,7 +26,7 @@ export default function AboutPage() {
         heroImage="/images/Projects/front-porch-2019-aug/porch-framing-scott-onsite.jpg"
       />
       <ScrollReveal>
-        <About />
+        <About hideLink />
       </ScrollReveal>
       <ScrollReveal>
         <Team />

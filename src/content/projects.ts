@@ -1061,6 +1061,81 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
       },
     ],
   },
+  {
+    id: 'brick-walkway',
+    eyebrow: 'Project case study',
+    title: 'Brick Walkway & Entry Steps',
+    location: 'Langhorne, PA',
+    serviceId: 'decks-patios',
+    image:
+      '/images/Projects/710 Parker St. Langhorne, Pa/brick-walkway/walkway-front-exterior.jpg',
+    imageAlt:
+      'Completed brick walkway with herringbone pattern, brick pillars, and picket fence in Langhorne, PA',
+    scope: 'Brick walkway, entry steps, and column pillars',
+    homeownerGoal:
+      'Create a welcoming, handcrafted path from the gate to the front door that adds real curb appeal and lasting character.',
+    homeownerNeed:
+      'The front yard lacked a defined entry path. The homeowners wanted a brick walkway and steps that felt intentional and matched the home traditional style.',
+    outcome:
+      'Delivered a hand-laid brick walkway with herringbone entry steps and column pillars that transformed the front approach.',
+    summary:
+      'A hand-laid brick walkway from the gate to the front door, with herringbone-pattern entry steps and brick column pillars — built by Scott from the ground up.',
+    projectStory:
+      'This project gave the front yard a completely new sense of arrival. Scott hand-laid every brick — from the curved walkway section through the straight path to the front door — finishing with herringbone-pattern entry steps and matching brick pillars that frame the gate.',
+    scottApproach:
+      'Scott handled the full scope personally — grading, base prep, and hand-laying every brick in the walkway, steps, and pillars — ensuring clean lines, proper drainage, and a finished look that feels permanent.',
+    result:
+      'The finished walkway and steps gave the home a stronger front presence and a well-defined entry sequence that feels crafted, not poured.',
+    projectHighlights: [
+      'Hand-laid brick walkway',
+      'Herringbone entry steps',
+      'Brick column pillars',
+    ],
+    outcomePoints: [
+      'A defined path from gate to front door that adds structure to the front yard',
+      'Herringbone-pattern brick steps that elevate the entry',
+      'Brick pillars that frame the gate and tie the hardscaping together',
+    ],
+    tags: ['Hardscaping', 'Hand-laid brick', 'Curb appeal'],
+    images: [
+      {
+        src: '/images/Projects/710 Parker St. Langhorne, Pa/brick-walkway/walkway-front-exterior.jpg',
+        alt: 'Full house exterior with completed brick walkway, picket fence, and brick pillars',
+        caption:
+          'The completed walkway and pillars as seen from the street — a fully transformed front approach',
+      },
+      {
+        src: '/images/Projects/710 Parker St. Langhorne, Pa/brick-walkway/brick-entry-steps-detail.jpg',
+        alt: 'Close-up of brick entry steps with herringbone pattern',
+        caption:
+          'Herringbone-pattern brick entry steps — hand-laid detail that sets the tone at the front door',
+      },
+      {
+        src: '/images/Projects/710 Parker St. Langhorne, Pa/brick-walkway/walkway-curve-in-progress.jpg',
+        alt: 'Scott laying brick on the curved walkway section, in progress',
+        caption:
+          'Scott hand-laying brick on the curved section — every piece placed individually for a clean line',
+      },
+      {
+        src: '/images/Projects/710 Parker St. Langhorne, Pa/brick-walkway/walkway-gate-to-door.jpg',
+        alt: 'Completed brick walkway from the gate to the front door, straight-on view',
+        caption:
+          'The full path from gate to front door — a straight-on view of the finished walkway',
+      },
+      {
+        src: '/images/Projects/710 Parker St. Langhorne, Pa/brick-walkway/walkway-steps-side-view.jpg',
+        alt: 'Walkway and entry steps from side angle, showing the full path',
+        caption:
+          'Side view showing how the walkway and steps connect to create a cohesive entry sequence',
+      },
+      {
+        src: '/images/Projects/710 Parker St. Langhorne, Pa/brick-walkway/scott-laying-brick-detail.jpg',
+        alt: 'Scott laying brick from above, showing craftsmanship and detail work',
+        caption:
+          'Craftsmanship detail — Scott laying each brick by hand to ensure a precise, lasting result',
+      },
+    ],
+  },
 ];
 
 export const PORTFOLIO: PortfolioItem[] = PROJECT_CASE_STUDIES;

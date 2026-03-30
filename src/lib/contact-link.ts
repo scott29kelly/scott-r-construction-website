@@ -14,5 +14,5 @@ export function buildContactHref({ leadSource, projectType }: ContactHrefOptions
     searchParams.set('projectType', projectType);
   }
 
-  return `/contact?${searchParams.toString()}#contact`;
+  return `/contact?${searchParams.toString()}`;
 }

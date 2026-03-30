@@ -38,13 +38,6 @@ export function Team() {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                href="/about"
-                className="btn-primary btn-primary-dark"
-              >
-                More About Us
-                <ArrowRight className="btn-arrow" />
-              </Link>
-              <Link
                 href="/contact"
                 className="btn-outline btn-outline-dark"
               >
