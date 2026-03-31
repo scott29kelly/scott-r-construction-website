@@ -48,7 +48,7 @@ export function FeaturedProject() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/portfolio/kitchen-remodel"
+              href={`/portfolio/${project.id}`}
               className="btn-primary btn-primary-light"
             >
               View This Project
