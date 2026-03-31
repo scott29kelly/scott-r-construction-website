@@ -67,7 +67,7 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${inter.variable}`}
     >
-      <body className="min-h-screen overflow-x-clip bg-white font-body text-text-body antialiased selection:bg-accent/20">
+      <body className="min-h-screen overflow-x-clip bg-white font-body text-charcoal antialiased selection:bg-accent/20">
         <SmoothScroller>
           <StructuredData />
           <GoogleAnalytics />

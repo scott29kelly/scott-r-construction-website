@@ -58,7 +58,7 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`group cursor-interact relative flex flex-col overflow-hidden rounded-[32px] bg-cream border border-accent/10 transition-transform duration-500 hover:scale-[1.01] hover:shadow-2xl ${BENTO_CLASSES[index] || 'col-span-1 row-span-1 min-h-[250px]'}`}
+              className={`group relative flex flex-col overflow-hidden rounded-[32px] bg-cream border border-accent/10 transition-transform duration-500 hover:scale-[1.01] hover:shadow-2xl ${BENTO_CLASSES[index] || 'col-span-1 row-span-1 min-h-[250px]'}`}
             >
               {/* Background Image with animated overlay */}
               <div className="absolute inset-0 z-0 h-full w-full overflow-hidden bg-charcoal">

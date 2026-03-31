@@ -121,7 +121,7 @@ export function Testimonials() {
       </div>
 
       {/* Drag Slider */}
-      <motion.div ref={containerRef} className="cursor-interact w-full overflow-hidden pl-5 md:pl-[calc(max(0px,(100vw-1400px))/2+50px)]">
+      <motion.div ref={containerRef} className="w-full overflow-hidden pl-5 md:pl-[calc(max(0px,(100vw-1400px))/2+50px)]">
         <motion.div
           drag="x"
           dragConstraints={{ right: 0, left: -width }}

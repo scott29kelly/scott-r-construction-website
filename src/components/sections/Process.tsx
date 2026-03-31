@@ -72,7 +72,7 @@ export function Process() {
         <div className="mt-12 text-center relative z-20">
           <Link
             href={buildContactHref({ leadSource: 'process-cta' })}
-            className="cursor-interact group relative inline-flex items-center gap-6 overflow-hidden rounded-full bg-charcoal px-8 py-5 text-sm font-medium uppercase tracking-[2px] text-white transition-transform hover:scale-105"
+            className="group relative inline-flex items-center gap-6 overflow-hidden rounded-full bg-charcoal px-8 py-5 text-sm font-medium uppercase tracking-[2px] text-white transition-transform hover:scale-105"
           >
             <span className="relative z-10 transition-colors">Start With a Free Consultation</span>
             <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-white/20">

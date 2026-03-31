@@ -26,7 +26,7 @@ function ProjectCard({ project, index }: { project: ProjectCaseStudy, index: num
       animate={{ opacity: 1, y: 0 }}
       exit={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.6, type: 'spring', damping: 20 }}
-      className={`group cursor-interact relative overflow-hidden bg-charcoal rounded-xl ${index === 0 ? 'lg:col-span-2 lg:row-span-2 min-h-[500px]' : 'min-h-[350px]'}`}
+      className={`group relative overflow-hidden bg-charcoal rounded-xl ${index === 0 ? 'lg:col-span-2 lg:row-span-2 min-h-[500px]' : 'min-h-[350px]'}`}
     >
       <Link href={`/portfolio/${project.id}`} className="block h-full w-full">
         {/* Parallax Image Container */}

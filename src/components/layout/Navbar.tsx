@@ -17,6 +17,10 @@ export function Navbar() {
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
     return () => {
       document.body.style.overflow = '';

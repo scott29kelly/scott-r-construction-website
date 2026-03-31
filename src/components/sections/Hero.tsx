@@ -47,7 +47,7 @@ export function Hero() {
         <video
           ref={useCallback((el: HTMLVideoElement | null) => { if (el) el.playbackRate = 0.75; }, [])}
           src="/Videos/kitchen-island-wide-animated-loop.mp4"
-          poster="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-full-standard v2-2x.jpg"
+          poster="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-full.jpg"
           autoPlay
           muted
           loop
@@ -76,7 +76,7 @@ export function Hero() {
 
           <h1 className="font-display text-hero-headline text-white text-left leading-[1.1] mb-12 flex flex-wrap gap-x-4 gap-y-2 lg:gap-x-6 overflow-hidden">
             {titleWords.map((word, i) => (
-              <span key={i} className="overflow-hidden inline-flex pt-2">
+              <span key={i} className="overflow-hidden inline-flex py-2">
                 <motion.span
                   custom={i}
                   variants={wordAnimation}
@@ -98,7 +98,7 @@ export function Hero() {
           >
             <Link
               href={buildContactHref({ leadSource: 'hero-primary' })}
-              className="cursor-interact group relative inline-flex items-center gap-6 overflow-hidden rounded-full bg-white px-8 py-5 text-sm font-medium uppercase tracking-[2px] text-charcoal transition-transform hover:scale-105"
+              className="group relative inline-flex items-center gap-6 overflow-hidden rounded-full bg-white px-8 py-5 text-sm font-medium uppercase tracking-[2px] text-charcoal transition-transform hover:scale-105"
             >
               <span className="relative z-10 transition-colors duration-500 group-hover:text-white">Book a Consult</span>
               <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-charcoal/10 transition-colors duration-500 group-hover:bg-white/20">
