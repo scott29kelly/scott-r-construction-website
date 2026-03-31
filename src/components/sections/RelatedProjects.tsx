@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowRight, ZoomIn } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
@@ -58,11 +58,6 @@ export function RelatedProjects({ projectIds }: RelatedProjectsProps) {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-charcoal/0 transition-colors duration-300 group-hover:bg-charcoal/20">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/0 text-white opacity-0 transition-all duration-300 group-hover:bg-white/90 group-hover:opacity-100">
-                    <ZoomIn size={20} className="text-charcoal" />
-                  </span>
-                </div>
               </button>
 
               {/* Card content */}
