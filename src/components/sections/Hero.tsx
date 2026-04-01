@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -45,13 +45,19 @@ export function Hero() {
         className="absolute inset-0 z-0 h-full w-full"
       >
         <video
-          ref={useCallback((el: HTMLVideoElement | null) => { if (el) el.playbackRate = 0.75; }, [])}
-          src="/Videos/kitchen-island-wide-animated-loop.mp4"
+          src="/videos/kitchen-island-wide-animated-orbit-pingpong.mp4"
           poster="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-full.jpg"
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
+          ref={(el) => {
+            if (el) el.playbackRate = 0.7;
+          }}
+          onLoadedMetadata={(e) => {
+            e.currentTarget.playbackRate = 0.7;
+          }}
           className="absolute inset-0 h-full w-full scale-110 object-cover"
         />
         {/* Dark overlay engineered for 'editorial dark mode' contrast */}
