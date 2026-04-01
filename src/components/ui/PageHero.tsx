@@ -55,7 +55,7 @@ export function PageHero({
             onLoadedMetadata={(e) => {
               e.currentTarget.playbackRate = 0.7;
             }}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute top-0 left-0 w-full min-h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-black/60" />
         </>
