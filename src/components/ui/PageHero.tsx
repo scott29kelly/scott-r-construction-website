@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ArrowRight, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
-import { SITE_INFO } from '@/content';
+import { SITE_INFO, CONTACT_INFO } from '@/content';
 import { buildContactHref } from '@/lib/contact-link';
 
 interface PageHeroProps {
@@ -38,7 +38,7 @@ export function PageHero({
   ];
 
   return (
-    <section className="relative overflow-hidden bg-warm-black pt-44 text-white md:pt-52 min-h-[480px] md:min-h-[560px]">
+    <section className="relative overflow-hidden bg-warm-black pt-28 md:pt-44 text-white min-h-[400px] md:min-h-[480px]">
       {heroVideo ? (
         <>
           <video
@@ -48,7 +48,7 @@ export function PageHero({
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             ref={(el) => {
               if (el) el.playbackRate = 0.7;
             }}
@@ -115,11 +115,11 @@ export function PageHero({
             <ArrowRight className="btn-arrow" />
           </Link>
           <a
-            href="tel:2155191795"
+            href={`tel:${CONTACT_INFO.phone.replace(/[^0-9]/g, '')}`}
             className="btn-outline btn-outline-light"
           >
             <Phone size={14} />
-            Call (215) 519-1795
+            Call {CONTACT_INFO.phone}
           </a>
         </motion.div>
 

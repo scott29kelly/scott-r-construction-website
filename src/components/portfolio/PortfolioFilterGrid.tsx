@@ -26,7 +26,7 @@ function ProjectCard({ project, index }: { project: ProjectCaseStudy, index: num
       animate={{ opacity: 1, y: 0 }}
       exit={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.6, type: 'spring', damping: 20 }}
-      className={`group relative overflow-hidden bg-charcoal rounded-xl ${index === 0 ? 'lg:col-span-2 lg:row-span-2 min-h-[500px]' : 'min-h-[350px]'}`}
+      className={`group relative overflow-hidden bg-charcoal rounded-xl ${index === 0 ? 'lg:col-span-2 lg:row-span-2 min-h-[350px] md:min-h-[500px]' : 'min-h-[300px] md:min-h-[350px]'}`}
     >
       <Link href={`/portfolio/${project.id}`} className="block h-full w-full">
         {/* Parallax Image Container */}
@@ -51,7 +51,7 @@ function ProjectCard({ project, index }: { project: ProjectCaseStudy, index: num
           {/* Subtle gradient to ensure text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
           
-          <div className="relative z-20 translate-y-6 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-y-0 group-hover:opacity-100">
+          <div className="relative z-20 translate-y-0 opacity-100 md:translate-y-6 md:opacity-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:translate-y-0 md:group-hover:opacity-100">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-8 bg-accent" />
               <p className="font-body text-[11px] font-bold tracking-[3px] uppercase text-accent hover:text-white transition-colors">{project.location}</p>
@@ -91,7 +91,7 @@ export function PortfolioFilterGrid({ projects, services }: PortfolioFilterGridP
       <div className="flex flex-wrap gap-3 mt-12 justify-center mb-16 px-4">
         <button
           onClick={() => setActiveFilter('all')}
-          className={`px-8 py-3 rounded-full text-[11px] font-bold tracking-[2px] uppercase transition-all duration-300 ${
+          className={`px-5 md:px-8 py-3 rounded-full text-[11px] font-bold tracking-[2px] uppercase transition-all duration-300 ${
             activeFilter === 'all'
               ? 'bg-charcoal text-white shadow-[0_8px_20px_-6px_rgba(0,0,0,0.3)]'
               : 'bg-white text-steel hover:text-charcoal hover:bg-cream border border-sand/40 hover:border-charcoal/20'
@@ -103,7 +103,7 @@ export function PortfolioFilterGrid({ projects, services }: PortfolioFilterGridP
           <button
             key={service.id}
             onClick={() => setActiveFilter(service.id)}
-            className={`px-8 py-3 rounded-full text-[11px] font-bold tracking-[2px] uppercase transition-all duration-300 ${
+            className={`px-5 md:px-8 py-3 rounded-full text-[11px] font-bold tracking-[2px] uppercase transition-all duration-300 ${
               activeFilter === service.id
                 ? 'bg-charcoal text-white shadow-[0_8px_20px_-6px_rgba(0,0,0,0.3)]'
                 : 'bg-white text-steel hover:text-charcoal hover:bg-cream border border-sand/40 hover:border-charcoal/20'

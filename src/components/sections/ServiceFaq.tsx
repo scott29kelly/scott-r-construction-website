@@ -47,7 +47,7 @@ export function ServiceFaq({ items, serviceTitle }: ServiceFaqProps) {
                   />
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-200 ${isOpen ? 'max-h-[500px] pb-6' : 'max-h-0'}`}
+                  className={`overflow-hidden transition-all duration-200 ${isOpen ? 'max-h-[800px] pb-6' : 'max-h-0'}`}
                 >
                   <p className="text-body-sm text-concrete">{item.answer}</p>
                 </div>

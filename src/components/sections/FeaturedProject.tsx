@@ -8,7 +8,7 @@ export function FeaturedProject() {
   const project = FEATURED_PROJECT_STORY;
 
   return (
-    <section className="relative flex min-h-[680px] items-center overflow-hidden">
+    <section className="relative flex min-h-[500px] md:min-h-[680px] items-center overflow-hidden">
       {/* Full-width background image */}
       <Image
         src={project.image}

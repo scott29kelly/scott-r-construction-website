@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import Image from 'next/image';
@@ -15,6 +15,8 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -25,6 +27,29 @@ export function Navbar() {
     return () => {
       document.body.style.overflow = '';
     };
+  }, [mobileMenuOpen]);
+
+  // Escape key handler
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileMenuOpen(false);
+        hamburgerRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [mobileMenuOpen]);
+
+  // Focus first link when menu opens
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      // Small delay to allow animation to start
+      requestAnimationFrame(() => {
+        firstLinkRef.current?.focus();
+      });
+    }
   }, [mobileMenuOpen]);
 
   useEffect(() => {
@@ -97,10 +122,12 @@ export function Navbar() {
 
           {/* Mobile hamburger */}
           <button
+            ref={hamburgerRef}
             className="inline-flex h-11 w-11 items-center justify-center text-white lg:hidden"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-label="Toggle navigation"
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -111,6 +138,10 @@ export function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
+            id="mobile-nav-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -127,6 +158,7 @@ export function Navbar() {
                     transition={{ delay: index * 0.05 + 0.05, duration: 0.3 }}
                   >
                     <Link
+                      ref={index === 0 ? firstLinkRef : undefined}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={cn(

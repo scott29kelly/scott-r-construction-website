@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useIsTouchDevice } from '@/hooks/useIsTouchDevice';
 
 interface MagneticButtonProps {
   children: React.ReactNode;
@@ -12,8 +13,10 @@ interface MagneticButtonProps {
 export function MagneticButton({ children, className = '', onClick }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const isTouchDevice = useIsTouchDevice();
 
   const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isTouchDevice) return;
     const { clientX, clientY } = e;
     const { height, width, left, top } = ref.current!.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
@@ -30,10 +33,10 @@ export function MagneticButton({ children, className = '', onClick }: MagneticBu
   return (
     <motion.div
       ref={ref}
-      onMouseMove={handleMouse}
-      onMouseLeave={reset}
+      onMouseMove={isTouchDevice ? undefined : handleMouse}
+      onMouseLeave={isTouchDevice ? undefined : reset}
       animate={{ x, y }}
-      transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
+      transition={isTouchDevice ? { duration: 0 } : { type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
       className={`inline-block ${className}`}
       onClick={onClick}
     >

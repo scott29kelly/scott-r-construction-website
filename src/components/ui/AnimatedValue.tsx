@@ -27,6 +27,7 @@ export function AnimatedValue({ value }: AnimatedValueProps) {
 
     const duration = 1500;
     const start = performance.now();
+    let rafId: number;
 
     function tick(now: number) {
       const elapsed = now - start;
@@ -35,10 +36,12 @@ export function AnimatedValue({ value }: AnimatedValueProps) {
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.round(eased * target);
       setDisplay(`${current}${suffix}`);
-      if (progress < 1) requestAnimationFrame(tick);
+      if (progress < 1) rafId = requestAnimationFrame(tick);
     }
 
-    requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(rafId);
   }, [isInView, hasNumber, target, suffix, value, shouldReduceMotion]);
 
   return <span ref={ref}>{display}</span>;

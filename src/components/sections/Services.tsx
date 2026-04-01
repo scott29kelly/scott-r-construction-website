@@ -17,12 +17,12 @@ const SERVICE_IMAGES: Record<string, string> = {
 };
 
 const BENTO_CLASSES: Record<number, string> = {
-  0: 'md:col-span-2 md:row-span-2 min-h-[450px]',
-  1: 'md:col-span-2 md:row-span-1 min-h-[280px]',
-  2: 'md:col-span-1 md:row-span-1 min-h-[280px]',
-  3: 'md:col-span-1 md:row-span-1 min-h-[280px]',
-  4: 'md:col-span-2 md:row-span-1 min-h-[280px]',
-  5: 'md:col-span-2 md:row-span-1 min-h-[280px]',
+  0: 'md:col-span-2 md:row-span-2 min-h-[300px] md:min-h-[450px]',
+  1: 'md:col-span-2 md:row-span-1 min-h-[220px] md:min-h-[280px]',
+  2: 'md:col-span-1 md:row-span-1 min-h-[220px] md:min-h-[280px]',
+  3: 'md:col-span-1 md:row-span-1 min-h-[220px] md:min-h-[280px]',
+  4: 'md:col-span-2 md:row-span-1 min-h-[220px] md:min-h-[280px]',
+  5: 'md:col-span-2 md:row-span-1 min-h-[220px] md:min-h-[280px]',
 };
 
 export function Services() {

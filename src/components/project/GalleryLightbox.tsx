@@ -293,7 +293,7 @@ export function GalleryLightbox({
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
+        className="absolute right-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
         aria-label="Close gallery"
       >
         <X size={22} />
@@ -332,7 +332,7 @@ export function GalleryLightbox({
               animate={isZoomed ? undefined : 'center'}
               exit={isZoomed ? undefined : 'exit'}
               transition={{ duration: 0.15, ease: 'easeInOut' }}
-              className={`relative aspect-[4/3] w-full max-h-[70vh] ${cursorClass}`}
+              className={`relative aspect-[4/3] w-full max-h-[60vh] sm:max-h-[70vh] ${cursorClass}`}
               ref={imageContainerRef}
               onWheel={handleWheel}
               onDoubleClick={handleDoubleClick}

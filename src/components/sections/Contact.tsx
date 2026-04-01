@@ -157,7 +157,7 @@ async function fileToBase64(file: File): Promise<string> {
 }
 
 const baseField =
-  'w-full border bg-white px-4 py-3 font-body text-[15px] text-charcoal outline-none transition-colors';
+  'w-full border bg-white px-4 py-3.5 font-body text-[15px] text-charcoal outline-none transition-colors';
 const fieldOk = `${baseField} border-sand/30 focus:border-charcoal`;
 const fieldErr = `${baseField} border-red-400 focus:border-red-500`;
 

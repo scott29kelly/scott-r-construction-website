@@ -2,8 +2,9 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { Star } from 'lucide-react';
-import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useTransform, useSpring, useReducedMotion } from 'framer-motion';
 import { TESTIMONIALS } from '@/content';
+import { useIsTouchDevice } from '@/hooks/useIsTouchDevice';
 
 function StarRating({ count }: { count: number }) {
   return (
@@ -24,6 +25,10 @@ function TestimonialCard({ testimonial }: { testimonial: any }) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const isTouchDevice = useIsTouchDevice();
+  const shouldReduceMotion = useReducedMotion();
+
+  const skipTilt = isTouchDevice || shouldReduceMotion;
 
   const rotateX = useTransform(y, [-100, 100], [10, -10]);
   const rotateY = useTransform(x, [-100, 100], [-10, 10]);
@@ -32,6 +37,7 @@ function TestimonialCard({ testimonial }: { testimonial: any }) {
   const smoothY = useSpring(rotateY, { stiffness: 300, damping: 20 });
 
   function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
+    if (skipTilt) return;
     const rect = ref.current?.getBoundingClientRect();
     if (!rect) return;
     const width = rect.width;
@@ -45,6 +51,7 @@ function TestimonialCard({ testimonial }: { testimonial: any }) {
   }
 
   function handleMouseLeave() {
+    if (skipTilt) return;
     x.set(0);
     y.set(0);
   }
@@ -52,17 +59,17 @@ function TestimonialCard({ testimonial }: { testimonial: any }) {
   return (
     <motion.div
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
+      onMouseMove={skipTilt ? undefined : handleMouseMove}
+      onMouseLeave={skipTilt ? undefined : handleMouseLeave}
+      style={skipTilt ? undefined : {
         rotateX: smoothX,
         rotateY: smoothY,
         transformPerspective: 1000
       }}
-      className="relative min-w-[85vw] md:min-w-[450px] shrink-0 overflow-hidden rounded-[32px] border border-charcoal/5 bg-white p-8 md:p-12 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.05)] cursor-grab active:cursor-grabbing transition-colors hover:border-accent/30"
+      className="relative min-w-[90vw] sm:min-w-[85vw] md:min-w-[450px] shrink-0 overflow-hidden rounded-[32px] border border-charcoal/5 bg-white p-8 md:p-12 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.05)] cursor-grab active:cursor-grabbing transition-colors hover:border-accent/30"
     >
       <span className="absolute -top-6 right-6 select-none pointer-events-none font-display text-[120px] leading-none text-accent/[0.08]">&ldquo;</span>
-      
+
       <div className="flex items-center gap-4 mb-8">
         <StarRating count={testimonial.stars} />
       </div>
@@ -94,7 +101,7 @@ export function Testimonials() {
         setWidth(containerRef.current.scrollWidth - containerRef.current.offsetWidth);
       }
     };
-    
+
     calculateWidth();
     window.addEventListener('resize', calculateWidth);
     return () => window.removeEventListener('resize', calculateWidth);
@@ -115,7 +122,7 @@ export function Testimonials() {
             </h2>
           </div>
           <p className="text-body-sm text-charcoal/60 uppercase tracking-widest hidden md:block animate-pulse">
-            Drag to explore →
+            Drag to explore &rarr;
           </p>
         </div>
       </div>

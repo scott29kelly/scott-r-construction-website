@@ -88,7 +88,7 @@ export function FileUpload({
               <button
                 type="button"
                 onClick={() => removeFile(i)}
-                className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-warm-black text-white opacity-0 transition-opacity group-hover:opacity-100"
+                className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-warm-black text-white opacity-100 md:opacity-0 transition-opacity md:group-hover:opacity-100"
                 aria-label={`Remove ${file.name}`}
               >
                 <X size={12} />

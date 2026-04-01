@@ -39,9 +39,9 @@ const config: Config = {
         'content-3xl': '1100px',
       },
       spacing: {
-        'section-x': '50px',
-        'section-y': '100px',
-        'card-pad': '35px',
+        'section-x': 'clamp(20px, 5vw, 50px)',
+        'section-y': 'clamp(60px, 10vw, 100px)',
+        'card-pad': 'clamp(24px, 4vw, 35px)',
       },
       letterSpacing: {
         nav: '1.625px',

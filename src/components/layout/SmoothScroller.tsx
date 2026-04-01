@@ -2,37 +2,45 @@
 
 import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import { useReducedMotion } from 'framer-motion';
 import Lenis from 'lenis';
+import { useIsTouchDevice } from '@/hooks/useIsTouchDevice';
 
 export function SmoothScroller({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
   const pathname = usePathname();
+  const isTouchDevice = useIsTouchDevice();
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (shouldReduceMotion) return;
+
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: isTouchDevice ? 0.6 : 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
-      smoothWheel: true,
+      smoothWheel: !isTouchDevice,
       wheelMultiplier: 1,
       touchMultiplier: 2,
     });
 
     lenisRef.current = lenis;
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
       lenisRef.current = null;
     };
-  }, []);
+  }, [isTouchDevice, shouldReduceMotion]);
 
   useEffect(() => {
     const lenis = lenisRef.current;

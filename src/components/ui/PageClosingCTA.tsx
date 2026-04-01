@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { buildContactHref } from '@/lib/contact-link';
+import { CONTACT_INFO } from '@/content';
 
 interface PageClosingCTAProps {
   eyebrow: string;
@@ -65,7 +66,7 @@ export function PageClosingCTA({
                 <ArrowRight className="btn-arrow" />
               </Link>
               <a
-                href="tel:2155191795"
+                href={`tel:${CONTACT_INFO.phone.replace(/[^0-9]/g, '')}`}
                 className="btn-outline btn-outline-light"
               >
                 <Phone size={14} />

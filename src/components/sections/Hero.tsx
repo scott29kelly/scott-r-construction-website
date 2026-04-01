@@ -38,7 +38,7 @@ export function Hero() {
   const titleWords = "Building Your Vision with Craftsmanship & Care".split(' ');
 
   return (
-    <section ref={containerRef} className="relative flex min-h-[105vh] items-center justify-center overflow-hidden bg-charcoal">
+    <section ref={containerRef} className="relative flex min-h-screen md:min-h-[105vh] items-center justify-center overflow-hidden bg-charcoal">
       {/* Background image container with parallax */}
       <motion.div 
         style={{ y, scale, opacity }} 
@@ -51,7 +51,7 @@ export function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           ref={(el) => {
             if (el) el.playbackRate = 0.7;
           }}
