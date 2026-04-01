@@ -15,6 +15,8 @@ interface PageHeroProps {
   leadSource: string;
   chips?: string[];
   heroImage?: string;
+  heroVideo?: string;
+  heroVideoPoster?: string;
 }
 
 export function PageHero({
@@ -24,6 +26,8 @@ export function PageHero({
   leadSource,
   chips,
   heroImage,
+  heroVideo,
+  heroVideoPoster,
 }: PageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
 
@@ -35,7 +39,27 @@ export function PageHero({
 
   return (
     <section className="relative overflow-hidden bg-warm-black pt-44 text-white md:pt-52 min-h-[480px] md:min-h-[560px]">
-      {heroImage && (
+      {heroVideo ? (
+        <>
+          <video
+            src={heroVideo}
+            poster={heroVideoPoster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            ref={(el) => {
+              if (el) el.playbackRate = 0.7;
+            }}
+            onLoadedMetadata={(e) => {
+              e.currentTarget.playbackRate = 0.7;
+            }}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </>
+      ) : heroImage ? (
         <>
           <Image
             src={heroImage}
@@ -47,7 +71,7 @@ export function PageHero({
           />
           <div className="absolute inset-0 bg-black/60" />
         </>
-      )}
+      ) : null}
 
       <div className="relative z-10 mx-auto max-w-site section-padding-x pb-24 md:pb-28">
         <motion.p

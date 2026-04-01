@@ -22,7 +22,8 @@ export default function ProcessPage() {
         description="See how Scott handles early fit checks, estimate conversations, project planning, and owner-led execution so you know what to expect before reaching out."
         leadSource="process-page-hero"
         chips={['Fit first', 'Clear communication', 'Owner-led execution']}
-        heroImage="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-wide.jpg"
+        heroVideo="/videos/freestanding-tub-stone-surround-wide-animated-orbit-pingpong.mp4"
+        heroVideoPoster="/images/Projects/bathroom-2018/freestanding-tub-stone-surround-wide.jpg"
       />
       <Process />
       <ScrollReveal>
