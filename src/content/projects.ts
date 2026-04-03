@@ -930,9 +930,9 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
     title: 'Master Bathroom Renovation',
     location: 'Bucks County, PA',
     serviceId: 'remodeling',
-    image: '/images/Projects/bathroom-2018/bathroom-wide-tub-shower-vanity.jpg',
+    image: '/images/Projects/bathroom-2018/freestanding-tub-stone-surround-wide.jpg',
     imageAlt:
-      'Renovated master bathroom with freestanding soaking tub, walk-in shower, and gray vanity',
+      'Renovated master bathroom with freestanding soaking tub on fieldstone surround beneath the window',
     scope: 'Full master bathroom renovation with custom tile and freestanding tub',
     homeownerGoal:
       'Transform a dated master bath into a spa-inspired retreat with a freestanding tub, walk-in shower, and premium tile work throughout.',

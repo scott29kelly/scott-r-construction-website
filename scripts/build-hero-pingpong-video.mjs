@@ -1,6 +1,6 @@
 /**
  * Builds a ping-pong hero background: forward + reversed copy concatenated (ffmpeg).
- * Optional — Hero uses the raw orbit clip for reliable browser playback; ping-pong
+ * Optional — home Hero uses the raw orbit clip for reliable browser playback; ping-pong
  * concat can cause early decode stalls in Chrome/Edge/Safari for some exports.
  *
  *   node scripts/build-hero-pingpong-video.mjs

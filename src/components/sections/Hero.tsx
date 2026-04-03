@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
+import Image from 'next/image';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -44,22 +45,32 @@ export function Hero() {
         style={{ y, scale, opacity }} 
         className="absolute inset-0 z-0 h-full w-full"
       >
-        <video
-          src="/videos/kitchen-island-wide-animated-orbit-pingpong.mp4"
-          poster="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-full.jpg"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          ref={(el) => {
-            if (el) el.playbackRate = 0.7;
-          }}
-          onLoadedMetadata={(e) => {
-            e.currentTarget.playbackRate = 0.7;
-          }}
-          className="absolute inset-0 h-full w-full scale-110 object-cover"
-        />
+        {shouldReduceMotion ? (
+          <Image
+            src="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-full.jpg"
+            alt=""
+            fill
+            priority
+            className="scale-110 object-cover"
+          />
+        ) : (
+          <video
+            src="/videos/kitchen-island-wide-animated-orbit-pingpong.mp4"
+            poster="/images/Projects/710 Parker St. Langhorne, Pa/kitchen-island-full.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            ref={(el) => {
+              if (el) el.playbackRate = 0.7;
+            }}
+            onLoadedMetadata={(e) => {
+              e.currentTarget.playbackRate = 0.7;
+            }}
+            className="absolute inset-0 h-full w-full scale-110 object-cover"
+          />
+        )}
         {/* Dark overlay engineered for 'editorial dark mode' contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/30 to-charcoal/90" />
       </motion.div>

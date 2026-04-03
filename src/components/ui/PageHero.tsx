@@ -41,22 +41,33 @@ export function PageHero({
     <section className="relative overflow-hidden bg-warm-black pt-28 md:pt-44 text-white min-h-[400px] md:min-h-[480px]">
       {heroVideo ? (
         <>
-          <video
-            src={heroVideo}
-            poster={heroVideoPoster}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            ref={(el) => {
-              if (el) el.playbackRate = 0.7;
-            }}
-            onLoadedMetadata={(e) => {
-              e.currentTarget.playbackRate = 0.7;
-            }}
-            className="absolute top-0 left-0 w-full min-h-full object-cover object-top"
-          />
+          {shouldReduceMotion && heroVideoPoster ? (
+            <Image
+              src={heroVideoPoster}
+              alt=""
+              fill
+              priority
+              className="object-cover object-top"
+              sizes="100vw"
+            />
+          ) : (
+            <video
+              src={heroVideo}
+              poster={heroVideoPoster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              ref={(el) => {
+                if (el) el.playbackRate = 0.7;
+              }}
+              onLoadedMetadata={(e) => {
+                e.currentTarget.playbackRate = 0.7;
+              }}
+              className="absolute top-0 left-0 w-full min-h-full object-cover object-top"
+            />
+          )}
           <div className="absolute inset-0 bg-black/60" />
         </>
       ) : heroImage ? (

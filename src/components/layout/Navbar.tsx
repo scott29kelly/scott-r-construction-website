@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import { buildContactHref } from '@/lib/contact-link';
 import { PRIMARY_NAV_LINKS } from '@/lib/navigation';
 import { cn } from '@/lib/utils';
+import { useFocusTrap } from '@/hooks/useFocusTrap';
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,6 +18,9 @@ export function Navbar() {
   const shouldReduceMotion = useReducedMotion();
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  useFocusTrap(mobileMenuRef, mobileMenuOpen);
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -138,6 +142,7 @@ export function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
+            ref={mobileMenuRef}
             id="mobile-nav-menu"
             role="dialog"
             aria-modal="true"

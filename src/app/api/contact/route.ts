@@ -3,6 +3,44 @@ import { Resend } from 'resend';
 import { buildContactEmail } from '@/lib/email-template';
 import { formatLeadSource } from '@/lib/contact-source';
 
+/* ------------------------------------------------------------------ */
+/*  In-memory IP rate limiter                                         */
+/* ------------------------------------------------------------------ */
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const RATE_LIMIT_MAX = 5;
+
+const ipHits = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = ipHits.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    ipHits.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+
+  entry.count += 1;
+  return entry.count > RATE_LIMIT_MAX;
+}
+
+// Periodic cleanup so the Map doesn't grow indefinitely
+if (typeof globalThis !== 'undefined') {
+  setInterval(() => {
+    const now = Date.now();
+    for (const [ip, entry] of ipHits) {
+      if (now > entry.resetAt) ipHits.delete(ip);
+    }
+  }, RATE_LIMIT_WINDOW_MS);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Attachment validation                                             */
+/* ------------------------------------------------------------------ */
+const MAX_ATTACHMENTS = 5;
+const MAX_ATTACHMENT_BYTES = 10 * 1024 * 1024; // 10 MB decoded
+const ALLOWED_EXTENSIONS = /\.(jpe?g|png|gif|webp)$/i;
+
 interface PhotoAttachment {
   filename: string;
   content: string;
@@ -30,6 +68,16 @@ function normalizeValue(value: string | undefined): string {
 
 export async function POST(request: Request) {
   try {
+    // Rate limiting
+    const forwarded = request.headers.get('x-forwarded-for');
+    const ip = forwarded?.split(',')[0]?.trim() || 'unknown';
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please wait a few minutes and try again.' },
+        { status: 429 }
+      );
+    }
+
     const body = (await request.json()) as ContactRequestBody;
 
     const firstName = normalizeValue(body.firstName);
@@ -97,12 +145,37 @@ export async function POST(request: Request) {
       entryPage,
     });
 
-    const attachments = body.photoAttachments
-      ?.filter((a) => a.filename && a.content)
-      .map((a) => ({
-        filename: a.filename,
-        content: Buffer.from(a.content, 'base64'),
-      }));
+    // Validate attachments before decoding
+    const rawAttachments = body.photoAttachments?.filter((a) => a.filename && a.content) ?? [];
+
+    if (rawAttachments.length > MAX_ATTACHMENTS) {
+      return NextResponse.json(
+        { error: `You can attach up to ${MAX_ATTACHMENTS} images.` },
+        { status: 400 }
+      );
+    }
+
+    for (const a of rawAttachments) {
+      if (!ALLOWED_EXTENSIONS.test(a.filename)) {
+        return NextResponse.json(
+          { error: `File "${a.filename}" is not an allowed image type. Use JPG, PNG, GIF, or WebP.` },
+          { status: 400 }
+        );
+      }
+      // Base64 string length ≈ decoded bytes * 4/3
+      const estimatedBytes = a.content.length * 0.75;
+      if (estimatedBytes > MAX_ATTACHMENT_BYTES) {
+        return NextResponse.json(
+          { error: `File "${a.filename}" exceeds the 10 MB size limit.` },
+          { status: 400 }
+        );
+      }
+    }
+
+    const attachments = rawAttachments.map((a) => ({
+      filename: a.filename,
+      content: Buffer.from(a.content, 'base64'),
+    }));
 
     await resend.emails.send({
       from: 'Scott Romanoski Construction <onboarding@resend.dev>',

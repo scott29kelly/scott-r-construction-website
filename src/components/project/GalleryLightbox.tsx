@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import type { ContentImage } from '@/types';
+import { useFocusTrap } from '@/hooks/useFocusTrap';
 
 interface GalleryLightboxProps {
   images: ContentImage[];
@@ -28,7 +29,10 @@ export function GalleryLightbox({
 }: GalleryLightboxProps) {
   const [index, setIndex] = useState(initialIndex);
   const [direction, setDirection] = useState(0);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const thumbsRef = useRef<HTMLDivElement>(null);
+
+  useFocusTrap(dialogRef, true);
   const image = images[index];
   const hasNav = images.length > 1;
 
@@ -276,6 +280,7 @@ export function GalleryLightbox({
 
   return (
     <div
+      ref={dialogRef}
       role="dialog"
       aria-modal="true"
       aria-label="Image gallery"

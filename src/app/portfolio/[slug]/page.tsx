@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { PROJECT_CASE_STUDIES } from '@/content';
+import { PROJECT_CASE_STUDIES, SERVICE_DETAILS } from '@/content';
 import { SiteShell } from '@/components/layout/SiteShell';
 import { PageClosingCTA } from '@/components/ui/PageClosingCTA';
 import { ProjectHero } from '@/components/project/ProjectHero';
@@ -54,6 +54,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   if (!project) notFound();
 
   const { prev, next } = getAdjacentProjects(slug);
+  const service = SERVICE_DETAILS.find((s) => s.id === project.serviceId);
 
   // Story gets up to MAX_STORY_IMAGES; gallery always shows all images
   const storyImages = project.images.slice(0, MAX_STORY_IMAGES);
@@ -83,7 +84,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         title="Share your goals and Scott will follow up with practical next steps."
         description="Include the room or area, your timing window, and what is driving the project to get the most useful first reply."
         leadSource={`project-detail-${project.id}-cta`}
-        projectType={project.serviceId}
+        projectType={service?.contactProjectType}
       />
       </ScrollReveal>
     </SiteShell>
